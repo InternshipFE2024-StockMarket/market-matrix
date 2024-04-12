@@ -1,18 +1,16 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
-import PortfolioScreen from '../screens/PortfolioScreen';
-import DiscoverScreen from '../screens/DiscoverScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {CompanyScreen} from '../screens/CompanyScreen';
+import {BottomTabNavigation} from './BottomTabNavigation';
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Portfolio" component={PortfolioScreen} />
-      <Tab.Screen name="Discover" component={DiscoverScreen} />
-    </Tab.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Tabs" component={BottomTabNavigation} />
+      <Stack.Screen name="Company" component={CompanyScreen} />
+    </Stack.Navigator>
   );
 };
 
