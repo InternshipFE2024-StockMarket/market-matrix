@@ -1,7 +1,7 @@
 // GradientBackground.js
 
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/Colors';
 
@@ -21,7 +21,7 @@ const GradientBackground = ({children}: GradientBackgroundProps) => {
       start={{x: 0.5, y: 0}}
       end={{x: 1, y: 1}}
       style={styles.container}>
-      {children}
+      <SafeAreaView>{children}</SafeAreaView>
     </LinearGradient>
   );
 };

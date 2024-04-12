@@ -7,11 +7,13 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
+    "json-server": "json-server src/db.json --watch",
     "test": "jest"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
+    "json-server": "^1.0.0-alpha.23",
     "react": "18.2.0",
     "react-native": "0.73.6",
     "react-native-linear-gradient": "^2.8.3",
