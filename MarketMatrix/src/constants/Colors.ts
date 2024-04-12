@@ -7,6 +7,6 @@ export const Colors = {
   pink: '#EB137B',
   green: '#17D878',
   cardBackground: 'rgba(47, 57, 90, 0.5)',
-  navigationBackground: 'gba(177, 188, 222, 0.1)',
+  navigationBackground: '#2f3c63',
   border: 'rga((236,239,248, 0.5)',
 };
