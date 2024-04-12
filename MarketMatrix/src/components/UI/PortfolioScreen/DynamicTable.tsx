@@ -1,9 +1,11 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
-import {TestData} from '../../../screens/PortfolioScreen';
+import {TableData} from '../../../screens/PortfolioScreen';
+import {Colors} from '../../../constants/Colors';
+import TableRow from './TableRow';
 
 interface DynamicTableProps {
-  data: TestData[];
+  data: TableData[];
 }
 
 const DynamicTable = ({data}: DynamicTableProps) => {
@@ -17,14 +19,14 @@ const DynamicTable = ({data}: DynamicTableProps) => {
       </View>
       <FlatList
         data={data}
-        keyExtractor={index => index.toString()}
+        keyExtractor={item => item.asset}
         renderItem={({item}) => (
-          <View style={styles.row}>
-            <Text style={styles.cell}>{item.asset}</Text>
-            <Text style={styles.cell}>{item.amount}</Text>
-            <Text style={styles.cell}>{item.plValue}</Text>
-            <Text style={styles.cell}>{item.value}</Text>
-          </View>
+          <TableRow
+            asset={item.asset}
+            amount={item.amount}
+            plValue={item.plValue}
+            value={item.value}
+          />
         )}
       />
     </View>
@@ -33,28 +35,18 @@ const DynamicTable = ({data}: DynamicTableProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
   },
   header: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
     paddingVertical: 10,
-    paddingHorizontal: 5,
   },
   headerText: {
     flex: 1,
-    textAlign: 'center',
+    fontSize: 16,
     fontWeight: 'bold',
-  },
-  row: {
-    flexDirection: 'row',
-    paddingVertical: 10,
-    paddingHorizontal: 5,
-  },
-  cell: {
-    flex: 1,
     textAlign: 'center',
+    color: Colors.text500,
   },
 });
 
