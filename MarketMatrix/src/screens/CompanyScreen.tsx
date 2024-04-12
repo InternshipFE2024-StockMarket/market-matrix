@@ -4,6 +4,7 @@ import {Button, Image, StyleSheet, Text, View} from 'react-native';
 import GradientBackground from '../components/UI/GradientBackground';
 import {Colors} from '../constants/Colors';
 import {Stock} from '../constants/Interfaces';
+import {CompanyTabNavigation} from '../navigation/CompanyTabNavigation';
 
 export const CompanyScreen = ({navigation}: any) => {
   const [selectedStock, setSelectedStock] = useState<Stock | undefined>();
@@ -79,6 +80,7 @@ export const CompanyScreen = ({navigation}: any) => {
                 </View>
               </View>
             </View>
+            <CompanyTabNavigation />
           </View>
           <Button title="Go back" onPress={() => navigation.goBack()} />
         </View>
@@ -100,11 +102,8 @@ const styles = StyleSheet.create({
   companyDetaildContainer: {
     margin: '3%',
     height: '30%',
-    borderBottomColor: 'rgba(177, 188, 222, 0.3)',
-    borderBottomWidth: 1,
   },
   mainDetails: {
-    //flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
