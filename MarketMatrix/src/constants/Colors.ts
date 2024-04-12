@@ -10,4 +10,5 @@ export const Colors = {
   navigationBackground: '#353c58',
   border: 'rga((236,239,248, 0.5)',
   selectedIcon: '#617ae0',
+  dropdown: 'rgba(251, 251, 251, 0.54)',
 };
