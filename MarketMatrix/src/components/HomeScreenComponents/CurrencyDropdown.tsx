@@ -4,13 +4,19 @@ import {SelectList} from 'react-native-dropdown-select-list';
 import {Colors} from '../../constants/Colors';
 
 const data = [
-  {key: '1', value: 'EUR'},
-  {key: '2', value: 'USD'},
+  {key: 'EUR', value: 'EUR'},
+  {key: 'USD', value: 'USD'},
 ];
 
-export const CurrencyDropdown = () => {
-  const [selected, setSelected] = useState('EUR');
+interface CurrencyDropdownProps {
+  selected: string;
+  setSelected: React.Dispatch<SetStateAction<string>>;
+}
 
+export const CurrencyDropdown = ({
+  selected,
+  setSelected,
+}: CurrencyDropdownProps) => {
   return (
     <View style={styles.dropdown}>
       <SelectList

@@ -1,10 +1,27 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 
 const HomeScreen = () => {
+  const [currency, setCurrency] = useState('EUR');
+  const [initialValue, setInitialValue] = useState(18000);
+  const [value, setValue] = useState(18000);
+
+  const currencyFormat = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency,
+  });
+
+  useEffect(() => {
+    if (currency === 'USD') {
+      setValue(initialValue * 1.06);
+    } else if (currency === 'EUR') {
+      setValue(initialValue);
+    }
+  }, [currency, initialValue]);
+
   return (
     <GradientBackground>
       <View style={styles.homeWrapper}>
@@ -15,13 +32,13 @@ const HomeScreen = () => {
           <View>
             <Text style={styles.text}>Your total value:</Text>
             <View style={styles.valueContainer}>
-              <Text style={styles.currency}>$</Text>
-              <Text style={styles.value}>180,20.66</Text>
+              {/* <Text style={styles.currency}>$</Text> */}
+              <Text style={styles.value}>{currencyFormat.format(value)}</Text>
             </View>
             {/* create a component to change dinamically the color and add arrow icon  */}
             <Text style={styles.valueDifference}>34.10 (0.19%)</Text>
           </View>
-          <CurrencyDropdown />
+          <CurrencyDropdown selected={currency} setSelected={setCurrency} />
         </View>
         <Text style={styles.text}>Stories</Text>
         <Text style={styles.text}>Chart</Text>
