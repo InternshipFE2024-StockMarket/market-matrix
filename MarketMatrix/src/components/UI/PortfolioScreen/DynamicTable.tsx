@@ -10,12 +10,14 @@ interface DynamicTableProps {
 
 const DynamicTable = ({data}: DynamicTableProps) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Asset</Text>
-        <Text style={styles.headerText}>Amount</Text>
-        <Text style={styles.headerText}>P/L</Text>
-        <Text style={styles.headerText}>Value</Text>
+    <View style={styles.rootContainer}>
+      <View style={styles.headerContainer}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Asset</Text>
+          <Text style={styles.headerText}>Amount</Text>
+          <Text style={styles.headerText}>P/L</Text>
+          <Text style={styles.headerText}>Value</Text>
+        </View>
       </View>
       <FlatList
         data={data}
@@ -38,12 +40,17 @@ const DynamicTable = ({data}: DynamicTableProps) => {
 export default DynamicTable;
 
 const styles = StyleSheet.create({
-  container: {
+  rootContainer: {
     flex: 1,
   },
   header: {
     flexDirection: 'row',
-    paddingVertical: 10,
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+    marginHorizontal: 5,
+  },
+  headerContainer: {
+    backgroundColor: Colors.cardBackground500,
   },
   headerText: {
     flex: 1,

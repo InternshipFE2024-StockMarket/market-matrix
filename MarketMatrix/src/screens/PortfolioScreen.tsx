@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
@@ -52,7 +52,6 @@ const PortfolioScreen = () => {
   return (
     <GradientBackground>
       <View style={styles.rootContainer}>
-        <Text style={styles.text}>PortfolioScreen</Text>
         <DynamicTable data={testData} />
       </View>
     </GradientBackground>

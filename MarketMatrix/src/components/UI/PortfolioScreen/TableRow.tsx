@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View, Dimensions} from 'react-native';
 import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 import {TableData} from '../../../screens/PortfolioScreen';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../../constants/Colors';
@@ -8,13 +8,24 @@ import AssetCell from './AssetCell';
 const TableRow = ({ticker, amount, plValue, value, price, logo}: TableData) => {
   return (
     <LinearGradient
-      colors={[`${Colors.cardBackground}10`, `${Colors.background800}`]}
+      colors={[Colors.cardBackground500, Colors.cardBackground700]}
       style={styles.container}>
       <View style={styles.row}>
-        <AssetCell ticker={ticker} price={price} logoSource={logo} />
-        <Text style={styles.cell}>{amount}</Text>
-        <Text style={styles.cell}>{plValue}</Text>
-        <Text style={styles.cell}>{value}</Text>
+        <AssetCell
+          ticker={ticker}
+          price={price}
+          logoSource={logo}
+          style={styles.cell}
+        />
+        <Text style={[styles.cell, styles.text]}>{amount}</Text>
+        <Text
+          style={[
+            {color: plValue > 0 ? Colors.green : Colors.pink},
+            styles.cell,
+          ]}>
+          {plValue}
+        </Text>
+        <Text style={[styles.cell, styles.text]}>{value}</Text>
       </View>
     </LinearGradient>
   );
@@ -22,18 +33,23 @@ const TableRow = ({ticker, amount, plValue, value, price, logo}: TableData) => {
 
 export default TableRow;
 
-const displayWidth = Dimensions.get('window').width;
-
 const styles = StyleSheet.create({
-  container: {
-    // width: displayWidth,
-  },
+  container: {},
   row: {
+    flex: 1,
     flexDirection: 'row',
-    paddingVertical: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+    marginHorizontal: 5,
+  },
+  text: {
+    color: Colors.text500,
   },
   cell: {
     flex: 1,
     textAlign: 'center',
+    fontSize: 16,
+    fontWeight: '500',
   },
 });
