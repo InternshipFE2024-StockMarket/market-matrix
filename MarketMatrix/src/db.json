@@ -3,6 +3,7 @@
     {
       "ticker": "AAPL",
       "companyName": "Apple Inc.",
+      "companyValue": "2.70T",
       "price": 191.5314,
       "priceChangePercentage": 1.5381,
       "priceChange": 2.9014,
@@ -18,6 +19,7 @@
     {
       "ticker": "AMZN",
       "companyName": "Amazon.com, Inc.",
+      "companyValue": "1.96T",
       "price": 155.295,
       "priceChangePercentage": 1.1694,
       "priceChange": 1.795,
@@ -33,6 +35,7 @@
     {
       "ticker": "ANET",
       "companyName": "Arista Networks, Inc.",
+      "companyValue": "92.72B",
       "price": 263.545,
       "priceChangePercentage": 2.3237,
       "priceChange": 5.985,
@@ -48,6 +51,7 @@
     {
       "ticker": "BAC",
       "companyName": "Bank of America Corporation",
+      "companyValue": "286.82B",
       "price": 32.135,
       "priceChangePercentage": 1.2764,
       "priceChange": 0.405,
@@ -63,6 +67,7 @@
     {
       "ticker": "C",
       "companyName": "Citigroup Inc.",
+      "companyValue": "116.04B",
       "price": 51.51,
       "priceChangePercentage": 0.7826,
       "priceChange": 0.4,
@@ -78,6 +83,7 @@
     {
       "ticker": "COST",
       "companyName": "Costco Wholesale Corporation",
+      "companyValue": "324.80B",
       "price": 695.02,
       "priceChangePercentage": 1.1218,
       "priceChange": 7.71,
@@ -93,6 +99,7 @@
     {
       "ticker": "CPRT",
       "companyName": "Copart, Inc.",
+      "companyValue": "53.84B",
       "price": 48.77,
       "priceChangePercentage": 1.2456,
       "priceChange": 0.6,
@@ -108,6 +115,7 @@
     {
       "ticker": "CVX",
       "companyName": "Chevron Corporation",
+      "companyValue": "300.670B",
       "price": 142.115,
       "priceChangePercentage": 0.208,
       "priceChange": 0.295,
@@ -123,6 +131,7 @@
     {
       "ticker": "GOOGL",
       "companyName": "Alphabet Inc.",
+      "companyValue": "1.99T",
       "price": 145.645,
       "priceChangePercentage": 1.5089,
       "priceChange": 2.165,
