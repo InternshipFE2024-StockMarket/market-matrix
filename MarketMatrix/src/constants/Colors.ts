@@ -7,6 +7,7 @@ export const Colors = {
   pink: '#EB137B',
   green: '#17D878',
   cardBackground: 'rgba(47, 57, 90, 0.5)',
-  navigationBackground: '#2f3c63',
+  navigationBackground: '#353c58',
   border: 'rga((236,239,248, 0.5)',
+  selectedIcon: '#617ae0',
 };

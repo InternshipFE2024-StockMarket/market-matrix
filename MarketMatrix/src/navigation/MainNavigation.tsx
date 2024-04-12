@@ -17,6 +17,8 @@ const MainNavigation = () => {
           backgroundColor: Colors.navigationBackground,
           borderTopWidth: 0,
         },
+        tabBarActiveTintColor: Colors.selectedIcon,
+        tabBarInactiveTintColor: Colors.text500,
       }}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Portfolio" component={PortfolioScreen} />
