@@ -19,19 +19,23 @@ const DynamicTable = ({data}: DynamicTableProps) => {
       </View>
       <FlatList
         data={data}
-        keyExtractor={item => item.asset}
+        keyExtractor={item => item.ticker}
         renderItem={({item}) => (
           <TableRow
-            asset={item.asset}
+            ticker={item.ticker}
             amount={item.amount}
             plValue={item.plValue}
             value={item.value}
+            price={item.price}
+            logo={item.logo}
           />
         )}
       />
     </View>
   );
 };
+
+export default DynamicTable;
 
 const styles = StyleSheet.create({
   container: {
@@ -49,5 +53,3 @@ const styles = StyleSheet.create({
     color: Colors.text500,
   },
 });
-
-export default DynamicTable;

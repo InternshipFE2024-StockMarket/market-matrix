@@ -5,17 +5,47 @@ import GradientBackground from '../components/UI/GradientBackground';
 import DynamicTable from '../components/UI/PortfolioScreen/DynamicTable';
 
 export interface TableData {
-  asset: string;
+  ticker: string;
   amount: number;
   plValue: number;
   value: number;
+  price: number;
+  logo: string;
 }
 
-const testData: TableData[] = [
-  {asset: 'AAPL', amount: 100, plValue: 50, value: 6000},
-  {asset: 'GOOGL', amount: 50, plValue: -20, value: 10000},
-  {asset: 'MSFT', amount: 75, plValue: 30, value: 4500},
-  {asset: 'AMZN', amount: 25, plValue: 100, value: 20000},
+export const testData: TableData[] = [
+  {
+    ticker: 'AAPL',
+    amount: 100,
+    plValue: 50,
+    value: 6000,
+    price: 150,
+    logo: 'https://financialmodelingprep.com/image-stock/AAPL.png',
+  },
+  {
+    ticker: 'GOOGL',
+    amount: 50,
+    plValue: -20,
+    value: 10000,
+    price: 200,
+    logo: 'https://financialmodelingprep.com/image-stock/AAPL.png',
+  },
+  {
+    ticker: 'MSFT',
+    amount: 75,
+    plValue: 30,
+    value: 4500,
+    price: 100,
+    logo: 'https://financialmodelingprep.com/image-stock/AAPL.png',
+  },
+  {
+    ticker: 'AMZN',
+    amount: 25,
+    plValue: 100,
+    value: 20000,
+    price: 300,
+    logo: 'https://financialmodelingprep.com/image-stock/AAPL.png',
+  },
 ];
 
 const PortfolioScreen = () => {
