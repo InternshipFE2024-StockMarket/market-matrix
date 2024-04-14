@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
+import {Story} from '../components/HomeScreenComponents/Story';
 
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('EUR');
@@ -32,7 +33,6 @@ const HomeScreen = () => {
           <View>
             <Text style={styles.text}>Your total value:</Text>
             <View style={styles.valueContainer}>
-              {/* <Text style={styles.currency}>$</Text> */}
               <Text style={styles.value}>{currencyFormat.format(value)}</Text>
             </View>
             {/* create a component to change dinamically the color and add arrow icon  */}
@@ -40,7 +40,45 @@ const HomeScreen = () => {
           </View>
           <CurrencyDropdown selected={currency} setSelected={setCurrency} />
         </View>
-        <Text style={styles.text}>Stories</Text>
+        <View style={styles.storiesContaner}>
+          <Story
+            logo={require('../assets/icons/icon-apple.png')}
+            title="APPLE"
+            value={34.1}
+            percentage={0.19}
+            color="green"
+          />
+          <Story
+            logo={require('../assets/icons/icon-apple.png')}
+            title="APPL"
+            value={34.1}
+            percentage={0.19}
+            color="red"
+          />
+          <Story
+            logo={require('../assets/icons/icon-apple.png')}
+            title="APPL"
+            value={34.1}
+            percentage={0.19}
+            color="red"
+          />
+          <Story
+            logo={require('../assets/icons/icon-apple.png')}
+            title="APPL"
+            value={34.1}
+            percentage={0.19}
+            color="green"
+          />
+          <Story
+            logo={require('../assets/icons/icon-apple.png')}
+            title="APPL"
+            value={34.1}
+            percentage={0.19}
+            color="green"
+          />
+          {/* <Story />
+          <Story /> */}
+        </View>
         <Text style={styles.text}>Chart</Text>
       </View>
     </GradientBackground>
@@ -82,5 +120,11 @@ const styles = StyleSheet.create({
   valueDifference: {
     color: Colors.pink,
     fontSize: 20,
+  },
+  storiesContaner: {
+    flexDirection: 'row',
+    gap: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
