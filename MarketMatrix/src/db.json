@@ -331,265 +331,229 @@
       "type": "stock"
     }
   ],
-  "values": [
+  "changes": [
     {
       "ticker": "AAPL",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 353.4,
-          "lowerValue": 320.8,
-          "higherValue": 360.0,
-          "openValue": 333.45,
-          "closeValue": 370.9
+          "date": "2024-03-13",
+          "close": 171.1300048828,
+          "dividends": 0,
+          "high": 173.1900024414,
+          "low": 170.7599945068,
+          "open": 172.7700042725,
+          "stockSplits": 0,
+          "volume": 52488700
         },
         {
-          "date": "2024.03.02",
-          "value": 355.8,
-          "lowerValue": 322.1,
-          "higherValue": 363.5,
-          "openValue": 370.9,
-          "closeValue": 352.6
+          "date": "2024-03-14",
+          "close": 173.0,
+          "dividends": 0,
+          "high": 174.3099975586,
+          "low": 172.0500030518,
+          "open": 172.9100036621,
+          "stockSplits": 0,
+          "volume": 72913500
         },
         {
-          "date": "2024.03.03",
-          "value": 360.5,
-          "lowerValue": 325.6,
-          "higherValue": 367.9,
-          "openValue": 352.6,
-          "closeValue": 358.7
+          "date": "2024-03-15",
+          "close": 172.6199951172,
+          "dividends": 0,
+          "high": 172.6199951172,
+          "low": 170.2899932861,
+          "open": 171.1699981689,
+          "stockSplits": 0,
+          "volume": 121664700
         },
         {
-          "date": "2024.03.04",
-          "value": 358.9,
-          "lowerValue": 330.2,
-          "higherValue": 370.4,
-          "openValue": 358.7,
-          "closeValue": 361.4
+          "date": "2024-03-18",
+          "close": 173.7200012207,
+          "dividends": 0,
+          "high": 177.7100067139,
+          "low": 173.5200042725,
+          "open": 175.5700073242,
+          "stockSplits": 0,
+          "volume": 75604200
         },
         {
-          "date": "2024.03.05",
-          "value": 362.3,
-          "lowerValue": 328.7,
-          "higherValue": 366.9,
-          "openValue": 361.4,
-          "closeValue": 363.8
+          "date": "2024-03-19",
+          "close": 176.0800018311,
+          "dividends": 0,
+          "high": 176.6100006104,
+          "low": 173.0299987793,
+          "open": 174.3399963379,
+          "stockSplits": 0,
+          "volume": 55215200
         },
         {
-          "date": "2024.03.06",
-          "value": 365.7,
-          "lowerValue": 332.6,
-          "higherValue": 369.4,
-          "openValue": 363.8,
-          "closeValue": 367.2
+          "date": "2024-03-20",
+          "close": 178.6699981689,
+          "dividends": 0,
+          "high": 178.6699981689,
+          "low": 175.0899963379,
+          "open": 175.7200012207,
+          "stockSplits": 0,
+          "volume": 53423100
         },
         {
-          "date": "2024.03.07",
-          "value": 368.4,
-          "lowerValue": 334.8,
-          "higherValue": 372.1,
-          "openValue": 367.2,
-          "closeValue": 369.8
+          "date": "2024-03-21",
+          "close": 171.3699951172,
+          "dividends": 0,
+          "high": 177.4900054932,
+          "low": 170.8399963379,
+          "open": 177.0500030518,
+          "stockSplits": 0,
+          "volume": 106181300
         },
         {
-          "date": "2024.03.08",
-          "value": 371.2,
-          "lowerValue": 337.6,
-          "higherValue": 375.0,
-          "openValue": 369.8,
-          "closeValue": 372.5
+          "date": "2024-03-22",
+          "close": 172.2799987793,
+          "dividends": 0,
+          "high": 173.0500030518,
+          "low": 170.0599975586,
+          "open": 171.7599945068,
+          "stockSplits": 0,
+          "volume": 71106600
         },
         {
-          "date": "2024.03.09",
-          "value": 385.2,
-          "lowerValue": 350.6,
-          "higherValue": 390.9,
-          "openValue": 372.5,
-          "closeValue": 382.1
+          "date": "2024-03-25",
+          "close": 170.8500061035,
+          "dividends": 0,
+          "high": 171.9400024414,
+          "low": 169.4499969482,
+          "open": 170.5700073242,
+          "stockSplits": 0,
+          "volume": 54288300
         },
         {
-          "date": "2024.03.10",
-          "value": 382.5,
-          "lowerValue": 348.9,
-          "higherValue": 382.3,
-          "openValue": 382.1,
-          "closeValue": 381.2
+          "date": "2024-03-26",
+          "close": 169.7100067139,
+          "dividends": 0,
+          "high": 171.4199981689,
+          "low": 169.5800018311,
+          "open": 170.0,
+          "stockSplits": 0,
+          "volume": 57388400
         },
         {
-          "date": "2024.03.11",
-          "value": 381.8,
-          "lowerValue": 345.2,
-          "higherValue": 375.1,
-          "openValue": 381.2,
-          "closeValue": 379.9
+          "date": "2024-03-27",
+          "close": 173.3099975586,
+          "dividends": 0,
+          "high": 173.6000061035,
+          "low": 170.1100006104,
+          "open": 170.4100036621,
+          "stockSplits": 0,
+          "volume": 60273300
         },
         {
-          "date": "2024.03.12",
-          "value": 379.1,
-          "lowerValue": 340.3,
-          "higherValue": 379.9,
-          "openValue": 379.9,
-          "closeValue": 376.5
+          "date": "2024-03-28",
+          "close": 171.4799957275,
+          "dividends": 0,
+          "high": 172.2299957275,
+          "low": 170.5099945068,
+          "open": 171.75,
+          "stockSplits": 0,
+          "volume": 65672700
         },
         {
-          "date": "2024.03.13",
-          "value": 376.8,
-          "lowerValue": 338.1,
-          "higherValue": 380.5,
-          "openValue": 376.5,
-          "closeValue": 379.4
+          "date": "2024-04-01",
+          "close": 170.0299987793,
+          "dividends": 0,
+          "high": 171.25,
+          "low": 169.4799957275,
+          "open": 171.1900024414,
+          "stockSplits": 0,
+          "volume": 46240500
         },
         {
-          "date": "2024.03.14",
-          "value": 380.2,
-          "lowerValue": 343.5,
-          "higherValue": 384.0,
-          "openValue": 379.4,
-          "closeValue": 382.1
+          "date": "2024-04-02",
+          "close": 168.8399963379,
+          "dividends": 0,
+          "high": 169.3399963379,
+          "low": 168.2299957275,
+          "open": 169.0800018311,
+          "stockSplits": 0,
+          "volume": 49329500
         },
         {
-          "date": "2024.03.15",
-          "value": 383.6,
-          "lowerValue": 347.8,
-          "higherValue": 387.2,
-          "openValue": 382.1,
-          "closeValue": 386.4
+          "date": "2024-04-03",
+          "close": 169.6499938965,
+          "dividends": 0,
+          "high": 170.6799926758,
+          "low": 168.5800018311,
+          "open": 168.7899932861,
+          "stockSplits": 0,
+          "volume": 47691700
         },
         {
-          "date": "2024.03.16",
-          "value": 388.2,
-          "lowerValue": 352.6,
-          "higherValue": 390.9,
-          "openValue": 386.4,
-          "closeValue": 392.1
+          "date": "2024-04-04",
+          "close": 168.8200073242,
+          "dividends": 0,
+          "high": 171.9199981689,
+          "low": 168.8200073242,
+          "open": 170.2899932861,
+          "stockSplits": 0,
+          "volume": 53704400
         },
         {
-          "date": "2024.03.17",
-          "value": 392.5,
-          "lowerValue": 356.9,
-          "higherValue": 395.3,
-          "openValue": 392.1,
-          "closeValue": 395.2
+          "date": "2024-04-05",
+          "close": 169.5800018311,
+          "dividends": 0,
+          "high": 170.3899993896,
+          "low": 168.9499969482,
+          "open": 169.5899963379,
+          "stockSplits": 0,
+          "volume": 42055200
         },
         {
-          "date": "2024.03.18",
-          "value": 395.8,
-          "lowerValue": 359.2,
-          "higherValue": 399.1,
-          "openValue": 395,
-          "closeValue": 397.9
+          "date": "2024-04-08",
+          "close": 168.4499969482,
+          "dividends": 0,
+          "high": 169.1999969482,
+          "low": 168.2400054932,
+          "open": 169.0299987793,
+          "stockSplits": 0,
+          "volume": 37425500
         },
         {
-          "date": "2024.03.19",
-          "value": 398.1,
-          "lowerValue": 362.3,
-          "higherValue": 401.0,
-          "openValue": 397.9,
-          "closeValue": 400.5
+          "date": "2024-04-09",
+          "close": 169.6699981689,
+          "dividends": 0,
+          "high": 170.0800018311,
+          "low": 168.3500061035,
+          "open": 168.6999969482,
+          "stockSplits": 0,
+          "volume": 42451200
         },
         {
-          "date": "2024.03.20",
-          "value": 400.8,
-          "lowerValue": 364.1,
-          "higherValue": 404.5,
-          "openValue": 400.5,
-          "closeValue": 403.4
+          "date": "2024-04-10",
+          "close": 167.7799987793,
+          "dividends": 0,
+          "high": 169.0899963379,
+          "low": 167.1100006104,
+          "open": 168.8000030518,
+          "stockSplits": 0,
+          "volume": 49709300
         },
         {
-          "date": "2024.03.21",
-          "value": 404.2,
-          "lowerValue": 368.5,
-          "higherValue": 408.0,
-          "openValue": 403.4,
-          "closeValue": 407.1
+          "date": "2024-04-11",
+          "close": 175.0399932861,
+          "dividends": 0,
+          "high": 175.4600067139,
+          "low": 168.1600036621,
+          "open": 168.3399963379,
+          "stockSplits": 0,
+          "volume": 91070300
         },
         {
-          "date": "2024.03.22",
-          "value": 407.6,
-          "lowerValue": 371.8,
-          "higherValue": 411.2,
-          "openValue": 407.1,
-          "closeValue": 411.4
-        },
-        {
-          "date": "2024.03.23",
-          "value": 412.2,
-          "lowerValue": 376.6,
-          "higherValue": 414.9,
-          "openValue": 411.4,
-          "closeValue": 415.1
-        },
-        {
-          "date": "2024.03.24",
-          "value": 415.5,
-          "lowerValue": 379.9,
-          "higherValue": 418.3,
-          "openValue": 415.1,
-          "closeValue": 418.2
-        },
-        {
-          "date": "2024.03.25",
-          "value": 418.8,
-          "lowerValue": 383.2,
-          "higherValue": 422.1,
-          "openValue": 418.2,
-          "closeValue": 421.9
-        },
-        {
-          "date": "2024.03.26",
-          "value": 422.1,
-          "lowerValue": 386.3,
-          "higherValue": 425.0,
-          "openValue": 421.9,
-          "closeValue": 424.5
-        },
-        {
-          "date": "2024.03.27",
-          "value": 424.8,
-          "lowerValue": 389.1,
-          "higherValue": 428.5,
-          "openValue": 424.5,
-          "closeValue": 427.4
-        },
-        {
-          "date": "2024.03.28",
-          "value": 428.2,
-          "lowerValue": 392.5,
-          "higherValue": 431.0,
-          "openValue": 427.4,
-          "closeValue": 431.1
-        },
-        {
-          "date": "2024.03.29",
-          "value": 431.6,
-          "lowerValue": 395.8,
-          "higherValue": 435.2,
-          "openValue": 431.1,
-          "closeValue": 435.5
-        },
-        {
-          "date": "2024.03.30",
-          "value": 436.0,
-          "lowerValue": 400.2,
-          "higherValue": 439.6,
-          "openValue": 435.5,
-          "closeValue": 439.2
-        },
-        {
-          "date": "2024.03.31",
-          "value": 439.4,
-          "lowerValue": 403.6,
-          "higherValue": 442.8,
-          "openValue": 439.2,
-          "closeValue": 442.6
-        },
-        {
-          "date": "2024.04.01",
-          "value": 443.0,
-          "lowerValue": 407.2,
-          "higherValue": 446.4,
-          "openValue": 442.5,
-          "closeValue": 446.1
+          "date": "2024-04-12",
+          "close": 176.5500030518,
+          "dividends": 0,
+          "high": 178.3600006104,
+          "low": 174.2100067139,
+          "open": 174.2599945068,
+          "Stock Splits": 0,
+          "volume": 101593300
         }
       ]
     },
@@ -597,260 +561,224 @@
       "ticker": "AMZN",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 1873.12,
-          "lowerValue": 1850.2,
-          "higherValue": 1898.0,
-          "openValue": 1880.0,
-          "closeValue": 1898.0
+          "date": "2024-03-13",
+          "close": 176.5599975586,
+          "dividends": 0,
+          "high": 177.6199951172,
+          "low": 175.5500030518,
+          "open": 175.8999938965,
+          "stockSplits": 0,
+          "volume": 30772600
         },
         {
-          "date": "2024.03.02",
-          "value": 1898.0,
-          "lowerValue": 1875.1,
-          "higherValue": 1910.0,
-          "openValue": 1898.0,
-          "closeValue": 1910.0
+          "date": "2024-03-14",
+          "close": 178.75,
+          "dividends": 0,
+          "high": 179.5299987793,
+          "low": 176.4700012207,
+          "open": 177.6900024414,
+          "stockSplits": 0,
+          "volume": 43705800
         },
         {
-          "date": "2024.03.03",
-          "value": 1910.0,
-          "lowerValue": 1887.1,
-          "higherValue": 1930.0,
-          "openValue": 1910.0,
-          "closeValue": 1930.0
+          "date": "2024-03-15",
+          "close": 174.4199981689,
+          "dividends": 0,
+          "high": 177.9299926758,
+          "low": 173.8999938965,
+          "open": 176.6399993896,
+          "stockSplits": 0,
+          "volume": 72115500
         },
         {
-          "date": "2024.03.04",
-          "value": 1930.0,
-          "lowerValue": 1907.1,
-          "higherValue": 1950.0,
-          "openValue": 1930.0,
-          "closeValue": 1950.0
+          "date": "2024-03-18",
+          "close": 174.4799957275,
+          "dividends": 0,
+          "high": 176.6900024414,
+          "low": 174.2799987793,
+          "open": 175.8000030518,
+          "stockSplits": 0,
+          "volume": 31250700
         },
         {
-          "date": "2024.03.05",
-          "value": 1950.0,
-          "lowerValue": 1927.1,
-          "higherValue": 1970.0,
-          "openValue": 1950.0,
-          "closeValue": 1970.0
+          "date": "2024-03-19",
+          "close": 175.8999938965,
+          "dividends": 0,
+          "high": 176.0899963379,
+          "low": 173.5200042725,
+          "open": 174.2200012207,
+          "stockSplits": 0,
+          "volume": 26880900
         },
         {
-          "date": "2024.03.06",
-          "value": 1970.0,
-          "lowerValue": 1947.1,
-          "higherValue": 1990.0,
-          "openValue": 1970.0,
-          "closeValue": 1990.0
+          "date": "2024-03-20",
+          "close": 178.1499938965,
+          "dividends": 0,
+          "high": 178.5299987793,
+          "low": 174.6399993896,
+          "open": 176.1399993896,
+          "stockSplits": 0,
+          "volume": 29947200
         },
         {
-          "date": "2024.03.07",
-          "value": 1990.0,
-          "lowerValue": 1967.1,
-          "higherValue": 2010.0,
-          "openValue": 1990.0,
-          "closeValue": 2010.0
+          "date": "2024-03-21",
+          "close": 178.1499938965,
+          "dividends": 0,
+          "high": 181.4199981689,
+          "low": 178.1499938965,
+          "open": 179.9900054932,
+          "stockSplits": 0,
+          "volume": 32824300
         },
         {
-          "date": "2024.03.08",
-          "value": 2010.0,
-          "lowerValue": 1987.1,
-          "higherValue": 2030.0,
-          "openValue": 2010.0,
-          "closeValue": 2030.0
+          "date": "2024-03-22",
+          "close": 178.8699951172,
+          "dividends": 0,
+          "high": 179.2599945068,
+          "low": 176.75,
+          "open": 177.75,
+          "stockSplits": 0,
+          "volume": 27964100
         },
         {
-          "date": "2024.03.09",
-          "value": 2030.0,
-          "lowerValue": 2007.1,
-          "higherValue": 2050.0,
-          "openValue": 2030.0,
-          "closeValue": 2050.0
+          "date": "2024-03-25",
+          "close": 179.7100067139,
+          "dividends": 0,
+          "high": 180.9900054932,
+          "low": 177.2400054932,
+          "open": 178.0099945068,
+          "stockSplits": 0,
+          "volume": 29815500
         },
         {
-          "date": "2024.03.10",
-          "value": 2050.0,
-          "lowerValue": 2027.1,
-          "higherValue": 2070.0,
-          "openValue": 2050.0,
-          "closeValue": 2070.0
+          "date": "2024-03-26",
+          "close": 178.3000030518,
+          "dividends": 0,
+          "high": 180.4499969482,
+          "low": 177.9499969482,
+          "open": 180.1499938965,
+          "stockSplits": 0,
+          "volume": 29659000
         },
         {
-          "date": "2024.03.11",
-          "value": 2070.0,
-          "lowerValue": 2047.1,
-          "higherValue": 2090.0,
-          "openValue": 2070.0,
-          "closeValue": 2090.0
+          "date": "2024-03-27",
+          "close": 179.8300018311,
+          "dividends": 0,
+          "high": 180.0,
+          "low": 177.3099975586,
+          "open": 179.8800048828,
+          "stockSplits": 0,
+          "volume": 33272600
         },
         {
-          "date": "2024.03.12",
-          "value": 2090.0,
-          "lowerValue": 2067.1,
-          "higherValue": 2110.0,
-          "openValue": 2090.0,
-          "closeValue": 2110.0
+          "date": "2024-03-28",
+          "close": 180.3800048828,
+          "dividends": 0,
+          "high": 181.6999969482,
+          "low": 179.2599945068,
+          "open": 180.1699981689,
+          "stockSplits": 0,
+          "volume": 38051600
         },
         {
-          "date": "2024.03.13",
-          "value": 2110.0,
-          "lowerValue": 2087.1,
-          "higherValue": 2130.0,
-          "openValue": 2110.0,
-          "closeValue": 2130.0
+          "date": "2024-04-01",
+          "close": 180.9700012207,
+          "dividends": 0,
+          "high": 183.0,
+          "low": 179.9499969482,
+          "open": 180.7899932861,
+          "stockSplits": 0,
+          "volume": 29174500
         },
         {
-          "date": "2024.03.14",
-          "value": 2130.0,
-          "lowerValue": 2107.1,
-          "higherValue": 2150.0,
-          "openValue": 2130.0,
-          "closeValue": 2150.0
+          "date": "2024-04-02",
+          "close": 180.6900024414,
+          "dividends": 0,
+          "high": 180.7899932861,
+          "low": 178.3800048828,
+          "open": 179.0700073242,
+          "stockSplits": 0,
+          "volume": 32611500
         },
         {
-          "date": "2024.03.15",
-          "value": 2150.0,
-          "lowerValue": 2127.1,
-          "higherValue": 2170.0,
-          "openValue": 2150.0,
-          "closeValue": 2170.0
+          "date": "2024-04-03",
+          "close": 182.4100036621,
+          "dividends": 0,
+          "high": 182.8699951172,
+          "low": 179.8000030518,
+          "open": 179.8999938965,
+          "stockSplits": 0,
+          "volume": 31046600
         },
         {
-          "date": "2024.03.16",
-          "value": 2170.0,
-          "lowerValue": 2147.1,
-          "higherValue": 2190.0,
-          "openValue": 2170.0,
-          "closeValue": 2190.0
+          "date": "2024-04-04",
+          "close": 180.0,
+          "dividends": 0,
+          "high": 185.1000061035,
+          "low": 180.0,
+          "open": 184.0,
+          "stockSplits": 0,
+          "volume": 41624300
         },
         {
-          "date": "2024.03.17",
-          "value": 2190.0,
-          "lowerValue": 2167.1,
-          "higherValue": 2210.0,
-          "openValue": 2190.0,
-          "closeValue": 2210.0
+          "date": "2024-04-05",
+          "close": 185.0700073242,
+          "dividends": 0,
+          "high": 186.2700042725,
+          "low": 181.9700012207,
+          "open": 182.3800048828,
+          "stockSplits": 0,
+          "volume": 42335200
         },
         {
-          "date": "2024.03.18",
-          "value": 2210.0,
-          "lowerValue": 2187.1,
-          "higherValue": 2230.0,
-          "openValue": 2210.0,
-          "closeValue": 2230.0
+          "date": "2024-04-08",
+          "close": 185.1900024414,
+          "dividends": 0,
+          "high": 187.2899932861,
+          "low": 184.8099975586,
+          "open": 186.8999938965,
+          "stockSplits": 0,
+          "volume": 39221300
         },
         {
-          "date": "2024.03.19",
-          "value": 2230.0,
-          "lowerValue": 2207.1,
-          "higherValue": 2250.0,
-          "openValue": 2230.0,
-          "closeValue": 2250.0
+          "date": "2024-04-09",
+          "close": 185.6699981689,
+          "dividends": 0,
+          "high": 187.3399963379,
+          "low": 184.1999969482,
+          "open": 187.2400054932,
+          "stockSplits": 0,
+          "volume": 36546900
         },
         {
-          "date": "2024.03.20",
-          "value": 2250.0,
-          "lowerValue": 2227.1,
-          "higherValue": 2270.0,
-          "openValue": 2250.0,
-          "closeValue": 2270.0
+          "date": "2024-04-10",
+          "close": 185.9499969482,
+          "dividends": 0,
+          "high": 186.2700042725,
+          "low": 182.6699981689,
+          "open": 182.7700042725,
+          "stockSplits": 0,
+          "volume": 35879200
         },
         {
-          "date": "2024.03.21",
-          "value": 2270.0,
-          "lowerValue": 2247.1,
-          "higherValue": 2290.0,
-          "openValue": 2270.0,
-          "closeValue": 2290.0
+          "date": "2024-04-11",
+          "close": 189.0500030518,
+          "dividends": 0,
+          "high": 189.7700042725,
+          "low": 185.5099945068,
+          "open": 186.7400054932,
+          "stockSplits": 0,
+          "volume": 40020700
         },
         {
-          "date": "2024.03.22",
-          "value": 2290.0,
-          "lowerValue": 2267.1,
-          "higherValue": 2310.0,
-          "openValue": 2290.0,
-          "closeValue": 2310.0
-        },
-        {
-          "date": "2024.03.23",
-          "value": 2310.0,
-          "lowerValue": 2287.1,
-          "higherValue": 2330.0,
-          "openValue": 2310.0,
-          "closeValue": 2330.0
-        },
-        {
-          "date": "2024.03.24",
-          "value": 2330.0,
-          "lowerValue": 2307.1,
-          "higherValue": 2350.0,
-          "openValue": 2330.0,
-          "closeValue": 2350.0
-        },
-        {
-          "date": "2024.03.25",
-          "value": 2350.0,
-          "lowerValue": 2327.1,
-          "higherValue": 2370.0,
-          "openValue": 2350.0,
-          "closeValue": 2370.0
-        },
-        {
-          "date": "2024.03.26",
-          "value": 2370.0,
-          "lowerValue": 2347.1,
-          "higherValue": 2390.0,
-          "openValue": 2370.0,
-          "closeValue": 2390.0
-        },
-        {
-          "date": "2024.03.27",
-          "value": 2390.0,
-          "lowerValue": 2367.1,
-          "higherValue": 2410.0,
-          "openValue": 2390.0,
-          "closeValue": 2410.0
-        },
-        {
-          "date": "2024.03.28",
-          "value": 2410.0,
-          "lowerValue": 2387.1,
-          "higherValue": 2430.0,
-          "openValue": 2410.0,
-          "closeValue": 2430.0
-        },
-        {
-          "date": "2024.03.29",
-          "value": 2430.0,
-          "lowerValue": 2407.1,
-          "higherValue": 2450.0,
-          "openValue": 2430.0,
-          "closeValue": 2450.0
-        },
-        {
-          "date": "2024.03.30",
-          "value": 2450.0,
-          "lowerValue": 2427.1,
-          "higherValue": 2470.0,
-          "openValue": 2450.0,
-          "closeValue": 2470.0
-        },
-        {
-          "date": "2024.03.31",
-          "value": 2470.0,
-          "lowerValue": 2447.1,
-          "higherValue": 2490.0,
-          "openValue": 2470.0,
-          "closeValue": 2490.0
-        },
-        {
-          "date": "2024.04.01",
-          "value": 2490.0,
-          "lowerValue": 2467.1,
-          "higherValue": 2510.0,
-          "openValue": 2490.0,
-          "closeValue": 2510.0
+          "date": "2024-04-12",
+          "close": 186.1300048828,
+          "dividends": 0,
+          "high": 188.3800048828,
+          "low": 185.0800018311,
+          "open": 187.7200012207,
+          "stockSplits": 0,
+          "volume": 38554300
         }
       ]
     },
@@ -858,260 +786,224 @@
       "ticker": "ANET",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 263.545,
-          "lowerValue": 257.56,
-          "higherValue": 268.13,
-          "openValue": 263.545,
-          "closeValue": 268.13
+          "date": "2024-03-13",
+          "close": 280.7099914551,
+          "dividends": 0,
+          "high": 282.25,
+          "low": 276.8299865723,
+          "open": 279.9700012207,
+          "stockSplits": 0,
+          "volume": 3023700
         },
         {
-          "date": "2024.03.02",
-          "value": 268.13,
-          "lowerValue": 262.145,
-          "higherValue": 273.71,
-          "openValue": 268.13,
-          "closeValue": 273.71
+          "date": "2024-03-14",
+          "close": 284.0199890137,
+          "dividends": 0,
+          "high": 285.75,
+          "low": 280.1700134277,
+          "open": 281.6099853516,
+          "stockSplits": 0,
+          "volume": 3137900
         },
         {
-          "date": "2024.03.03",
-          "value": 273.71,
-          "lowerValue": 267.725,
-          "higherValue": 278.29,
-          "openValue": 273.71,
-          "closeValue": 278.29
+          "date": "2024-03-15",
+          "close": 277.7300109863,
+          "dividends": 0,
+          "high": 281.8099975586,
+          "low": 276.0799865723,
+          "open": 279.1799926758,
+          "stockSplits": 0,
+          "volume": 3819100
         },
         {
-          "date": "2024.03.04",
-          "value": 278.29,
-          "lowerValue": 272.305,
-          "higherValue": 283.87,
-          "openValue": 278.29,
-          "closeValue": 283.87
+          "date": "2024-03-18",
+          "close": 289.3200073242,
+          "dividends": 0,
+          "high": 289.700012207,
+          "low": 281.0450134277,
+          "open": 282.4100036621,
+          "stockSplits": 0,
+          "volume": 3872900
         },
         {
-          "date": "2024.03.05",
-          "value": 283.87,
-          "lowerValue": 277.885,
-          "higherValue": 288.45,
-          "openValue": 283.87,
-          "closeValue": 288.45
+          "date": "2024-03-19",
+          "close": 286.9200134277,
+          "dividends": 0,
+          "high": 288.2399902344,
+          "low": 272.6099853516,
+          "open": 284.0,
+          "stockSplits": 0,
+          "volume": 5270700
         },
         {
-          "date": "2024.03.06",
-          "value": 288.45,
-          "lowerValue": 282.465,
-          "higherValue": 293.03,
-          "openValue": 288.45,
-          "closeValue": 293.03
+          "date": "2024-03-20",
+          "close": 296.5799865723,
+          "dividends": 0,
+          "high": 296.7600097656,
+          "low": 285.75,
+          "open": 289.0299987793,
+          "stockSplits": 0,
+          "volume": 3302000
         },
         {
-          "date": "2024.03.07",
-          "value": 293.03,
-          "lowerValue": 287.045,
-          "higherValue": 298.62,
-          "openValue": 293.03,
-          "closeValue": 298.62
+          "date": "2024-03-21",
+          "close": 304.6000061035,
+          "dividends": 0,
+          "high": 305.6300048828,
+          "low": 295.0100097656,
+          "open": 299.0,
+          "stockSplits": 0,
+          "volume": 2924300
         },
         {
-          "date": "2024.03.08",
-          "value": 298.62,
-          "lowerValue": 292.635,
-          "higherValue": 303.2,
-          "openValue": 298.62,
-          "closeValue": 303.2
+          "date": "2024-03-22",
+          "close": 306.4200134277,
+          "dividends": 0,
+          "high": 307.7399902344,
+          "low": 302.0,
+          "open": 303.0,
+          "stockSplits": 0,
+          "volume": 2379600
         },
         {
-          "date": "2024.03.09",
-          "value": 303.2,
-          "lowerValue": 297.215,
-          "higherValue": 307.79,
-          "openValue": 303.2,
-          "closeValue": 307.79
+          "date": "2024-03-25",
+          "close": 305.5,
+          "dividends": 0,
+          "high": 307.3699951172,
+          "low": 300.4599914551,
+          "open": 302.4700012207,
+          "stockSplits": 0,
+          "volume": 2012300
         },
         {
-          "date": "2024.03.10",
-          "value": 307.79,
-          "lowerValue": 301.805,
-          "higherValue": 312.38,
-          "openValue": 307.79,
-          "closeValue": 312.38
+          "date": "2024-03-26",
+          "close": 297.8299865723,
+          "dividends": 0,
+          "high": 305.5,
+          "low": 297.1900024414,
+          "open": 300.4800109863,
+          "stockSplits": 0,
+          "volume": 2462600
         },
         {
-          "date": "2024.03.11",
-          "value": 312.38,
-          "lowerValue": 306.395,
-          "higherValue": 316.97,
-          "openValue": 312.38,
-          "closeValue": 316.97
+          "date": "2024-03-27",
+          "close": 288.4100036621,
+          "dividends": 0,
+          "high": 297.3500061035,
+          "low": 284.0700073242,
+          "open": 296.2399902344,
+          "stockSplits": 0,
+          "volume": 3203300
         },
         {
-          "date": "2024.03.12",
-          "value": 316.97,
-          "lowerValue": 310.985,
-          "higherValue": 321.56,
-          "openValue": 316.97,
-          "closeValue": 321.56
+          "date": "2024-03-28",
+          "close": 289.9800109863,
+          "dividends": 0,
+          "high": 292.9400024414,
+          "low": 286.0100097656,
+          "open": 287.7900085449,
+          "stockSplits": 0,
+          "volume": 1839300
         },
         {
-          "date": "2024.03.13",
-          "value": 321.56,
-          "lowerValue": 315.575,
-          "higherValue": 326.15,
-          "openValue": 321.56,
-          "closeValue": 326.15
+          "date": "2024-04-01",
+          "close": 299.75,
+          "dividends": 0,
+          "high": 299.7900085449,
+          "low": 291.3299865723,
+          "open": 292.2799987793,
+          "stockSplits": 0,
+          "volume": 1589200
         },
         {
-          "date": "2024.03.14",
-          "value": 326.15,
-          "lowerValue": 320.165,
-          "higherValue": 330.74,
-          "openValue": 326.15,
-          "closeValue": 330.74
+          "date": "2024-04-02",
+          "close": 290.8500061035,
+          "dividends": 0,
+          "high": 293.7399902344,
+          "low": 284.4899902344,
+          "open": 291.700012207,
+          "stockSplits": 0,
+          "volume": 2225600
         },
         {
-          "date": "2024.03.15",
-          "value": 330.74,
-          "lowerValue": 324.755,
-          "higherValue": 335.33,
-          "openValue": 330.74,
-          "closeValue": 335.33
+          "date": "2024-04-03",
+          "close": 298.7900085449,
+          "dividends": 0,
+          "high": 301.4899902344,
+          "low": 290.0,
+          "open": 291.1199951172,
+          "stockSplits": 0,
+          "volume": 1790400
         },
         {
-          "date": "2024.03.16",
-          "value": 335.33,
-          "lowerValue": 329.345,
-          "higherValue": 339.92,
-          "openValue": 335.33,
-          "closeValue": 339.92
+          "date": "2024-04-04",
+          "close": 288.7699890137,
+          "dividends": 0,
+          "high": 303.5,
+          "low": 288.5700073242,
+          "open": 300.9599914551,
+          "stockSplits": 0,
+          "volume": 1877500
         },
         {
-          "date": "2024.03.17",
-          "value": 339.92,
-          "lowerValue": 333.935,
-          "higherValue": 344.51,
-          "openValue": 339.92,
-          "closeValue": 344.51
+          "date": "2024-04-05",
+          "close": 297.6000061035,
+          "dividends": 0,
+          "high": 298.25,
+          "low": 290.0,
+          "open": 291.0199890137,
+          "stockSplits": 0,
+          "volume": 1452100
         },
         {
-          "date": "2024.03.18",
-          "value": 344.51,
-          "lowerValue": 338.525,
-          "higherValue": 349.1,
-          "openValue": 344.51,
-          "closeValue": 349.1
+          "date": "2024-04-08",
+          "close": 297.3800048828,
+          "dividends": 0,
+          "high": 299.174987793,
+          "low": 293.3200073242,
+          "open": 297.0100097656,
+          "stockSplits": 0,
+          "volume": 1336800
         },
         {
-          "date": "2024.03.19",
-          "value": 349.1,
-          "lowerValue": 343.115,
-          "higherValue": 353.69,
-          "openValue": 349.1,
-          "closeValue": 353.69
+          "date": "2024-04-09",
+          "close": 294.75,
+          "dividends": 0,
+          "high": 299.9899902344,
+          "low": 286.5299987793,
+          "open": 299.9899902344,
+          "stockSplits": 0,
+          "volume": 1312500
         },
         {
-          "date": "2024.03.20",
-          "value": 353.69,
-          "lowerValue": 347.705,
-          "higherValue": 358.28,
-          "openValue": 353.69,
-          "closeValue": 358.28
+          "date": "2024-04-10",
+          "close": 288.2200012207,
+          "dividends": 0,
+          "high": 294.5799865723,
+          "low": 287.2850036621,
+          "open": 290.0,
+          "stockSplits": 0,
+          "volume": 1910600
         },
         {
-          "date": "2024.03.21",
-          "value": 358.28,
-          "lowerValue": 352.295,
-          "higherValue": 362.87,
-          "openValue": 358.28,
-          "closeValue": 362.87
+          "date": "2024-04-11",
+          "close": 296.5799865723,
+          "dividends": 0,
+          "high": 297.6700134277,
+          "low": 289.3299865723,
+          "open": 290.6300048828,
+          "stockSplits": 0,
+          "volume": 1513600
         },
         {
-          "date": "2024.03.22",
-          "value": 362.87,
-          "lowerValue": 356.885,
-          "higherValue": 367.46,
-          "openValue": 362.87,
-          "closeValue": 367.46
-        },
-        {
-          "date": "2024.03.23",
-          "value": 367.46,
-          "lowerValue": 361.475,
-          "higherValue": 372.05,
-          "openValue": 367.46,
-          "closeValue": 372.05
-        },
-        {
-          "date": "2024.03.24",
-          "value": 372.05,
-          "lowerValue": 366.065,
-          "higherValue": 376.64,
-          "openValue": 372.05,
-          "closeValue": 376.64
-        },
-        {
-          "date": "2024.03.25",
-          "value": 376.64,
-          "lowerValue": 370.655,
-          "higherValue": 381.23,
-          "openValue": 376.64,
-          "closeValue": 381.23
-        },
-        {
-          "date": "2024.03.26",
-          "value": 381.23,
-          "lowerValue": 375.245,
-          "higherValue": 385.82,
-          "openValue": 381.23,
-          "closeValue": 385.82
-        },
-        {
-          "date": "2024.03.27",
-          "value": 385.82,
-          "lowerValue": 379.835,
-          "higherValue": 390.41,
-          "openValue": 385.82,
-          "closeValue": 390.41
-        },
-        {
-          "date": "2024.03.28",
-          "value": 390.41,
-          "lowerValue": 384.425,
-          "higherValue": 394.0,
-          "openValue": 390.41,
-          "closeValue": 394.0
-        },
-        {
-          "date": "2024.03.29",
-          "value": 394.0,
-          "lowerValue": 388.015,
-          "higherValue": 398.59,
-          "openValue": 394.0,
-          "closeValue": 398.59
-        },
-        {
-          "date": "2024.03.30",
-          "value": 398.59,
-          "lowerValue": 392.605,
-          "higherValue": 403.18,
-          "openValue": 398.59,
-          "closeValue": 403.18
-        },
-        {
-          "date": "2024.03.31",
-          "value": 403.18,
-          "lowerValue": 397.195,
-          "higherValue": 407.77,
-          "openValue": 403.18,
-          "closeValue": 407.77
-        },
-        {
-          "date": "2024.04.01",
-          "value": 407.77,
-          "lowerValue": 401.785,
-          "higherValue": 412.36,
-          "openValue": 407.77,
-          "closeValue": 412.36
+          "date": "2024-04-12",
+          "close": 271.2200012207,
+          "dividends": 0,
+          "high": 282.700012207,
+          "low": 268.3299865723,
+          "open": 280.2699890137,
+          "stockSplits": 0,
+          "volume": 5747300
         }
       ]
     },
@@ -1119,252 +1011,224 @@
       "ticker": "CPRT",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 53.44,
-          "lowerValue": 30.84,
-          "higherValue": 60.56,
-          "openValue": 33.45,
-          "closeValue": 51.9
+          "date": "2024-03-13",
+          "close": 56.25,
+          "dividends": 0,
+          "high": 56.4599990845,
+          "low": 54.9799995422,
+          "open": 55.0999984741,
+          "stockSplits": 0,
+          "volume": 9044900
         },
         {
-          "date": "2024.03.02",
-          "value": 43.48,
-          "lowerValue": 39.24,
-          "higherValue": 53.52,
-          "openValue": 51.9,
-          "closeValue": 48.9
+          "date": "2024-03-14",
+          "close": 56.4199981689,
+          "dividends": 0,
+          "high": 56.9599990845,
+          "low": 56.2700004578,
+          "open": 56.6399993896,
+          "stockSplits": 0,
+          "volume": 8977700
         },
         {
-          "date": "2024.03.03",
-          "value": 47.22,
-          "lowerValue": 41.18,
-          "higherValue": 48.56,
-          "openValue": 48.9,
-          "closeValue": 46.7
+          "date": "2024-03-15",
+          "close": 56.1300010681,
+          "dividends": 0,
+          "high": 56.75,
+          "low": 56.0,
+          "open": 56.4500007629,
+          "stockSplits": 0,
+          "volume": 10434800
         },
         {
-          "date": "2024.03.04",
-          "value": 45.34,
-          "lowerValue": 42.0,
-          "higherValue": 46.9,
-          "openValue": 46.7,
-          "closeValue": 44.5
+          "date": "2024-03-18",
+          "close": 56.0900001526,
+          "dividends": 0,
+          "high": 56.7700004578,
+          "low": 56.0400009155,
+          "open": 56.5600013733,
+          "stockSplits": 0,
+          "volume": 3588900
         },
         {
-          "date": "2024.03.05",
-          "value": 44.89,
-          "lowerValue": 40.11,
-          "higherValue": 45.6,
-          "openValue": 44.5,
-          "closeValue": 43.2
+          "date": "2024-03-19",
+          "close": 56.2700004578,
+          "dividends": 0,
+          "high": 56.5,
+          "low": 56.0099983215,
+          "open": 56.3699989319,
+          "stockSplits": 0,
+          "volume": 3694600
         },
         {
-          "date": "2024.03.06",
-          "value": 42.77,
-          "lowerValue": 39.3,
-          "higherValue": 43.5,
-          "openValue": 43.2,
-          "closeValue": 41.8
+          "date": "2024-03-20",
+          "close": 56.9000015259,
+          "dividends": 0,
+          "high": 56.9500007629,
+          "low": 56.2799987793,
+          "open": 56.4199981689,
+          "stockSplits": 0,
+          "volume": 3890000
         },
         {
-          "date": "2024.03.07",
-          "value": 40.68,
-          "lowerValue": 37.24,
-          "higherValue": 41.2,
-          "openValue": 41.8,
-          "closeValue": 39.7
+          "date": "2024-03-21",
+          "close": 57.2099990845,
+          "dividends": 0,
+          "high": 57.8600006104,
+          "low": 57.1899986267,
+          "open": 57.3300018311,
+          "stockSplits": 0,
+          "volume": 5824400
         },
         {
-          "date": "2024.03.08",
-          "value": 38.55,
-          "lowerValue": 36.5,
-          "higherValue": 39.9,
-          "openValue": 39.7,
-          "closeValue": 37.4
+          "date": "2024-03-22",
+          "close": 57.4099998474,
+          "dividends": 0,
+          "high": 57.5900001526,
+          "low": 57.1800003052,
+          "open": 57.4099998474,
+          "stockSplits": 0,
+          "volume": 4501300
         },
         {
-          "date": "2024.03.09",
-          "value": 36.44,
-          "lowerValue": 35.0,
-          "higherValue": 37.8,
-          "openValue": 37.4,
-          "closeValue": 36.1
+          "date": "2024-03-25",
+          "close": 57.1800003052,
+          "dividends": 0,
+          "high": 57.5499992371,
+          "low": 57.0200004578,
+          "open": 57.4099998474,
+          "stockSplits": 0,
+          "volume": 3667600
         },
         {
-          "date": "2024.03.10",
-          "value": 37.89,
-          "lowerValue": 36.1,
-          "higherValue": 38.5,
-          "openValue": 36.1,
-          "closeValue": 37.5
+          "date": "2024-03-26",
+          "close": 57.2200012207,
+          "dividends": 0,
+          "high": 57.4000015259,
+          "low": 57.0299987793,
+          "open": 57.3199996948,
+          "stockSplits": 0,
+          "volume": 4302300
         },
         {
-          "date": "2024.03.11",
-          "value": 39.1,
-          "lowerValue": 37.45,
-          "higherValue": 40.2,
-          "openValue": 37.5,
-          "closeValue": 39.8
+          "date": "2024-03-27",
+          "close": 57.2400016785,
+          "dividends": 0,
+          "high": 57.9099998474,
+          "low": 56.8100013733,
+          "open": 57.7400016785,
+          "stockSplits": 0,
+          "volume": 3713500
         },
         {
-          "date": "2024.03.12",
-          "value": 41.23,
-          "lowerValue": 39.8,
-          "higherValue": 42.0,
-          "openValue": 39.8,
-          "closeValue": 41.5
+          "date": "2024-03-28",
+          "close": 57.9199981689,
+          "dividends": 0,
+          "high": 58.1500015259,
+          "low": 57.4399986267,
+          "open": 57.8800010681,
+          "stockSplits": 0,
+          "volume": 5084200
         },
         {
-          "date": "2024.03.13",
-          "value": 43.56,
-          "lowerValue": 41.5,
-          "higherValue": 44.1,
-          "openValue": 41.5,
-          "closeValue": 43.2
+          "date": "2024-04-01",
+          "close": 58.0699996948,
+          "dividends": 0,
+          "high": 58.5800018311,
+          "low": 57.7200012207,
+          "open": 58.1300010681,
+          "stockSplits": 0,
+          "volume": 4161100
         },
         {
-          "date": "2024.03.14",
-          "value": 42.77,
-          "lowerValue": 40.89,
-          "higherValue": 43.7,
-          "openValue": 43.2,
-          "closeValue": 42.0
+          "date": "2024-04-02",
+          "close": 57.25,
+          "dividends": 0,
+          "high": 57.5200004578,
+          "low": 56.7700004578,
+          "open": 57.5200004578,
+          "stockSplits": 0,
+          "volume": 3900200
         },
         {
-          "date": "2024.03.15",
-          "value": 41.98,
-          "lowerValue": 40.2,
-          "higherValue": 42.5,
-          "openValue": 42.0,
-          "closeValue": 41.1
+          "date": "2024-04-03",
+          "close": 57.3699989319,
+          "dividends": 0,
+          "high": 57.9700012207,
+          "low": 57.0200004578,
+          "open": 57.1300010681,
+          "stockSplits": 0,
+          "volume": 3866500
         },
         {
-          "date": "2024.03.16",
-          "value": 40.66,
-          "lowerValue": 39.11,
-          "higherValue": 41.2,
-          "openValue": 41.1,
-          "closeValue": 40.3
+          "date": "2024-04-04",
+          "close": 55.7400016785,
+          "dividends": 0,
+          "high": 58.3499984741,
+          "low": 55.7000007629,
+          "open": 58.0600013733,
+          "stockSplits": 0,
+          "volume": 4285000
         },
         {
-          "date": "2024.03.17",
-          "value": 41.89,
-          "lowerValue": 40.3,
-          "higherValue": 42.9,
-          "openValue": 40.3,
-          "closeValue": 41.7
+          "date": "2024-04-05",
+          "close": 56.5499992371,
+          "dividends": 0,
+          "high": 56.9500007629,
+          "low": 55.8100013733,
+          "open": 56.5600013733,
+          "stockSplits": 0,
+          "volume": 3387800
         },
         {
-          "date": "2024.03.18",
-          "value": 43.02,
-          "lowerValue": 41.68,
-          "higherValue": 43.5,
-          "openValue": 41.7,
-          "closeValue": 42.8
+          "date": "2024-04-08",
+          "close": 56.2799987793,
+          "dividends": 0,
+          "high": 56.8400001526,
+          "low": 56.2000007629,
+          "open": 56.5900001526,
+          "stockSplits": 0,
+          "volume": 3953000
         },
         {
-          "date": "2024.03.19",
-          "value": 44.56,
-          "lowerValue": 42.8,
-          "higherValue": 45.1,
-          "openValue": 42.8,
-          "closeValue": 44.2
+          "date": "2024-04-09",
+          "close": 56.6899986267,
+          "dividends": 0,
+          "high": 56.75,
+          "low": 55.6100006104,
+          "open": 56.5499992371,
+          "stockSplits": 0,
+          "volume": 3374500
         },
         {
-          "date": "2024.03.20",
-          "value": 45.77,
-          "lowerValue": 44.22,
-          "higherValue": 46.3,
-          "openValue": 44.2,
-          "closeValue": 45.6
+          "date": "2024-04-10",
+          "close": 56.0299987793,
+          "dividends": 0,
+          "high": 56.3100013733,
+          "low": 55.5299987793,
+          "open": 55.8499984741,
+          "stockSplits": 0,
+          "volume": 3767600
         },
         {
-          "date": "2024.03.21",
-          "value": 46.88,
-          "lowerValue": 45.3,
-          "higherValue": 47.5,
-          "openValue": 45.6,
-          "closeValue": 46.3
+          "date": "2024-04-11",
+          "close": 56.0,
+          "dividends": 0,
+          "high": 56.2000007629,
+          "low": 55.5,
+          "open": 55.9799995422,
+          "stockSplits": 0,
+          "volume": 3368600
         },
         {
-          "date": "2024.03.22",
-          "value": 45.99,
-          "lowerValue": 44.4,
-          "higherValue": 46.6,
-          "openValue": 46.3,
-          "closeValue": 45.2
-        },
-        {
-          "date": "2024.03.23",
-          "value": 44.1,
-          "lowerValue": 42.95,
-          "higherValue": 45.2,
-          "openValue": 45.2,
-          "closeValue": 43.8
-        },
-        {
-          "date": "2024.03.24",
-          "value": 43.22,
-          "lowerValue": 41.78,
-          "higherValue": 43.7,
-          "openValue": 43.8,
-          "closeValue": 42.6
-        },
-        {
-          "date": "2024.03.25",
-          "value": 41.33,
-          "lowerValue": 40.1,
-          "higherValue": 42.5,
-          "openValue": 42.6,
-          "closeValue": 41.0
-        },
-        {
-          "date": "2024.03.26",
-          "value": 40.44,
-          "lowerValue": 39.0,
-          "higherValue": 41.9,
-          "openValue": 41.0,
-          "closeValue": 39.5
-        },
-        {
-          "date": "2024.03.27",
-          "value": 39.55,
-          "lowerValue": 38.2,
-          "higherValue": 40.8,
-          "openValue": 39.5,
-          "closeValue": 38.7
-        },
-        {
-          "date": "2024.03.28",
-          "value": 38.66,
-          "lowerValue": 37.3,
-          "higherValue": 39.7,
-          "openValue": 38.7,
-          "closeValue": 37.9
-        },
-        {
-          "date": "2024.03.29",
-          "value": 37.77,
-          "lowerValue": 36.4,
-          "higherValue": 38.6,
-          "openValue": 37.9,
-          "closeValue": 37.1
-        },
-        {
-          "date": "2024.03.30",
-          "value": 36.88,
-          "lowerValue": 35.5,
-          "higherValue": 37.9,
-          "openValue": 37.1,
-          "closeValue": 36.3
-        },
-        {
-          "date": "2024.03.31",
-          "value": 35.99,
-          "lowerValue": 34.6,
-          "higherValue": 37.0,
-          "openValue": 36.3,
-          "closeValue": 35.5
+          "date": "2024-04-12",
+          "close": 55.3800010681,
+          "dividends": 0,
+          "high": 55.7599983215,
+          "low": 55.0699996948,
+          "open": 55.4099998474,
+          "stockSplits": 0,
+          "volume": 3609500
         }
       ]
     },
@@ -1372,252 +1236,224 @@
       "ticker": "CVX",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 153.44,
-          "lowerValue": 130.84,
-          "higherValue": 160.56,
-          "openValue": 133.45,
-          "closeValue": 151.9
+          "date": "2024-03-13",
+          "close": 153.8899993896,
+          "dividends": 0,
+          "high": 154.8800048828,
+          "low": 153.1499938965,
+          "open": 153.2400054932,
+          "stockSplits": 0,
+          "volume": 8065600
         },
         {
-          "date": "2024.03.02",
-          "value": 143.48,
-          "lowerValue": 139.24,
-          "higherValue": 153.52,
-          "openValue": 151.9,
-          "closeValue": 148.9
+          "date": "2024-03-14",
+          "close": 155.6999969482,
+          "dividends": 0,
+          "high": 155.7299957275,
+          "low": 152.7599945068,
+          "open": 153.7700042725,
+          "stockSplits": 0,
+          "volume": 9047200
         },
         {
-          "date": "2024.03.03",
-          "value": 139.3,
-          "lowerValue": 135.85,
-          "higherValue": 140.52,
-          "openValue": 148.9,
-          "closeValue": 138.9
+          "date": "2024-03-15",
+          "close": 155.5500030518,
+          "dividends": 0,
+          "high": 157.0399932861,
+          "low": 154.4199981689,
+          "open": 155.1900024414,
+          "stockSplits": 0,
+          "volume": 20379100
         },
         {
-          "date": "2024.03.04",
-          "value": 140.78,
-          "lowerValue": 138.67,
-          "higherValue": 142.45,
-          "openValue": 138.9,
-          "closeValue": 141.2
+          "date": "2024-03-18",
+          "close": 155.4100036621,
+          "dividends": 0,
+          "high": 156.6699981689,
+          "low": 154.9400024414,
+          "open": 156.0299987793,
+          "stockSplits": 0,
+          "volume": 7242700
         },
         {
-          "date": "2024.03.05",
-          "value": 142.34,
-          "lowerValue": 139.92,
-          "higherValue": 143.88,
-          "openValue": 141.2,
-          "closeValue": 143.1
+          "date": "2024-03-19",
+          "close": 156.6199951172,
+          "dividends": 0,
+          "high": 156.8399963379,
+          "low": 155.0099945068,
+          "open": 155.3000030518,
+          "stockSplits": 0,
+          "volume": 7736700
         },
         {
-          "date": "2024.03.06",
-          "value": 141.57,
-          "lowerValue": 139.3,
-          "higherValue": 142.6,
-          "openValue": 143.1,
-          "closeValue": 140.5
+          "date": "2024-03-20",
+          "close": 154.5500030518,
+          "dividends": 0,
+          "high": 156.4299926758,
+          "low": 154.2299957275,
+          "open": 155.7599945068,
+          "stockSplits": 0,
+          "volume": 8449100
         },
         {
-          "date": "2024.03.07",
-          "value": 139.88,
-          "lowerValue": 137.44,
-          "higherValue": 140.9,
-          "openValue": 140.5,
-          "closeValue": 138.7
+          "date": "2024-03-21",
+          "close": 154.8600006104,
+          "dividends": 0,
+          "high": 155.6900024414,
+          "low": 154.4100036621,
+          "open": 154.9499969482,
+          "stockSplits": 0,
+          "volume": 7899100
         },
         {
-          "date": "2024.03.08",
-          "value": 137.45,
-          "lowerValue": 135.2,
-          "higherValue": 138.56,
-          "openValue": 138.7,
-          "closeValue": 136.8
+          "date": "2024-03-22",
+          "close": 154.6600036621,
+          "dividends": 0,
+          "high": 155.2799987793,
+          "low": 154.1600036621,
+          "open": 155.0800018311,
+          "stockSplits": 0,
+          "volume": 5973700
         },
         {
-          "date": "2024.03.09",
-          "value": 138.62,
-          "lowerValue": 136.45,
-          "higherValue": 139.73,
-          "openValue": 136.8,
-          "closeValue": 138.2
+          "date": "2024-03-25",
+          "close": 156.4700012207,
+          "dividends": 0,
+          "high": 157.3099975586,
+          "low": 155.2700042725,
+          "open": 155.4799957275,
+          "stockSplits": 0,
+          "volume": 6058700
         },
         {
-          "date": "2024.03.10",
-          "value": 140.29,
-          "lowerValue": 137.88,
-          "higherValue": 141.55,
-          "openValue": 138.2,
-          "closeValue": 140.1
+          "date": "2024-03-26",
+          "close": 155.2700042725,
+          "dividends": 0,
+          "high": 156.8600006104,
+          "low": 154.6499938965,
+          "open": 156.5200042725,
+          "stockSplits": 0,
+          "volume": 6677900
         },
         {
-          "date": "2024.03.11",
-          "value": 141.93,
-          "lowerValue": 139.67,
-          "higherValue": 142.88,
-          "openValue": 140.1,
-          "closeValue": 141.8
+          "date": "2024-03-27",
+          "close": 156.3500061035,
+          "dividends": 0,
+          "high": 156.4400024414,
+          "low": 154.8500061035,
+          "open": 154.8699951172,
+          "stockSplits": 0,
+          "volume": 7416900
         },
         {
-          "date": "2024.03.12",
-          "value": 140.75,
-          "lowerValue": 138.59,
-          "higherValue": 141.95,
-          "openValue": 141.8,
-          "closeValue": 139.6
+          "date": "2024-03-28",
+          "close": 157.7400054932,
+          "dividends": 0,
+          "high": 158.1900024414,
+          "low": 156.3699951172,
+          "open": 157.1499938965,
+          "stockSplits": 0,
+          "volume": 8331600
         },
         {
-          "date": "2024.03.13",
-          "value": 139.2,
-          "lowerValue": 137.14,
-          "higherValue": 140.22,
-          "openValue": 139.6,
-          "closeValue": 138.0
+          "date": "2024-04-01",
+          "close": 159.0800018311,
+          "dividends": 0,
+          "high": 159.5899963379,
+          "low": 156.9400024414,
+          "open": 158.2700042725,
+          "stockSplits": 0,
+          "volume": 6285700
         },
         {
-          "date": "2024.03.14",
-          "value": 137.65,
-          "lowerValue": 135.89,
-          "higherValue": 138.67,
-          "openValue": 138.0,
-          "closeValue": 136.5
+          "date": "2024-04-02",
+          "close": 159.7799987793,
+          "dividends": 0,
+          "high": 161.2200012207,
+          "low": 159.0200042725,
+          "open": 160.0500030518,
+          "stockSplits": 0,
+          "volume": 8815400
         },
         {
-          "date": "2024.03.15",
-          "value": 138.8,
-          "lowerValue": 136.22,
-          "higherValue": 139.88,
-          "openValue": 136.5,
-          "closeValue": 138.4
+          "date": "2024-04-03",
+          "close": 160.4400024414,
+          "dividends": 0,
+          "high": 160.9499969482,
+          "low": 159.7200012207,
+          "open": 160.1000061035,
+          "stockSplits": 0,
+          "volume": 7819700
         },
         {
-          "date": "2024.03.16",
-          "value": 140.05,
-          "lowerValue": 137.98,
-          "higherValue": 141.1,
-          "openValue": 138.4,
-          "closeValue": 139.9
+          "date": "2024-04-04",
+          "close": 160.6900024414,
+          "dividends": 0,
+          "high": 161.9499969482,
+          "low": 159.8200073242,
+          "open": 160.8000030518,
+          "stockSplits": 0,
+          "volume": 9269700
         },
         {
-          "date": "2024.03.17",
-          "value": 138.89,
-          "lowerValue": 137.45,
-          "higherValue": 139.92,
-          "openValue": 139.9,
-          "closeValue": 138.3
+          "date": "2024-04-05",
+          "close": 161.6000061035,
+          "dividends": 0,
+          "high": 162.1699981689,
+          "low": 159.8600006104,
+          "open": 161.3300018311,
+          "stockSplits": 0,
+          "volume": 7429800
         },
         {
-          "date": "2024.03.18",
-          "value": 137.34,
-          "lowerValue": 135.6,
-          "higherValue": 138.45,
-          "openValue": 138.3,
-          "closeValue": 136.7
+          "date": "2024-04-08",
+          "close": 161.2700042725,
+          "dividends": 0,
+          "high": 162.5,
+          "low": 160.3300018311,
+          "open": 161.6499938965,
+          "stockSplits": 0,
+          "volume": 7253200
         },
         {
-          "date": "2024.03.19",
-          "value": 138.56,
-          "lowerValue": 136.1,
-          "higherValue": 139.67,
-          "openValue": 136.7,
-          "closeValue": 138.1
+          "date": "2024-04-09",
+          "close": 162.0,
+          "dividends": 0,
+          "high": 162.5299987793,
+          "low": 160.4600067139,
+          "open": 161.8500061035,
+          "stockSplits": 0,
+          "volume": 6577400
         },
         {
-          "date": "2024.03.20",
-          "value": 139.77,
-          "lowerValue": 138.22,
-          "higherValue": 140.82,
-          "openValue": 138.1,
-          "closeValue": 139.5
+          "date": "2024-04-10",
+          "close": 162.6699981689,
+          "dividends": 0,
+          "high": 162.7700042725,
+          "low": 161.0099945068,
+          "open": 162.2100067139,
+          "stockSplits": 0,
+          "volume": 7525800
         },
         {
-          "date": "2024.03.21",
-          "value": 141.23,
-          "lowerValue": 139.5,
-          "higherValue": 142.0,
-          "openValue": 139.5,
-          "closeValue": 140.75
+          "date": "2024-04-11",
+          "close": 161.8899993896,
+          "dividends": 0,
+          "high": 163.6199951172,
+          "low": 159.8000030518,
+          "open": 163.6199951172,
+          "stockSplits": 0,
+          "volume": 7682500
         },
         {
-          "date": "2024.03.22",
-          "value": 142.67,
-          "lowerValue": 141.0,
-          "higherValue": 143.24,
-          "openValue": 140.75,
-          "closeValue": 142.18
-        },
-        {
-          "date": "2024.03.23",
-          "value": 143.58,
-          "lowerValue": 142.1,
-          "higherValue": 144.66,
-          "openValue": 142.18,
-          "closeValue": 143.95
-        },
-        {
-          "date": "2024.03.24",
-          "value": 144.89,
-          "lowerValue": 143.4,
-          "higherValue": 145.33,
-          "openValue": 143.95,
-          "closeValue": 144.5
-        },
-        {
-          "date": "2024.03.25",
-          "value": 146.02,
-          "lowerValue": 144.58,
-          "higherValue": 147.11,
-          "openValue": 144.5,
-          "closeValue": 146.77
-        },
-        {
-          "date": "2024.03.26",
-          "value": 147.34,
-          "lowerValue": 145.95,
-          "higherValue": 148.22,
-          "openValue": 146.77,
-          "closeValue": 147.89
-        },
-        {
-          "date": "2024.03.27",
-          "value": 148.56,
-          "lowerValue": 147.1,
-          "higherValue": 149.02,
-          "openValue": 147.89,
-          "closeValue": 148.4
-        },
-        {
-          "date": "2024.03.28",
-          "value": 149.67,
-          "lowerValue": 148.34,
-          "higherValue": 150.78,
-          "openValue": 148.4,
-          "closeValue": 149.52
-        },
-        {
-          "date": "2024.03.29",
-          "value": 150.88,
-          "lowerValue": 149.5,
-          "higherValue": 151.94,
-          "openValue": 149.52,
-          "closeValue": 150.66
-        },
-        {
-          "date": "2024.03.30",
-          "value": 155.42,
-          "lowerValue": 143.78,
-          "higherValue": 156.96,
-          "openValue": 150.6,
-          "closeValue": 155.9
-        },
-        {
-          "date": "2024.03.31",
-          "value": 156.89,
-          "lowerValue": 155.34,
-          "higherValue": 157.22,
-          "openValue": 155.9,
-          "closeValue": 156.7
+          "date": "2024-04-12",
+          "close": 158.9600067139,
+          "dividends": 0,
+          "high": 163.8699951172,
+          "low": 158.0399932861,
+          "open": 162.2899932861,
+          "stockSplits": 0,
+          "volume": 11058800
         }
       ]
     },
@@ -1625,252 +1461,224 @@
       "ticker": "GOOGL",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 176.89,
-          "lowerValue": 155.34,
-          "higherValue": 187.22,
-          "openValue": 155.9,
-          "closeValue": 156.7
+          "date": "2024-03-13",
+          "close": 139.7899932861,
+          "dividends": 0,
+          "high": 141.0899963379,
+          "low": 138.9900054932,
+          "open": 139.0,
+          "stockSplits": 0,
+          "volume": 23347200
         },
         {
-          "date": "2024.03.02",
-          "value": 156.89,
-          "lowerValue": 155.34,
-          "higherValue": 157.22,
-          "openValue": 156.7,
-          "closeValue": 157.22
+          "date": "2024-03-14",
+          "close": 143.1000061035,
+          "dividends": 0,
+          "high": 143.5899963379,
+          "low": 140.4600067139,
+          "open": 141.1900024414,
+          "stockSplits": 0,
+          "volume": 42753400
         },
         {
-          "date": "2024.03.03",
-          "value": 158.34,
-          "lowerValue": 156.7,
-          "higherValue": 159.22,
-          "openValue": 157.22,
-          "closeValue": 158.4
+          "date": "2024-03-15",
+          "close": 141.1799926758,
+          "dividends": 0,
+          "high": 143.1799926758,
+          "low": 140.0299987793,
+          "open": 142.5,
+          "stockSplits": 0,
+          "volume": 49460600
         },
         {
-          "date": "2024.03.04",
-          "value": 159.55,
-          "lowerValue": 158.4,
-          "higherValue": 160.12,
-          "openValue": 158.4,
-          "closeValue": 159.8
+          "date": "2024-03-18",
+          "close": 147.6799926758,
+          "dividends": 0,
+          "high": 152.1499938965,
+          "low": 147.1699981689,
+          "open": 148.6100006104,
+          "stockSplits": 0,
+          "volume": 69273700
         },
         {
-          "date": "2024.03.05",
-          "value": 160.78,
-          "lowerValue": 159.8,
-          "higherValue": 161.5,
-          "openValue": 159.8,
-          "closeValue": 161.2
+          "date": "2024-03-19",
+          "close": 147.0299987793,
+          "dividends": 0,
+          "high": 148.7899932861,
+          "low": 146.0800018311,
+          "open": 148.1600036621,
+          "stockSplits": 0,
+          "volume": 24070400
         },
         {
-          "date": "2024.03.06",
-          "value": 162.03,
-          "lowerValue": 161.2,
-          "higherValue": 163.25,
-          "openValue": 161.2,
-          "closeValue": 162.5
+          "date": "2024-03-20",
+          "close": 148.7400054932,
+          "dividends": 0,
+          "high": 148.8600006104,
+          "low": 146.7400054932,
+          "open": 148.0,
+          "stockSplits": 0,
+          "volume": 21311500
         },
         {
-          "date": "2024.03.07",
-          "value": 163.47,
-          "lowerValue": 162.5,
-          "higherValue": 164.72,
-          "openValue": 162.5,
-          "closeValue": 163.9
+          "date": "2024-03-21",
+          "close": 147.6000061035,
+          "dividends": 0,
+          "high": 150.3699951172,
+          "low": 146.8999938965,
+          "open": 149.4700012207,
+          "stockSplits": 0,
+          "volume": 24755600
         },
         {
-          "date": "2024.03.08",
-          "value": 164.89,
-          "lowerValue": 163.9,
-          "higherValue": 165.98,
-          "openValue": 163.9,
-          "closeValue": 165.3
+          "date": "2024-03-22",
+          "close": 150.7700042725,
+          "dividends": 0,
+          "high": 151.5800018311,
+          "low": 148.9799957275,
+          "open": 149.1199951172,
+          "stockSplits": 0,
+          "volume": 29175700
         },
         {
-          "date": "2024.03.09",
-          "value": 165.76,
-          "lowerValue": 165.3,
-          "higherValue": 166.82,
-          "openValue": 165.3,
-          "closeValue": 166.1
+          "date": "2024-03-25",
+          "close": 150.0700073242,
+          "dividends": 0,
+          "high": 150.3800048828,
+          "low": 147.8200073242,
+          "open": 149.9400024414,
+          "stockSplits": 0,
+          "volume": 19229300
         },
         {
-          "date": "2024.03.10",
-          "value": 167.25,
-          "lowerValue": 166.1,
-          "higherValue": 168.34,
-          "openValue": 166.1,
-          "closeValue": 167.6
+          "date": "2024-03-26",
+          "close": 150.6699981689,
+          "dividends": 0,
+          "high": 152.2599945068,
+          "low": 149.9799957275,
+          "open": 150.2200012207,
+          "stockSplits": 0,
+          "volume": 22149100
         },
         {
-          "date": "2024.03.11",
-          "value": 168.78,
-          "lowerValue": 167.6,
-          "higherValue": 169.9,
-          "openValue": 167.6,
-          "closeValue": 169.2
+          "date": "2024-03-27",
+          "close": 150.8699951172,
+          "dividends": 0,
+          "high": 151.6399993896,
+          "low": 148.8999938965,
+          "open": 151.1799926758,
+          "stockSplits": 0,
+          "volume": 22879200
         },
         {
-          "date": "2024.03.12",
-          "value": 169.45,
-          "lowerValue": 169.2,
-          "higherValue": 170.58,
-          "openValue": 169.2,
-          "closeValue": 170.1
+          "date": "2024-03-28",
+          "close": 150.9299926758,
+          "dividends": 0,
+          "high": 151.4299926758,
+          "low": 150.1699981689,
+          "open": 150.8500061035,
+          "stockSplits": 0,
+          "volume": 24485400
         },
         {
-          "date": "2024.03.13",
-          "value": 170.67,
-          "lowerValue": 170.1,
-          "higherValue": 171.89,
-          "openValue": 170.1,
-          "closeValue": 171.3
+          "date": "2024-04-01",
+          "close": 155.4900054932,
+          "dividends": 0,
+          "high": 155.7400054932,
+          "low": 150.6100006104,
+          "open": 150.6900024414,
+          "stockSplits": 0,
+          "volume": 31730800
         },
         {
-          "date": "2024.03.14",
-          "value": 172.14,
-          "lowerValue": 171.3,
-          "higherValue": 173.22,
-          "openValue": 171.3,
-          "closeValue": 172.5
+          "date": "2024-04-02",
+          "close": 154.5599975586,
+          "dividends": 0,
+          "high": 154.6999969482,
+          "low": 152.1499938965,
+          "open": 153.5,
+          "stockSplits": 0,
+          "volume": 24586000
         },
         {
-          "date": "2024.03.15",
-          "value": 173.58,
-          "lowerValue": 172.5,
-          "higherValue": 174.66,
-          "openValue": 172.5,
-          "closeValue": 173.9
+          "date": "2024-04-03",
+          "close": 154.9199981689,
+          "dividends": 0,
+          "high": 155.0800018311,
+          "low": 152.7299957275,
+          "open": 153.6000061035,
+          "stockSplits": 0,
+          "volume": 24705000
         },
         {
-          "date": "2024.03.16",
-          "value": 174.89,
-          "lowerValue": 173.9,
-          "higherValue": 175.98,
-          "openValue": 173.9,
-          "closeValue": 175.3
+          "date": "2024-04-04",
+          "close": 150.5299987793,
+          "dividends": 0,
+          "high": 154.7700042725,
+          "low": 150.4499969482,
+          "open": 153.5,
+          "stockSplits": 0,
+          "volume": 34724700
         },
         {
-          "date": "2024.03.17",
-          "value": 176.23,
-          "lowerValue": 175.3,
-          "higherValue": 177.45,
-          "openValue": 175.3,
-          "closeValue": 176.5
+          "date": "2024-04-05",
+          "close": 152.5,
+          "dividends": 0,
+          "high": 153.4199981689,
+          "low": 149.6000061035,
+          "open": 150.0299987793,
+          "stockSplits": 0,
+          "volume": 23449300
         },
         {
-          "date": "2024.03.18",
-          "value": 177.67,
-          "lowerValue": 176.5,
-          "higherValue": 178.89,
-          "openValue": 176.5,
-          "closeValue": 178.1
+          "date": "2024-04-08",
+          "close": 154.8500061035,
+          "dividends": 0,
+          "high": 155.2700042725,
+          "low": 152.6100006104,
+          "open": 152.7799987793,
+          "stockSplits": 0,
+          "volume": 20702000
         },
         {
-          "date": "2024.03.19",
-          "value": 178.95,
-          "lowerValue": 178.1,
-          "higherValue": 180.22,
-          "openValue": 178.1,
-          "closeValue": 179.4
+          "date": "2024-04-09",
+          "close": 156.6000061035,
+          "dividends": 0,
+          "high": 158.5599975586,
+          "low": 155.1900024414,
+          "open": 156.0899963379,
+          "stockSplits": 0,
+          "volume": 31113000
         },
         {
-          "date": "2024.03.20",
-          "value": 180.34,
-          "lowerValue": 179.4,
-          "higherValue": 181.56,
-          "openValue": 179.4,
-          "closeValue": 180.7
+          "date": "2024-04-10",
+          "close": 156.1399993896,
+          "dividends": 0,
+          "high": 156.6100006104,
+          "low": 154.6799926758,
+          "open": 156.2100067139,
+          "stockSplits": 0,
+          "volume": 22838600
         },
         {
-          "date": "2024.03.21",
-          "value": 181.76,
-          "lowerValue": 180.7,
-          "higherValue": 182.98,
-          "openValue": 180.7,
-          "closeValue": 182.1
+          "date": "2024-04-11",
+          "close": 159.4100036621,
+          "dividends": 0,
+          "high": 159.6799926758,
+          "low": 156.4600067139,
+          "open": 156.9100036621,
+          "stockSplits": 0,
+          "volume": 27166400
         },
         {
-          "date": "2024.03.22",
-          "value": 183.22,
-          "lowerValue": 182.1,
-          "higherValue": 184.34,
-          "openValue": 182.1,
-          "closeValue": 183.5
-        },
-        {
-          "date": "2024.03.23",
-          "value": 184.67,
-          "lowerValue": 183.5,
-          "higherValue": 185.89,
-          "openValue": 183.5,
-          "closeValue": 184.9
-        },
-        {
-          "date": "2024.03.24",
-          "value": 185.98,
-          "lowerValue": 184.9,
-          "higherValue": 187.12,
-          "openValue": 184.9,
-          "closeValue": 186.3
-        },
-        {
-          "date": "2024.03.25",
-          "value": 187.45,
-          "lowerValue": 186.3,
-          "higherValue": 188.67,
-          "openValue": 186.3,
-          "closeValue": 187.7
-        },
-        {
-          "date": "2024.03.26",
-          "value": 188.89,
-          "lowerValue": 187.7,
-          "higherValue": 190.1,
-          "openValue": 187.7,
-          "closeValue": 189.2
-        },
-        {
-          "date": "2024.03.27",
-          "value": 190.34,
-          "lowerValue": 189.2,
-          "higherValue": 191.56,
-          "openValue": 189.2,
-          "closeValue": 190.8
-        },
-        {
-          "date": "2024.03.28",
-          "value": 191.78,
-          "lowerValue": 190.8,
-          "higherValue": 193.0,
-          "openValue": 190.8,
-          "closeValue": 192.3
-        },
-        {
-          "date": "2024.03.29",
-          "value": 193.25,
-          "lowerValue": 192.3,
-          "higherValue": 194.49,
-          "openValue": 192.3,
-          "closeValue": 193.9
-        },
-        {
-          "date": "2024.03.30",
-          "value": 194.67,
-          "lowerValue": 193.9,
-          "higherValue": 195.88,
-          "openValue": 193.9,
-          "closeValue": 195.2
-        },
-        {
-          "date": "2024.03.31",
-          "value": 196.12,
-          "lowerValue": 195.2,
-          "higherValue": 197.34,
-          "openValue": 195.2,
-          "closeValue": 196.7
+          "date": "2024-04-12",
+          "close": 157.7299957275,
+          "dividends": 0,
+          "high": 160.2200012207,
+          "low": 157.1399993896,
+          "open": 157.9600067139,
+          "stockSplits": 0,
+          "volume": 25329200
         }
       ]
     },
@@ -1878,313 +1686,224 @@
       "ticker": "COST",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 731.4,
-          "lowerValue": 120.5,
-          "higherValue": 810.7,
-          "openValue": 620.1,
-          "closeValue": 780.6
+          "date": "2024-03-13",
+          "close": 734.200012207,
+          "dividends": 0,
+          "high": 736.5,
+          "low": 726.5800170898,
+          "open": 735.0,
+          "stockSplits": 0,
+          "volume": 2270300
         },
         {
-          "date": "2024.03.02",
-          "value": 642.6,
-          "lowerValue": 180.3,
-          "higherValue": 700.8,
-          "openValue": 780.6,
-          "closeValue": 650.4
+          "date": "2024-03-14",
+          "close": 731.950012207,
+          "dividends": 0,
+          "high": 740.6799926758,
+          "low": 728.9899902344,
+          "open": 738.3300170898,
+          "stockSplits": 0,
+          "volume": 1826100
         },
         {
-          "date": "2024.03.03",
-          "value": 621.8,
-          "lowerValue": 590.5,
-          "higherValue": 650.7,
-          "openValue": 650.4,
-          "closeValue": 610.2
+          "date": "2024-03-15",
+          "close": 725.6300048828,
+          "dividends": 0,
+          "high": 732.5200195312,
+          "low": 723.2199707031,
+          "open": 732.5200195312,
+          "stockSplits": 0,
+          "volume": 3389900
         },
         {
-          "date": "2024.03.04",
-          "value": 750.9,
-          "lowerValue": 760.3,
-          "higherValue": 780.2,
-          "openValue": 610.2,
-          "closeValue": 700.6
+          "date": "2024-03-18",
+          "close": 731.5399780273,
+          "dividends": 0,
+          "high": 733.3400268555,
+          "low": 726.0200195312,
+          "open": 726.0999755859,
+          "stockSplits": 0,
+          "volume": 1595200
         },
         {
-          "date": "2024.03.05",
-          "value": 719.6,
-          "lowerValue": 721.5,
-          "higherValue": 750.8,
-          "openValue": 700.6,
-          "closeValue": 730.3
+          "date": "2024-03-19",
+          "close": 732.1699829102,
+          "dividends": 0,
+          "high": 735.3499755859,
+          "low": 730.0200195312,
+          "open": 731.7899780273,
+          "stockSplits": 0,
+          "volume": 1322700
         },
         {
-          "date": "2024.03.06",
-          "value": 760.1,
-          "lowerValue": 522.5,
-          "higherValue": 812.8,
-          "openValue": 730.3,
-          "closeValue": 690.8
+          "date": "2024-03-20",
+          "close": 740.7199707031,
+          "dividends": 0,
+          "high": 742.0900268555,
+          "low": 729.1300048828,
+          "open": 731.0,
+          "stockSplits": 0,
+          "volume": 1398700
         },
         {
-          "date": "2024.03.07",
-          "value": 810.5,
-          "lowerValue": 624.8,
-          "higherValue": 865.1,
-          "openValue": 690.8,
-          "closeValue": 760.2
+          "date": "2024-03-21",
+          "close": 742.5599975586,
+          "dividends": 0,
+          "high": 752.3099975586,
+          "low": 741.0999755859,
+          "open": 743.5,
+          "stockSplits": 0,
+          "volume": 2106900
         },
         {
-          "date": "2024.03.08",
-          "value": 870.3,
-          "lowerValue": 785.2,
-          "higherValue": 900.8,
-          "openValue": 760.2,
-          "closeValue": 820.4
+          "date": "2024-03-22",
+          "close": 734.799987793,
+          "dividends": 0,
+          "high": 744.7899780273,
+          "low": 734.3800048828,
+          "open": 744.4299926758,
+          "stockSplits": 0,
+          "volume": 1791200
         },
         {
-          "date": "2024.03.09",
-          "value": 819.8,
-          "lowerValue": 722.1,
-          "higherValue": 855.4,
-          "openValue": 820.4,
-          "closeValue": 755.6
+          "date": "2024-03-25",
+          "close": 730.9600219727,
+          "dividends": 0,
+          "high": 734.1599731445,
+          "low": 726.7399902344,
+          "open": 731.0,
+          "stockSplits": 0,
+          "volume": 1604700
         },
         {
-          "date": "2024.03.10",
-          "value": 855.2,
-          "lowerValue": 772.2,
-          "higherValue": 900.9,
-          "openValue": 755.6,
-          "closeValue": 800.6
+          "date": "2024-03-26",
+          "close": 730.9799804688,
+          "dividends": 0,
+          "high": 734.700012207,
+          "low": 730.2199707031,
+          "open": 731.0,
+          "stockSplits": 0,
+          "volume": 1353500
         },
         {
-          "date": "2024.03.11",
-          "value": 804.9,
-          "lowerValue": 722.6,
-          "higherValue": 851.3,
-          "openValue": 800.6,
-          "closeValue": 760.7
+          "date": "2024-03-27",
+          "close": 732.0800170898,
+          "dividends": 0,
+          "high": 735.8900146484,
+          "low": 727.75,
+          "open": 734.0,
+          "stockSplits": 0,
+          "volume": 1246700
         },
         {
-          "date": "2024.03.12",
-          "value": 752.6,
-          "lowerValue": 782.1,
-          "higherValue": 783.1,
-          "openValue": 760.7,
-          "closeValue": 823.1
+          "date": "2024-03-28",
+          "close": 732.6300048828,
+          "dividends": 0,
+          "high": 734.9000244141,
+          "low": 728.3200073242,
+          "open": 733.8499755859,
+          "stockSplits": 0,
+          "volume": 1713300
         },
         {
-          "date": "2024.03.13",
-          "value": 784.3,
-          "lowerValue": 691.2,
-          "higherValue": 811.4,
-          "openValue": 823.1,
-          "closeValue": 750.4
+          "date": "2024-04-01",
+          "close": 721.2399902344,
+          "dividends": 0,
+          "high": 733.2700195312,
+          "low": 720.200012207,
+          "open": 731.7600097656,
+          "stockSplits": 0,
+          "volume": 1600700
         },
         {
-          "date": "2024.03.14",
-          "value": 736.9,
-          "lowerValue": 641.5,
-          "higherValue": 784.2,
-          "openValue": 750.4,
-          "closeValue": 711.7
+          "date": "2024-04-02",
+          "close": 711.299987793,
+          "dividends": 0,
+          "high": 720.0,
+          "low": 708.4000244141,
+          "open": 720.0,
+          "stockSplits": 0,
+          "volume": 2326700
         },
         {
-          "date": "2024.03.15",
-          "value": 687.6,
-          "lowerValue": 611.9,
-          "higherValue": 713.7,
-          "openValue": 711.7,
-          "closeValue": 671.4
+          "date": "2024-04-03",
+          "close": 705.6900024414,
+          "dividends": 0,
+          "high": 710.8099975586,
+          "low": 697.2700195312,
+          "open": 709.9799804688,
+          "stockSplits": 0,
+          "volume": 3205500
         },
         {
-          "date": "2024.03.16",
-          "value": 633.7,
-          "lowerValue": 563.2,
-          "higherValue": 683.9,
-          "openValue": 671.4,
-          "closeValue": 620.9
+          "date": "2024-04-04",
+          "close": 704.8800048828,
+          "dividends": 0,
+          "high": 717.1300048828,
+          "low": 704.2199707031,
+          "open": 708.7700195312,
+          "stockSplits": 0,
+          "volume": 2252400
         },
         {
-          "date": "2024.03.17",
-          "value": 573.9,
-          "lowerValue": 493.2,
-          "higherValue": 623.1,
-          "openValue": 620.9,
-          "closeValue": 581.8
+          "date": "2024-04-05",
+          "close": 713.7199707031,
+          "dividends": 0,
+          "high": 716.8900146484,
+          "low": 706.0200195312,
+          "open": 706.0399780273,
+          "stockSplits": 0,
+          "volume": 1552300
         },
         {
-          "date": "2024.03.18",
-          "value": 524.1,
-          "lowerValue": 433.1,
-          "higherValue": 573.3,
-          "openValue": 581.8,
-          "closeValue": 531.5
+          "date": "2024-04-08",
+          "close": 711.8099975586,
+          "dividends": 0,
+          "high": 716.1400146484,
+          "low": 710.8699951172,
+          "open": 713.5100097656,
+          "stockSplits": 0,
+          "volume": 1459000
         },
         {
-          "date": "2024.03.19",
-          "value": 474.6,
-          "lowerValue": 370.0,
-          "higherValue": 520.5,
-          "openValue": 530.2,
-          "closeValue": 480.1
-        }
-      ]
-    },
-    {
-      "ticker": "COST",
-      "values": [
-        {
-          "date": "2024.03.01",
-          "value": 731.4,
-          "lowerValue": 120.5,
-          "higherValue": 810.7,
-          "openValue": 620.1,
-          "closeValue": 780.6
+          "date": "2024-04-09",
+          "close": 718.5900268555,
+          "dividends": 0,
+          "high": 719.049987793,
+          "low": 706.9799804688,
+          "open": 716.2399902344,
+          "stockSplits": 0,
+          "volume": 1388300
         },
         {
-          "date": "2024.03.02",
-          "value": 642.6,
-          "lowerValue": 180.3,
-          "higherValue": 700.8,
-          "openValue": 780.6,
-          "closeValue": 650.4
+          "date": "2024-04-10",
+          "close": 722.5800170898,
+          "dividends": 0,
+          "high": 723.9799804688,
+          "low": 708.950012207,
+          "open": 711.0,
+          "stockSplits": 0,
+          "volume": 1832000
         },
         {
-          "date": "2024.03.03",
-          "value": 621.8,
-          "lowerValue": 590.5,
-          "higherValue": 650.7,
-          "openValue": 650.4,
-          "closeValue": 610.2
+          "date": "2024-04-11",
+          "close": 732.3499755859,
+          "dividends": 0,
+          "high": 733.7899780273,
+          "low": 724.1500244141,
+          "open": 731.5,
+          "stockSplits": 0,
+          "volume": 2107800
         },
         {
-          "date": "2024.03.04",
-          "value": 750.9,
-          "lowerValue": 760.3,
-          "higherValue": 780.2,
-          "openValue": 610.2,
-          "closeValue": 700.6
-        },
-        {
-          "date": "2024.03.05",
-          "value": 719.6,
-          "lowerValue": 721.5,
-          "higherValue": 750.8,
-          "openValue": 700.6,
-          "closeValue": 730.3
-        },
-        {
-          "date": "2024.03.06",
-          "value": 760.1,
-          "lowerValue": 522.5,
-          "higherValue": 812.8,
-          "openValue": 730.3,
-          "closeValue": 690.8
-        },
-        {
-          "date": "2024.03.07",
-          "value": 810.5,
-          "lowerValue": 624.8,
-          "higherValue": 865.1,
-          "openValue": 690.8,
-          "closeValue": 760.2
-        },
-        {
-          "date": "2024.03.08",
-          "value": 870.3,
-          "lowerValue": 785.2,
-          "higherValue": 900.8,
-          "openValue": 760.2,
-          "closeValue": 820.4
-        },
-        {
-          "date": "2024.03.09",
-          "value": 819.8,
-          "lowerValue": 722.1,
-          "higherValue": 855.4,
-          "openValue": 820.4,
-          "closeValue": 755.6
-        },
-        {
-          "date": "2024.03.10",
-          "value": 855.2,
-          "lowerValue": 772.2,
-          "higherValue": 900.9,
-          "openValue": 755.6,
-          "closeValue": 800.6
-        },
-        {
-          "date": "2024.03.11",
-          "value": 804.9,
-          "lowerValue": 722.6,
-          "higherValue": 851.3,
-          "openValue": 800.6,
-          "closeValue": 760.7
-        },
-        {
-          "date": "2024.03.12",
-          "value": 752.6,
-          "lowerValue": 782.1,
-          "higherValue": 783.1,
-          "openValue": 760.7,
-          "closeValue": 823.1
-        },
-        {
-          "date": "2024.03.13",
-          "value": 784.3,
-          "lowerValue": 691.2,
-          "higherValue": 811.4,
-          "openValue": 823.1,
-          "closeValue": 750.4
-        },
-        {
-          "date": "2024.03.14",
-          "value": 736.9,
-          "lowerValue": 641.5,
-          "higherValue": 784.2,
-          "openValue": 750.4,
-          "closeValue": 711.7
-        },
-        {
-          "date": "2024.03.15",
-          "value": 687.6,
-          "lowerValue": 611.9,
-          "higherValue": 713.7,
-          "openValue": 711.7,
-          "closeValue": 671.4
-        },
-        {
-          "date": "2024.03.16",
-          "value": 633.7,
-          "lowerValue": 563.2,
-          "higherValue": 683.9,
-          "openValue": 671.4,
-          "closeValue": 620.9
-        },
-        {
-          "date": "2024.03.17",
-          "value": 573.9,
-          "lowerValue": 493.2,
-          "higherValue": 623.1,
-          "openValue": 620.9,
-          "closeValue": 581.8
-        },
-        {
-          "date": "2024.03.18",
-          "value": 524.1,
-          "lowerValue": 433.1,
-          "higherValue": 573.3,
-          "openValue": 581.8,
-          "closeValue": 531.5
-        },
-        {
-          "date": "2024.03.19",
-          "value": 474.6,
-          "lowerValue": 370.0,
-          "higherValue": 520.5,
-          "openValue": 530.2,
-          "closeValue": 480.1
+          "date": "2024-04-12",
+          "close": 731.3099975586,
+          "dividends": 0,
+          "high": 732.9000244141,
+          "low": 726.5399780273,
+          "open": 728.0,
+          "stockSplits": 0,
+          "volume": 1480600
         }
       ]
     },
@@ -2192,156 +1911,224 @@
       "ticker": "BAC",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 762.3,
-          "lowerValue": 520.5,
-          "higherValue": 810.7,
-          "openValue": 620.1,
-          "closeValue": 780.6
+          "date": "2024-03-13",
+          "close": 36.0800018311,
+          "dividends": 0,
+          "high": 36.4500007629,
+          "low": 35.9599990845,
+          "open": 35.9599990845,
+          "stockSplits": 0,
+          "volume": 38289600
         },
         {
-          "date": "2024.03.02",
-          "value": 682.6,
-          "lowerValue": 580.3,
-          "higherValue": 730.8,
-          "openValue": 780.6,
-          "closeValue": 650.4
+          "date": "2024-03-14",
+          "close": 35.6899986267,
+          "dividends": 0,
+          "high": 36.2200012207,
+          "low": 35.4799995422,
+          "open": 35.9199981689,
+          "stockSplits": 0,
+          "volume": 40178100
         },
         {
-          "date": "2024.03.03",
-          "value": 629.4,
-          "lowerValue": 650.2,
-          "higherValue": 670.8,
-          "openValue": 650.4,
-          "closeValue": 610.1
+          "date": "2024-03-15",
+          "close": 35.4099998474,
+          "dividends": 0,
+          "high": 36.0099983215,
+          "low": 35.2400016785,
+          "open": 35.2799987793,
+          "stockSplits": 0,
+          "volume": 69638100
         },
         {
-          "date": "2024.03.04",
-          "value": 752.1,
-          "lowerValue": 760.5,
-          "higherValue": 780.9,
-          "openValue": 610.1,
-          "closeValue": 700.2
+          "date": "2024-03-18",
+          "close": 36.0099983215,
+          "dividends": 0,
+          "high": 36.0900001526,
+          "low": 35.3899993896,
+          "open": 35.6599998474,
+          "stockSplits": 0,
+          "volume": 50617900
         },
         {
-          "date": "2024.03.05",
-          "value": 710.5,
-          "lowerValue": 720.2,
-          "higherValue": 750.1,
-          "openValue": 700.2,
-          "closeValue": 730.8
+          "date": "2024-03-19",
+          "close": 36.0299987793,
+          "dividends": 0,
+          "high": 36.3899993896,
+          "low": 35.8499984741,
+          "open": 35.8899993896,
+          "stockSplits": 0,
+          "volume": 46113800
         },
         {
-          "date": "2024.03.06",
-          "value": 760.3,
-          "lowerValue": 520.5,
-          "higherValue": 810.8,
-          "openValue": 730.8,
-          "closeValue": 690.2
+          "date": "2024-03-20",
+          "close": 36.75,
+          "dividends": 0,
+          "high": 36.8800010681,
+          "low": 35.7299995422,
+          "open": 35.8400001526,
+          "stockSplits": 0,
+          "volume": 40519000
         },
         {
-          "date": "2024.03.07",
-          "value": 815.7,
-          "lowerValue": 620.3,
-          "higherValue": 860.1,
-          "openValue": 690.2,
-          "closeValue": 760.6
+          "date": "2024-03-21",
+          "close": 37.5099983215,
+          "dividends": 0,
+          "high": 37.5999984741,
+          "low": 36.8800010681,
+          "open": 36.9300003052,
+          "stockSplits": 0,
+          "volume": 43219500
         },
         {
-          "date": "2024.03.08",
-          "value": 870.4,
-          "lowerValue": 780.2,
-          "higherValue": 900.8,
-          "openValue": 760.6,
-          "closeValue": 820.3
+          "date": "2024-03-22",
+          "close": 37.0499992371,
+          "dividends": 0,
+          "high": 37.6100006104,
+          "low": 37.0,
+          "open": 37.4099998474,
+          "stockSplits": 0,
+          "volume": 28955900
         },
         {
-          "date": "2024.03.09",
-          "value": 820.2,
-          "lowerValue": 720.1,
-          "higherValue": 850.4,
-          "openValue": 820.3,
-          "closeValue": 750.6
+          "date": "2024-03-25",
+          "close": 36.8600006104,
+          "dividends": 0,
+          "high": 37.2799987793,
+          "low": 36.8400001526,
+          "open": 37.0999984741,
+          "stockSplits": 0,
+          "volume": 30480200
         },
         {
-          "date": "2024.03.10",
-          "value": 850.1,
-          "lowerValue": 770.2,
-          "higherValue": 900.8,
-          "openValue": 750.6,
-          "closeValue": 800.3
+          "date": "2024-03-26",
+          "close": 37.0900001526,
+          "dividends": 0,
+          "high": 37.2400016785,
+          "low": 36.7999992371,
+          "open": 37.0,
+          "stockSplits": 0,
+          "volume": 33673400
         },
         {
-          "date": "2024.03.11",
-          "value": 800.2,
-          "lowerValue": 720.6,
-          "higherValue": 850.3,
-          "openValue": 800.3,
-          "closeValue": 760.5
+          "date": "2024-03-27",
+          "close": 37.8100013733,
+          "dividends": 0,
+          "high": 37.8499984741,
+          "low": 37.2400016785,
+          "open": 37.25,
+          "stockSplits": 0,
+          "volume": 36350200
         },
         {
-          "date": "2024.03.12",
-          "value": 750.6,
-          "lowerValue": 780.2,
-          "higherValue": 780.1,
-          "openValue": 760.5,
-          "closeValue": 820.1
+          "date": "2024-03-28",
+          "close": 37.9199981689,
+          "dividends": 0,
+          "high": 38.0,
+          "low": 37.4199981689,
+          "open": 37.7200012207,
+          "stockSplits": 0,
+          "volume": 42262500
         },
         {
-          "date": "2024.03.13",
-          "value": 780.2,
-          "lowerValue": 690.9,
-          "higherValue": 810.4,
-          "openValue": 820.1,
-          "closeValue": 750.2
+          "date": "2024-04-01",
+          "close": 37.5200004578,
+          "dividends": 0,
+          "high": 38.3499984741,
+          "low": 37.4399986267,
+          "open": 37.9399986267,
+          "stockSplits": 0,
+          "volume": 33908000
         },
         {
-          "date": "2024.03.14",
-          "value": 730.9,
-          "lowerValue": 640.5,
-          "higherValue": 780.2,
-          "openValue": 750.2,
-          "closeValue": 710.5
+          "date": "2024-04-02",
+          "close": 37.2999992371,
+          "dividends": 0,
+          "high": 37.5800018311,
+          "low": 37.1599998474,
+          "open": 37.1899986267,
+          "stockSplits": 0,
+          "volume": 34806800
         },
         {
-          "date": "2024.03.15",
-          "value": 680.5,
-          "lowerValue": 610.8,
-          "higherValue": 710.6,
-          "openValue": 710.5,
-          "closeValue": 670.1
+          "date": "2024-04-03",
+          "close": 37.4399986267,
+          "dividends": 0,
+          "high": 38.0200004578,
+          "low": 37.2700004578,
+          "open": 37.4000015259,
+          "stockSplits": 0,
+          "volume": 33338500
         },
         {
-          "date": "2024.03.16",
-          "value": 630.8,
-          "lowerValue": 560.6,
-          "higherValue": 680.2,
-          "openValue": 670.1,
-          "closeValue": 620.0
+          "date": "2024-04-04",
+          "close": 36.9199981689,
+          "dividends": 0,
+          "high": 37.9599990845,
+          "low": 36.8699989319,
+          "open": 37.7000007629,
+          "stockSplits": 0,
+          "volume": 42888200
         },
         {
-          "date": "2024.03.17",
-          "value": 570.6,
-          "lowerValue": 490.6,
-          "higherValue": 620.1,
-          "openValue": 620.0,
-          "closeValue": 580.0
+          "date": "2024-04-05",
+          "close": 37.1100006104,
+          "dividends": 0,
+          "high": 37.3400001526,
+          "low": 36.7299995422,
+          "open": 36.8100013733,
+          "stockSplits": 0,
+          "volume": 30818000
         },
         {
-          "date": "2024.03.18",
-          "value": 520.6,
-          "lowerValue": 430.1,
-          "higherValue": 570.9,
-          "openValue": 580.0,
-          "closeValue": 530.2
+          "date": "2024-04-08",
+          "close": 37.5,
+          "dividends": 0,
+          "high": 37.5800018311,
+          "low": 37.1300010681,
+          "open": 37.2000007629,
+          "stockSplits": 0,
+          "volume": 29470300
         },
         {
-          "date": "2024.03.19",
-          "value": 470.1,
-          "lowerValue": 370.0,
-          "higherValue": 520.5,
-          "openValue": 530.2,
-          "closeValue": 480.1
+          "date": "2024-04-09",
+          "close": 37.7299995422,
+          "dividends": 0,
+          "high": 37.7700004578,
+          "low": 37.2000007629,
+          "open": 37.5099983215,
+          "stockSplits": 0,
+          "volume": 30977700
+        },
+        {
+          "date": "2024-04-10",
+          "close": 36.6500015259,
+          "dividends": 0,
+          "high": 37.2299995422,
+          "low": 36.5499992371,
+          "open": 37.1800003052,
+          "stockSplits": 0,
+          "volume": 37610700
+        },
+        {
+          "date": "2024-04-11",
+          "close": 36.3499984741,
+          "dividends": 0,
+          "high": 36.75,
+          "low": 36.0499992371,
+          "open": 36.75,
+          "stockSplits": 0,
+          "volume": 38604000
+        },
+        {
+          "date": "2024-04-12",
+          "close": 35.7900009155,
+          "dividends": 0,
+          "high": 36.0900001526,
+          "low": 35.5299987793,
+          "open": 35.8100013733,
+          "stockSplits": 0,
+          "volume": 47118300
         }
       ]
     },
@@ -2349,156 +2136,224 @@
       "ticker": "C",
       "values": [
         {
-          "date": "2024.03.01",
-          "value": 876.2,
-          "lowerValue": 830.5,
-          "higherValue": 890.7,
-          "openValue": 840.1,
-          "closeValue": 880.6
+          "date": "2024-03-13",
+          "close": 57.7599983215,
+          "dividends": 0,
+          "high": 58.3699989319,
+          "low": 57.4599990845,
+          "open": 57.5,
+          "stockSplits": 0,
+          "volume": 12982800
         },
         {
-          "date": "2024.03.02",
-          "value": 882.6,
-          "lowerValue": 850.3,
-          "higherValue": 900.8,
-          "openValue": 880.6,
-          "closeValue": 870.4
+          "date": "2024-03-14",
+          "close": 57.0900001526,
+          "dividends": 0,
+          "high": 58.6699981689,
+          "low": 56.6399993896,
+          "open": 58.3300018311,
+          "stockSplits": 0,
+          "volume": 18833600
         },
         {
-          "date": "2024.03.03",
-          "value": 870.4,
-          "lowerValue": 860.2,
-          "higherValue": 880.8,
-          "openValue": 870.4,
-          "closeValue": 865.1
+          "date": "2024-03-15",
+          "close": 57.6100006104,
+          "dividends": 0,
+          "high": 57.75,
+          "low": 56.4500007629,
+          "open": 56.4500007629,
+          "stockSplits": 0,
+          "volume": 26160800
         },
         {
-          "date": "2024.03.04",
-          "value": 865.1,
-          "lowerValue": 860.5,
-          "higherValue": 870.9,
-          "openValue": 865.1,
-          "closeValue": 862.2
+          "date": "2024-03-18",
+          "close": 58.6300010681,
+          "dividends": 0,
+          "high": 58.6599998474,
+          "low": 57.5600013733,
+          "open": 57.8499984741,
+          "stockSplits": 0,
+          "volume": 13994600
         },
         {
-          "date": "2024.03.05",
-          "value": 862.2,
-          "lowerValue": 860.2,
-          "higherValue": 865.1,
-          "openValue": 862.2,
-          "closeValue": 861.8
+          "date": "2024-03-19",
+          "close": 58.8600006104,
+          "dividends": 0,
+          "high": 59.3199996948,
+          "low": 58.5400009155,
+          "open": 58.5900001526,
+          "stockSplits": 0,
+          "volume": 13455300
         },
         {
-          "date": "2024.03.06",
-          "value": 861.8,
-          "lowerValue": 860.5,
-          "higherValue": 863.8,
-          "openValue": 861.8,
-          "closeValue": 862.5
+          "date": "2024-03-20",
+          "close": 60.1300010681,
+          "dividends": 0,
+          "high": 60.3400001526,
+          "low": 58.4599990845,
+          "open": 58.4900016785,
+          "stockSplits": 0,
+          "volume": 20269900
         },
         {
-          "date": "2024.03.07",
-          "value": 862.5,
-          "lowerValue": 861.2,
-          "higherValue": 863.9,
-          "openValue": 862.5,
-          "closeValue": 862.6
+          "date": "2024-03-21",
+          "close": 61.3300018311,
+          "dividends": 0,
+          "high": 61.5499992371,
+          "low": 60.3100013733,
+          "open": 60.3100013733,
+          "stockSplits": 0,
+          "volume": 17892100
         },
         {
-          "date": "2024.03.08",
-          "value": 862.6,
-          "lowerValue": 861.9,
-          "higherValue": 863.0,
-          "openValue": 862.6,
-          "closeValue": 862.7
+          "date": "2024-03-22",
+          "close": 60.8199996948,
+          "dividends": 0,
+          "high": 61.6699981689,
+          "low": 60.5800018311,
+          "open": 61.0400009155,
+          "stockSplits": 0,
+          "volume": 16204600
         },
         {
-          "date": "2024.03.09",
-          "value": 862.7,
-          "lowerValue": 861.8,
-          "higherValue": 863.5,
-          "openValue": 862.7,
-          "closeValue": 862.8
+          "date": "2024-03-25",
+          "close": 60.9500007629,
+          "dividends": 0,
+          "high": 61.5200004578,
+          "low": 60.5800018311,
+          "open": 60.8899993896,
+          "stockSplits": 0,
+          "volume": 12040300
         },
         {
-          "date": "2024.03.10",
-          "value": 862.8,
-          "lowerValue": 862.0,
-          "higherValue": 863.1,
-          "openValue": 862.8,
-          "closeValue": 862.9
+          "date": "2024-03-26",
+          "close": 61.6599998474,
+          "dividends": 0,
+          "high": 61.9500007629,
+          "low": 61.0,
+          "open": 61.1500015259,
+          "stockSplits": 0,
+          "volume": 17947400
         },
         {
-          "date": "2024.03.11",
-          "value": 862.9,
-          "lowerValue": 862.5,
-          "higherValue": 863.0,
-          "openValue": 862.9,
-          "closeValue": 863.0
+          "date": "2024-03-27",
+          "close": 62.75,
+          "dividends": 0,
+          "high": 62.7599983215,
+          "low": 61.7200012207,
+          "open": 62.0299987793,
+          "stockSplits": 0,
+          "volume": 16684400
         },
         {
-          "date": "2024.03.12",
-          "value": 863.0,
-          "lowerValue": 862.7,
-          "higherValue": 863.2,
-          "openValue": 863.0,
-          "closeValue": 863.1
+          "date": "2024-03-28",
+          "close": 63.2400016785,
+          "dividends": 0,
+          "high": 63.3699989319,
+          "low": 62.5800018311,
+          "open": 62.7299995422,
+          "stockSplits": 0,
+          "volume": 19012000
         },
         {
-          "date": "2024.03.13",
-          "value": 863.1,
-          "lowerValue": 862.9,
-          "higherValue": 863.2,
-          "openValue": 863.1,
-          "closeValue": 863.2
+          "date": "2024-04-01",
+          "close": 63.4599990845,
+          "dividends": 0,
+          "high": 63.9000015259,
+          "low": 63.0200004578,
+          "open": 63.5999984741,
+          "stockSplits": 0,
+          "volume": 14223900
         },
         {
-          "date": "2024.03.14",
-          "value": 863.2,
-          "lowerValue": 863.0,
-          "higherValue": 863.3,
-          "openValue": 863.2,
-          "closeValue": 863.2
+          "date": "2024-04-02",
+          "close": 62.8400001526,
+          "dividends": 0,
+          "high": 63.5900001526,
+          "low": 62.6500015259,
+          "open": 62.6500015259,
+          "stockSplits": 0,
+          "volume": 16062000
         },
         {
-          "date": "2024.03.15",
-          "value": 863.2,
-          "lowerValue": 863.1,
-          "higherValue": 863.3,
-          "openValue": 863.2,
-          "closeValue": 863.3
+          "date": "2024-04-03",
+          "close": 61.6899986267,
+          "dividends": 0,
+          "high": 63.3899993896,
+          "low": 61.5200004578,
+          "open": 62.8600006104,
+          "stockSplits": 0,
+          "volume": 18079900
         },
         {
-          "date": "2024.03.16",
-          "value": 863.3,
-          "lowerValue": 863.2,
-          "higherValue": 863.4,
-          "openValue": 863.3,
-          "closeValue": 863.3
+          "date": "2024-04-04",
+          "close": 60.9099998474,
+          "dividends": 0,
+          "high": 62.7400016785,
+          "low": 60.75,
+          "open": 62.1500015259,
+          "stockSplits": 0,
+          "volume": 13401100
         },
         {
-          "date": "2024.03.17",
-          "value": 863.3,
-          "lowerValue": 863.2,
-          "higherValue": 863.4,
-          "openValue": 863.3,
-          "closeValue": 863.3
+          "date": "2024-04-05",
+          "close": 61.5999984741,
+          "dividends": 0,
+          "high": 62.0400009155,
+          "low": 60.4199981689,
+          "open": 60.8199996948,
+          "stockSplits": 0,
+          "volume": 12680600
         },
         {
-          "date": "2024.03.18",
-          "value": 863.3,
-          "lowerValue": 863.3,
-          "higherValue": 863.4,
-          "openValue": 863.3,
-          "closeValue": 863.3
+          "date": "2024-04-08",
+          "close": 61.7299995422,
+          "dividends": 0,
+          "high": 62.3199996948,
+          "low": 61.6599998474,
+          "open": 61.6699981689,
+          "stockSplits": 0,
+          "volume": 10708300
         },
         {
-          "date": "2024.03.19",
-          "value": 863.3,
-          "lowerValue": 863.3,
-          "higherValue": 863.4,
-          "openValue": 863.3,
-          "closeValue": 863.3
+          "date": "2024-04-09",
+          "close": 61.6599998474,
+          "dividends": 0,
+          "high": 62.0900001526,
+          "low": 60.9099998474,
+          "open": 61.75,
+          "stockSplits": 0,
+          "volume": 10303000
+        },
+        {
+          "date": "2024-04-10",
+          "close": 60.1800003052,
+          "dividends": 0,
+          "high": 61.3100013733,
+          "low": 59.9700012207,
+          "open": 60.5200004578,
+          "stockSplits": 0,
+          "volume": 18088000
+        },
+        {
+          "date": "2024-04-11",
+          "close": 60.7099990845,
+          "dividends": 0,
+          "high": 60.8899993896,
+          "low": 59.5,
+          "open": 60.3499984741,
+          "stockSplits": 0,
+          "volume": 18181900
+        },
+        {
+          "date": "2024-04-12",
+          "close": 59.6800003052,
+          "dividends": 0,
+          "high": 62.5999984741,
+          "low": 58.75,
+          "open": 62.2900009155,
+          "stockSplits": 0,
+          "volume": 28556400
         }
       ]
     }

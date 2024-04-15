@@ -4,11 +4,15 @@ import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 import {Story} from '../components/HomeScreenComponents/Story';
+import axios from 'axios';
+import {Change} from '../constants/Interfaces';
 
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('EUR');
   const [initialValue, setInitialValue] = useState(18000);
   const [value, setValue] = useState(18000);
+
+  const [changes, setChanges] = useState<Change[]>([]);
 
   const currencyFormat = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -22,6 +26,45 @@ const HomeScreen = () => {
       setValue(initialValue);
     }
   }, [currency, initialValue]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8081/src/db.json');
+        setChanges(response.data.changes);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const maxDifferences: {[ticker: string]: number | string} = {};
+
+  changes.forEach(change => {
+    let maxDifference = -Infinity;
+    let minDifference = Infinity;
+
+    change.values.forEach(value => {
+      const difference = value.close - value.open;
+
+      if (difference > maxDifference) {
+        maxDifference = difference;
+      }
+      if (difference < minDifference) {
+        minDifference = difference;
+      }
+    });
+
+    if (Math.abs(minDifference) > maxDifference) {
+      maxDifferences[change.ticker] = minDifference.toFixed(2);
+    } else {
+      maxDifferences[change.ticker] = maxDifference.toFixed(2);
+    }
+  });
+
+  console.log(maxDifferences);
 
   return (
     <GradientBackground>
@@ -40,6 +83,7 @@ const HomeScreen = () => {
           </View>
           <CurrencyDropdown selected={currency} setSelected={setCurrency} />
         </View>
+
         <View style={styles.storiesContaner}>
           <Story
             logo={require('../assets/icons/icon-apple.png')}
