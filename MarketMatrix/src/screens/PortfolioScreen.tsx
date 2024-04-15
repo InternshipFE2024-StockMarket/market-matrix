@@ -4,6 +4,7 @@ import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
 import DynamicTable from '../components/PortfolioScreen/DynamicTable';
 import useFetchUserInvetments from '../utils/http/useFetchUserInvetments';
+import useFetchUserStocks from '../utils/http/useFetchUserStocks';
 export interface TableData {
   ticker: string;
   amount: number;
@@ -51,7 +52,9 @@ export const testData: TableData[] = [
 const PortfolioScreen = () => {
   const userId = 123456;
   const userInv = useFetchUserInvetments(userId);
+  const userStocks = useFetchUserStocks(userInv);
   console.log(userInv);
+  console.log(userStocks);
 
   return (
     <GradientBackground>
