@@ -5,30 +5,22 @@ import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 import {Story} from '../components/HomeScreenComponents/Story';
 import axios from 'axios';
-import {Change} from '../constants/Interfaces';
+import {Change, UserData} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
+import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
-  const [initialValue, setInitialValue] = useState(18000);
-  const [value, setValue] = useState(18000);
+  const [changes, setChanges] = useState<Change[]>([]);
+
   const {stocks} = useStock();
 
-  // console.log('Stocks' + stocks);
-
-  const [changes, setChanges] = useState<Change[]>([]);
+  let portfolioValue = Number(getTotalPortofolioValue());
 
   const currencyFormat = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency,
   });
-
-  useEffect(() => {
-    if (currency === 'EUR') {
-    } else if (currency === 'USD') {
-      setValue(initialValue);
-    }
-  }, [currency, initialValue]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,7 +59,6 @@ const HomeScreen = () => {
       maxDifferences[change.ticker] = maxDifference.toFixed(2);
     }
   });
-  // console.log(maxDifferences);
 
   const entries = Object.entries(maxDifferences);
 
@@ -91,21 +82,16 @@ const HomeScreen = () => {
   firstEntries.forEach(item => {
     let company = item[0];
     let change = item[1];
-    // Find the stock object with the matching ticker
     const stock = stocks.find(stock => stock.ticker === company);
     if (stock) {
       let obj = {
         company: company,
         change: change,
-        logo: {uri: stock.image}, // Use the image URL from the stock object
+        logo: {uri: stock.image},
       };
       stories.push(obj);
     }
   });
-
-  // console.log(stories);
-
-  // stories.map(story => console.log(story[0]));
 
   return (
     <GradientBackground>
@@ -117,9 +103,12 @@ const HomeScreen = () => {
           <View>
             <Text style={styles.text}>Your total value:</Text>
             <View style={styles.valueContainer}>
-              <Text style={styles.value}>{currencyFormat.format(value)}</Text>
+              <Text style={styles.value}>
+                {currency === 'USD'
+                  ? currencyFormat.format(Number(portfolioValue))
+                  : currencyFormat.format(Number(portfolioValue * 1.06))}
+              </Text>
             </View>
-            {/* create a component to change dinamically the color and add arrow icon  */}
             <Text style={styles.valueDifference}>34.10 (0.19%)</Text>
           </View>
           <View style={styles.dropdown}>

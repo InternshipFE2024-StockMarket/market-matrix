@@ -53,3 +53,10 @@ export interface Stock {
   sector: string;
   type: string;
 }
+
+export interface UserData {
+  id: string;
+  name: string;
+  investment: Investment[];
+  total: string;
+}
