@@ -1,12 +1,6 @@
-import {
-  FlatList,
-  ListRenderItemInfo,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Colors} from '../../constants/Colors';
+import {FlatList, ListRenderItemInfo, View} from 'react-native';
 import GradientBackground from '../../components/UI/GradientBackground';
 import {useStock} from '../../contexts/stocksContext';
 import {Stock} from '../../constants/Interfaces';
@@ -23,11 +17,11 @@ const OverviewScreen = () => {
   return (
     <GradientBackground>
       <View>
-        <Text style={styles.text}>OverviewScreen</Text>
         <FlatList
           data={stocks}
           keyExtractor={item => item.id}
           renderItem={renderAsset}
+          contentContainerStyle={{gap: 5}}
         />
       </View>
     </GradientBackground>
@@ -35,9 +29,3 @@ const OverviewScreen = () => {
 };
 
 export default OverviewScreen;
-
-const styles = StyleSheet.create({
-  text: {
-    color: Colors.text500,
-  },
-});

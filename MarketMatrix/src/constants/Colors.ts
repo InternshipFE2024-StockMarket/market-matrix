@@ -9,6 +9,6 @@ export const Colors = {
   cardBackground500: 'rgba(47, 57, 90, 0.4)',
   cardBackground700: 'rgba(21, 26, 46, 0.9)',
   navigationBackground: '#353c58',
-  border: 'rga((236,239,248, 0.5)',
+  border: 'rgba(247, 248, 250, 0.3)',
   selectedIcon: '#617ae0',
 };

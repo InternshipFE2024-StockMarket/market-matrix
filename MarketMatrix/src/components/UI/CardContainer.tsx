@@ -25,6 +25,9 @@ export default CardContainer;
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    margin: 10,
+    marginHorizontal: 10,
+    borderRadius: 10,
+    borderColor: Colors.border,
+    borderWidth: 0.3,
   },
 });

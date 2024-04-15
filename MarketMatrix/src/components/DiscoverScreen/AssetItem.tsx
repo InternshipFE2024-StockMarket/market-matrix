@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import {Stock} from '../../constants/Interfaces';
 import {Colors} from '../../constants/Colors';
 import CardContainer from '../UI/CardContainer';
@@ -16,14 +16,16 @@ const AssetItem = ({stock}: AssetItemProps) => {
       <View style={styles.container}>
         <View style={styles.leftContainer}>
           <View style={styles.titleContainer}>
-            <Text style={styles.symbol}>{stock.ticker}</Text>
+            <Image source={{uri: stock.image}} style={styles.image} />
+            <View>
+              <Text style={styles.ticker}>{stock.ticker}</Text>
+              <Text style={styles.name}>{stock.companyName}</Text>
+            </View>
           </View>
-
-          <Text style={styles.name}>{stock.companyName}</Text>
         </View>
 
         <View style={styles.rightContainer}>
-          <Text style={styles.close}>{stock.price}</Text>
+          <Text style={styles.price}>{stock.price}</Text>
 
           <Text
             style={{
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
     color: Colors.text500,
   },
 
-  symbol: {
+  ticker: {
     fontSize: 18,
     fontWeight: 'bold',
     color: Colors.text500,
@@ -76,9 +78,14 @@ const styles = StyleSheet.create({
     height: 18,
     tintColor: Colors.text500,
   },
-  close: {
+  price: {
     fontFamily: 'monospace',
     fontSize: 14,
     color: Colors.text500,
+  },
+  image: {
+    width: 30,
+    height: 30,
+    marginRight: 5,
   },
 });
