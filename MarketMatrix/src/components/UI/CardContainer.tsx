@@ -1,19 +1,21 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/Colors';
 
-const CardContainer = () => {
+interface CardContainerProps {
+  children: React.ReactNode;
+}
+
+const CardContainer = ({children}: CardContainerProps) => {
   return (
     <LinearGradient
-      colors={[Colors.cardBackground, Colors.background600]}
+      colors={[Colors.cardBackground500, Colors.background600]}
       locations={[0, 0.8]}
       start={{x: 0.5, y: 0}}
       end={{x: 0.5, y: 1}}
       style={styles.container}>
-      <View>
-        <Text>CardContainer</Text>
-      </View>
+      <View>{children}</View>
     </LinearGradient>
   );
 };
