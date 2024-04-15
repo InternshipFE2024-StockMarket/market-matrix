@@ -1,5 +1,6 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Stock} from '../constants/Interfaces';
+import {fetchStocks} from '../utils/http/fetchStocks';
 
 interface StockContextValue {
   stocks: Stock[];
@@ -15,6 +16,20 @@ interface StockProviderProps {
 
 export const StockProvider = ({children}: StockProviderProps) => {
   const [stocks, setStocks] = useState<Stock[]>([]);
+
+  useEffect(() => {
+    const updateStocksData = async () => {
+      const stocksData = await fetchStocks();
+      console.log({stocksData});
+
+      setStocks(stocksData);
+    };
+    updateStocksData();
+
+    const intervalId = setInterval(updateStocksData, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const value = {
     stocks: stocks,
