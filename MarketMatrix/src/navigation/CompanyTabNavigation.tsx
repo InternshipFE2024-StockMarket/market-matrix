@@ -16,11 +16,11 @@ export const CompanyTabNavigation = ({ticker}: CompanyNavigationProp) => {
         tabBarStyle: {
           backgroundColor: 'rgba(177, 188, 222, 0.1)',
         },
-        tabBarActiveTintColor: '#ffffff',
+        tabBarActiveTintColor: '#7fa4f8',
         tabBarInactiveTintColor: '#c7c7c7',
         tabBarIndicatorStyle: {
-          backgroundColor: '#ffffff',
-          height: 2,
+          backgroundColor: '#7fa4f8',
+          height: 5,
         },
       }}>
       <Tab.Screen

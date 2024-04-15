@@ -2,11 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {StockValues} from '../../constants/Interfaces';
 import {ChartConfiguration} from '../chart/ChartConfiguration';
 import {fetchChangesForStock} from '../../utils/http/fetchChangesForStock';
+import {Text, View} from 'react-native';
 
 export const LineChart = ({route}: any) => {
   const [chartValues, setChartValues] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const ticker = route.params?.userParams?.ticker;
 
   useEffect(() => {
@@ -30,13 +29,9 @@ export const LineChart = ({route}: any) => {
         setChartValues(chartData);
       } catch (error: any) {
         console.error('Failed to fetch values for stock:', error);
-        setError(error);
-      } finally {
-        setLoading(false);
       }
     }
   };
-
   return (
     <ChartConfiguration
       ticker={ticker}

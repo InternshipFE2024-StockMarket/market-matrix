@@ -31,9 +31,6 @@ export const CandlestickChart = ({route}: any) => {
         setCandleChartData(chartData);
       } catch (error: any) {
         console.error('Failed to fetch values for stock:', error);
-        //setError(error);
-      } finally {
-        //setLoading(false);
       }
     }
   };
