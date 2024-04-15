@@ -12,7 +12,6 @@ export const getPlValue = (
     console.error('Shares cannot be zero.');
     return NaN;
   }
-  console.log({currentPrice}, {boughtPrice}, {shares});
 
   return (currentPrice - boughtPrice) * shares;
 };
