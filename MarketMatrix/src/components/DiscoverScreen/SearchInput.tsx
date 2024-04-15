@@ -34,9 +34,10 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   input: {
+    backgroundColor: Colors.background600,
     width: '90%',
     height: 60,
-    borderRadius: 30,
+    borderRadius: 10,
   },
   search: {
     width: 24,

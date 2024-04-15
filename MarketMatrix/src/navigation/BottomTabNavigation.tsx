@@ -1,12 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import PortfolioScreen from '../screens/PortfolioScreen';
-// import DiscoverScreen from '../screens/DiscoverScreen';
 import {Colors} from '../constants/Colors';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
 import DiscoverTabNavigation from './DiscoverTabNavigation';
-import {View} from 'react-native';
-import SearchInput from '../components/DiscoverScreen/SearchInput';
+import SearchHeader from '../components/DiscoverScreen/SearchHeader';
 
 const Tab = createBottomTabNavigator();
 
@@ -64,11 +62,7 @@ export const BottomTabNavigation = () => {
               source={require('../assets/icons/icon-search.png')}
             />
           ),
-          header: () => (
-            <View>
-              <SearchInput />
-            </View>
-          ),
+          header: () => <SearchHeader />,
         }}
       />
     </Tab.Navigator>
