@@ -1,9 +1,27 @@
 {
   "stocks": [
     {
+      "id": "BTC-USD",
+      "ticker": "BTC",
+      "companyName": "Bitcoin",
+      "price": 64515.62,
+      "priceChangePercentage": 2.87,
+      "priceChange": 1500.75,
+      "image": "https://example.com/bitcoin.png",
+      "exchange": "Crypto Exchange",
+      "ceo": "Satoshi Nakamoto",
+      "city": "Unknown",
+      "state": "Unknown",
+      "industry": "Cryptocurrency",
+      "sector": "Finance",
+      "type": "crypto"
+    },
+    {
+      "id": "AAPL",
       "ticker": "AAPL",
       "companyName": "Apple Inc.",
-      "price": 191.5314,
+      "companyValue": "2.73T",
+      "price": 146.09,
       "priceChangePercentage": 1.5381,
       "priceChange": 2.9014,
       "image": "https://financialmodelingprep.com/image-stock/AAPL.png",
@@ -16,9 +34,11 @@
       "type": "stock"
     },
     {
+      "id": "AMZN",
       "ticker": "AMZN",
       "companyName": "Amazon.com, Inc.",
-      "price": 155.295,
+      "companyValue": "1.93T",
+      "price": 201.36,
       "priceChangePercentage": 1.1694,
       "priceChange": 1.795,
       "image": "https://financialmodelingprep.com/image-stock/AMZN.png",
@@ -31,9 +51,11 @@
       "type": "stock"
     },
     {
+      "id": "ANET",
       "ticker": "ANET",
       "companyName": "Arista Networks, Inc.",
-      "price": 263.545,
+      "companyValue": "84.79B",
+      "price": 277.94,
       "priceChangePercentage": 2.3237,
       "priceChange": 5.985,
       "image": "https://financialmodelingprep.com/image-stock/ANET.png",
@@ -46,9 +68,11 @@
       "type": "stock"
     },
     {
+      "id": "BAC",
       "ticker": "BAC",
       "companyName": "Bank of America Corporation",
-      "price": 32.135,
+      "companyValue": "282.41B",
+      "price": 30.81,
       "priceChangePercentage": 1.2764,
       "priceChange": 0.405,
       "image": "https://financialmodelingprep.com/image-stock/BAC.png",
@@ -61,9 +85,11 @@
       "type": "stock"
     },
     {
+      "id": "C",
       "ticker": "C",
       "companyName": "Citigroup Inc.",
-      "price": 51.51,
+      "companyValue": "114.07B",
+      "price": 94.29,
       "priceChangePercentage": 0.7826,
       "priceChange": 0.4,
       "image": "https://financialmodelingprep.com/image-stock/C.png",
@@ -76,9 +102,11 @@
       "type": "stock"
     },
     {
+      "id": "COST",
       "ticker": "COST",
       "companyName": "Costco Wholesale Corporation",
-      "price": 695.02,
+      "companyValue": "324.34B",
+      "price": 692.69,
       "priceChangePercentage": 1.1218,
       "priceChange": 7.71,
       "image": "https://financialmodelingprep.com/image-stock/COST.png",
@@ -91,9 +119,11 @@
       "type": "stock"
     },
     {
+      "id": "CPRT",
       "ticker": "CPRT",
       "companyName": "Copart, Inc.",
-      "price": 48.77,
+      "companyValue": "53.25B",
+      "price": 56.58,
       "priceChangePercentage": 1.2456,
       "priceChange": 0.6,
       "image": "https://financialmodelingprep.com/image-stock/CPRT.png",
@@ -106,9 +136,11 @@
       "type": "stock"
     },
     {
+      "id": "CVX",
       "ticker": "CVX",
       "companyName": "Chevron Corporation",
-      "price": 142.115,
+      "companyValue": "293.25B",
+      "price": 133.98,
       "priceChangePercentage": 0.208,
       "priceChange": 0.295,
       "image": "https://financialmodelingprep.com/image-stock/CVX.png",
@@ -121,9 +153,11 @@
       "type": "stock"
     },
     {
+      "id": "GOOGL",
       "ticker": "GOOGL",
       "companyName": "Alphabet Inc.",
-      "price": 145.645,
+      "companyValue": "1.97T",
+      "price": 157.64,
       "priceChangePercentage": 1.5089,
       "priceChange": 2.165,
       "image": "https://financialmodelingprep.com/image-stock/GOOGL.png",
@@ -136,9 +170,11 @@
       "type": "stock"
     },
     {
+      "id": "INTU",
       "ticker": "INTU",
       "companyName": "Intuit Inc.",
-      "price": 622.175,
+      "companyValue": "173.90B",
+      "price": 632.61,
       "priceChangePercentage": 1.769,
       "priceChange": 10.815,
       "image": "https://financialmodelingprep.com/image-stock/INTU.png",
@@ -151,9 +187,11 @@
       "type": "stock"
     },
     {
+      "id": "JPM",
       "ticker": "JPM",
       "companyName": "JPMorgan Chase & Co.",
-      "price": 170.07,
+      "companyValue": "526.55B",
+      "price": 166.2,
       "priceChangePercentage": 1.5829,
       "priceChange": 2.65,
       "image": "https://financialmodelingprep.com/image-stock/JPM.png",
@@ -166,9 +204,11 @@
       "type": "stock"
     },
     {
+      "id": "KNSL",
       "ticker": "KNSL",
       "companyName": "Kinsale Capital Group, Inc.",
-      "price": 400.14,
+      "companyValue": "10.46B",
+      "price": 410.34,
       "priceChangePercentage": 0.6819,
       "priceChange": 2.71,
       "image": "https://financialmodelingprep.com/image-stock/KNSL.png",
@@ -181,9 +221,11 @@
       "type": "stock"
     },
     {
+      "id": "MA",
       "ticker": "MA",
       "companyName": "Mastercard Incorporated",
-      "price": 435.6776,
+      "companyValue": "434.15B",
+      "price": 435.27,
       "priceChangePercentage": 1.151,
       "priceChange": 4.9576,
       "image": "https://financialmodelingprep.com/image-stock/MA.png",
@@ -196,9 +238,11 @@
       "type": "stock"
     },
     {
+      "id": "META",
       "ticker": "META",
       "companyName": "Meta Platforms, Inc.",
-      "price": 383.385,
+      "companyValue": "1.31T",
+      "price": 390.22,
       "priceChangePercentage": 1.9289,
       "priceChange": 7.255,
       "image": "https://financialmodelingprep.com/image-stock/META.png",
@@ -211,9 +255,11 @@
       "type": "stock"
     },
     {
+      "id": "MSFT",
       "ticker": "MSFT",
       "companyName": "Microsoft Corporation",
-      "price": 396.93,
+      "companyValue": "3.13T",
+      "price": 388.41,
       "priceChangePercentage": 0.7769,
       "priceChange": 3.06,
       "image": "https://financialmodelingprep.com/image-stock/MSFT.png",
@@ -226,9 +272,11 @@
       "type": "stock"
     },
     {
+      "id": "MUSA",
       "ticker": "MUSA",
       "companyName": "Murphy USA Inc.",
-      "price": 370.9,
+      "companyValue": "8.58B",
+      "price": 388.34,
       "priceChangePercentage": -0.4375,
       "priceChange": -1.63,
       "image": "https://financialmodelingprep.com/image-stock/MUSA.png",
@@ -241,9 +289,11 @@
       "type": "stock"
     },
     {
+      "id": "NVDA",
       "ticker": "NVDA",
       "companyName": "NVIDIA Corporation",
-      "price": 589.88,
+      "companyValue": "2.20T",
+      "price": 579.67,
       "priceChangePercentage": 3.2938,
       "priceChange": 18.81,
       "image": "https://financialmodelingprep.com/image-stock/NVDA.png",
@@ -256,9 +306,11 @@
       "type": "stock"
     },
     {
+      "id": "ODFL",
       "ticker": "ODFL",
       "companyName": "Old Dominion Freight Line, Inc.",
-      "price": 387.52,
+      "companyValue": "48.13B",
+      "price": 379.65,
       "priceChangePercentage": 1.3389,
       "priceChange": 5.12,
       "image": "https://financialmodelingprep.com/image-stock/ODFL.png",
@@ -271,9 +323,11 @@
       "type": "stock"
     },
     {
+      "id": "QLYS",
       "ticker": "QLYS",
       "companyName": "Qualys, Inc.",
-      "price": 195.925,
+      "companyValue": "6.14B",
+      "price": 189.67,
       "priceChangePercentage": -0.9279,
       "priceChange": -1.835,
       "image": "https://financialmodelingprep.com/image-stock/QLYS.png",
@@ -286,9 +340,11 @@
       "type": "stock"
     },
     {
+      "id": "USB",
       "ticker": "USB",
       "companyName": "U.S. Bancorp",
-      "price": 41.65,
+      "companyValue": "64.79B",
+      "price": 40.69,
       "priceChangePercentage": 3.736,
       "priceChange": 1.5,
       "image": "https://financialmodelingprep.com/image-stock/USB.png",
@@ -301,9 +357,11 @@
       "type": "stock"
     },
     {
+      "id": "V",
       "ticker": "V",
       "companyName": "Visa Inc.",
-      "price": 270.79,
+      "companyValue": "554.39B",
+      "price": 263.4,
       "priceChangePercentage": 0.9883,
       "priceChange": 2.65,
       "image": "https://financialmodelingprep.com/image-stock/V.png",
@@ -316,9 +374,11 @@
       "type": "stock"
     },
     {
+      "id": "WFC",
       "ticker": "WFC",
       "companyName": "Wells Fargo & Company",
-      "price": 47.895,
+      "companyValue": "199.93B",
+      "price": 54.28,
       "priceChangePercentage": 3.1331,
       "priceChange": 1.455,
       "image": "https://financialmodelingprep.com/image-stock/WFC.png",
@@ -347,7 +407,7 @@
         },
         {
           "date": "2024-03-14",
-          "close": 173.0,
+          "close": 173,
           "dividends": 0,
           "high": 174.3099975586,
           "low": 172.0500030518,
@@ -431,7 +491,7 @@
           "dividends": 0,
           "high": 171.4199981689,
           "low": 169.5800018311,
-          "open": 170.0,
+          "open": 170,
           "stockSplits": 0,
           "volume": 57388400
         },
@@ -555,7 +615,8 @@
           "Stock Splits": 0,
           "volume": 101593300
         }
-      ]
+      ],
+      "id": "9303"
     },
     {
       "ticker": "AMZN",
@@ -664,7 +725,7 @@
           "date": "2024-03-27",
           "close": 179.8300018311,
           "dividends": 0,
-          "high": 180.0,
+          "high": 180,
           "low": 177.3099975586,
           "open": 179.8800048828,
           "stockSplits": 0,
@@ -684,7 +745,7 @@
           "date": "2024-04-01",
           "close": 180.9700012207,
           "dividends": 0,
-          "high": 183.0,
+          "high": 183,
           "low": 179.9499969482,
           "open": 180.7899932861,
           "stockSplits": 0,
@@ -712,11 +773,11 @@
         },
         {
           "date": "2024-04-04",
-          "close": 180.0,
+          "close": 180,
           "dividends": 0,
           "high": 185.1000061035,
-          "low": 180.0,
-          "open": 184.0,
+          "low": 180,
+          "open": 184,
           "stockSplits": 0,
           "volume": 41624300
         },
@@ -780,7 +841,8 @@
           "stockSplits": 0,
           "volume": 38554300
         }
-      ]
+      ],
+      "id": "e8d3"
     },
     {
       "ticker": "ANET",
@@ -831,7 +893,7 @@
           "dividends": 0,
           "high": 288.2399902344,
           "low": 272.6099853516,
-          "open": 284.0,
+          "open": 284,
           "stockSplits": 0,
           "volume": 5270700
         },
@@ -851,7 +913,7 @@
           "dividends": 0,
           "high": 305.6300048828,
           "low": 295.0100097656,
-          "open": 299.0,
+          "open": 299,
           "stockSplits": 0,
           "volume": 2924300
         },
@@ -860,8 +922,8 @@
           "close": 306.4200134277,
           "dividends": 0,
           "high": 307.7399902344,
-          "low": 302.0,
-          "open": 303.0,
+          "low": 302,
+          "open": 303,
           "stockSplits": 0,
           "volume": 2379600
         },
@@ -930,7 +992,7 @@
           "close": 298.7900085449,
           "dividends": 0,
           "high": 301.4899902344,
-          "low": 290.0,
+          "low": 290,
           "open": 291.1199951172,
           "stockSplits": 0,
           "volume": 1790400
@@ -950,7 +1012,7 @@
           "close": 297.6000061035,
           "dividends": 0,
           "high": 298.25,
-          "low": 290.0,
+          "low": 290,
           "open": 291.0199890137,
           "stockSplits": 0,
           "volume": 1452100
@@ -981,7 +1043,7 @@
           "dividends": 0,
           "high": 294.5799865723,
           "low": 287.2850036621,
-          "open": 290.0,
+          "open": 290,
           "stockSplits": 0,
           "volume": 1910600
         },
@@ -1005,7 +1067,8 @@
           "stockSplits": 0,
           "volume": 5747300
         }
-      ]
+      ],
+      "id": "2c64"
     },
     {
       "ticker": "CPRT",
@@ -1035,7 +1098,7 @@
           "close": 56.1300010681,
           "dividends": 0,
           "high": 56.75,
-          "low": 56.0,
+          "low": 56,
           "open": 56.4500007629,
           "stockSplits": 0,
           "volume": 10434800
@@ -1212,7 +1275,7 @@
         },
         {
           "date": "2024-04-11",
-          "close": 56.0,
+          "close": 56,
           "dividends": 0,
           "high": 56.2000007629,
           "low": 55.5,
@@ -1230,7 +1293,8 @@
           "stockSplits": 0,
           "volume": 3609500
         }
-      ]
+      ],
+      "id": "60fb"
     },
     {
       "ticker": "CVX",
@@ -1417,7 +1481,7 @@
         },
         {
           "date": "2024-04-09",
-          "close": 162.0,
+          "close": 162,
           "dividends": 0,
           "high": 162.5299987793,
           "low": 160.4600067139,
@@ -1455,7 +1519,8 @@
           "stockSplits": 0,
           "volume": 11058800
         }
-      ]
+      ],
+      "id": "1687"
     },
     {
       "ticker": "GOOGL",
@@ -1466,7 +1531,7 @@
           "dividends": 0,
           "high": 141.0899963379,
           "low": 138.9900054932,
-          "open": 139.0,
+          "open": 139,
           "stockSplits": 0,
           "volume": 23347200
         },
@@ -1516,7 +1581,7 @@
           "dividends": 0,
           "high": 148.8600006104,
           "low": 146.7400054932,
-          "open": 148.0,
+          "open": 148,
           "stockSplits": 0,
           "volume": 21311500
         },
@@ -1680,7 +1745,8 @@
           "stockSplits": 0,
           "volume": 25329200
         }
-      ]
+      ],
+      "id": "e5a5"
     },
     {
       "ticker": "COST",
@@ -1691,7 +1757,7 @@
           "dividends": 0,
           "high": 736.5,
           "low": 726.5800170898,
-          "open": 735.0,
+          "open": 735,
           "stockSplits": 0,
           "volume": 2270300
         },
@@ -1741,7 +1807,7 @@
           "dividends": 0,
           "high": 742.0900268555,
           "low": 729.1300048828,
-          "open": 731.0,
+          "open": 731,
           "stockSplits": 0,
           "volume": 1398700
         },
@@ -1771,7 +1837,7 @@
           "dividends": 0,
           "high": 734.1599731445,
           "low": 726.7399902344,
-          "open": 731.0,
+          "open": 731,
           "stockSplits": 0,
           "volume": 1604700
         },
@@ -1781,7 +1847,7 @@
           "dividends": 0,
           "high": 734.700012207,
           "low": 730.2199707031,
-          "open": 731.0,
+          "open": 731,
           "stockSplits": 0,
           "volume": 1353500
         },
@@ -1791,7 +1857,7 @@
           "dividends": 0,
           "high": 735.8900146484,
           "low": 727.75,
-          "open": 734.0,
+          "open": 734,
           "stockSplits": 0,
           "volume": 1246700
         },
@@ -1819,9 +1885,9 @@
           "date": "2024-04-02",
           "close": 711.299987793,
           "dividends": 0,
-          "high": 720.0,
+          "high": 720,
           "low": 708.4000244141,
-          "open": 720.0,
+          "open": 720,
           "stockSplits": 0,
           "volume": 2326700
         },
@@ -1881,7 +1947,7 @@
           "dividends": 0,
           "high": 723.9799804688,
           "low": 708.950012207,
-          "open": 711.0,
+          "open": 711,
           "stockSplits": 0,
           "volume": 1832000
         },
@@ -1901,11 +1967,12 @@
           "dividends": 0,
           "high": 732.9000244141,
           "low": 726.5399780273,
-          "open": 728.0,
+          "open": 728,
           "stockSplits": 0,
           "volume": 1480600
         }
-      ]
+      ],
+      "id": "24f9"
     },
     {
       "ticker": "BAC",
@@ -1985,7 +2052,7 @@
           "close": 37.0499992371,
           "dividends": 0,
           "high": 37.6100006104,
-          "low": 37.0,
+          "low": 37,
           "open": 37.4099998474,
           "stockSplits": 0,
           "volume": 28955900
@@ -2006,7 +2073,7 @@
           "dividends": 0,
           "high": 37.2400016785,
           "low": 36.7999992371,
-          "open": 37.0,
+          "open": 37,
           "stockSplits": 0,
           "volume": 33673400
         },
@@ -2024,7 +2091,7 @@
           "date": "2024-03-28",
           "close": 37.9199981689,
           "dividends": 0,
-          "high": 38.0,
+          "high": 38,
           "low": 37.4199981689,
           "open": 37.7200012207,
           "stockSplits": 0,
@@ -2130,7 +2197,8 @@
           "stockSplits": 0,
           "volume": 47118300
         }
-      ]
+      ],
+      "id": "4ee4"
     },
     {
       "ticker": "C",
@@ -2230,7 +2298,7 @@
           "close": 61.6599998474,
           "dividends": 0,
           "high": 61.9500007629,
-          "low": 61.0,
+          "low": 61,
           "open": 61.1500015259,
           "stockSplits": 0,
           "volume": 17947400
@@ -2355,51 +2423,84 @@
           "stockSplits": 0,
           "volume": 28556400
         }
-      ]
+      ],
+      "id": "203e"
     }
   ],
   "user": [
     {
-      "id": 123456,
+      "id": "123456",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "s3cur3P@ssw0rd",
       "investment": [
         {
           "ticker": "AAPL",
-          "value": 5000,
-          "dynamic_value_percentage": 5
+          "amount": 5000,
+          "boughtPrice": 191.2314,
+          "shares": 26.14
         },
         {
           "ticker": "COST",
-          "value": 3000,
-          "dynamic_value_percentage": 8
+          "amount": 3000,
+          "boughtPrice": 693.02,
+          "shares": 4.33
         },
         {
           "ticker": "BAC",
-          "value": 2000,
-          "dynamic_value_percentage": 10
+          "amount": 2000,
+          "boughtPrice": 32.635,
+          "shares": 61.25
+        }
+      ],
+      "total": 10000
+    },
+    {
+      "id": "123457",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "s3cur3P@ssw0rd",
+      "investment": [
+        {
+          "ticker": "AAPL",
+          "amount": 5000,
+          "boughtPrice": 191.2314,
+          "shares": 26.14
+        },
+        {
+          "ticker": "COST",
+          "amount": 3000,
+          "boughtPrice": 693.02,
+          "shares": 4.33
+        },
+        {
+          "ticker": "BAC",
+          "amount": 2000,
+          "boughtPrice": 32.635,
+          "shares": 61.25
         }
       ],
       "total": 10000
     }
   ],
-
   "news": [
     {
       "ticker": "AAPL",
       "changedPrice": 5.32,
-      "changedPricePercentage": 2.5
+      "changedPricePercentage": 2.5,
+      "id": "edff"
     },
     {
       "ticker": "GOOGL",
       "changedPrice": -3.21,
-      "changedPricePercentage": -1.8
+      "changedPricePercentage": -1.8,
+      "id": "1192"
     },
     {
       "ticker": "MSFT",
       "changedPrice": 1.45,
-      "changedPricePercentage": 1.2
+      "changedPricePercentage": 1.2,
+      "id": "4549"
     }
   ]
 }

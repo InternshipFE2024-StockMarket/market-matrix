@@ -11,7 +11,6 @@ export const BottomTabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
         tabBarStyle: {
           backgroundColor: Colors.navigationBackground,
           borderTopWidth: 0,
@@ -24,6 +23,7 @@ export const BottomTabNavigation = () => {
         name="Home"
         component={HomeScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused, color}) => (
             <NavigationIcon
               focused={focused}
@@ -38,6 +38,7 @@ export const BottomTabNavigation = () => {
         name="Portfolio"
         component={PortfolioScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused, color}) => (
             <NavigationIcon
               focused={focused}
@@ -52,6 +53,7 @@ export const BottomTabNavigation = () => {
         name="Discover"
         component={DiscoverScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused, color}) => (
             <NavigationIcon
               focused={focused}
