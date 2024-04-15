@@ -6,11 +6,15 @@ import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropd
 import {Story} from '../components/HomeScreenComponents/Story';
 import axios from 'axios';
 import {Change} from '../constants/Interfaces';
+import {useStock} from '../contexts/stocksContext';
 
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
   const [initialValue, setInitialValue] = useState(18000);
   const [value, setValue] = useState(18000);
+  const {stocks} = useStock();
+
+  // console.log('Stocks' + stocks);
 
   const [changes, setChanges] = useState<Change[]>([]);
 
@@ -63,7 +67,7 @@ const HomeScreen = () => {
       maxDifferences[change.ticker] = maxDifference.toFixed(2);
     }
   });
-  console.log(maxDifferences);
+  // console.log(maxDifferences);
 
   const entries = Object.entries(maxDifferences);
 
@@ -78,18 +82,28 @@ const HomeScreen = () => {
   interface Story {
     company: string;
     change: number | string;
-    logo?: string;
+    logo: {
+      uri: string;
+    };
   }
 
   let stories: Story[] = [];
   firstEntries.forEach(item => {
     let company = item[0];
     let change = item[1];
-    let obj = {company: company, change: change};
-    stories.push(obj);
+    // Find the stock object with the matching ticker
+    const stock = stocks.find(stock => stock.ticker === company);
+    if (stock) {
+      let obj = {
+        company: company,
+        change: change,
+        logo: {uri: stock.image}, // Use the image URL from the stock object
+      };
+      stories.push(obj);
+    }
   });
 
-  console.log(stories);
+  // console.log(stories);
 
   // stories.map(story => console.log(story[0]));
 
@@ -117,7 +131,7 @@ const HomeScreen = () => {
           {stories.map((story, index) => (
             <Story
               key={index}
-              logo={require('../assets/icons/icon-apple.png')}
+              logo={story.logo}
               title={story.company}
               value={story.change as number}
               percentage={0.19}

@@ -3,7 +3,7 @@ import {Colors} from '../../constants/Colors';
 import LinearGradient from 'react-native-linear-gradient';
 
 interface StoryProps {
-  logo: ImageSourcePropType;
+  logo?: ImageSourcePropType;
   title: string;
   value: number;
   percentage: number;
