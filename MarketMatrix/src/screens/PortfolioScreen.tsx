@@ -2,8 +2,8 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
-import DynamicTable from '../components/UI/PortfolioScreen/DynamicTable';
-
+import DynamicTable from '../components/PortfolioScreen/DynamicTable';
+import useFetchUserInvetments from '../utils/http/useFetchUserInvetments';
 export interface TableData {
   ticker: string;
   amount: number;
@@ -49,6 +49,10 @@ export const testData: TableData[] = [
 ];
 
 const PortfolioScreen = () => {
+  const userId = 123456;
+  const userInv = useFetchUserInvetments(userId);
+  console.log(userInv);
+
   return (
     <GradientBackground>
       <View style={styles.rootContainer}>

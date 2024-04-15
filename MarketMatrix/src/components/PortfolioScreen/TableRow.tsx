@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {TableData} from '../../../screens/PortfolioScreen';
+import {TableData} from '../../screens/PortfolioScreen';
 import LinearGradient from 'react-native-linear-gradient';
-import {Colors} from '../../../constants/Colors';
+import {Colors} from '../../constants/Colors';
 import AssetCell from './AssetCell';
 
 const TableRow = ({ticker, amount, plValue, value, price, logo}: TableData) => {

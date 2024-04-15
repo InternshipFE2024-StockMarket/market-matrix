@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View, ViewStyle} from 'react-native';
-import {Colors} from '../../../constants/Colors';
+import {Colors} from '../../constants/Colors';
 
 interface AssetCellProps {
   logoSource: any;

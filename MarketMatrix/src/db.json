@@ -2513,17 +2513,47 @@
         {
           "ticker": "AAPL",
           "value": 5000,
-          "dynamic_value_percentage": 5
+          "boughtPrice": 4500,
+          "shares": 1
         },
         {
           "ticker": "COST",
           "value": 3000,
-          "dynamic_value_percentage": 8
+          "boughtPrice": 4500,
+          "shares": 8
         },
         {
           "ticker": "BAC",
           "value": 2000,
-          "dynamic_value_percentage": 10
+          "boughtPrice": 4500,
+          "shares": 10
+        }
+      ],
+      "total": 10000
+    },
+    {
+      "id": 123457,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "s3cur3P@ssw0rd",
+      "investment": [
+        {
+          "ticker": "AAPL",
+          "amount": 5000,
+          "boughtPrice": 4500,
+          "shares": 1
+        },
+        {
+          "ticker": "COST",
+          "amount": 3000,
+          "boughtPrice": 4500,
+          "shares": 8
+        },
+        {
+          "ticker": "BAC",
+          "amount": 2000,
+          "boughtPrice": 4500,
+          "shares": 10
         }
       ],
       "total": 10000

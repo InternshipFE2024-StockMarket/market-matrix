@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
-import {TableData} from '../../../screens/PortfolioScreen';
-import {Colors} from '../../../constants/Colors';
+import {TableData} from '../../screens/PortfolioScreen';
+import {Colors} from '../../constants/Colors';
 import TableRow from './TableRow';
 
 interface DynamicTableProps {
