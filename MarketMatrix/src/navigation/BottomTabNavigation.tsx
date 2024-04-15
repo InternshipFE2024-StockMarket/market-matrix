@@ -5,6 +5,8 @@ import PortfolioScreen from '../screens/PortfolioScreen';
 import {Colors} from '../constants/Colors';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
 import DiscoverTabNavigation from './DiscoverTabNavigation';
+import {View} from 'react-native';
+import SearchInput from '../components/DiscoverScreen/SearchInput';
 
 const Tab = createBottomTabNavigator();
 
@@ -54,7 +56,6 @@ export const BottomTabNavigation = () => {
         name="Discover"
         component={DiscoverTabNavigation}
         options={{
-          headerShown: false,
           tabBarIcon: ({focused, color}) => (
             <NavigationIcon
               focused={focused}
@@ -62,6 +63,11 @@ export const BottomTabNavigation = () => {
               size={24}
               source={require('../assets/icons/icon-search.png')}
             />
+          ),
+          header: () => (
+            <View>
+              <SearchInput />
+            </View>
           ),
         }}
       />
