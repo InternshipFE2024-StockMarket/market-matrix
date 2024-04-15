@@ -1,15 +1,15 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 import {Investment} from '../../constants/Interfaces';
-import {StockData} from '../../constants/Interfaces';
+import {UserStockData} from '../../constants/Interfaces';
 
 const useFetchUserStocks = (userInvestments: Investment[]) => {
-  const [stocksData, setStocksData] = useState<StockData[]>([]);
+  const [stocksData, setStocksData] = useState<UserStockData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchedStocksData: StockData[] = [];
+        const fetchedStocksData: UserStockData[] = [];
 
         for (const userInvestment of userInvestments) {
           const response = await axios.get(

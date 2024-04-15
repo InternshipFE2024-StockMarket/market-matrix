@@ -14,7 +14,7 @@ export interface Investment {
   shares: number;
 }
 
-export interface StockData {
+export interface UserStockData {
   image: string;
   price: number;
   ticker: string;

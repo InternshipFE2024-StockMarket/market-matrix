@@ -35,6 +35,7 @@ export default PortfolioScreen;
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
+    marginHorizontal: 5,
   },
   header: {
     alignItems: 'center',
