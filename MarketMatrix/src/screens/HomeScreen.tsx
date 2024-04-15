@@ -8,7 +8,7 @@ import axios from 'axios';
 import {Change} from '../constants/Interfaces';
 
 const HomeScreen = () => {
-  const [currency, setCurrency] = useState('EUR');
+  const [currency, setCurrency] = useState('USD');
   const [initialValue, setInitialValue] = useState(18000);
   const [value, setValue] = useState(18000);
 
@@ -20,9 +20,8 @@ const HomeScreen = () => {
   });
 
   useEffect(() => {
-    if (currency === 'USD') {
-      setValue(initialValue * 1.06);
-    } else if (currency === 'EUR') {
+    if (currency === 'EUR') {
+    } else if (currency === 'USD') {
       setValue(initialValue);
     }
   }, [currency, initialValue]);
@@ -46,9 +45,10 @@ const HomeScreen = () => {
     let maxDifference = -Infinity;
     let minDifference = Infinity;
 
-    change.values.forEach(value => {
-      const difference = value.close - value.open;
+    const last7DaysValues = change.values.slice(-7);
 
+    last7DaysValues.forEach(value => {
+      const difference = value.close - value.open;
       if (difference > maxDifference) {
         maxDifference = difference;
       }
@@ -63,8 +63,35 @@ const HomeScreen = () => {
       maxDifferences[change.ticker] = maxDifference.toFixed(2);
     }
   });
-
   console.log(maxDifferences);
+
+  const entries = Object.entries(maxDifferences);
+
+  entries.sort(
+    (a, b) =>
+      Math.abs(parseFloat(b[1] as string)) -
+      Math.abs(parseFloat(a[1] as string)),
+  );
+
+  const firstEntries = entries.slice(0, 5);
+
+  interface Story {
+    company: string;
+    change: number | string;
+    logo?: string;
+  }
+
+  let stories: Story[] = [];
+  firstEntries.forEach(item => {
+    let company = item[0];
+    let change = item[1];
+    let obj = {company: company, change: change};
+    stories.push(obj);
+  });
+
+  console.log(stories);
+
+  // stories.map(story => console.log(story[0]));
 
   return (
     <GradientBackground>
@@ -81,47 +108,22 @@ const HomeScreen = () => {
             {/* create a component to change dinamically the color and add arrow icon  */}
             <Text style={styles.valueDifference}>34.10 (0.19%)</Text>
           </View>
-          <CurrencyDropdown selected={currency} setSelected={setCurrency} />
+          <View style={styles.dropdown}>
+            <CurrencyDropdown selected={currency} setSelected={setCurrency} />
+          </View>
         </View>
 
         <View style={styles.storiesContaner}>
-          <Story
-            logo={require('../assets/icons/icon-apple.png')}
-            title="APPLE"
-            value={34.1}
-            percentage={0.19}
-            color="green"
-          />
-          <Story
-            logo={require('../assets/icons/icon-apple.png')}
-            title="APPL"
-            value={34.1}
-            percentage={0.19}
-            color="red"
-          />
-          <Story
-            logo={require('../assets/icons/icon-apple.png')}
-            title="APPL"
-            value={34.1}
-            percentage={0.19}
-            color="red"
-          />
-          <Story
-            logo={require('../assets/icons/icon-apple.png')}
-            title="APPL"
-            value={34.1}
-            percentage={0.19}
-            color="green"
-          />
-          <Story
-            logo={require('../assets/icons/icon-apple.png')}
-            title="APPL"
-            value={34.1}
-            percentage={0.19}
-            color="green"
-          />
-          {/* <Story />
-          <Story /> */}
+          {stories.map((story, index) => (
+            <Story
+              key={index}
+              logo={require('../assets/icons/icon-apple.png')}
+              title={story.company}
+              value={story.change as number}
+              percentage={0.19}
+              color={(story.change as number) >= 0 ? 'green' : 'pink'}
+            />
+          ))}
         </View>
         <Text style={styles.text}>Chart</Text>
       </View>
@@ -144,6 +146,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 40,
+    position: 'relative',
   },
   text: {
     color: Colors.text500,
@@ -170,5 +173,9 @@ const styles = StyleSheet.create({
     gap: 8,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  dropdown: {
+    position: 'absolute',
+    right: 0,
   },
 });
