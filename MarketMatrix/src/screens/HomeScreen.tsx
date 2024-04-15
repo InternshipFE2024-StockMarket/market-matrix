@@ -23,7 +23,9 @@ const HomeScreen = () => {
 
   const {stocks} = useStock();
 
-  let portfolioValue = Number(getTotalPortofolioValue());
+  let portfolioValue = Number(getTotalPortofolioValue()?.total);
+  let totalDifference = Number(getTotalPortofolioValue()?.difference);
+  let percentage = ((totalDifference * 100) / portfolioValue).toFixed(2);
 
   const currencyFormat = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -109,7 +111,13 @@ const HomeScreen = () => {
                   : currencyFormat.format(Number(portfolioValue * 1.06))}
               </Text>
             </View>
-            <Text style={styles.valueDifference}>34.10 (0.19%)</Text>
+            <Text
+              style={{
+                fontSize: 20,
+                color: totalDifference > 0 ? Colors.green : Colors.pink,
+              }}>
+              {totalDifference.toFixed(2)} ({percentage}%)
+            </Text>
           </View>
           <View style={styles.dropdown}>
             <CurrencyDropdown selected={currency} setSelected={setCurrency} />
@@ -170,10 +178,6 @@ const styles = StyleSheet.create({
   value: {
     color: Colors.text500,
     fontSize: 44,
-  },
-  valueDifference: {
-    color: Colors.pink,
-    fontSize: 20,
   },
   storiesContaner: {
     flexDirection: 'row',

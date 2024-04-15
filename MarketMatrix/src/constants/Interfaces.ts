@@ -2,6 +2,7 @@ export interface Stock {
   ticker: string;
   companyName: string;
   companyValue: string;
+  openPrice: number;
   price: number;
   priceChangePercentage: number;
   priceChange: number;
