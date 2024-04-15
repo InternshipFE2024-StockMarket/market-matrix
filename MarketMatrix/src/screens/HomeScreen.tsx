@@ -122,7 +122,11 @@ const HomeScreen = () => {
               key={index}
               logo={story.logo}
               title={story.company}
-              value={story.change as number}
+              value={
+                currency === 'USD'
+                  ? (story.change as number)
+                  : Number((Number(story.change) * 1.06).toFixed(2))
+              }
               percentage={0.19}
               color={(story.change as number) >= 0 ? 'green' : 'pink'}
             />
