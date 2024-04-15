@@ -13,8 +13,6 @@ export const ChartConfiguration = ({
   chartType,
   seriesData,
 }: ChartConfigurationProp) => {
-  const isLineChart = chartType === 'line';
-
   const chartConfig = {
     chart: {
       type: chartType,
@@ -51,7 +49,14 @@ export const ChartConfiguration = ({
     },
     series: [
       {
-        name: isLineChart ? 'Price' : 'Price Movements',
+        name:
+          chartType === 'line'
+            ? `Price`
+            : chartType === 'candlestick'
+            ? `Price Movement`
+            : chartType === 'bar'
+            ? `Bar series name`
+            : 'Chart type not defined',
         data: seriesData,
         tooltip: {
           valueDecimals: 2,
