@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {Button, Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import GradientBackground from '../components/UI/GradientBackground';
 import {Colors} from '../constants/Colors';
 import {Stock} from '../constants/Interfaces';
@@ -11,28 +11,24 @@ const nasdaq = 'NASDAQ:';
 const ceo = 'CEO:';
 const industry = 'Industry:';
 const sector = 'Sector:';
-const market = 'Market capiotalization';
+const market = 'Market capitalization';
 
 export const CompanyScreen = ({navigation}: any) => {
   const [selectedStock, setSelectedStock] = useState<Stock | undefined>();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const ticker = 'AAPL';
 
   useEffect(() => {
-    setLoading(true);
-    (async () => {
-      try {
-        const stock = await fetchStockByTicker(ticker);
-        setSelectedStock(stock);
-      } catch (error: any) {
-        console.error('Failed to fetch stock:', error);
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    })();
+    getStockByTicker();
   }, [ticker]);
+
+  const getStockByTicker = async () => {
+    try {
+      const stock = await fetchStockByTicker(ticker);
+      setSelectedStock(stock);
+    } catch (error: any) {
+      console.error('Failed to fetch stock:', error);
+    }
+  };
 
   return (
     <GradientBackground>
@@ -105,7 +101,7 @@ const styles = StyleSheet.create({
   rootContainer: {
     marginHorizontal: '5%',
     marginTop: '5%',
-    backgroundColor: 'rgba(177, 188, 222, 0.1)',
+    backgroundColor: Colors.companyScreenBackground,
     height: '90%',
     borderRadius: 15,
   },
