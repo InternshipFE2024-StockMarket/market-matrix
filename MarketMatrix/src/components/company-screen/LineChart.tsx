@@ -26,7 +26,9 @@ export const LineChart = ({route}: any) => {
               selStock.values.map((stock: {date: string}) => stock.date),
             );
             setCloseValues(
-              selStock.values.map((stock: {close: number}) => stock.close),
+              selStock.values.map(
+                (stock: {close: number}) => Math.round(stock.close * 100) / 100,
+              ),
             );
           }
         } catch (error: any) {
