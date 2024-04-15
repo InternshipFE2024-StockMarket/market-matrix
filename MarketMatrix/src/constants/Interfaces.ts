@@ -7,13 +7,23 @@ export interface Stock {
   priceChangePercentage: number;
   priceChange: number;
   image: string;
-  exchange: string;
   ceo: string;
   city: string;
   state: string;
   industry: string;
   sector: string;
   type: string;
+}
+
+export interface StockChanges {
+  ticker: string;
+  changes: [
+    date: string,
+    close: number,
+    high: number,
+    low: number,
+    open: number,
+  ];
 }
 export interface UserInvestmentsDetails {
   ticker: string;

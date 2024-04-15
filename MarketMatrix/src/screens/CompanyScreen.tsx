@@ -74,8 +74,8 @@ export const CompanyScreen = ({navigation}: any) => {
                 <View style={styles.priceColumn}>
                   <Text style={styles.priceValue}>${selectedStock.price}</Text>
                   <Text style={styles.fluctuationText}>
-                    {selectedStock.priceChange} (
-                    {selectedStock.priceChangePercentage}%)
+                    {selectedStock.priceChange.toFixed(2)} (
+                    {selectedStock.priceChangePercentage.toFixed(2)}%)
                   </Text>
                 </View>
               </View>
