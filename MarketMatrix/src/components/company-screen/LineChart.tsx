@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {WebView} from 'react-native-webview';
 import axios from 'axios';
-import {Stock, StockChanges} from '../../constants/Interfaces';
+import {StockChanges} from '../../constants/Interfaces';
+import {ChartConfiguration} from '../chart/ChartConfiguration';
 
 export const LineChart = ({route}: any) => {
   const [selectedStock, setSelectedStock] = useState<
@@ -38,77 +37,11 @@ export const LineChart = ({route}: any) => {
     }
   }, [ticker]);
 
-  const chartConfig = {
-    chart: {
-      type: 'line',
-    },
-    title: {
-      text: `Recent Close Prices for ${ticker}`,
-    },
-    xAxis: {
-      categories: dates,
-      title: {
-        text: 'Date',
-      },
-    },
-    yAxis: {
-      title: {
-        text: 'Close price',
-      },
-    },
-    plotOptions: {
-      line: {
-        dataLabels: {
-          enabled: true,
-        },
-      },
-    },
-    series: [
-      {
-        name: 'Prices',
-        data: closeValues,
-      },
-    ],
-  };
-
-  const injectedData = `
-    document.addEventListener('DOMContentLoaded', function () {
-      const chart = Highcharts.chart('container', ${JSON.stringify(
-        chartConfig,
-      )});
-    });
-  `;
-
-  const htmlContent = `
-    <html>
-      <head>
-      <script src="https://code.highcharts.com/stock/highstock.js"></script>
-      <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-      <script src="https://code.highcharts.com/stock/modules/candlestick.js"></script>
-      </head>
-      <body>
-        <div id="container" style="height: 100%; width: 100%;"></div>
-        <script>
-          ${injectedData}
-        </script>
-      </body>
-    </html>
-  `;
-
   return (
-    <View style={styles.container}>
-      <WebView
-        originWhitelist={['*']}
-        source={{html: htmlContent}}
-        style={{flex: 1}}
-      />
-    </View>
+    <ChartConfiguration
+      ticker={ticker}
+      seriesData={closeValues}
+      xAxisData={dates}
+    />
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
