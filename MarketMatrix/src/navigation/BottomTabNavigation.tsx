@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react/self-closing-comp */
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import PortfolioScreen from '../screens/PortfolioScreen';
@@ -5,6 +7,7 @@ import {Colors} from '../constants/Colors';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
 import DiscoverTabNavigation from './DiscoverTabNavigation';
 import SearchHeader from '../components/DiscoverScreen/SearchHeader';
+import React from 'react';
 
 const Tab = createBottomTabNavigator();
 

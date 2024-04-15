@@ -20,13 +20,12 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background500,
   },
   searchContainer: {
-    marginTop: '5%',
     flexDirection: 'row',
     alignItems: 'center',
   },
   input: {
     height: 45,
-    paddingHorizontal: 30,
+    paddingHorizontal: 10,
     fontSize: 16,
   },
 });
