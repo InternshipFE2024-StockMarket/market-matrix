@@ -1,26 +1,31 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
 import {Button, Image, StyleSheet, Text, View} from 'react-native';
 import GradientBackground from '../components/UI/GradientBackground';
 import {Colors} from '../constants/Colors';
 import {Stock} from '../constants/Interfaces';
 import {CompanyTabNavigation} from '../navigation/CompanyTabNavigation';
+import {fetchStockByTicker} from '../utils/http/fetchStockbyTicker';
 
 export const CompanyScreen = ({navigation}: any) => {
   const [selectedStock, setSelectedStock] = useState<Stock | undefined>();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const ticker = 'AAPL';
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/stocks/${ticker}`)
-      .then(response => {
-        const selStock = response.data;
-        setSelectedStock(selStock);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+    setLoading(true);
+    (async () => {
+      try {
+        const stock = await fetchStockByTicker(ticker);
+        setSelectedStock(stock);
+      } catch (error: any) {
+        console.error('Failed to fetch stock:', error);
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [ticker]);
 
   console.log(selectedStock);
 

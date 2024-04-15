@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {StockChanges} from '../../constants/Interfaces';
 import {ChartConfiguration} from '../chart/ChartConfiguration';
+import {fetchChangesForStock} from '../../utils/http/fetchChangesForStock';
 
 export const LineChart = ({route}: any) => {
   const [selectedStock, setSelectedStock] = useState<
@@ -9,16 +10,16 @@ export const LineChart = ({route}: any) => {
   >();
   const [dates, setDates] = useState<string[]>([]);
   const [closeValues, setCloseValues] = useState<number[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const ticker = route.params?.userParams?.ticker;
 
   useEffect(() => {
     if (ticker) {
-      axios
-        .get('http://localhost:3000/changes')
-        .then(response => {
-          const selStock = response.data.find(
-            (stock: StockChanges) => stock.ticker === ticker,
-          );
+      setLoading(true);
+      (async () => {
+        try {
+          const selStock = await fetchChangesForStock(ticker);
           setSelectedStock(selStock);
           if (selStock) {
             setDates(
@@ -28,10 +29,13 @@ export const LineChart = ({route}: any) => {
               selStock.values.map((stock: {close: number}) => stock.close),
             );
           }
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
+        } catch (error: any) {
+          console.error('Failed to fetch values for stock:', error);
+          setError(error);
+        } finally {
+          setLoading(false);
+        }
+      })();
     } else {
       console.log('Ticker is undefined.');
     }
