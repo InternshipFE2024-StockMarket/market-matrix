@@ -9,6 +9,7 @@ export const Colors = {
   cardBackground500: 'rgba(47, 57, 90, 0.4)',
   cardBackground700: 'rgba(21, 26, 46, 0.9)',
   navigationBackground: '#353c58',
+  companyScreenBackground: 'rgba(177, 188, 222, 0.1)',
   border: 'rga((236,239,248, 0.5)',
   selectedIcon: '#617ae0',
 };

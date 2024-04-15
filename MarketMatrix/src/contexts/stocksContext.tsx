@@ -21,7 +21,6 @@ export const StockProvider = ({children}: StockProviderProps) => {
   useEffect(() => {
     const updateStocksData = async () => {
       const stocksData = await fetchStocks();
-      console.log({stocksData});
 
       const updatedStocks = await Promise.all(
         stocksData.map(async (stock: Stock) => {
