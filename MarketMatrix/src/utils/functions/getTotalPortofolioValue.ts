@@ -22,7 +22,6 @@ export const getTotalPortofolioValue = () => {
     fetchData();
   }, []);
 
-  //   console.log(user);
   let total = 0;
   if (user.length > 0) {
     user[0].investment.map(investition => {
@@ -34,7 +33,6 @@ export const getTotalPortofolioValue = () => {
     });
   }
   if (total !== 0) {
-    console.log('Total' + total);
     return Number(total);
   }
 };
