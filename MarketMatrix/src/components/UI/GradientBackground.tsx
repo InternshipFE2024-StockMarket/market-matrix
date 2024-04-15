@@ -21,7 +21,7 @@ const GradientBackground = ({children}: GradientBackgroundProps) => {
       start={{x: 0.5, y: 0}}
       end={{x: 1, y: 1}}
       style={styles.container}>
-      <SafeAreaView>{children}</SafeAreaView>
+      <SafeAreaView style={styles.container}>{children}</SafeAreaView>
     </LinearGradient>
   );
 };
