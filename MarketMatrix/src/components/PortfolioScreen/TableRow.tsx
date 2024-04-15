@@ -1,11 +1,18 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {TableData} from '../../screens/PortfolioScreen';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/Colors';
 import AssetCell from './AssetCell';
+import {UserInvestmentsDetails} from '../../constants/Interfaces';
 
-const TableRow = ({ticker, amount, plValue, value, price, logo}: TableData) => {
+const TableRow = ({
+  ticker,
+  amount,
+  plValue,
+  dynamicValue,
+  currentPrice,
+  image,
+}: UserInvestmentsDetails) => {
   return (
     <LinearGradient
       colors={[Colors.cardBackground500, Colors.cardBackground700]}
@@ -13,8 +20,8 @@ const TableRow = ({ticker, amount, plValue, value, price, logo}: TableData) => {
       <View style={styles.row}>
         <AssetCell
           ticker={ticker}
-          price={price}
-          logoSource={logo}
+          price={currentPrice}
+          logoSource={image}
           style={styles.cell}
         />
         <Text style={[styles.cell, styles.text]}>{amount}</Text>
@@ -25,7 +32,7 @@ const TableRow = ({ticker, amount, plValue, value, price, logo}: TableData) => {
           ]}>
           {plValue}
         </Text>
-        <Text style={[styles.cell, styles.text]}>{value}</Text>
+        <Text style={[styles.cell, styles.text]}>{dynamicValue}</Text>
       </View>
     </LinearGradient>
   );

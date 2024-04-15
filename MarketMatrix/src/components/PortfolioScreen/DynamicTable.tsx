@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
-import {TableData} from '../../screens/PortfolioScreen';
 import {Colors} from '../../constants/Colors';
 import TableRow from './TableRow';
+import {UserInvestmentsDetails} from '../../constants/Interfaces';
 
 interface DynamicTableProps {
-  data: TableData[];
+  data: UserInvestmentsDetails[];
 }
 
 const DynamicTable = ({data}: DynamicTableProps) => {
@@ -27,9 +27,9 @@ const DynamicTable = ({data}: DynamicTableProps) => {
             ticker={item.ticker}
             amount={item.amount}
             plValue={item.plValue}
-            value={item.value}
-            price={item.price}
-            logo={item.logo}
+            dynamicValue={item.dynamicValue}
+            currentPrice={item.currentPrice}
+            image={item.image}
           />
         )}
       />
