@@ -20,3 +20,20 @@ export interface UserStockData {
   ticker: string;
   type: string;
 }
+
+export interface Stock {
+  id: string;
+  ticker: string;
+  companyName: string;
+  price: number;
+  priceChangePercentage: number;
+  priceChange: number;
+  image: string;
+  exchange: string;
+  ceo: string;
+  city: string;
+  state: string;
+  industry: string;
+  sector: string;
+  type: string;
+}
