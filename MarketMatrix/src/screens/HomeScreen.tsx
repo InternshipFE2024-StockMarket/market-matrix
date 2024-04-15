@@ -5,13 +5,21 @@ import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 import {Story} from '../components/HomeScreenComponents/Story';
 import axios from 'axios';
-import {Change, UserData} from '../constants/Interfaces';
+import {StockChanges, UserData} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 
+interface Story {
+  company: string;
+  change: number | string;
+  logo: {
+    uri: string;
+  };
+}
+
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
-  const [changes, setChanges] = useState<Change[]>([]);
+  const [changes, setChanges] = useState<StockChanges[]>([]);
 
   const {stocks} = useStock();
 
@@ -37,7 +45,7 @@ const HomeScreen = () => {
 
   const maxDifferences: {[ticker: string]: number | string} = {};
 
-  changes.forEach(change => {
+  changes?.forEach(change => {
     let maxDifference = -Infinity;
     let minDifference = Infinity;
 
@@ -69,14 +77,6 @@ const HomeScreen = () => {
   );
 
   const firstEntries = entries.slice(0, 5);
-
-  interface Story {
-    company: string;
-    change: number | string;
-    logo: {
-      uri: string;
-    };
-  }
 
   let stories: Story[] = [];
   firstEntries.forEach(item => {

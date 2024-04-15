@@ -5,7 +5,6 @@ import {useStock} from '../../contexts/stocksContext';
 import {getDynamicValue} from './getDynamicValue';
 
 export const getTotalPortofolioValue = () => {
-  const [totalValue, setTotalValue] = useState(0);
   const [user, setUser] = useState<UserData[]>([]);
   const {stocks} = useStock();
 
@@ -23,7 +22,7 @@ export const getTotalPortofolioValue = () => {
   }, []);
 
   let total = 0;
-  if (user.length > 0) {
+  if (user?.length > 0) {
     user[0].investment.map(investition => {
       const stock = stocks.find(stock => stock.ticker === investition.ticker);
       if (stock) {
