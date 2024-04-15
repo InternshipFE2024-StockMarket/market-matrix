@@ -12,11 +12,9 @@ export const CompanyScreen = ({navigation}: any) => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/stocks')
+      .get(`http://localhost:3000/stocks/${ticker}`)
       .then(response => {
-        const selStock = response.data.find(
-          (stock: Stock) => stock.ticker === ticker,
-        );
+        const selStock = response.data;
         setSelectedStock(selStock);
       })
       .catch(error => {
@@ -80,7 +78,7 @@ export const CompanyScreen = ({navigation}: any) => {
                 </View>
               </View>
             </View>
-            <CompanyTabNavigation />
+            <CompanyTabNavigation ticker={ticker} />
           </View>
           <Button title="Go back" onPress={() => navigation.goBack()} />
         </View>

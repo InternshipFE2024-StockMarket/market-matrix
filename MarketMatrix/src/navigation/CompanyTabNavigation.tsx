@@ -5,7 +5,11 @@ import {CompanyNews} from '../components/company-screen/CompanyNews';
 
 const Tab = createMaterialTopTabNavigator();
 
-export const CompanyTabNavigation = () => {
+interface CompanyNavigationProp {
+  ticker: string;
+}
+
+export const CompanyTabNavigation = ({ticker}: CompanyNavigationProp) => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -23,6 +27,7 @@ export const CompanyTabNavigation = () => {
         name="LineChart"
         component={LineChart}
         options={{title: 'Line Chart'}}
+        initialParams={{userParams: {ticker}}}
       />
       <Tab.Screen
         name="CandlestickChart"

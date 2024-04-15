@@ -2,38 +2,58 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {WebView} from 'react-native-webview';
 import axios from 'axios';
-import {Stock} from '../../constants/Interfaces';
+import {Stock, StockChanges} from '../../constants/Interfaces';
 
-export const LineChart = () => {
+export const LineChart = ({route}: any) => {
+  const [selectedStock, setSelectedStock] = useState<
+    StockChanges | undefined
+  >();
+  const [dates, setDates] = useState<string[]>([]);
+  const [closeValues, setCloseValues] = useState<number[]>([]);
+  const ticker = route.params?.userParams?.ticker;
+
+  useEffect(() => {
+    if (ticker) {
+      axios
+        .get('http://localhost:3000/changes')
+        .then(response => {
+          const selStock = response.data.find(
+            (stock: StockChanges) => stock.ticker === ticker,
+          );
+          setSelectedStock(selStock);
+          if (selStock) {
+            setDates(
+              selStock.values.map((stock: {date: string}) => stock.date),
+            );
+            setCloseValues(
+              selStock.values.map((stock: {close: number}) => stock.close),
+            );
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    } else {
+      console.log('Ticker is undefined.');
+    }
+  }, [ticker]);
+
   const chartConfig = {
     chart: {
       type: 'line',
     },
     title: {
-      text: 'Monthly Average Temperature',
-    },
-    subtitle: {
-      text: 'Source: WorldClimate.com',
+      text: `Recent Close Prices for ${ticker}`,
     },
     xAxis: {
-      categories: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-      ],
+      categories: dates,
+      title: {
+        text: 'Date',
+      },
     },
     yAxis: {
       title: {
-        text: 'Temperature (°C)',
+        text: 'Close price',
       },
     },
     plotOptions: {
@@ -41,15 +61,12 @@ export const LineChart = () => {
         dataLabels: {
           enabled: true,
         },
-        enableMouseTracking: false,
       },
     },
     series: [
       {
-        name: 'London',
-        data: [
-          3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8,
-        ],
+        name: 'Prices',
+        data: closeValues,
       },
     ],
   };
@@ -67,7 +84,7 @@ export const LineChart = () => {
       <head>
       <script src="https://code.highcharts.com/stock/highstock.js"></script>
       <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-      
+      <script src="https://code.highcharts.com/stock/modules/candlestick.js"></script>
       </head>
       <body>
         <div id="container" style="height: 100%; width: 100%;"></div>

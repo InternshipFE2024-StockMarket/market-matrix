@@ -15,16 +15,19 @@ export interface Stock {
   type: string;
 }
 
+export interface StockValues {
+  date: string;
+  close: number;
+  high: number;
+  low: number;
+  open: number;
+}
+
 export interface StockChanges {
   ticker: string;
-  changes: [
-    date: string,
-    close: number,
-    high: number,
-    low: number,
-    open: number,
-  ];
+  values: StockValues[];
 }
+
 export interface UserInvestmentsDetails {
   ticker: string;
   image: string;
