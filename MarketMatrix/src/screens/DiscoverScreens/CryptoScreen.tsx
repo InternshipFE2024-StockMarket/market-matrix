@@ -1,22 +1,29 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {FlatList, ListRenderItemInfo} from 'react-native';
 import React from 'react';
 import GradientBackground from '../../components/UI/GradientBackground';
-import {Colors} from '../../constants/Colors';
+import {Stock} from '../../constants/Interfaces';
+import {useStock} from '../../contexts/stocksContext';
+import AssetItem from '../../components/DiscoverScreen/AssetItem';
 
 const CryptoScreen = () => {
+  const stockContext = useStock();
+  const crypto = stockContext
+    ? stockContext.stocks.filter((asset: Stock) => asset.type === 'crypto')
+    : [];
+
+  const renderCrypto = (itemData: ListRenderItemInfo<Stock>) => {
+    return <AssetItem stock={itemData.item} />;
+  };
+
   return (
     <GradientBackground>
-      <View>
-        <Text style={styles.text}>CryptoScreen</Text>
-      </View>
+      <FlatList
+        data={crypto}
+        keyExtractor={item => item.id}
+        renderItem={renderCrypto}
+      />
     </GradientBackground>
   );
 };
 
 export default CryptoScreen;
-
-const styles = StyleSheet.create({
-  text: {
-    color: Colors.text500,
-  },
-});

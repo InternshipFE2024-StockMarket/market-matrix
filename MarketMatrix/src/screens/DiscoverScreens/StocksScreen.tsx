@@ -1,22 +1,28 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {FlatList, ListRenderItemInfo} from 'react-native';
 import React from 'react';
 import GradientBackground from '../../components/UI/GradientBackground';
-import {Colors} from '../../constants/Colors';
+import AssetItem from '../../components/DiscoverScreen/AssetItem';
+import {Stock} from '../../constants/Interfaces';
+import {useStock} from '../../contexts/stocksContext';
 
 const StocksScreen = () => {
+  const stockContext = useStock();
+  const stocksData = stockContext
+    ? stockContext.stocks.filter((asset: Stock) => asset.type === 'stock')
+    : [];
+
+  const renderStock = (itemData: ListRenderItemInfo<Stock>) => {
+    return <AssetItem stock={itemData.item} />;
+  };
   return (
     <GradientBackground>
-      <View>
-        <Text style={styles.text}>StocksScreen</Text>
-      </View>
+      <FlatList
+        data={stocksData}
+        keyExtractor={item => item.id}
+        renderItem={renderStock}
+      />
     </GradientBackground>
   );
 };
 
 export default StocksScreen;
-
-const styles = StyleSheet.create({
-  text: {
-    color: Colors.text500,
-  },
-});
