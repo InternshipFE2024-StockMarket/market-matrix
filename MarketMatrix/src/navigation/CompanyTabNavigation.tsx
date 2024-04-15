@@ -33,6 +33,7 @@ export const CompanyTabNavigation = ({ticker}: CompanyNavigationProp) => {
         name="CandlestickChart"
         component={CandlestickChart}
         options={{title: 'Candlestick Chart'}}
+        initialParams={{userParams: {ticker}}}
       />
       <Tab.Screen name="News" component={CompanyNews} />
     </Tab.Navigator>

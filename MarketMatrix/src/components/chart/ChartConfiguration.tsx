@@ -4,44 +4,58 @@ import WebView from 'react-native-webview';
 
 interface ChartConfigurationProp {
   ticker: string;
+  chartType: 'line' | 'candlestick' | 'bar';
   seriesData: number[];
-  xAxisData: string[];
 }
 
 export const ChartConfiguration = ({
   ticker,
+  chartType,
   seriesData,
-  xAxisData,
 }: ChartConfigurationProp) => {
+  const isLineChart = chartType === 'line';
+
   const chartConfig = {
     chart: {
-      type: 'line',
+      type: chartType,
     },
     title: {
-      text: `Recent Close Prices for ${ticker}`,
+      text:
+        chartType === 'line'
+          ? `Recent Close Prices for ${ticker}`
+          : chartType === 'candlestick'
+          ? `Price Movements for ${ticker}`
+          : chartType === 'bar'
+          ? `Bar chart for ${ticker}`
+          : 'Chart type not defined',
     },
     xAxis: {
-      categories: xAxisData,
-      title: {
-        text: 'Date',
-      },
+      title: {text: 'Date'},
+      type: 'datetime',
     },
     yAxis: {
       title: {
-        text: 'Close price',
+        text: 'Price',
       },
     },
     plotOptions: {
       line: {
-        dataLabels: {
-          enabled: true,
-        },
+        dataLabels: {enabled: true},
+      },
+      candlestick: {
+        color: 'pink',
+        lineColor: 'red',
+        upColor: 'lightgreen',
+        upLineColor: 'green',
       },
     },
     series: [
       {
-        name: 'Prices',
+        name: isLineChart ? 'Price' : 'Price Movements',
         data: seriesData,
+        tooltip: {
+          valueDecimals: 2,
+        },
       },
     ],
   };

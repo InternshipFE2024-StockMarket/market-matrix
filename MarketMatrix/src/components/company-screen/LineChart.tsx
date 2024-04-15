@@ -1,15 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {StockChanges} from '../../constants/Interfaces';
+import {StockChanges, StockValues} from '../../constants/Interfaces';
 import {ChartConfiguration} from '../chart/ChartConfiguration';
 import {fetchChangesForStock} from '../../utils/http/fetchChangesForStock';
 
 export const LineChart = ({route}: any) => {
-  const [selectedStock, setSelectedStock] = useState<
-    StockChanges | undefined
-  >();
-  const [dates, setDates] = useState<string[]>([]);
-  const [closeValues, setCloseValues] = useState<number[]>([]);
+  const [chartValues, setChartValues] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const ticker = route.params?.userParams?.ticker;
@@ -20,16 +16,14 @@ export const LineChart = ({route}: any) => {
       (async () => {
         try {
           const selStock = await fetchChangesForStock(ticker);
-          setSelectedStock(selStock);
           if (selStock) {
-            setDates(
-              selStock.values.map((stock: {date: string}) => stock.date),
-            );
-            setCloseValues(
-              selStock.values.map(
-                (stock: {close: number}) => Math.round(stock.close * 100) / 100,
-              ),
-            );
+            const chartData = selStock.values.map((item: StockValues) => {
+              return [
+                new Date(item.date).getTime(),
+                parseFloat(item.close.toFixed(2)),
+              ];
+            });
+            setChartValues(chartData);
           }
         } catch (error: any) {
           console.error('Failed to fetch values for stock:', error);
@@ -46,8 +40,8 @@ export const LineChart = ({route}: any) => {
   return (
     <ChartConfiguration
       ticker={ticker}
-      seriesData={closeValues}
-      xAxisData={dates}
+      seriesData={chartValues}
+      chartType="line"
     />
   );
 };
