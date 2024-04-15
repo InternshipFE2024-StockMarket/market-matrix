@@ -1,12 +1,6 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-
-export interface Investment {
-  ticker: string;
-  amount: number;
-  boughtPrice: number;
-  shares: number;
-}
+import {Investment} from '../../constants/Interfaces';
 
 const useFetchUserInvetments = (id: number) => {
   const [userInvestments, setUserInvestments] = useState<Investment[]>([]);
