@@ -1,6 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Stock} from '../constants/Interfaces';
 import {fetchStocks} from '../utils/http/fetchStocks';
+import {patchPrice} from '../utils/http/patchPrice';
 
 interface StockContextValue {
   stocks: Stock[];
@@ -22,11 +23,18 @@ export const StockProvider = ({children}: StockProviderProps) => {
       const stocksData = await fetchStocks();
       console.log({stocksData});
 
-      setStocks(stocksData);
+      const updatedStocks = await Promise.all(
+        stocksData.map(async (stock: Stock) => {
+          const price = modifyPrice(stock.price);
+          await patchPrice(stock.id, price);
+          return {...stock, price};
+        }),
+      );
+      setStocks(updatedStocks);
     };
     updateStocksData();
 
-    const intervalId = setInterval(updateStocksData, 5000);
+    const intervalId = setInterval(updateStocksData, 30000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -41,3 +49,10 @@ export const StockProvider = ({children}: StockProviderProps) => {
 };
 
 export default StockContext;
+
+function modifyPrice(price: number) {
+  const randomOffset = Math.random();
+  const modifier = Math.random() > 0.5 ? 1 : -1;
+  const modifiedPrice = price + randomOffset * modifier;
+  return Number(modifiedPrice.toFixed(2));
+}

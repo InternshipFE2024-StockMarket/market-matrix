@@ -1,9 +1,26 @@
 {
   "stocks": [
     {
+      "id": "BTC-USD",
+      "ticker": "BTC",
+      "companyName": "Bitcoin",
+      "price": 64510.57,
+      "priceChangePercentage": 2.87,
+      "priceChange": 1500.75,
+      "image": "https://example.com/bitcoin.png",
+      "exchange": "Crypto Exchange",
+      "ceo": "Satoshi Nakamoto",
+      "city": "Unknown",
+      "state": "Unknown",
+      "industry": "Cryptocurrency",
+      "sector": "Finance",
+      "type": "crypto"
+    },
+    {
+      "id": "AAPL",
       "ticker": "AAPL",
       "companyName": "Apple Inc.",
-      "price": 191.5314,
+      "price": 152.28,
       "priceChangePercentage": 1.5381,
       "priceChange": 2.9014,
       "image": "https://financialmodelingprep.com/image-stock/AAPL.png",
@@ -16,9 +33,10 @@
       "type": "stock"
     },
     {
+      "id": "AMZN",
       "ticker": "AMZN",
       "companyName": "Amazon.com, Inc.",
-      "price": 155.295,
+      "price": 196.75,
       "priceChangePercentage": 1.1694,
       "priceChange": 1.795,
       "image": "https://financialmodelingprep.com/image-stock/AMZN.png",
@@ -31,9 +49,10 @@
       "type": "stock"
     },
     {
+      "id": "ANET",
       "ticker": "ANET",
       "companyName": "Arista Networks, Inc.",
-      "price": 263.545,
+      "price": 273.67,
       "priceChangePercentage": 2.3237,
       "priceChange": 5.985,
       "image": "https://financialmodelingprep.com/image-stock/ANET.png",
@@ -46,9 +65,10 @@
       "type": "stock"
     },
     {
+      "id": "BAC",
       "ticker": "BAC",
       "companyName": "Bank of America Corporation",
-      "price": 32.135,
+      "price": 32.3,
       "priceChangePercentage": 1.2764,
       "priceChange": 0.405,
       "image": "https://financialmodelingprep.com/image-stock/BAC.png",
@@ -61,9 +81,10 @@
       "type": "stock"
     },
     {
+      "id": "C",
       "ticker": "C",
       "companyName": "Citigroup Inc.",
-      "price": 51.51,
+      "price": 100.43,
       "priceChangePercentage": 0.7826,
       "priceChange": 0.4,
       "image": "https://financialmodelingprep.com/image-stock/C.png",
@@ -76,9 +97,10 @@
       "type": "stock"
     },
     {
+      "id": "COST",
       "ticker": "COST",
       "companyName": "Costco Wholesale Corporation",
-      "price": 695.02,
+      "price": 693.56,
       "priceChangePercentage": 1.1218,
       "priceChange": 7.71,
       "image": "https://financialmodelingprep.com/image-stock/COST.png",
@@ -91,9 +113,10 @@
       "type": "stock"
     },
     {
+      "id": "CPRT",
       "ticker": "CPRT",
       "companyName": "Copart, Inc.",
-      "price": 48.77,
+      "price": 51.35,
       "priceChangePercentage": 1.2456,
       "priceChange": 0.6,
       "image": "https://financialmodelingprep.com/image-stock/CPRT.png",
@@ -106,9 +129,10 @@
       "type": "stock"
     },
     {
+      "id": "CVX",
       "ticker": "CVX",
       "companyName": "Chevron Corporation",
-      "price": 142.115,
+      "price": 144.65,
       "priceChangePercentage": 0.208,
       "priceChange": 0.295,
       "image": "https://financialmodelingprep.com/image-stock/CVX.png",
@@ -121,9 +145,10 @@
       "type": "stock"
     },
     {
+      "id": "GOOGL",
       "ticker": "GOOGL",
       "companyName": "Alphabet Inc.",
-      "price": 145.645,
+      "price": 148.82,
       "priceChangePercentage": 1.5089,
       "priceChange": 2.165,
       "image": "https://financialmodelingprep.com/image-stock/GOOGL.png",
@@ -136,9 +161,10 @@
       "type": "stock"
     },
     {
+      "id": "INTU",
       "ticker": "INTU",
       "companyName": "Intuit Inc.",
-      "price": 622.175,
+      "price": 626.74,
       "priceChangePercentage": 1.769,
       "priceChange": 10.815,
       "image": "https://financialmodelingprep.com/image-stock/INTU.png",
@@ -151,9 +177,10 @@
       "type": "stock"
     },
     {
+      "id": "JPM",
       "ticker": "JPM",
       "companyName": "JPMorgan Chase & Co.",
-      "price": 170.07,
+      "price": 164.79,
       "priceChangePercentage": 1.5829,
       "priceChange": 2.65,
       "image": "https://financialmodelingprep.com/image-stock/JPM.png",
@@ -166,9 +193,10 @@
       "type": "stock"
     },
     {
+      "id": "KNSL",
       "ticker": "KNSL",
       "companyName": "Kinsale Capital Group, Inc.",
-      "price": 400.14,
+      "price": 403.5,
       "priceChangePercentage": 0.6819,
       "priceChange": 2.71,
       "image": "https://financialmodelingprep.com/image-stock/KNSL.png",
@@ -181,9 +209,10 @@
       "type": "stock"
     },
     {
+      "id": "MA",
       "ticker": "MA",
       "companyName": "Mastercard Incorporated",
-      "price": 435.6776,
+      "price": 433.18,
       "priceChangePercentage": 1.151,
       "priceChange": 4.9576,
       "image": "https://financialmodelingprep.com/image-stock/MA.png",
@@ -196,9 +225,10 @@
       "type": "stock"
     },
     {
+      "id": "META",
       "ticker": "META",
       "companyName": "Meta Platforms, Inc.",
-      "price": 383.385,
+      "price": 387.11,
       "priceChangePercentage": 1.9289,
       "priceChange": 7.255,
       "image": "https://financialmodelingprep.com/image-stock/META.png",
@@ -211,9 +241,10 @@
       "type": "stock"
     },
     {
+      "id": "MSFT",
       "ticker": "MSFT",
       "companyName": "Microsoft Corporation",
-      "price": 396.93,
+      "price": 388.99,
       "priceChangePercentage": 0.7769,
       "priceChange": 3.06,
       "image": "https://financialmodelingprep.com/image-stock/MSFT.png",
@@ -226,9 +257,10 @@
       "type": "stock"
     },
     {
+      "id": "MUSA",
       "ticker": "MUSA",
       "companyName": "Murphy USA Inc.",
-      "price": 370.9,
+      "price": 372.52,
       "priceChangePercentage": -0.4375,
       "priceChange": -1.63,
       "image": "https://financialmodelingprep.com/image-stock/MUSA.png",
@@ -241,9 +273,10 @@
       "type": "stock"
     },
     {
+      "id": "NVDA",
       "ticker": "NVDA",
       "companyName": "NVIDIA Corporation",
-      "price": 589.88,
+      "price": 587.46,
       "priceChangePercentage": 3.2938,
       "priceChange": 18.81,
       "image": "https://financialmodelingprep.com/image-stock/NVDA.png",
@@ -256,9 +289,10 @@
       "type": "stock"
     },
     {
+      "id": "ODFL",
       "ticker": "ODFL",
       "companyName": "Old Dominion Freight Line, Inc.",
-      "price": 387.52,
+      "price": 381.94,
       "priceChangePercentage": 1.3389,
       "priceChange": 5.12,
       "image": "https://financialmodelingprep.com/image-stock/ODFL.png",
@@ -271,9 +305,10 @@
       "type": "stock"
     },
     {
+      "id": "QLYS",
       "ticker": "QLYS",
       "companyName": "Qualys, Inc.",
-      "price": 195.925,
+      "price": 192.91,
       "priceChangePercentage": -0.9279,
       "priceChange": -1.835,
       "image": "https://financialmodelingprep.com/image-stock/QLYS.png",
@@ -286,9 +321,10 @@
       "type": "stock"
     },
     {
+      "id": "USB",
       "ticker": "USB",
       "companyName": "U.S. Bancorp",
-      "price": 41.65,
+      "price": 44.96,
       "priceChangePercentage": 3.736,
       "priceChange": 1.5,
       "image": "https://financialmodelingprep.com/image-stock/USB.png",
@@ -301,9 +337,10 @@
       "type": "stock"
     },
     {
+      "id": "V",
       "ticker": "V",
       "companyName": "Visa Inc.",
-      "price": 270.79,
+      "price": 265.26,
       "priceChangePercentage": 0.9883,
       "priceChange": 2.65,
       "image": "https://financialmodelingprep.com/image-stock/V.png",
@@ -316,9 +353,10 @@
       "type": "stock"
     },
     {
+      "id": "WFC",
       "ticker": "WFC",
       "companyName": "Wells Fargo & Company",
-      "price": 47.895,
+      "price": 49.57,
       "priceChangePercentage": 3.1331,
       "priceChange": 1.455,
       "image": "https://financialmodelingprep.com/image-stock/WFC.png",
@@ -339,7 +377,7 @@
           "date": "2024.03.01",
           "value": 353.4,
           "lowerValue": 320.8,
-          "higherValue": 360.0,
+          "higherValue": 360,
           "openValue": 333.45,
           "closeValue": 370.9
         },
@@ -395,7 +433,7 @@
           "date": "2024.03.08",
           "value": 371.2,
           "lowerValue": 337.6,
-          "higherValue": 375.0,
+          "higherValue": 375,
           "openValue": 369.8,
           "closeValue": 372.5
         },
@@ -443,7 +481,7 @@
           "date": "2024.03.14",
           "value": 380.2,
           "lowerValue": 343.5,
-          "higherValue": 384.0,
+          "higherValue": 384,
           "openValue": 379.4,
           "closeValue": 382.1
         },
@@ -483,7 +521,7 @@
           "date": "2024.03.19",
           "value": 398.1,
           "lowerValue": 362.3,
-          "higherValue": 401.0,
+          "higherValue": 401,
           "openValue": 397.9,
           "closeValue": 400.5
         },
@@ -499,7 +537,7 @@
           "date": "2024.03.21",
           "value": 404.2,
           "lowerValue": 368.5,
-          "higherValue": 408.0,
+          "higherValue": 408,
           "openValue": 403.4,
           "closeValue": 407.1
         },
@@ -539,7 +577,7 @@
           "date": "2024.03.26",
           "value": 422.1,
           "lowerValue": 386.3,
-          "higherValue": 425.0,
+          "higherValue": 425,
           "openValue": 421.9,
           "closeValue": 424.5
         },
@@ -555,7 +593,7 @@
           "date": "2024.03.28",
           "value": 428.2,
           "lowerValue": 392.5,
-          "higherValue": 431.0,
+          "higherValue": 431,
           "openValue": 427.4,
           "closeValue": 431.1
         },
@@ -569,7 +607,7 @@
         },
         {
           "date": "2024.03.30",
-          "value": 436.0,
+          "value": 436,
           "lowerValue": 400.2,
           "higherValue": 439.6,
           "openValue": 435.5,
@@ -585,7 +623,7 @@
         },
         {
           "date": "2024.04.01",
-          "value": 443.0,
+          "value": 443,
           "lowerValue": 407.2,
           "higherValue": 446.4,
           "openValue": 442.5,
@@ -600,257 +638,257 @@
           "date": "2024.03.01",
           "value": 1873.12,
           "lowerValue": 1850.2,
-          "higherValue": 1898.0,
-          "openValue": 1880.0,
-          "closeValue": 1898.0
+          "higherValue": 1898,
+          "openValue": 1880,
+          "closeValue": 1898
         },
         {
           "date": "2024.03.02",
-          "value": 1898.0,
+          "value": 1898,
           "lowerValue": 1875.1,
-          "higherValue": 1910.0,
-          "openValue": 1898.0,
-          "closeValue": 1910.0
+          "higherValue": 1910,
+          "openValue": 1898,
+          "closeValue": 1910
         },
         {
           "date": "2024.03.03",
-          "value": 1910.0,
+          "value": 1910,
           "lowerValue": 1887.1,
-          "higherValue": 1930.0,
-          "openValue": 1910.0,
-          "closeValue": 1930.0
+          "higherValue": 1930,
+          "openValue": 1910,
+          "closeValue": 1930
         },
         {
           "date": "2024.03.04",
-          "value": 1930.0,
+          "value": 1930,
           "lowerValue": 1907.1,
-          "higherValue": 1950.0,
-          "openValue": 1930.0,
-          "closeValue": 1950.0
+          "higherValue": 1950,
+          "openValue": 1930,
+          "closeValue": 1950
         },
         {
           "date": "2024.03.05",
-          "value": 1950.0,
+          "value": 1950,
           "lowerValue": 1927.1,
-          "higherValue": 1970.0,
-          "openValue": 1950.0,
-          "closeValue": 1970.0
+          "higherValue": 1970,
+          "openValue": 1950,
+          "closeValue": 1970
         },
         {
           "date": "2024.03.06",
-          "value": 1970.0,
+          "value": 1970,
           "lowerValue": 1947.1,
-          "higherValue": 1990.0,
-          "openValue": 1970.0,
-          "closeValue": 1990.0
+          "higherValue": 1990,
+          "openValue": 1970,
+          "closeValue": 1990
         },
         {
           "date": "2024.03.07",
-          "value": 1990.0,
+          "value": 1990,
           "lowerValue": 1967.1,
-          "higherValue": 2010.0,
-          "openValue": 1990.0,
-          "closeValue": 2010.0
+          "higherValue": 2010,
+          "openValue": 1990,
+          "closeValue": 2010
         },
         {
           "date": "2024.03.08",
-          "value": 2010.0,
+          "value": 2010,
           "lowerValue": 1987.1,
-          "higherValue": 2030.0,
-          "openValue": 2010.0,
-          "closeValue": 2030.0
+          "higherValue": 2030,
+          "openValue": 2010,
+          "closeValue": 2030
         },
         {
           "date": "2024.03.09",
-          "value": 2030.0,
+          "value": 2030,
           "lowerValue": 2007.1,
-          "higherValue": 2050.0,
-          "openValue": 2030.0,
-          "closeValue": 2050.0
+          "higherValue": 2050,
+          "openValue": 2030,
+          "closeValue": 2050
         },
         {
           "date": "2024.03.10",
-          "value": 2050.0,
+          "value": 2050,
           "lowerValue": 2027.1,
-          "higherValue": 2070.0,
-          "openValue": 2050.0,
-          "closeValue": 2070.0
+          "higherValue": 2070,
+          "openValue": 2050,
+          "closeValue": 2070
         },
         {
           "date": "2024.03.11",
-          "value": 2070.0,
+          "value": 2070,
           "lowerValue": 2047.1,
-          "higherValue": 2090.0,
-          "openValue": 2070.0,
-          "closeValue": 2090.0
+          "higherValue": 2090,
+          "openValue": 2070,
+          "closeValue": 2090
         },
         {
           "date": "2024.03.12",
-          "value": 2090.0,
+          "value": 2090,
           "lowerValue": 2067.1,
-          "higherValue": 2110.0,
-          "openValue": 2090.0,
-          "closeValue": 2110.0
+          "higherValue": 2110,
+          "openValue": 2090,
+          "closeValue": 2110
         },
         {
           "date": "2024.03.13",
-          "value": 2110.0,
+          "value": 2110,
           "lowerValue": 2087.1,
-          "higherValue": 2130.0,
-          "openValue": 2110.0,
-          "closeValue": 2130.0
+          "higherValue": 2130,
+          "openValue": 2110,
+          "closeValue": 2130
         },
         {
           "date": "2024.03.14",
-          "value": 2130.0,
+          "value": 2130,
           "lowerValue": 2107.1,
-          "higherValue": 2150.0,
-          "openValue": 2130.0,
-          "closeValue": 2150.0
+          "higherValue": 2150,
+          "openValue": 2130,
+          "closeValue": 2150
         },
         {
           "date": "2024.03.15",
-          "value": 2150.0,
+          "value": 2150,
           "lowerValue": 2127.1,
-          "higherValue": 2170.0,
-          "openValue": 2150.0,
-          "closeValue": 2170.0
+          "higherValue": 2170,
+          "openValue": 2150,
+          "closeValue": 2170
         },
         {
           "date": "2024.03.16",
-          "value": 2170.0,
+          "value": 2170,
           "lowerValue": 2147.1,
-          "higherValue": 2190.0,
-          "openValue": 2170.0,
-          "closeValue": 2190.0
+          "higherValue": 2190,
+          "openValue": 2170,
+          "closeValue": 2190
         },
         {
           "date": "2024.03.17",
-          "value": 2190.0,
+          "value": 2190,
           "lowerValue": 2167.1,
-          "higherValue": 2210.0,
-          "openValue": 2190.0,
-          "closeValue": 2210.0
+          "higherValue": 2210,
+          "openValue": 2190,
+          "closeValue": 2210
         },
         {
           "date": "2024.03.18",
-          "value": 2210.0,
+          "value": 2210,
           "lowerValue": 2187.1,
-          "higherValue": 2230.0,
-          "openValue": 2210.0,
-          "closeValue": 2230.0
+          "higherValue": 2230,
+          "openValue": 2210,
+          "closeValue": 2230
         },
         {
           "date": "2024.03.19",
-          "value": 2230.0,
+          "value": 2230,
           "lowerValue": 2207.1,
-          "higherValue": 2250.0,
-          "openValue": 2230.0,
-          "closeValue": 2250.0
+          "higherValue": 2250,
+          "openValue": 2230,
+          "closeValue": 2250
         },
         {
           "date": "2024.03.20",
-          "value": 2250.0,
+          "value": 2250,
           "lowerValue": 2227.1,
-          "higherValue": 2270.0,
-          "openValue": 2250.0,
-          "closeValue": 2270.0
+          "higherValue": 2270,
+          "openValue": 2250,
+          "closeValue": 2270
         },
         {
           "date": "2024.03.21",
-          "value": 2270.0,
+          "value": 2270,
           "lowerValue": 2247.1,
-          "higherValue": 2290.0,
-          "openValue": 2270.0,
-          "closeValue": 2290.0
+          "higherValue": 2290,
+          "openValue": 2270,
+          "closeValue": 2290
         },
         {
           "date": "2024.03.22",
-          "value": 2290.0,
+          "value": 2290,
           "lowerValue": 2267.1,
-          "higherValue": 2310.0,
-          "openValue": 2290.0,
-          "closeValue": 2310.0
+          "higherValue": 2310,
+          "openValue": 2290,
+          "closeValue": 2310
         },
         {
           "date": "2024.03.23",
-          "value": 2310.0,
+          "value": 2310,
           "lowerValue": 2287.1,
-          "higherValue": 2330.0,
-          "openValue": 2310.0,
-          "closeValue": 2330.0
+          "higherValue": 2330,
+          "openValue": 2310,
+          "closeValue": 2330
         },
         {
           "date": "2024.03.24",
-          "value": 2330.0,
+          "value": 2330,
           "lowerValue": 2307.1,
-          "higherValue": 2350.0,
-          "openValue": 2330.0,
-          "closeValue": 2350.0
+          "higherValue": 2350,
+          "openValue": 2330,
+          "closeValue": 2350
         },
         {
           "date": "2024.03.25",
-          "value": 2350.0,
+          "value": 2350,
           "lowerValue": 2327.1,
-          "higherValue": 2370.0,
-          "openValue": 2350.0,
-          "closeValue": 2370.0
+          "higherValue": 2370,
+          "openValue": 2350,
+          "closeValue": 2370
         },
         {
           "date": "2024.03.26",
-          "value": 2370.0,
+          "value": 2370,
           "lowerValue": 2347.1,
-          "higherValue": 2390.0,
-          "openValue": 2370.0,
-          "closeValue": 2390.0
+          "higherValue": 2390,
+          "openValue": 2370,
+          "closeValue": 2390
         },
         {
           "date": "2024.03.27",
-          "value": 2390.0,
+          "value": 2390,
           "lowerValue": 2367.1,
-          "higherValue": 2410.0,
-          "openValue": 2390.0,
-          "closeValue": 2410.0
+          "higherValue": 2410,
+          "openValue": 2390,
+          "closeValue": 2410
         },
         {
           "date": "2024.03.28",
-          "value": 2410.0,
+          "value": 2410,
           "lowerValue": 2387.1,
-          "higherValue": 2430.0,
-          "openValue": 2410.0,
-          "closeValue": 2430.0
+          "higherValue": 2430,
+          "openValue": 2410,
+          "closeValue": 2430
         },
         {
           "date": "2024.03.29",
-          "value": 2430.0,
+          "value": 2430,
           "lowerValue": 2407.1,
-          "higherValue": 2450.0,
-          "openValue": 2430.0,
-          "closeValue": 2450.0
+          "higherValue": 2450,
+          "openValue": 2430,
+          "closeValue": 2450
         },
         {
           "date": "2024.03.30",
-          "value": 2450.0,
+          "value": 2450,
           "lowerValue": 2427.1,
-          "higherValue": 2470.0,
-          "openValue": 2450.0,
-          "closeValue": 2470.0
+          "higherValue": 2470,
+          "openValue": 2450,
+          "closeValue": 2470
         },
         {
           "date": "2024.03.31",
-          "value": 2470.0,
+          "value": 2470,
           "lowerValue": 2447.1,
-          "higherValue": 2490.0,
-          "openValue": 2470.0,
-          "closeValue": 2490.0
+          "higherValue": 2490,
+          "openValue": 2470,
+          "closeValue": 2490
         },
         {
           "date": "2024.04.01",
-          "value": 2490.0,
+          "value": 2490,
           "lowerValue": 2467.1,
-          "higherValue": 2510.0,
-          "openValue": 2490.0,
-          "closeValue": 2510.0
+          "higherValue": 2510,
+          "openValue": 2490,
+          "closeValue": 2510
         }
       ]
     },
@@ -1077,16 +1115,16 @@
           "date": "2024.03.28",
           "value": 390.41,
           "lowerValue": 384.425,
-          "higherValue": 394.0,
+          "higherValue": 394,
           "openValue": 390.41,
-          "closeValue": 394.0
+          "closeValue": 394
         },
         {
           "date": "2024.03.29",
-          "value": 394.0,
+          "value": 394,
           "lowerValue": 388.015,
           "higherValue": 398.59,
-          "openValue": 394.0,
+          "openValue": 394,
           "closeValue": 398.59
         },
         {
@@ -1145,7 +1183,7 @@
         {
           "date": "2024.03.04",
           "value": 45.34,
-          "lowerValue": 42.0,
+          "lowerValue": 42,
           "higherValue": 46.9,
           "openValue": 46.7,
           "closeValue": 44.5
@@ -1185,7 +1223,7 @@
         {
           "date": "2024.03.09",
           "value": 36.44,
-          "lowerValue": 35.0,
+          "lowerValue": 35,
           "higherValue": 37.8,
           "openValue": 37.4,
           "closeValue": 36.1
@@ -1210,7 +1248,7 @@
           "date": "2024.03.12",
           "value": 41.23,
           "lowerValue": 39.8,
-          "higherValue": 42.0,
+          "higherValue": 42,
           "openValue": 39.8,
           "closeValue": 41.5
         },
@@ -1228,14 +1266,14 @@
           "lowerValue": 40.89,
           "higherValue": 43.7,
           "openValue": 43.2,
-          "closeValue": 42.0
+          "closeValue": 42
         },
         {
           "date": "2024.03.15",
           "value": 41.98,
           "lowerValue": 40.2,
           "higherValue": 42.5,
-          "openValue": 42.0,
+          "openValue": 42,
           "closeValue": 41.1
         },
         {
@@ -1316,14 +1354,14 @@
           "lowerValue": 40.1,
           "higherValue": 42.5,
           "openValue": 42.6,
-          "closeValue": 41.0
+          "closeValue": 41
         },
         {
           "date": "2024.03.26",
           "value": 40.44,
-          "lowerValue": 39.0,
+          "lowerValue": 39,
           "higherValue": 41.9,
-          "openValue": 41.0,
+          "openValue": 41,
           "closeValue": 39.5
         },
         {
@@ -1362,7 +1400,7 @@
           "date": "2024.03.31",
           "value": 35.99,
           "lowerValue": 34.6,
-          "higherValue": 37.0,
+          "higherValue": 37,
           "openValue": 36.3,
           "closeValue": 35.5
         }
@@ -1473,14 +1511,14 @@
           "lowerValue": 137.14,
           "higherValue": 140.22,
           "openValue": 139.6,
-          "closeValue": 138.0
+          "closeValue": 138
         },
         {
           "date": "2024.03.14",
           "value": 137.65,
           "lowerValue": 135.89,
           "higherValue": 138.67,
-          "openValue": 138.0,
+          "openValue": 138,
           "closeValue": 136.5
         },
         {
@@ -1535,14 +1573,14 @@
           "date": "2024.03.21",
           "value": 141.23,
           "lowerValue": 139.5,
-          "higherValue": 142.0,
+          "higherValue": 142,
           "openValue": 139.5,
           "closeValue": 140.75
         },
         {
           "date": "2024.03.22",
           "value": 142.67,
-          "lowerValue": 141.0,
+          "lowerValue": 141,
           "higherValue": 143.24,
           "openValue": 140.75,
           "closeValue": 142.18
@@ -1844,7 +1882,7 @@
           "date": "2024.03.28",
           "value": 191.78,
           "lowerValue": 190.8,
-          "higherValue": 193.0,
+          "higherValue": 193,
           "openValue": 190.8,
           "closeValue": 192.3
         },
@@ -2024,7 +2062,7 @@
         {
           "date": "2024.03.19",
           "value": 474.6,
-          "lowerValue": 370.0,
+          "lowerValue": 370,
           "higherValue": 520.5,
           "openValue": 530.2,
           "closeValue": 480.1
@@ -2181,7 +2219,7 @@
         {
           "date": "2024.03.19",
           "value": 474.6,
-          "lowerValue": 370.0,
+          "lowerValue": 370,
           "higherValue": 520.5,
           "openValue": 530.2,
           "closeValue": 480.1
@@ -2317,28 +2355,28 @@
           "lowerValue": 560.6,
           "higherValue": 680.2,
           "openValue": 670.1,
-          "closeValue": 620.0
+          "closeValue": 620
         },
         {
           "date": "2024.03.17",
           "value": 570.6,
           "lowerValue": 490.6,
           "higherValue": 620.1,
-          "openValue": 620.0,
-          "closeValue": 580.0
+          "openValue": 620,
+          "closeValue": 580
         },
         {
           "date": "2024.03.18",
           "value": 520.6,
           "lowerValue": 430.1,
           "higherValue": 570.9,
-          "openValue": 580.0,
+          "openValue": 580,
           "closeValue": 530.2
         },
         {
           "date": "2024.03.19",
           "value": 470.1,
-          "lowerValue": 370.0,
+          "lowerValue": 370,
           "higherValue": 520.5,
           "openValue": 530.2,
           "closeValue": 480.1
@@ -2408,7 +2446,7 @@
           "date": "2024.03.08",
           "value": 862.6,
           "lowerValue": 861.9,
-          "higherValue": 863.0,
+          "higherValue": 863,
           "openValue": 862.6,
           "closeValue": 862.7
         },
@@ -2423,7 +2461,7 @@
         {
           "date": "2024.03.10",
           "value": 862.8,
-          "lowerValue": 862.0,
+          "lowerValue": 862,
           "higherValue": 863.1,
           "openValue": 862.8,
           "closeValue": 862.9
@@ -2432,16 +2470,16 @@
           "date": "2024.03.11",
           "value": 862.9,
           "lowerValue": 862.5,
-          "higherValue": 863.0,
+          "higherValue": 863,
           "openValue": 862.9,
-          "closeValue": 863.0
+          "closeValue": 863
         },
         {
           "date": "2024.03.12",
-          "value": 863.0,
+          "value": 863,
           "lowerValue": 862.7,
           "higherValue": 863.2,
-          "openValue": 863.0,
+          "openValue": 863,
           "closeValue": 863.1
         },
         {
@@ -2455,7 +2493,7 @@
         {
           "date": "2024.03.14",
           "value": 863.2,
-          "lowerValue": 863.0,
+          "lowerValue": 863,
           "higherValue": 863.3,
           "openValue": 863.2,
           "closeValue": 863.2
@@ -2559,7 +2597,6 @@
       "total": 10000
     }
   ],
-
   "news": [
     {
       "ticker": "AAPL",
