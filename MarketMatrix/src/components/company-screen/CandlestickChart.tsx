@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text} from 'react-native';
-import {StockChanges, StockValues} from '../../constants/Interfaces';
+import {StockValues} from '../../constants/Interfaces';
 import {fetchChangesForStock} from '../../utils/http/fetchChangesForStock';
 import {ChartConfiguration} from '../chart/ChartConfiguration';
 
@@ -10,13 +9,13 @@ export const CandlestickChart = ({route}: any) => {
 
   useEffect(() => {
     if (ticker) {
-      updateStocksData();
+      getValuesForStock();
     } else {
       console.log('Ticker is undefined.');
     }
   }, [ticker]);
 
-  const updateStocksData = async () => {
+  const getValuesForStock = async () => {
     const selStock = await fetchChangesForStock(ticker);
     if (selStock) {
       try {
