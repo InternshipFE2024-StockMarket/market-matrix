@@ -73,18 +73,18 @@ export const StockProvider = ({children}: StockProviderProps) => {
 
 export default StockContext;
 
-function modifyPrice(price: number) {
+const modifyPrice = (price: number) => {
   const randomOffset = Math.random();
   const modifier = Math.random() > 0.5 ? 1 : -1;
   const modifiedPrice = price + randomOffset * modifier;
   return Number(modifiedPrice.toFixed(2));
-}
+};
 
-function modifyPriceChange(price: number, openPrice: number) {
+const modifyPriceChange = (price: number, openPrice: number) => {
   const change = price - openPrice;
   return Number(change.toFixed(2));
-}
+};
 
-function modifyPricePercentage(priceChange: number, openPrice: number) {
+const modifyPricePercentage = (priceChange: number, openPrice: number) => {
   return Number(((priceChange / openPrice) * 100).toFixed(2));
-}
+};
