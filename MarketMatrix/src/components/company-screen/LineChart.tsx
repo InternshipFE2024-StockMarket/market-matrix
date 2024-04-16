@@ -38,6 +38,7 @@ export const LineChart = ({route}: any) => {
       title={title}
       seriesData={chartValues}
       chartType="line"
+      ticker={id}
     />
   );
 };

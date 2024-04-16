@@ -41,6 +41,7 @@ export const CandlestickChart = ({route}: any) => {
       title={title}
       seriesData={candleChartData}
       chartType="candlestick"
+      ticker={id}
     />
   );
 };
