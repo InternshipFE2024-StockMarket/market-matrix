@@ -1,27 +1,37 @@
-import {Pressable, StyleSheet, Text} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Colors} from '../../constants/Colors';
 
 interface ButtonProps {
-  onPress: () => void;
-  title: string;
+  onPress?: () => void;
+  children: React.ReactNode;
 }
 
-const Button = ({onPress, title}: ButtonProps) => {
+const Button = ({onPress, children}: ButtonProps) => {
   return (
-    <Pressable onPress={onPress} style={styles.button}>
-      <Text>{title}</Text>
-    </Pressable>
+    <View style={styles.container}>
+      <Pressable onPress={onPress} style={styles.button}>
+        <Text style={styles.title}>{children}</Text>
+      </Pressable>
+    </View>
   );
 };
 
 export default Button;
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: Colors.border,
+    borderRadius: 10,
+  },
   button: {
-    backgroundColor: Colors.background800,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
+    margin: 5,
+  },
+  title: {
     color: Colors.text500,
+    marginHorizontal: 10,
+    marginVertical: 5,
   },
 });

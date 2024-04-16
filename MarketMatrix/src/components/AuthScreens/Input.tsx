@@ -11,7 +11,7 @@ import {Colors} from '../../constants/Colors';
 interface InputProps {
   label: string;
   keyboardType?: KeyboardTypeOptions;
-  onUpdateValue?: () => void;
+  onUpdateValue?: (enteredValue: any) => void;
   value?: string;
   isInvalid?: boolean;
 }
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   label: {
     color: 'white',
     marginBottom: 4,
+    fontWeight: '600',
   },
   labelInvalid: {
     color: Colors.pink,
@@ -55,9 +56,10 @@ const styles = StyleSheet.create({
   input: {
     paddingVertical: 8,
     paddingHorizontal: 6,
-    backgroundColor: Colors.background800,
-    borderRadius: 4,
+    backgroundColor: Colors.background500,
+    borderRadius: 10,
     fontSize: 16,
+    color: Colors.text500,
   },
   inputInvalid: {
     backgroundColor: Colors.pink,
