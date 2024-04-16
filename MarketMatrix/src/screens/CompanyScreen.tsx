@@ -16,8 +16,8 @@ const market = 'Market capitalization';
 
 export const CompanyScreen = ({navigation, route}: any) => {
   const [selStock, setSelectedStock] = useState<Stock | string>();
-  const id = route.params.id;
   const stockContext = useStock();
+  const id = route.params.id;
   const findById = stockContext?.findById;
 
   useEffect(() => {
@@ -34,6 +34,9 @@ export const CompanyScreen = ({navigation, route}: any) => {
   if (typeof selStock === 'string') {
     return <Text>Stock not found</Text>;
   }
+
+  const change = selStock?.priceChange;
+  const percentage = selStock?.priceChangePercentage;
 
   return (
     <GradientBackground>
@@ -82,9 +85,28 @@ export const CompanyScreen = ({navigation, route}: any) => {
                 </View>
                 <View style={styles.priceColumn}>
                   <Text style={styles.priceValue}>${selStock.price}</Text>
-                  <Text style={styles.fluctuationText}>
-                    {selStock.priceChange}({selStock.priceChangePercentage}%)
-                  </Text>
+                  <View style={styles.fluctuationText}>
+                    <Text
+                      style={{
+                        fontSize: 16,
+                        color:
+                          change && change > 0 ? Colors.green : Colors.pink,
+                      }}>
+                      {change && change > 0 ? '+' : ''}
+                      {change}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 16,
+                        color:
+                          percentage && percentage > 0
+                            ? Colors.green
+                            : Colors.pink,
+                      }}>
+                      ({percentage && percentage > 0 ? '+' : ''}
+                      {percentage}%)
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>
@@ -173,7 +195,6 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   fluctuationText: {
-    color: Colors.pink,
-    fontSize: 16,
+    flexDirection: 'row',
   },
 });
