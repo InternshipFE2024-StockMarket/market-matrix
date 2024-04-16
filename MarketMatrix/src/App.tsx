@@ -10,13 +10,16 @@ import MainNavigation from './navigation/MainNavigation';
 import {NavigationContainer} from '@react-navigation/native';
 import {StockProvider} from './contexts/stocksContext';
 import {SearchProvider} from './contexts/searchContext';
+import AuthContextProvider from './contexts/authContext';
 
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <StockProvider>
         <SearchProvider>
-          <MainNavigation />
+          <AuthContextProvider>
+            <MainNavigation />
+          </AuthContextProvider>
         </SearchProvider>
       </StockProvider>
     </NavigationContainer>

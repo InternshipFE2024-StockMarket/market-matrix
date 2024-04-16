@@ -72,6 +72,19 @@ export interface Stock {
   type: string;
 }
 
+export interface FormValidation {
+  email: boolean;
+  password: boolean;
+  confirmEmail: boolean;
+  confirmPassword: boolean;
+}
+
+export interface FormCredentials {
+  email: string;
+  password: string;
+  confirmEmail?: string;
+  confirmPassword?: string;
+}
 export interface UserData {
   id: string;
   name: string;

@@ -1,17 +1,15 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {CompanyScreen} from '../screens/CompanyScreen';
-import {BottomTabNavigation} from './BottomTabNavigation';
-
-const Stack = createNativeStackNavigator();
+import {useAuth} from '../contexts/authContext';
+import AuthStack from './AuthStack';
+import AuthenticatedStack from './AuthenticatedStack';
 
 const MainNavigation = () => {
-  return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Tabs" component={BottomTabNavigation} />
-      <Stack.Screen name="Company" component={CompanyScreen} />
-    </Stack.Navigator>
-  );
+  const {isAuthenticated} = useAuth();
+  if (isAuthenticated) {
+    return <AuthenticatedStack />;
+  } else if (!isAuthenticated) {
+    return <AuthStack />;
+  }
 };
 
 export default MainNavigation;
