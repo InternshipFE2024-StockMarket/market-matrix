@@ -1,7 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Stock} from '../constants/Interfaces';
 import {fetchStocks} from '../utils/http/fetchStocks';
-import {patchPrice} from '../utils/http/patchPrice';
 
 interface StockContextValue {
   stocks: Stock[];
@@ -9,7 +8,13 @@ interface StockContextValue {
 
 const StockContext = createContext<StockContextValue | undefined>(undefined);
 
-export const useStock = () => useContext(StockContext);
+export const useStock = () => {
+  const context = useContext(StockContext);
+  if (!context) {
+    console.log('useStock must be used within a StockProvider');
+  }
+  return context;
+};
 
 interface StockProviderProps {
   children: React.ReactNode;
@@ -25,7 +30,6 @@ export const StockProvider = ({children}: StockProviderProps) => {
       const updatedStocks = await Promise.all(
         stocksData.map(async (stock: Stock) => {
           const price = modifyPrice(stock.price);
-          await patchPrice(stock.id, price);
           return {...stock, price};
         }),
       );
@@ -33,7 +37,7 @@ export const StockProvider = ({children}: StockProviderProps) => {
     };
     updateStocksData();
 
-    const intervalId = setInterval(updateStocksData, 30000);
+    const intervalId = setInterval(updateStocksData, 5000);
 
     return () => clearInterval(intervalId);
   }, []);

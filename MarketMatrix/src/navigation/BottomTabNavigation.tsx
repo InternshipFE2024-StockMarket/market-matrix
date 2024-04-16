@@ -1,9 +1,13 @@
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react/self-closing-comp */
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import PortfolioScreen from '../screens/PortfolioScreen';
-import DiscoverScreen from '../screens/DiscoverScreen';
 import {Colors} from '../constants/Colors';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
+import DiscoverTabNavigation from './DiscoverTabNavigation';
+import SearchHeader from '../components/DiscoverScreen/SearchHeader';
+import React from 'react';
 
 const Tab = createBottomTabNavigator();
 
@@ -51,9 +55,8 @@ export const BottomTabNavigation = () => {
       />
       <Tab.Screen
         name="Discover"
-        component={DiscoverScreen}
+        component={DiscoverTabNavigation}
         options={{
-          headerShown: false,
           tabBarIcon: ({focused, color}) => (
             <NavigationIcon
               focused={focused}
@@ -62,6 +65,7 @@ export const BottomTabNavigation = () => {
               source={require('../assets/icons/icon-search.png')}
             />
           ),
+          header: () => <SearchHeader />,
         }}
       />
     </Tab.Navigator>
