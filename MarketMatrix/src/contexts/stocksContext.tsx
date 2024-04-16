@@ -1,12 +1,17 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Stock} from '../constants/Interfaces';
 import {fetchStocks} from '../utils/http/fetchStocks';
+import {fetchStockById} from '../utils/http/fetchStockbyTicker';
 
 interface StockContextValue {
   stocks: Stock[];
+  findById: (id: string) => Stock | undefined;
 }
 
-const StockContext = createContext<StockContextValue | undefined>(undefined);
+const StockContext = createContext<StockContextValue | undefined>({
+  stocks: [],
+  findById: (id: string) => undefined,
+});
 
 export const useStock = () => {
   const context = useContext(StockContext);
@@ -30,7 +35,12 @@ export const StockProvider = ({children}: StockProviderProps) => {
       const updatedStocks = await Promise.all(
         stocksData.map(async (stock: Stock) => {
           const price = modifyPrice(stock.price);
-          return {...stock, price};
+          const priceChange = modifyPriceChange(price, stock.openPrice);
+          const priceChangePercentage = modifyPricePercentage(
+            priceChange,
+            stock.openPrice,
+          );
+          return {...stock, priceChange, priceChangePercentage, price};
         }),
       );
       setStocks(updatedStocks);
@@ -42,8 +52,18 @@ export const StockProvider = ({children}: StockProviderProps) => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const findStockById = (id: string) => {
+    const stock = stocks.find(stock => stock.id === id);
+    if (stock) {
+      return stock;
+    } else {
+      console.log('No stock found');
+    }
+  };
+
   const value = {
     stocks: stocks,
+    findById: findStockById,
   };
 
   return (
@@ -53,9 +73,18 @@ export const StockProvider = ({children}: StockProviderProps) => {
 
 export default StockContext;
 
-function modifyPrice(price: number) {
+const modifyPrice = (price: number) => {
   const randomOffset = Math.random();
   const modifier = Math.random() > 0.5 ? 1 : -1;
   const modifiedPrice = price + randomOffset * modifier;
   return Number(modifiedPrice.toFixed(2));
-}
+};
+
+const modifyPriceChange = (price: number, openPrice: number) => {
+  const change = price - openPrice;
+  return Number(change.toFixed(2));
+};
+
+const modifyPricePercentage = (priceChange: number, openPrice: number) => {
+  return Number(((priceChange / openPrice) * 100).toFixed(2));
+};
