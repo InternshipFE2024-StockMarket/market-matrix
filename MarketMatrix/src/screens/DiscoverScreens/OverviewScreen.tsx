@@ -16,7 +16,9 @@ const OverviewScreen = () => {
   if (inputValue) {
     assets = assets?.filter(
       asset =>
-        asset.ticker === searchTerm || asset.companyName.includes(searchTerm),
+        asset.ticker.toLocaleLowerCase().includes(searchTerm) ||
+        asset.companyName.toLocaleLowerCase().includes(searchTerm) ||
+        asset.exchange.toLocaleLowerCase().includes(searchTerm),
     );
   }
 
