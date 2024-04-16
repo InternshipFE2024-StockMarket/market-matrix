@@ -14,10 +14,10 @@ export const CompanyTabNavigation = ({id}: CompanyNavigationProp) => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: Colors.companyScreenBackground,
+          backgroundColor: Colors.background500,
         },
         tabBarActiveTintColor: '#7fa4f8',
-        tabBarInactiveTintColor: '#c7c7c7',
+        tabBarInactiveTintColor: '#ffffff',
         tabBarIndicatorStyle: {
           backgroundColor: '#7fa4f8',
           height: 5,
