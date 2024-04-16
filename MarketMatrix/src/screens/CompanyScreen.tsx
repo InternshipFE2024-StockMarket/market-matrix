@@ -13,9 +13,9 @@ const industry = 'Industry:';
 const sector = 'Sector:';
 const market = 'Market capitalization';
 
-export const CompanyScreen = ({navigation}: any) => {
+export const CompanyScreen = ({navigation, route}: any) => {
   const [selectedStock, setSelectedStock] = useState<Stock | undefined>();
-  const ticker = 'AAPL';
+  const ticker = route.params.ticker;
 
   useEffect(() => {
     getStockByTicker();
@@ -32,13 +32,13 @@ export const CompanyScreen = ({navigation}: any) => {
 
   return (
     <GradientBackground>
+      <BackButton
+        text="Back"
+        onPress={() => navigation.goBack()}
+        style={styles.backButton}
+      />
       {selectedStock ? (
         <View>
-          <BackButton
-            text="Back"
-            onPress={() => navigation.goBack()}
-            style={styles.backButton}
-          />
           <View style={styles.rootContainer}>
             <View style={styles.companyDetaildContainer}>
               <View style={styles.upperView}>
@@ -47,7 +47,7 @@ export const CompanyScreen = ({navigation}: any) => {
                   source={{uri: selectedStock.image}}
                 />
                 <View style={styles.mainDetails}>
-                  <View>
+                  <View style={{flex: 1}}>
                     <Text style={styles.companyName}>
                       {selectedStock.companyName}
                     </Text>
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   detailColumn: {
-    flex: 1,
+    flex: 0.8,
     paddingRight: 10,
   },
   priceColumn: {
