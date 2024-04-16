@@ -2,11 +2,24 @@ import React, {useEffect, useState} from 'react';
 import {StockValues} from '../../constants/Interfaces';
 import {fetchChangesForStock} from '../../utils/http/fetchChangesForStock';
 import {ChartConfiguration} from '../chart/ChartConfiguration';
+import {Dimensions} from 'react-native';
 
 export const CandlestickChart = ({route}: any) => {
   const [candleChartData, setCandleChartData] = useState([]);
+  const [screenHeight, setScreenHeight] = useState(
+    Dimensions.get('window').height,
+  );
   const id = route.params?.userParams?.id;
   const title = `Recent Price Movements for ${id}`;
+
+  useEffect(() => {
+    const onChange = () => {
+      const {height} = Dimensions.get('window');
+      setScreenHeight(height);
+    };
+
+    Dimensions.addEventListener('change', onChange);
+  }, [screenHeight]);
 
   useEffect(() => {
     if (id) {
@@ -42,6 +55,7 @@ export const CandlestickChart = ({route}: any) => {
       seriesData={candleChartData}
       chartType="candlestick"
       ticker={id}
+      height={screenHeight}
     />
   );
 };

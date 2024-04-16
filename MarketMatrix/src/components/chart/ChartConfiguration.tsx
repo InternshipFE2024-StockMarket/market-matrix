@@ -8,6 +8,7 @@ interface ChartConfigurationProp {
   chartType: 'line' | 'candlestick' | 'bar';
   seriesData: number[];
   ticker?: string;
+  height?: number;
 }
 
 export const ChartConfiguration = ({
@@ -15,16 +16,17 @@ export const ChartConfiguration = ({
   chartType,
   seriesData,
   ticker,
+  height,
 }: ChartConfigurationProp) => {
   const [loading, setLoading] = useState(true);
+
   const chartConfig = {
     chart: {
       type: chartType,
       backgroundColor: Colors.companyScreenBackground,
       style: {
-        fontFamily: 'Arial',
         color: '#ffffff',
-        fontSize: 28,
+        fontSize: height ? (height > 500 ? '28' : '14') : '28',
         fontWeight: 'bold',
       },
     },
@@ -70,7 +72,7 @@ export const ChartConfiguration = ({
           color: '#ffffff',
           style: {
             fontWeight: 'bold',
-            fontSize: 24,
+            fontSize: height ? (height > 500 ? '24' : '14') : 24,
           },
         },
         color: Colors.green,
@@ -86,7 +88,7 @@ export const ChartConfiguration = ({
       enabled: true,
       itemStyle: {
         color: '#ffffff',
-        fontSize: 24,
+        fontSize: height ? (height > 500 ? '24' : '14') : '24',
       },
     },
     exporting: {
