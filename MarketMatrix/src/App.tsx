@@ -10,7 +10,8 @@ import MainNavigation from './navigation/MainNavigation';
 import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {StockProvider} from './contexts/stocksContext';
 import {SearchProvider} from './contexts/searchContext';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import AuthContextProvider from './contexts/authContext';
+import {Colors} from './constants/Colors';
 
 function App(): React.JSX.Element {
   const MyTheme = {
@@ -25,7 +26,9 @@ function App(): React.JSX.Element {
     <NavigationContainer theme={MyTheme}>
       <StockProvider>
         <SearchProvider>
-          <MainNavigation />
+          <AuthContextProvider>
+            <MainNavigation />
+          </AuthContextProvider>
         </SearchProvider>
       </StockProvider>
     </NavigationContainer>
