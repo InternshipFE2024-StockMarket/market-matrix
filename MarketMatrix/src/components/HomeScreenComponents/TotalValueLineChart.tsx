@@ -69,6 +69,10 @@ export const TotalValueLineChart = ({currency}: TotalValueLineChartProps) => {
   }
 
   return (
-    <ChartConfiguration ticker={''} seriesData={chartValues} chartType="line" />
+    <ChartConfiguration
+      title="Total values fluctuation"
+      seriesData={chartValues}
+      chartType="line"
+    />
   );
 };

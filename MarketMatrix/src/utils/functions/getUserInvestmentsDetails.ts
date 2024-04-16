@@ -36,6 +36,7 @@ export const useUserInvestmentsDetails = (
       );
 
       const userInvestmentData: UserInvestmentsDetails = {
+        id: userInvestment.id,
         ticker: stock.ticker,
         image: stock.image,
         currentPrice: stock.price,

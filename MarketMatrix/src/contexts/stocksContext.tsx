@@ -37,7 +37,7 @@ export const StockProvider = ({children}: StockProviderProps) => {
     };
     updateStocksData();
 
-    const intervalId = setInterval(updateStocksData, 30000);
+    const intervalId = setInterval(updateStocksData, 5000);
 
     return () => clearInterval(intervalId);
   }, []);

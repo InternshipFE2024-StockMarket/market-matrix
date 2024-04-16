@@ -9,12 +9,15 @@ import React from 'react';
 import MainNavigation from './navigation/MainNavigation';
 import {NavigationContainer} from '@react-navigation/native';
 import {StockProvider} from './contexts/stocksContext';
+import {SearchProvider} from './contexts/searchContext';
 
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <StockProvider>
-        <MainNavigation />
+        <SearchProvider>
+          <MainNavigation />
+        </SearchProvider>
       </StockProvider>
     </NavigationContainer>
   );

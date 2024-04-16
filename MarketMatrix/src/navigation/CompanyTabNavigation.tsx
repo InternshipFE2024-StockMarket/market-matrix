@@ -6,10 +6,10 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 const Tab = createMaterialTopTabNavigator();
 
 interface CompanyNavigationProp {
-  ticker: string;
+  id: string;
 }
 
-export const CompanyTabNavigation = ({ticker}: CompanyNavigationProp) => {
+export const CompanyTabNavigation = ({id}: CompanyNavigationProp) => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -27,13 +27,13 @@ export const CompanyTabNavigation = ({ticker}: CompanyNavigationProp) => {
         name="LineChart"
         component={LineChart}
         options={{title: 'Line Chart'}}
-        initialParams={{userParams: {ticker}}}
+        initialParams={{userParams: {id}}}
       />
       <Tab.Screen
         name="CandlestickChart"
         component={CandlestickChart}
         options={{title: 'Candlestick Chart'}}
-        initialParams={{userParams: {ticker}}}
+        initialParams={{userParams: {id}}}
       />
     </Tab.Navigator>
   );
