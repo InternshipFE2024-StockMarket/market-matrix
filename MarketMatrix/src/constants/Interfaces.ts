@@ -1,21 +1,4 @@
 // Add global interfaces
-export interface Stock {
-  id: string;
-  ticker: string;
-  companyName: string;
-  companyValue: string;
-  price: number;
-  priceChangePercentage: number;
-  priceChange: number;
-  image: string;
-  ceo: string;
-  city: string;
-  state: string;
-  industry: string;
-  sector: string;
-  type: string;
-}
-
 export interface StockValues {
   date: string;
   close: number;
@@ -58,6 +41,7 @@ export interface Stock {
   id: string;
   ticker: string;
   companyName: string;
+  companyValue: string;
   price: number;
   priceChangePercentage: number;
   priceChange: number;
