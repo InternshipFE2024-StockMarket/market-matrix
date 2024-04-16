@@ -31,8 +31,8 @@ export const getTotalPortofolioValue = () => {
       if (stock) {
         const value = getDynamicValue(investition.shares, stock.price);
         const differenceValue = getDynamicValue(
-          investition.shares,
           stock.openPrice - stock.price,
+          investition.shares,
         );
 
         total = total + value;
