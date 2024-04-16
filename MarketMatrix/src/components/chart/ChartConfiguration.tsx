@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import WebView from 'react-native-webview';
 import {Colors} from '../../constants/Colors';
 
@@ -128,11 +128,17 @@ export const ChartConfiguration = ({
 
   return (
     <View style={styles.container}>
-      <WebView
-        originWhitelist={['*']}
-        source={{html: htmlContent}}
-        style={{flex: 1}}
-      />
+      {seriesData.length > 0 ? (
+        <WebView
+          originWhitelist={['*']}
+          source={{html: htmlContent}}
+          style={{flex: 1}}
+        />
+      ) : (
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>There are no data</Text>
+        </View>
+      )}
     </View>
   );
 };
@@ -141,5 +147,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  textContainer: {
+    justifyContent: 'center',
+    alignContent: 'center',
+    flex: 1,
+  },
+  text: {
+    fontSize: 26,
+    alignSelf: 'center',
   },
 });
