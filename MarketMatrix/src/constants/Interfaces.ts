@@ -1,5 +1,6 @@
 // Add global interfaces
 export interface Stock {
+  id: string;
   ticker: string;
   companyName: string;
   companyValue: string;

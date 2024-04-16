@@ -6,18 +6,18 @@ import {Text, View} from 'react-native';
 
 export const LineChart = ({route}: any) => {
   const [chartValues, setChartValues] = useState([]);
-  const ticker = route.params?.userParams?.ticker;
+  const id = route.params?.userParams?.id;
 
   useEffect(() => {
-    if (ticker) {
+    if (id) {
       getValuesForStock();
     } else {
       console.log('Ticker is undefined.');
     }
-  }, [ticker]);
+  }, [id]);
 
   const getValuesForStock = async () => {
-    const selStock = await fetchChangesForStock(ticker);
+    const selStock = await fetchChangesForStock(id);
     if (selStock) {
       try {
         const chartData = selStock.values.map((item: StockValues) => {
@@ -33,10 +33,6 @@ export const LineChart = ({route}: any) => {
     }
   };
   return (
-    <ChartConfiguration
-      ticker={ticker}
-      seriesData={chartValues}
-      chartType="line"
-    />
+    <ChartConfiguration ticker={id} seriesData={chartValues} chartType="line" />
   );
 };

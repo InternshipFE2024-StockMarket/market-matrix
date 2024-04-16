@@ -12,13 +12,12 @@ interface AssetItemProps {
 
 const AssetItem = ({stock}: AssetItemProps) => {
   const navigation = useNavigation<{
-    navigate: (screen: string, params: {ticker: string}) => void;
+    navigate: (screen: string, params: {id: string}) => void;
   }>();
 
   const change = stock.priceChangePercentage;
   return (
-    <Pressable
-      onPress={() => navigation.navigate('Company', {ticker: stock.ticker})}>
+    <Pressable onPress={() => navigation.navigate('Company', {id: stock.id})}>
       <CardContainer>
         <View style={styles.container}>
           <View style={styles.leftContainer}>

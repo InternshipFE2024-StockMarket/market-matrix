@@ -5,18 +5,18 @@ import {ChartConfiguration} from '../chart/ChartConfiguration';
 
 export const CandlestickChart = ({route}: any) => {
   const [candleChartData, setCandleChartData] = useState([]);
-  const ticker = route.params?.userParams?.ticker;
+  const id = route.params?.userParams?.id;
 
   useEffect(() => {
-    if (ticker) {
+    if (id) {
       getValuesForStock();
     } else {
       console.log('Ticker is undefined.');
     }
-  }, [ticker]);
+  }, [id]);
 
   const getValuesForStock = async () => {
-    const selStock = await fetchChangesForStock(ticker);
+    const selStock = await fetchChangesForStock(id);
     if (selStock) {
       try {
         const chartData = selStock.values.map((item: StockValues) => {
@@ -37,7 +37,7 @@ export const CandlestickChart = ({route}: any) => {
 
   return (
     <ChartConfiguration
-      ticker={ticker}
+      ticker={id}
       seriesData={candleChartData}
       chartType="candlestick"
     />

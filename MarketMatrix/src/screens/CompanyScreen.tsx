@@ -4,7 +4,7 @@ import GradientBackground from '../components/UI/GradientBackground';
 import {Colors} from '../constants/Colors';
 import {Stock} from '../constants/Interfaces';
 import {CompanyTabNavigation} from '../navigation/CompanyTabNavigation';
-import {fetchStockByTicker} from '../utils/http/fetchStockbyTicker';
+import {fetchStockById} from '../utils/http/fetchStockbyTicker';
 import {BackButton} from '../components/UI/BackButton';
 
 const nasdaq = 'NASDAQ:';
@@ -15,15 +15,15 @@ const market = 'Market capitalization';
 
 export const CompanyScreen = ({navigation, route}: any) => {
   const [selectedStock, setSelectedStock] = useState<Stock | undefined>();
-  const ticker = route.params.ticker;
+  const id = route.params.id;
 
   useEffect(() => {
     getStockByTicker();
-  }, [ticker]);
+  }, [id]);
 
   const getStockByTicker = async () => {
     try {
-      const stock = await fetchStockByTicker(ticker);
+      const stock = await fetchStockById(id);
       setSelectedStock(stock);
     } catch (error: any) {
       console.error('Failed to fetch stock:', error);
@@ -84,11 +84,11 @@ export const CompanyScreen = ({navigation, route}: any) => {
                 </View>
               </View>
             </View>
-            <CompanyTabNavigation ticker={ticker} />
+            <CompanyTabNavigation id={id} />
           </View>
         </View>
       ) : (
-        <Text>No details available for {ticker}</Text>
+        <Text>No details available for {id}</Text>
       )}
     </GradientBackground>
   );
