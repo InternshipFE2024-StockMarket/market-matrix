@@ -17,7 +17,6 @@ export const ChartConfiguration = ({
   const chartConfig = {
     chart: {
       type: chartType,
-      // backgroundColor: '#ffffff',
       borderWidth: 0,
     },
     title: {
@@ -64,8 +63,8 @@ export const ChartConfiguration = ({
           },
         },
         tooltip: {
-          headerFormat: '<span style="font-size: 30px">{point.key}</span><br/>', // Set font size of tooltip header
-          pointFormat: '<span style="font-size: 30px">{point.y}</span><br/>', // Set font size of tooltip point
+          headerFormat: '<span style="font-size: 30px">{point.key}</span><br/>',
+          pointFormat: '<span style="font-size: 30px">{point.y}</span><br/>',
         },
       },
       candlestick: {
@@ -74,8 +73,8 @@ export const ChartConfiguration = ({
         upColor: 'lightgreen',
         upLineColor: 'green',
         tooltip: {
-          headerFormat: '<span style="font-size: 30px">{point.key}</span><br/>', // Set font size of tooltip header
-          pointFormat: '<span style="font-size: 30px">{point.y}</span><br/>', // Set font size of tooltip point
+          headerFormat: '<span style="font-size: 30px">{point.key}</span><br/>',
+          pointFormat: '<span style="font-size: 30px">{point.y}</span><br/>',
         },
       },
     },

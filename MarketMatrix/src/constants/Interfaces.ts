@@ -15,7 +15,6 @@ export interface Stock {
   type: string;
 }
 
-// Add global interfaces
 export interface StockValues {
   date: string;
   close: number;

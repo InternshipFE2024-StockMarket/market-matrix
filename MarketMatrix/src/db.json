@@ -2567,18 +2567,21 @@
       "password": "s3cur3P@ssw0rd",
       "investment": [
         {
+          "id": "AAPL",
           "ticker": "AAPL",
           "amount": 5000,
           "boughtPrice": 191.2314,
           "shares": 26.14
         },
         {
+          "id": "COST",
           "ticker": "COST",
           "amount": 3000,
           "boughtPrice": 693.02,
           "shares": 4.33
         },
         {
+          "id": "BAC",
           "ticker": "BAC",
           "amount": 2000,
           "boughtPrice": 32.635,
@@ -2594,18 +2597,21 @@
       "password": "s3cur3P@ssw0rd",
       "investment": [
         {
+          "id": "AAPL",
           "ticker": "AAPL",
           "amount": 5000,
           "boughtPrice": 191.2314,
           "shares": 26.14
         },
         {
+          "id": "COST",
           "ticker": "COST",
           "amount": 3000,
           "boughtPrice": 693.02,
           "shares": 4.33
         },
         {
+          "id": "BAC",
           "ticker": "BAC",
           "amount": 2000,
           "boughtPrice": 32.635,

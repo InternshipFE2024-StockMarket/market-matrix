@@ -1,36 +1,30 @@
 import {ChartConfiguration} from '../chart/ChartConfiguration';
+import useFetchUserInvetments from '../../utils/http/useFetchUserInvetments';
+import {useFetchChanges} from '../../utils/http/useFetchChanges';
 import {useEffect, useState} from 'react';
-import {StockChanges, UserData} from '../../constants/Interfaces';
-import axios from 'axios';
+import {StockChanges} from '../../constants/Interfaces';
 
 interface TotalValueLineChartProps {
   currency: string;
 }
 
 export const TotalValueLineChart = ({currency}: TotalValueLineChartProps) => {
-  const [user, setUser] = useState<UserData[]>([]);
+  const userInvestments = useFetchUserInvetments(123456);
   const [changes, setChanges] = useState<StockChanges[]>([]);
+  useEffect(() => {
+    const fetchChanges = async () => {
+      const response = await useFetchChanges();
+      setChanges(response);
+    };
+    fetchChanges();
+  }, []);
 
   let chartValues: number[] = [];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8081/src/db.json');
-        setUser(response.data.user);
-        setChanges(response.data.changes);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (user?.length > 0 && changes.length > 0) {
+  if (userInvestments.length > 0 && changes.length > 0) {
     const dateTotalMap = new Map();
 
-    user[0].investment.forEach(investment => {
+    userInvestments.forEach(investment => {
       changes.forEach(change => {
         const last7DaysValues = change.values.slice(-7);
 
