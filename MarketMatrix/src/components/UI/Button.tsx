@@ -21,10 +21,12 @@ export default Button;
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: Colors.border,
+    borderRadius: 10,
   },
   button: {
-    width: '40%',
     backgroundColor: Colors.background800,
   },
   title: {
