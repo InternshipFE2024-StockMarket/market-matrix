@@ -60,6 +60,7 @@ export interface Stock {
   companyName: string;
   companyValue: string;
   price: number;
+  openPrice: number;
   priceChangePercentage: number;
   priceChange: number;
   image: string;

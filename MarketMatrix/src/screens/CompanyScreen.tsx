@@ -6,6 +6,7 @@ import {Stock} from '../constants/Interfaces';
 import {CompanyTabNavigation} from '../navigation/CompanyTabNavigation';
 import {fetchStockById} from '../utils/http/fetchStockbyTicker';
 import {BackButton} from '../components/UI/BackButton';
+import {useStock} from '../contexts/stocksContext';
 
 const nasdaq = 'NASDAQ:';
 const ceo = 'CEO:';
@@ -14,21 +15,28 @@ const sector = 'Sector:';
 const market = 'Market capitalization';
 
 export const CompanyScreen = ({navigation, route}: any) => {
-  const [selectedStock, setSelectedStock] = useState<Stock | undefined>();
+  const [selStock, setSelectedStock] = useState<Stock | string>();
+  const stockContext = useStock();
   const id = route.params.id;
+  const findById = stockContext?.findById;
 
   useEffect(() => {
-    getStockByTicker();
-  }, [id]);
-
-  const getStockByTicker = async () => {
-    try {
-      const stock = await fetchStockById(id);
-      setSelectedStock(stock);
-    } catch (error: any) {
-      console.error('Failed to fetch stock:', error);
+    if (id && findById) {
+      const stock = findById(id);
+      if (stock) {
+        setSelectedStock(stock);
+      } else {
+        setSelectedStock('Stock not found');
+      }
     }
-  };
+  }, [id, stockContext]);
+
+  if (typeof selStock === 'string') {
+    return <Text>Stock not found</Text>;
+  }
+
+  const change = selStock?.priceChange;
+  const percentage = selStock?.priceChangePercentage;
 
   return (
     <GradientBackground>
@@ -37,27 +45,27 @@ export const CompanyScreen = ({navigation, route}: any) => {
         onPress={() => navigation.goBack()}
         style={styles.backButton}
       />
-      {selectedStock ? (
+      {selStock ? (
         <View>
           <View style={styles.rootContainer}>
             <View style={styles.companyDetaildContainer}>
               <View style={styles.upperView}>
                 <Image
                   style={styles.companyImage}
-                  source={{uri: selectedStock.image}}
+                  source={{uri: selStock.image}}
                 />
                 <View style={styles.mainDetails}>
                   <View style={{flex: 1}}>
                     <Text style={styles.companyName}>
-                      {selectedStock.companyName}
+                      {selStock.companyName}
                     </Text>
                     <Text style={styles.compantIndex}>
-                      {nasdaq} {selectedStock.ticker}
+                      {nasdaq} {selStock.ticker}
                     </Text>
                   </View>
                   <View>
                     <Text style={styles.companyCapital}>
-                      ${selectedStock.companyValue}
+                      ${selStock.companyValue}
                     </Text>
                     <Text style={styles.marketText}>{market}</Text>
                   </View>
@@ -66,21 +74,39 @@ export const CompanyScreen = ({navigation, route}: any) => {
               <View style={styles.secondaryDetails}>
                 <View style={styles.detailColumn}>
                   <Text style={styles.detailsText}>
-                    {ceo} {selectedStock.ceo}
+                    {ceo} {selStock.ceo}
                   </Text>
                   <Text style={styles.detailsText}>
-                    {industry} {selectedStock.industry}
+                    {industry} {selStock.industry}
                   </Text>
                   <Text style={styles.detailsText}>
-                    {sector} {selectedStock.sector}
+                    {sector} {selStock.sector}
                   </Text>
                 </View>
                 <View style={styles.priceColumn}>
-                  <Text style={styles.priceValue}>${selectedStock.price}</Text>
-                  <Text style={styles.fluctuationText}>
-                    {selectedStock.priceChange.toFixed(2)} (
-                    {selectedStock.priceChangePercentage.toFixed(2)}%)
-                  </Text>
+                  <Text style={styles.priceValue}>${selStock.price}</Text>
+                  <View style={styles.fluctuationText}>
+                    <Text
+                      style={{
+                        fontSize: 16,
+                        color:
+                          change && change > 0 ? Colors.green : Colors.pink,
+                      }}>
+                      {change && change > 0 ? '+' : ''}
+                      {change}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 16,
+                        color:
+                          percentage && percentage > 0
+                            ? Colors.green
+                            : Colors.pink,
+                      }}>
+                      ({percentage && percentage > 0 ? '+' : ''}
+                      {percentage}%)
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>
@@ -169,7 +195,6 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   fluctuationText: {
-    color: Colors.pink,
-    fontSize: 16,
+    flexDirection: 'row',
   },
 });
