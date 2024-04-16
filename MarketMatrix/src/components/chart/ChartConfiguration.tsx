@@ -1,50 +1,81 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import WebView from 'react-native-webview';
+import {Colors} from '../../constants/Colors';
 
 interface ChartConfigurationProp {
-  ticker: string;
+  title: string;
   chartType: 'line' | 'candlestick' | 'bar';
   seriesData: number[];
 }
 
 export const ChartConfiguration = ({
-  ticker,
+  title,
   chartType,
   seriesData,
 }: ChartConfigurationProp) => {
   const chartConfig = {
     chart: {
       type: chartType,
+      borderWidth: 0,
     },
     title: {
-      text:
-        chartType === 'line'
-          ? `Recent Close Prices for ${ticker}`
-          : chartType === 'candlestick'
-          ? `Price Movements for ${ticker}`
-          : chartType === 'bar'
-          ? `Bar chart for ${ticker}`
-          : 'Chart type not defined',
+      text: title,
+      style: {
+        fontSize: 40,
+        fontWeight: 'bold',
+      },
     },
     xAxis: {
-      title: {text: 'Date'},
+      title: {
+        text: 'Date',
+        style: {
+          fontSize: 30,
+          alignSelf: 'center',
+        },
+      },
       type: 'datetime',
+      labels: {
+        style: {
+          fontSize: 30,
+        },
+      },
     },
     yAxis: {
       title: {
         text: 'Price',
+        style: {
+          fontSize: 30,
+        },
+      },
+      labels: {
+        style: {
+          fontSize: 24,
+        },
       },
     },
     plotOptions: {
       line: {
-        dataLabels: {enabled: true},
+        dataLabels: {
+          enabled: true,
+          style: {
+            fontSize: 26,
+          },
+        },
+        tooltip: {
+          headerFormat: '<span style="font-size: 30px">{point.key}</span><br/>',
+          pointFormat: '<span style="font-size: 30px">{point.y}</span><br/>',
+        },
       },
       candlestick: {
         color: 'pink',
         lineColor: 'red',
         upColor: 'lightgreen',
         upLineColor: 'green',
+        tooltip: {
+          headerFormat: '<span style="font-size: 30px">{point.key}</span><br/>',
+          pointFormat: '<span style="font-size: 30px">{point.y}</span><br/>',
+        },
       },
     },
     series: [
@@ -68,6 +99,15 @@ export const ChartConfiguration = ({
   const htmlContent = `
       <html>
         <head>
+        <style>
+        body, html, #container {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          
+        }
+      </style>
         <script src="https://code.highcharts.com/stock/highstock.js"></script>
         <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/stock/modules/candlestick.js"></script>
@@ -87,11 +127,17 @@ export const ChartConfiguration = ({
 
   return (
     <View style={styles.container}>
-      <WebView
-        originWhitelist={['*']}
-        source={{html: htmlContent}}
-        style={{flex: 1}}
-      />
+      {seriesData.length > 0 ? (
+        <WebView
+          originWhitelist={['*']}
+          source={{html: htmlContent}}
+          style={{flex: 1}}
+        />
+      ) : (
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>There are no data</Text>
+        </View>
+      )}
     </View>
   );
 };
@@ -100,5 +146,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  textContainer: {
+    justifyContent: 'center',
+    alignContent: 'center',
+    flex: 1,
+  },
+  text: {
+    fontSize: 26,
+    alignSelf: 'center',
   },
 });

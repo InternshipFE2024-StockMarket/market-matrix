@@ -1,8 +1,8 @@
-// Add global interfaces
 export interface Stock {
   ticker: string;
   companyName: string;
   companyValue: string;
+  openPrice: number;
   price: number;
   priceChangePercentage: number;
   priceChange: number;
@@ -29,6 +29,7 @@ export interface StockChanges {
 }
 
 export interface UserInvestmentsDetails {
+  id: string;
   ticker: string;
   image: string;
   currentPrice: number;
@@ -38,6 +39,7 @@ export interface UserInvestmentsDetails {
 }
 
 export interface Investment {
+  id: string;
   ticker: string;
   amount: number;
   boughtPrice: number;
@@ -55,7 +57,9 @@ export interface Stock {
   id: string;
   ticker: string;
   companyName: string;
+  companyValue: string;
   price: number;
+  openPrice: number;
   priceChangePercentage: number;
   priceChange: number;
   image: string;
@@ -80,4 +84,10 @@ export interface FormCredentials {
   password: string;
   confirmEmail?: string;
   confirmPassword?: string;
+}
+export interface UserData {
+  id: string;
+  name: string;
+  investment: Investment[];
+  total: string;
 }
