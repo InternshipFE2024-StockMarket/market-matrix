@@ -1,10 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, StyleSheet, Image, Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {Stock} from '../../constants/Interfaces';
 import {Colors} from '../../constants/Colors';
 import CardContainer from '../UI/CardContainer';
-import {useNavigation} from '@react-navigation/native';
 
 interface AssetItemProps {
   stock: Stock;
