@@ -12,4 +12,5 @@ export const Colors = {
   border: 'rgba(247, 248, 250, 0.3)',
   companyScreenBackground: 'rgba(177, 188, 222, 0.1)',
   selectedIcon: '#617ae0',
+  dropdown: 'rgba(251, 251, 251, 0.54)',
 };

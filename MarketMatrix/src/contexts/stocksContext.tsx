@@ -16,7 +16,7 @@ const StockContext = createContext<StockContextValue | undefined>({
 export const useStock = () => {
   const context = useContext(StockContext);
   if (!context) {
-    console.log('useStock must be used within a StockProvider');
+    throw new Error('useStock must be used within a StockProvider');
   }
   return context;
 };

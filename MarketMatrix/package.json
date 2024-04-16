@@ -11,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@highcharts/highcharts-react-native": "^3.1.7",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/material-top-tabs": "^6.6.13",
     "@react-navigation/native": "^6.1.17",
@@ -21,6 +22,9 @@
     "json-server": "^1.0.0-alpha.23",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-dropdown-picker": "^5.4.6",
+    "react-native-dropdown-select-list": "^2.0.5",
+    "react-native-element-dropdown": "^2.10.4",
     "react-native-highcharts": "^1.0.2",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-pager-view": "^6.3.0",
