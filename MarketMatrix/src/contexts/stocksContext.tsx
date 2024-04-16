@@ -40,9 +40,6 @@ export const StockProvider = ({children}: StockProviderProps) => {
             priceChange,
             stock.openPrice,
           );
-          // console.log('OPEN ', stock.openPrice);
-          // console.log('PRICE ', price);
-          // console.log('CHANGE ', priceChange);
           return {...stock, priceChange, priceChangePercentage, price};
         }),
       );
