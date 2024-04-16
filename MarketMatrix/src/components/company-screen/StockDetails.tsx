@@ -1,34 +1,57 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
+import {useRoute} from '@react-navigation/native';
 import {Stock} from '../../constants/Interfaces';
 import {Colors} from '../../constants/Colors';
-
-interface StockDetailsProp {
-  selStock: Stock;
-}
+import {useStock} from '../../contexts/stocksContext';
 
 const nasdaq = 'NASDAQ:';
 const ceo = 'CEO:';
 const industry = 'Industry:';
 const sector = 'Sector:';
 const market = 'Market capitalization';
+interface RouteParams {
+  id: string;
+}
 
-export const StockDetails = ({selStock}: StockDetailsProp) => {
+export const StockDetails = () => {
+  const [selStock, setSelectedStock] = useState<Stock | string>();
+  const stockContext = useStock();
+  const route = useRoute();
+  const {id} = route.params as RouteParams;
+
+  const findById = stockContext?.findById;
+
+  useEffect(() => {
+    if (id && findById) {
+      const stock = findById(id.toString());
+      if (stock) {
+        setSelectedStock(stock);
+      } else {
+        setSelectedStock('Stock not found');
+      }
+    }
+  }, [id, stockContext]);
+
+  if (typeof selStock === 'string') {
+    return <Text>Stock not found</Text>;
+  }
+
   const change = selStock?.priceChange;
   const percentage = selStock?.priceChangePercentage;
   return (
     <View style={styles.companyDetaildContainer}>
       <View style={styles.upperView}>
-        <Image style={styles.companyImage} source={{uri: selStock.image}} />
+        <Image style={styles.companyImage} source={{uri: selStock?.image}} />
         <View style={styles.mainDetails}>
           <View style={{flex: 1}}>
-            <Text style={styles.companyName}>{selStock.companyName}</Text>
+            <Text style={styles.companyName}>{selStock?.companyName}</Text>
             <Text style={styles.compantIndex}>
-              {nasdaq} {selStock.ticker}
+              {nasdaq} {selStock?.ticker}
             </Text>
           </View>
           <View>
-            <Text style={styles.companyCapital}>${selStock.companyValue}</Text>
+            <Text style={styles.companyCapital}>${selStock?.companyValue}</Text>
             <Text style={styles.marketText}>{market}</Text>
           </View>
         </View>
@@ -36,17 +59,17 @@ export const StockDetails = ({selStock}: StockDetailsProp) => {
       <View style={styles.secondaryDetails}>
         <View style={styles.detailColumn}>
           <Text style={styles.detailsText}>
-            {ceo} {selStock.ceo}
+            {ceo} {selStock?.ceo}
           </Text>
           <Text style={styles.detailsText}>
-            {industry} {selStock.industry}
+            {industry} {selStock?.industry}
           </Text>
           <Text style={styles.detailsText}>
-            {sector} {selStock.sector}
+            {sector} {selStock?.sector}
           </Text>
         </View>
         <View style={styles.priceColumn}>
-          <Text style={styles.priceValue}>${selStock.price}</Text>
+          <Text style={styles.priceValue}>${selStock?.price}</Text>
           <View style={styles.fluctuationText}>
             <Text
               style={{
