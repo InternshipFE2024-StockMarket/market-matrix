@@ -33,17 +33,17 @@ const AuthForm = ({isLogin, onSubmit}: AuthFormProps) => {
     }
   };
 
-  function submitHandler() {
+  const submitHandler = () => {
     onSubmit({
       email: enteredEmail,
       confirmEmail: enteredConfirmEmail,
       password: enteredPassword,
       confirmPassword: enteredConfirmPassword,
     });
-  }
+  };
 
   return (
-    <View style={styles.rootContainer}>
+    <View>
       <View style={styles.form}>
         <Input
           label="Email Address"
@@ -87,9 +87,6 @@ const AuthForm = ({isLogin, onSubmit}: AuthFormProps) => {
 export default AuthForm;
 
 const styles = StyleSheet.create({
-  rootContainer: {
-    // flex: 1,
-  },
   form: {
     marginHorizontal: 20,
   },
