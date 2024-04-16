@@ -1,7 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Stock} from '../constants/Interfaces';
 import {fetchStocks} from '../utils/http/fetchStocks';
-// import {patchPrice} from '../utils/http/patchPrice';
 
 interface StockContextValue {
   stocks: Stock[];
@@ -31,7 +30,6 @@ export const StockProvider = ({children}: StockProviderProps) => {
       const updatedStocks = await Promise.all(
         stocksData.map(async (stock: Stock) => {
           const price = modifyPrice(stock.price);
-          // await patchPrice(stock.id, price);
           return {...stock, price};
         }),
       );

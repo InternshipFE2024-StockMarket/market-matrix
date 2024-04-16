@@ -26,7 +26,6 @@ const AssetItem = ({stock}: AssetItemProps) => {
 
         <View style={styles.rightContainer}>
           <Text style={styles.price}>{stock.price}</Text>
-
           <Text
             style={{
               color: change > 0 ? Colors.green : Colors.pink,
@@ -56,14 +55,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     gap: 6,
   },
-
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 3,
     color: Colors.text500,
   },
-
   ticker: {
     fontSize: 18,
     fontWeight: 'bold',
