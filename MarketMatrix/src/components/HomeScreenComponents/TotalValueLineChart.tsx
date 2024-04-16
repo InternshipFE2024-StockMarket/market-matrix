@@ -69,10 +69,6 @@ export const TotalValueLineChart = ({currency}: TotalValueLineChartProps) => {
   }
 
   return (
-    <ChartConfiguration
-      ticker={''} //delete this after merge
-      seriesData={chartValues}
-      chartType="line"
-    />
+    <ChartConfiguration ticker={''} seriesData={chartValues} chartType="line" />
   );
 };
