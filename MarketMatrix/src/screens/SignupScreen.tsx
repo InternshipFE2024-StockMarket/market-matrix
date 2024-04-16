@@ -8,9 +8,6 @@ const SignoutScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSignup = async ({email, password}: FormCredentials) => {
-    console.log({email});
-    console.log({password});
-
     setIsLoading(true);
     await createUser(email, password);
     setIsLoading(false);
