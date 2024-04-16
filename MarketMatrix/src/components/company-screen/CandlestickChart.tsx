@@ -6,6 +6,7 @@ import {ChartConfiguration} from '../chart/ChartConfiguration';
 export const CandlestickChart = ({route}: any) => {
   const [candleChartData, setCandleChartData] = useState([]);
   const id = route.params?.userParams?.id;
+  const title = `Recent Price Movements for ${id}`;
 
   useEffect(() => {
     if (id) {
@@ -37,7 +38,7 @@ export const CandlestickChart = ({route}: any) => {
 
   return (
     <ChartConfiguration
-      ticker={id}
+      title={title}
       seriesData={candleChartData}
       chartType="candlestick"
     />

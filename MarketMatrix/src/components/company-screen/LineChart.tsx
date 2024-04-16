@@ -7,6 +7,7 @@ import {Text, View} from 'react-native';
 export const LineChart = ({route}: any) => {
   const [chartValues, setChartValues] = useState([]);
   const id = route.params?.userParams?.id;
+  const title = `Recent Close Prices for ${id}`;
 
   useEffect(() => {
     if (id) {
@@ -33,6 +34,10 @@ export const LineChart = ({route}: any) => {
     }
   };
   return (
-    <ChartConfiguration ticker={id} seriesData={chartValues} chartType="line" />
+    <ChartConfiguration
+      title={title}
+      seriesData={chartValues}
+      chartType="line"
+    />
   );
 };
