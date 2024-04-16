@@ -8,6 +8,8 @@ import axios from 'axios';
 import {StockChanges, UserData} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
+import {LineChart} from '../components/company-screen/LineChart';
+import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
 
 interface Story {
   company: string;
@@ -140,7 +142,11 @@ const HomeScreen = () => {
             />
           ))}
         </View>
-        <Text style={styles.text}>Chart</Text>
+        <View style={styles.chartContainer}>
+          <View style={styles.chart}>
+            <TotalValueLineChart currency={currency} />
+          </View>
+        </View>
       </View>
     </GradientBackground>
   );
@@ -188,5 +194,14 @@ const styles = StyleSheet.create({
   dropdown: {
     position: 'absolute',
     right: 0,
+  },
+  chartContainer: {
+    marginTop: '20%',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  chart: {
+    width: '100%',
+    height: '65%',
   },
 });
