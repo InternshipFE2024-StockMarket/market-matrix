@@ -2,11 +2,11 @@ import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import Input from './Input';
 import Button from '../UI/Button';
-import {Form, FormValidation} from './AuthContent';
+import {FormCredentials, FormValidation} from '../../constants/Interfaces';
 
 interface AuthFormProps {
   isLogin?: boolean;
-  onSubmit: (credentials: Form) => void;
+  onSubmit: (credentials: FormCredentials) => void;
   credentialsInvalid: FormValidation;
 }
 

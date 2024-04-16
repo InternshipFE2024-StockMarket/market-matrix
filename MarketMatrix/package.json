@@ -21,6 +21,7 @@
     "json-server": "^1.0.0-alpha.23",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-dotenv": "^3.4.11",
     "react-native-highcharts": "^1.0.2",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-pager-view": "^6.3.0",

@@ -5,26 +5,14 @@ import {Colors} from '../../constants/Colors';
 import AuthForm from './AuthForm';
 import {useNavigation} from '@react-navigation/core';
 import Button from '../UI/Button';
+import {FormCredentials, FormValidation} from '../../constants/Interfaces';
 
 interface AuthContentProps {
   isLogin?: boolean;
+  onAuthenticate?: any;
 }
 
-export interface FormValidation {
-  email: boolean;
-  password: boolean;
-  confirmEmail: boolean;
-  confirmPassword: boolean;
-}
-
-export interface Form {
-  email: string;
-  password: string;
-  confirmEmail?: string;
-  confirmPassword?: string;
-}
-
-const AuthContent = ({isLogin}: AuthContentProps) => {
+const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
   const navigation = useNavigation();
 
   const [credentialsInvalid, setCredentialsInvalid] = useState<FormValidation>({
@@ -34,14 +22,14 @@ const AuthContent = ({isLogin}: AuthContentProps) => {
     confirmPassword: false,
   });
 
-  const handleSubmit = (credentials: Form) => {
+  const handleSubmit = (credentials: FormCredentials) => {
     let {email, confirmEmail, password, confirmPassword} = credentials;
 
     email = email.trim();
     password = password.trim();
 
     const emailIsValid = email.includes('@');
-    const passwordIsValid = password.length >= 6;
+    const passwordIsValid = password.length > 6;
     const emailsAreEqual = email === confirmEmail;
     const passwordsAreEqual = password === confirmPassword;
 
@@ -60,6 +48,7 @@ const AuthContent = ({isLogin}: AuthContentProps) => {
       return;
     }
     console.log('Submit');
+    onAuthenticate({email, password});
   };
 
   const handleSwitchToLogin = () => {
