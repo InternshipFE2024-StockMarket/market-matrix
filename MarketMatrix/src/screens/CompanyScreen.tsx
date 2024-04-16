@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
   companyDetaildContainer: {
     margin: '3%',
     height: '30%',
+    flex: 0.55,
   },
   upperView: {
     flexDirection: 'row',

@@ -30,6 +30,7 @@ export interface StockChanges {
 }
 
 export interface UserInvestmentsDetails {
+  id: string;
   ticker: string;
   image: string;
   currentPrice: number;
@@ -39,6 +40,7 @@ export interface UserInvestmentsDetails {
 }
 
 export interface Investment {
+  id: string;
   ticker: string;
   amount: number;
   boughtPrice: number;

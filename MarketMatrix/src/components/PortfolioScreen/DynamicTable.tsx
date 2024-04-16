@@ -21,9 +21,10 @@ const DynamicTable = ({data}: DynamicTableProps) => {
       </View>
       <FlatList
         data={data}
-        keyExtractor={item => item.ticker}
+        keyExtractor={item => item.id}
         renderItem={({item}) => (
           <TableRow
+            id={item.id}
             ticker={item.ticker}
             amount={item.amount}
             plValue={item.plValue}

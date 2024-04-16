@@ -1,11 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/Colors';
 import AssetCell from './AssetCell';
 import {UserInvestmentsDetails} from '../../constants/Interfaces';
+import {useNavigation} from '@react-navigation/native';
 
 const TableRow = ({
+  id,
   ticker,
   amount,
   plValue,
@@ -13,28 +15,34 @@ const TableRow = ({
   currentPrice,
   image,
 }: UserInvestmentsDetails) => {
+  const navigation = useNavigation<{
+    navigate: (screen: string, params: {id: string}) => void;
+  }>();
+
   return (
-    <LinearGradient
-      colors={[Colors.cardBackground500, Colors.cardBackground700]}
-      style={styles.container}>
-      <View style={styles.row}>
-        <AssetCell
-          ticker={ticker}
-          price={currentPrice}
-          logoSource={image}
-          style={styles.cell}
-        />
-        <Text style={[styles.cell, styles.text]}>{amount}</Text>
-        <Text
-          style={[
-            {color: plValue > 0 ? Colors.green : Colors.pink},
-            styles.cell,
-          ]}>
-          {plValue}
-        </Text>
-        <Text style={[styles.cell, styles.text]}>{dynamicValue}</Text>
-      </View>
-    </LinearGradient>
+    <Pressable onPress={() => navigation.navigate('Company', {id: id})}>
+      <LinearGradient
+        colors={[Colors.cardBackground500, Colors.cardBackground700]}
+        style={styles.container}>
+        <View style={styles.row}>
+          <AssetCell
+            ticker={ticker}
+            price={currentPrice}
+            logoSource={image}
+            style={styles.cell}
+          />
+          <Text style={[styles.cell, styles.text]}>{amount}</Text>
+          <Text
+            style={[
+              {color: plValue > 0 ? Colors.green : Colors.pink},
+              styles.cell,
+            ]}>
+            {plValue}
+          </Text>
+          <Text style={[styles.cell, styles.text]}>{dynamicValue}</Text>
+        </View>
+      </LinearGradient>
+    </Pressable>
   );
 };
 
