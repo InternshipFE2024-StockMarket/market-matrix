@@ -1,4 +1,12 @@
-import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+  Modal,
+  Button,
+  Pressable,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
@@ -9,6 +17,7 @@ import {StockChanges} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
+import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
 
 interface Story {
   company: string;
@@ -21,6 +30,7 @@ interface Story {
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
   const [changes, setChanges] = useState<StockChanges[]>([]);
+  const [showModal, setShowModal] = useState(false);
 
   const {stocks} = useStock();
 
@@ -98,6 +108,12 @@ const HomeScreen = () => {
     }
   });
 
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
   const currencyPosition = height < 500 ? 0 : 0;
   const storiesAllignment = height < 500 ? 'flex-start' : 'center';
   const orientation = height < 500 ? 'row' : 'column';
@@ -143,19 +159,21 @@ const HomeScreen = () => {
                 styles.storiesContaner,
                 {justifyContent: storiesAllignment},
               ]}>
+              <StoryModal showModal={showModal} closeModal={handleCloseModal} />
               {stories.map((story, index) => (
-                <Story
-                  key={index}
-                  logo={story.logo}
-                  title={story.company}
-                  value={
-                    currency === 'USD'
-                      ? (story.change as number)
-                      : Number((Number(story.change) * 1.06).toFixed(2))
-                  }
-                  percentage={0.19}
-                  color={(story.change as number) >= 0 ? 'green' : 'pink'}
-                />
+                <Pressable key={index} onPress={handleOpenModal}>
+                  <Story
+                    logo={story.logo}
+                    title={story.company}
+                    value={
+                      currency === 'USD'
+                        ? (story.change as number)
+                        : Number((Number(story.change) * 1.06).toFixed(2))
+                    }
+                    percentage={0.19}
+                    color={(story.change as number) >= 0 ? 'green' : 'pink'}
+                  />
+                </Pressable>
               ))}
             </View>
           </View>
