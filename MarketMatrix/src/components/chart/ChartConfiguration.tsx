@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import WebView from 'react-native-webview';
 import {Colors} from '../../constants/Colors';
 
@@ -7,13 +7,16 @@ interface ChartConfigurationProp {
   title: string;
   chartType: 'line' | 'candlestick' | 'bar';
   seriesData: number[];
+  ticker?: string;
 }
 
 export const ChartConfiguration = ({
   title,
   chartType,
   seriesData,
+  ticker,
 }: ChartConfigurationProp) => {
+  const [loading, setLoading] = useState(true);
   const chartConfig = {
     chart: {
       type: chartType,
@@ -77,10 +80,6 @@ export const ChartConfiguration = ({
         lineColor: Colors.pink,
         upColor: Colors.green,
         upLineColor: Colors.green,
-        tooltip: {
-          headerFormat: '<span style="font-size: 30px">{point.key}</span><br/>',
-          pointFormat: '<span style="font-size: 30px">{point.y}</span><br/>',
-        },
       },
     },
     legend: {
@@ -149,11 +148,21 @@ export const ChartConfiguration = ({
           originWhitelist={['*']}
           source={{html: htmlContent}}
           style={{flex: 1}}
+          onLoadEnd={() => setLoading(false)}
         />
       ) : (
         <View style={styles.textContainer}>
-          <Text style={styles.text}>There are no data yet.</Text>
+          <Text style={styles.text}>
+            There is no data provided for {ticker}.
+          </Text>
         </View>
+      )}
+      {seriesData.length > 0 && loading && (
+        <ActivityIndicator
+          size="large"
+          color={Colors.text500}
+          style={styles.loader}
+        />
       )}
     </View>
   );
@@ -163,6 +172,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 0,
+    backgroundColor: Colors.background600,
   },
   textContainer: {
     justifyContent: 'center',
@@ -171,7 +181,18 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.text500,
-    fontSize: 26,
+    fontSize: 20,
     alignSelf: 'center',
+  },
+  loader: {
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.background600,
+    flex: 1,
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
   },
 });
