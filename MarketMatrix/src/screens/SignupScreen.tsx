@@ -4,14 +4,17 @@ import AuthContent from '../components/AuthScreens/AuthContent';
 import {createUser} from '../utils/http/auth';
 import {FormCredentials} from '../constants/Interfaces';
 import LoadingOverlay from '../components/UI/LoadingOverlay';
+import {useAuth} from '../contexts/authContext';
 
 const SignoutScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const {authenticate} = useAuth();
 
   const handleSignup = async ({email, password}: FormCredentials) => {
     setIsLoading(true);
     try {
-      await createUser(email, password);
+      const token = await createUser(email, password);
+      authenticate(token);
     } catch (err) {
       Alert.alert(
         'Authentication failed!',

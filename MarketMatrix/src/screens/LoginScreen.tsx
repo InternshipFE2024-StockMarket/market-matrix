@@ -4,14 +4,17 @@ import AuthContent from '../components/AuthScreens/AuthContent';
 import {FormCredentials} from '../constants/Interfaces';
 import {login} from '../utils/http/auth';
 import LoadingOverlay from '../components/UI/LoadingOverlay';
+import {useAuth} from '../contexts/authContext';
 
 const SignoutScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const {authenticate} = useAuth();
 
   const handleLogin = async ({email, password}: FormCredentials) => {
     setIsLoading(true);
     try {
-      await login(email, password);
+      const token = await login(email, password);
+      authenticate(token);
     } catch (err) {
       Alert.alert(
         'Authentication failed!',
