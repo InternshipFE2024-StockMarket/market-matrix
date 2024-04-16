@@ -152,7 +152,7 @@ export const ChartConfiguration = ({
         />
       ) : (
         <View style={styles.textContainer}>
-          <Text style={styles.text}>There are no data</Text>
+          <Text style={styles.text}>There are no data yet.</Text>
         </View>
       )}
     </View>
@@ -170,15 +170,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    fontSize: 26,
-    alignSelf: 'center',
-  },
-  textContainer: {
-    justifyContent: 'center',
-    alignContent: 'center',
-    flex: 1,
-  },
-  text: {
+    color: Colors.text500,
     fontSize: 26,
     alignSelf: 'center',
   },
