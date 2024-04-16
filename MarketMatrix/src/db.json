@@ -4,6 +4,7 @@
       "id": "SPX",
       "ticker": "SPX",
       "companyName": "S&P 500",
+      "companyValue": "44.08T",
       "price": 4135.06,
       "priceChangePercentage": 0.65,
       "priceChange": 26.75,
@@ -20,6 +21,7 @@
       "id": "IXIC",
       "ticker": "IXIC",
       "companyName": "NASDAQ Composite",
+      "companyValue": "23.41T",
       "price": 13750,
       "priceChangePercentage": 0.94,
       "priceChange": 128.4,
@@ -36,6 +38,7 @@
       "id": "DJI",
       "ticker": "DJI",
       "companyName": "Dow Jones Industrial Average",
+      "companyValue": "40.52B",
       "price": 33516.27,
       "priceChangePercentage": 0.29,
       "priceChange": 95.87,
@@ -52,6 +55,7 @@
       "id": "BTC-USD",
       "ticker": "BTC",
       "companyName": "Bitcoin",
+      "companyValue": "1244.79B",
       "price": 64512.01,
       "priceChangePercentage": 2.87,
       "priceChange": 1500.75,
@@ -68,6 +72,7 @@
       "id": "ETH-USD",
       "ticker": "ETH",
       "companyName": "Ethereum",
+      "companyValue": "368.65B",
       "price": 2480.1,
       "priceChangePercentage": 3.21,
       "priceChange": 80.21,
@@ -84,6 +89,7 @@
       "id": "BNB-USD",
       "ticker": "BNB",
       "companyName": "Binance Coin",
+      "companyValue": "81.10B",
       "price": 537.48,
       "priceChangePercentage": 1.98,
       "priceChange": 10.35,
@@ -100,6 +106,7 @@
       "id": "ADA-USD",
       "ticker": "ADA",
       "companyName": "Cardano",
+      "companyValue": "16.669B",
       "price": -7.99,
       "priceChangePercentage": 2.67,
       "priceChange": 0.035,
@@ -2531,18 +2538,21 @@
       "password": "s3cur3P@ssw0rd",
       "investment": [
         {
+          "id": "AAPL",
           "ticker": "AAPL",
           "amount": 5000,
           "boughtPrice": 191.2314,
           "shares": 26.14
         },
         {
+          "id": "COST",
           "ticker": "COST",
           "amount": 3000,
           "boughtPrice": 693.02,
           "shares": 4.33
         },
         {
+          "id": "BAC",
           "ticker": "BAC",
           "amount": 2000,
           "boughtPrice": 32.635,
@@ -2558,18 +2568,21 @@
       "password": "s3cur3P@ssw0rd",
       "investment": [
         {
+          "id": "AAPL",
           "ticker": "AAPL",
           "amount": 5000,
           "boughtPrice": 191.2314,
           "shares": 26.14
         },
         {
+          "id": "COST",
           "ticker": "COST",
           "amount": 3000,
           "boughtPrice": 693.02,
           "shares": 4.33
         },
         {
+          "id": "BAC",
           "ticker": "BAC",
           "amount": 2000,
           "boughtPrice": 32.635,

@@ -4,7 +4,7 @@ import GradientBackground from '../components/UI/GradientBackground';
 import {Colors} from '../constants/Colors';
 import {Stock} from '../constants/Interfaces';
 import {CompanyTabNavigation} from '../navigation/CompanyTabNavigation';
-import {fetchStockByTicker} from '../utils/http/fetchStockbyTicker';
+import {fetchStockById} from '../utils/http/fetchStockbyTicker';
 import {BackButton} from '../components/UI/BackButton';
 
 const nasdaq = 'NASDAQ:';
@@ -13,17 +13,17 @@ const industry = 'Industry:';
 const sector = 'Sector:';
 const market = 'Market capitalization';
 
-export const CompanyScreen = ({navigation}: any) => {
+export const CompanyScreen = ({navigation, route}: any) => {
   const [selectedStock, setSelectedStock] = useState<Stock | undefined>();
-  const ticker = 'AAPL';
+  const id = route.params.id;
 
   useEffect(() => {
     getStockByTicker();
-  }, [ticker]);
+  }, [id]);
 
   const getStockByTicker = async () => {
     try {
-      const stock = await fetchStockByTicker(ticker);
+      const stock = await fetchStockById(id);
       setSelectedStock(stock);
     } catch (error: any) {
       console.error('Failed to fetch stock:', error);
@@ -32,13 +32,13 @@ export const CompanyScreen = ({navigation}: any) => {
 
   return (
     <GradientBackground>
+      <BackButton
+        text="Back"
+        onPress={() => navigation.goBack()}
+        style={styles.backButton}
+      />
       {selectedStock ? (
         <View>
-          <BackButton
-            text="Back"
-            onPress={() => navigation.goBack()}
-            style={styles.backButton}
-          />
           <View style={styles.rootContainer}>
             <View style={styles.companyDetaildContainer}>
               <View style={styles.upperView}>
@@ -47,7 +47,7 @@ export const CompanyScreen = ({navigation}: any) => {
                   source={{uri: selectedStock.image}}
                 />
                 <View style={styles.mainDetails}>
-                  <View>
+                  <View style={{flex: 1}}>
                     <Text style={styles.companyName}>
                       {selectedStock.companyName}
                     </Text>
@@ -84,11 +84,11 @@ export const CompanyScreen = ({navigation}: any) => {
                 </View>
               </View>
             </View>
-            <CompanyTabNavigation ticker={ticker} />
+            <CompanyTabNavigation id={id} />
           </View>
         </View>
       ) : (
-        <Text>No details available for {ticker}</Text>
+        <Text>No details available for {id}</Text>
       )}
     </GradientBackground>
   );
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
   companyDetaildContainer: {
     margin: '3%',
     height: '30%',
+    flex: 0.55,
   },
   upperView: {
     flexDirection: 'row',
@@ -150,7 +151,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   detailColumn: {
-    flex: 1,
+    flex: 0.8,
     paddingRight: 10,
   },
   priceColumn: {

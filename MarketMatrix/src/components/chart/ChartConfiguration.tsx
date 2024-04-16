@@ -3,13 +3,13 @@ import {StyleSheet, View} from 'react-native';
 import WebView from 'react-native-webview';
 
 interface ChartConfigurationProp {
-  ticker: string;
+  title: string;
   chartType: 'line' | 'candlestick' | 'bar';
   seriesData: number[];
 }
 
 export const ChartConfiguration = ({
-  ticker,
+  title,
   chartType,
   seriesData,
 }: ChartConfigurationProp) => {
@@ -18,14 +18,7 @@ export const ChartConfiguration = ({
       type: chartType,
     },
     title: {
-      text:
-        chartType === 'line'
-          ? `Recent Close Prices for ${ticker}`
-          : chartType === 'candlestick'
-          ? `Price Movements for ${ticker}`
-          : chartType === 'bar'
-          ? `Bar chart for ${ticker}`
-          : 'Chart type not defined',
+      text: title,
     },
     xAxis: {
       title: {text: 'Date'},
