@@ -7,7 +7,7 @@ const MainNavigation = () => {
   const {isAuthenticated} = useAuth();
   if (isAuthenticated) {
     return <AuthenticatedStack />;
-  } else {
+  } else if (!isAuthenticated) {
     return <AuthStack />;
   }
 };

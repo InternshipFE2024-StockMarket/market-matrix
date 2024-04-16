@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   button: {
-    backgroundColor: Colors.background800,
+    margin: 5,
   },
   title: {
     color: Colors.text500,

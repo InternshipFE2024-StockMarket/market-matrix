@@ -47,7 +47,6 @@ const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
       });
       return;
     }
-    console.log('Submit');
     onAuthenticate({email, password});
   };
 
