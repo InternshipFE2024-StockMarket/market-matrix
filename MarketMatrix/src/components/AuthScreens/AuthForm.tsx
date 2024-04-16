@@ -2,10 +2,12 @@ import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import Input from './Input';
 import Button from '../UI/Button';
+import {Form, FormValidation} from './AuthContent';
 
 interface AuthFormProps {
   isLogin?: boolean;
-  onSubmit: () => void;
+  onSubmit: (credentials: Form) => void;
+  credentialsInvalid: FormValidation;
 }
 
 const AuthForm = ({isLogin, onSubmit}: AuthFormProps) => {
@@ -31,12 +33,14 @@ const AuthForm = ({isLogin, onSubmit}: AuthFormProps) => {
     }
   };
 
-  const submitHandler = () => {
-    console.log(enteredEmail);
-    console.log(enteredConfirmEmail);
-    console.log(enteredPassword);
-    console.log(enteredConfirmPassword);
-  };
+  function submitHandler() {
+    onSubmit({
+      email: enteredEmail,
+      confirmEmail: enteredConfirmEmail,
+      password: enteredPassword,
+      confirmPassword: enteredConfirmPassword,
+    });
+  }
 
   return (
     <View style={styles.rootContainer}>
