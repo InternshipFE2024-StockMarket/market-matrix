@@ -7,13 +7,22 @@
 
 import React from 'react';
 import MainNavigation from './navigation/MainNavigation';
-import {NavigationContainer} from '@react-navigation/native';
+import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {StockProvider} from './contexts/stocksContext';
 import {SearchProvider} from './contexts/searchContext';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 function App(): React.JSX.Element {
+  const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: Colors.background800,
+      text: 'white',
+    },
+  };
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <StockProvider>
         <SearchProvider>
           <MainNavigation />

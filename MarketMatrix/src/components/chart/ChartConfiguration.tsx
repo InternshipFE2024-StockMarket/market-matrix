@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import WebView from 'react-native-webview';
+import {Colors} from '../../constants/Colors';
 
 interface ChartConfigurationProp {
   title: string;
@@ -16,29 +17,77 @@ export const ChartConfiguration = ({
   const chartConfig = {
     chart: {
       type: chartType,
+      backgroundColor: Colors.companyScreenBackground,
+      style: {
+        fontFamily: 'Arial',
+        color: '#ffffff',
+        fontSize: 28,
+        fontWeight: 'bold',
+      },
     },
     title: {
       text: title,
+      style: {
+        color: '#ffffff',
+      },
     },
     xAxis: {
-      title: {text: 'Date'},
+      title: {
+        text: 'Date',
+        style: {
+          color: '#ffffff',
+        },
+      },
       type: 'datetime',
+      gridLineWidth: 0,
+      labels: {
+        style: {
+          color: '#ffffff',
+        },
+      },
     },
     yAxis: {
       title: {
         text: 'Price',
+        style: {
+          color: '#ffffff',
+        },
+      },
+      gridLineWidth: 0,
+      labels: {
+        style: {
+          color: '#ffffff',
+        },
       },
     },
     plotOptions: {
       line: {
-        dataLabels: {enabled: true},
+        dataLabels: {
+          enabled: true,
+          color: '#ffffff',
+          style: {
+            fontWeight: 'bold',
+            fontSize: 24,
+          },
+        },
+        color: Colors.green,
       },
       candlestick: {
-        color: 'pink',
-        lineColor: 'red',
-        upColor: 'lightgreen',
-        upLineColor: 'green',
+        color: Colors.pink,
+        lineColor: Colors.pink,
+        upColor: Colors.green,
+        upLineColor: Colors.green,
       },
+    },
+    legend: {
+      enabled: true,
+      itemStyle: {
+        color: '#ffffff',
+        fontSize: 24,
+      },
+    },
+    exporting: {
+      enabled: false,
     },
     series: [
       {
@@ -54,6 +103,9 @@ export const ChartConfiguration = ({
         tooltip: {
           valueDecimals: 2,
         },
+        style: {
+          color: '#ffffff',
+        },
       },
     ],
   };
@@ -61,6 +113,14 @@ export const ChartConfiguration = ({
   const htmlContent = `
       <html>
         <head>
+        <style>
+        body, html, #container {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background-color: ${Colors.background600};
+        }
+      </style>
         <script src="https://code.highcharts.com/stock/highstock.js"></script>
         <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/stock/modules/candlestick.js"></script>
@@ -92,6 +152,6 @@ export const ChartConfiguration = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    margin: 0,
   },
 });
