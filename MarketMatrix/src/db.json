@@ -52,7 +52,7 @@
       "id": "BTC-USD",
       "ticker": "BTC",
       "companyName": "Bitcoin",
-      "price": 64511.26,
+      "price": 64512.01,
       "priceChangePercentage": 2.87,
       "priceChange": 1500.75,
       "image": "https://c1.klipartz.com/pngpicture/602/592/sticker-png-graphy-logo-bitcoin-bitcoin-cash-blockchain-cryptocurrency-exchange-cryptocurrency-wallet-symbol-sign.png",
@@ -117,7 +117,7 @@
       "ticker": "AAPL",
       "companyName": "Apple Inc.",
       "companyValue": "2.73T",
-      "price": 138.98,
+      "price": 135.15,
       "priceChangePercentage": 1.5381,
       "priceChange": 2.9014,
       "image": "https://financialmodelingprep.com/image-stock/AAPL.png",
@@ -134,7 +134,7 @@
       "ticker": "AMZN",
       "companyName": "Amazon.com, Inc.",
       "companyValue": "1.93T",
-      "price": 190.04,
+      "price": 206.56,
       "priceChangePercentage": 1.1694,
       "priceChange": 1.795,
       "image": "https://financialmodelingprep.com/image-stock/AMZN.png",
@@ -151,7 +151,7 @@
       "ticker": "ANET",
       "companyName": "Arista Networks, Inc.",
       "companyValue": "84.79B",
-      "price": 271.35,
+      "price": 288.48,
       "priceChangePercentage": 2.3237,
       "priceChange": 5.985,
       "image": "https://financialmodelingprep.com/image-stock/ANET.png",
@@ -168,7 +168,7 @@
       "ticker": "BAC",
       "companyName": "Bank of America Corporation",
       "companyValue": "282.41B",
-      "price": 35.7,
+      "price": 19.83,
       "priceChangePercentage": 1.2764,
       "priceChange": 0.405,
       "image": "https://financialmodelingprep.com/image-stock/BAC.png",
@@ -185,7 +185,7 @@
       "ticker": "C",
       "companyName": "Citigroup Inc.",
       "companyValue": "114.07B",
-      "price": 76.7,
+      "price": 99.34,
       "priceChangePercentage": 0.7826,
       "priceChange": 0.4,
       "image": "https://financialmodelingprep.com/image-stock/C.png",
@@ -202,7 +202,7 @@
       "ticker": "COST",
       "companyName": "Costco Wholesale Corporation",
       "companyValue": "324.34B",
-      "price": 701.04,
+      "price": 683.69,
       "priceChangePercentage": 1.1218,
       "priceChange": 7.71,
       "image": "https://financialmodelingprep.com/image-stock/COST.png",
@@ -219,7 +219,7 @@
       "ticker": "CPRT",
       "companyName": "Copart, Inc.",
       "companyValue": "53.25B",
-      "price": 57.15,
+      "price": 40.53,
       "priceChangePercentage": 1.2456,
       "priceChange": 0.6,
       "image": "https://financialmodelingprep.com/image-stock/CPRT.png",
@@ -236,7 +236,7 @@
       "ticker": "CVX",
       "companyName": "Chevron Corporation",
       "companyValue": "293.25B",
-      "price": 139.51,
+      "price": 128.24,
       "priceChangePercentage": 0.208,
       "priceChange": 0.295,
       "image": "https://financialmodelingprep.com/image-stock/CVX.png",
@@ -253,7 +253,7 @@
       "ticker": "GOOGL",
       "companyName": "Alphabet Inc.",
       "companyValue": "1.97T",
-      "price": 146.18,
+      "price": 144.9,
       "priceChangePercentage": 1.5089,
       "priceChange": 2.165,
       "image": "https://financialmodelingprep.com/image-stock/GOOGL.png",
@@ -270,7 +270,7 @@
       "ticker": "INTU",
       "companyName": "Intuit Inc.",
       "companyValue": "173.90B",
-      "price": 632.03,
+      "price": 647.02,
       "priceChangePercentage": 1.769,
       "priceChange": 10.815,
       "image": "https://financialmodelingprep.com/image-stock/INTU.png",
@@ -287,7 +287,7 @@
       "ticker": "JPM",
       "companyName": "JPMorgan Chase & Co.",
       "companyValue": "526.55B",
-      "price": 171.63,
+      "price": 153.3,
       "priceChangePercentage": 1.5829,
       "priceChange": 2.65,
       "image": "https://financialmodelingprep.com/image-stock/JPM.png",
@@ -304,7 +304,7 @@
       "ticker": "KNSL",
       "companyName": "Kinsale Capital Group, Inc.",
       "companyValue": "10.46B",
-      "price": 408.47,
+      "price": 387.23,
       "priceChangePercentage": 0.6819,
       "priceChange": 2.71,
       "image": "https://financialmodelingprep.com/image-stock/KNSL.png",
@@ -321,7 +321,7 @@
       "ticker": "MA",
       "companyName": "Mastercard Incorporated",
       "companyValue": "434.15B",
-      "price": 436.13,
+      "price": 430.56,
       "priceChangePercentage": 1.151,
       "priceChange": 4.9576,
       "image": "https://financialmodelingprep.com/image-stock/MA.png",
@@ -338,7 +338,7 @@
       "ticker": "META",
       "companyName": "Meta Platforms, Inc.",
       "companyValue": "1.31T",
-      "price": 390.47,
+      "price": 400.77,
       "priceChangePercentage": 1.9289,
       "priceChange": 7.255,
       "image": "https://financialmodelingprep.com/image-stock/META.png",
@@ -355,7 +355,7 @@
       "ticker": "MSFT",
       "companyName": "Microsoft Corporation",
       "companyValue": "3.13T",
-      "price": 393.13,
+      "price": 390.11,
       "priceChangePercentage": 0.7769,
       "priceChange": 3.06,
       "image": "https://financialmodelingprep.com/image-stock/MSFT.png",
@@ -372,7 +372,7 @@
       "ticker": "MUSA",
       "companyName": "Murphy USA Inc.",
       "companyValue": "8.58B",
-      "price": 383.43,
+      "price": 389.66,
       "priceChangePercentage": -0.4375,
       "priceChange": -1.63,
       "image": "https://financialmodelingprep.com/image-stock/MUSA.png",
@@ -389,7 +389,7 @@
       "ticker": "NVDA",
       "companyName": "NVIDIA Corporation",
       "companyValue": "2.20T",
-      "price": 592.2,
+      "price": 565.7,
       "priceChangePercentage": 3.2938,
       "priceChange": 18.81,
       "image": "https://financialmodelingprep.com/image-stock/NVDA.png",
@@ -406,7 +406,7 @@
       "ticker": "ODFL",
       "companyName": "Old Dominion Freight Line, Inc.",
       "companyValue": "48.13B",
-      "price": 376.46,
+      "price": 373.12,
       "priceChangePercentage": 1.3389,
       "priceChange": 5.12,
       "image": "https://financialmodelingprep.com/image-stock/ODFL.png",
@@ -423,7 +423,7 @@
       "ticker": "QLYS",
       "companyName": "Qualys, Inc.",
       "companyValue": "6.14B",
-      "price": 208.51,
+      "price": 202.91,
       "priceChangePercentage": -0.9279,
       "priceChange": -1.835,
       "image": "https://financialmodelingprep.com/image-stock/QLYS.png",
@@ -440,7 +440,7 @@
       "ticker": "USB",
       "companyName": "U.S. Bancorp",
       "companyValue": "64.79B",
-      "price": 71.61,
+      "price": 58.12,
       "priceChangePercentage": 3.736,
       "priceChange": 1.5,
       "image": "https://financialmodelingprep.com/image-stock/USB.png",
@@ -457,7 +457,7 @@
       "ticker": "V",
       "companyName": "Visa Inc.",
       "companyValue": "554.39B",
-      "price": 273.56,
+      "price": 269.49,
       "priceChangePercentage": 0.9883,
       "priceChange": 2.65,
       "image": "https://financialmodelingprep.com/image-stock/V.png",
@@ -474,7 +474,7 @@
       "ticker": "WFC",
       "companyName": "Wells Fargo & Company",
       "companyValue": "199.93B",
-      "price": 54.96,
+      "price": 38.98,
       "priceChangePercentage": 3.1331,
       "priceChange": 1.455,
       "image": "https://financialmodelingprep.com/image-stock/WFC.png",
@@ -711,7 +711,8 @@
           "Stock Splits": 0,
           "volume": 101593300
         }
-      ]
+      ],
+      "id": "0f4e"
     },
     {
       "ticker": "AMZN",
@@ -936,7 +937,8 @@
           "stockSplits": 0,
           "volume": 38554300
         }
-      ]
+      ],
+      "id": "073e"
     },
     {
       "ticker": "ANET",
@@ -1161,7 +1163,8 @@
           "stockSplits": 0,
           "volume": 5747300
         }
-      ]
+      ],
+      "id": "4636"
     },
     {
       "ticker": "CPRT",
@@ -1386,7 +1389,8 @@
           "stockSplits": 0,
           "volume": 3609500
         }
-      ]
+      ],
+      "id": "5baa"
     },
     {
       "ticker": "CVX",
@@ -1611,7 +1615,8 @@
           "stockSplits": 0,
           "volume": 11058800
         }
-      ]
+      ],
+      "id": "ed32"
     },
     {
       "ticker": "GOOGL",
@@ -1836,7 +1841,8 @@
           "stockSplits": 0,
           "volume": 25329200
         }
-      ]
+      ],
+      "id": "1352"
     },
     {
       "ticker": "COST",
@@ -2061,7 +2067,8 @@
           "stockSplits": 0,
           "volume": 1480600
         }
-      ]
+      ],
+      "id": "6308"
     },
     {
       "ticker": "BAC",
@@ -2286,7 +2293,8 @@
           "stockSplits": 0,
           "volume": 47118300
         }
-      ]
+      ],
+      "id": "9330"
     },
     {
       "ticker": "C",
@@ -2511,12 +2519,13 @@
           "stockSplits": 0,
           "volume": 28556400
         }
-      ]
+      ],
+      "id": "5bcf"
     }
   ],
   "user": [
     {
-      "id": 123456,
+      "id": "123456",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "s3cur3P@ssw0rd",
@@ -2543,7 +2552,7 @@
       "total": 10000
     },
     {
-      "id": 123457,
+      "id": "123457",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "s3cur3P@ssw0rd",
@@ -2574,17 +2583,20 @@
     {
       "ticker": "AAPL",
       "changedPrice": 5.32,
-      "changedPricePercentage": 2.5
+      "changedPricePercentage": 2.5,
+      "id": "a154"
     },
     {
       "ticker": "GOOGL",
       "changedPrice": -3.21,
-      "changedPricePercentage": -1.8
+      "changedPricePercentage": -1.8,
+      "id": "379c"
     },
     {
       "ticker": "MSFT",
       "changedPrice": 1.45,
-      "changedPricePercentage": 1.2
+      "changedPricePercentage": 1.2,
+      "id": "ab39"
     }
   ]
 }
