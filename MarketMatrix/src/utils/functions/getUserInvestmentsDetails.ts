@@ -1,8 +1,9 @@
 import useFetchUserInvetments from '../http/useFetchUserInvetments';
-import useFetchUserStocks from '../http/useFetchUserStocks';
 import {getPlValue} from './getPlValue';
 import {getDynamicValue} from './getDynamicValue';
 import {UserInvestmentsDetails} from '../../constants/Interfaces';
+import {useStock} from '../../contexts/stocksContext';
+import {getUserStocks} from './getUserStocks';
 
 const formatNumber = (num: number): number => {
   return Number(num.toFixed(2));
@@ -12,8 +13,10 @@ export const useUserInvestmentsDetails = (
   userId: number,
 ): UserInvestmentsDetails[] => {
   const userInvestments = useFetchUserInvetments(userId);
+  const stockCtx = useStock();
+  const stocks = stockCtx.stocks;
 
-  const stocksData = useFetchUserStocks(userInvestments);
+  const stocksData = getUserStocks(userInvestments, stocks);
 
   const userInvestmentsDetails: UserInvestmentsDetails[] = [];
 
