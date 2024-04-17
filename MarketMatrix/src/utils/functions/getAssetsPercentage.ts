@@ -1,6 +1,6 @@
 import {useUserInvestmentsDetails} from './getUserInvestmentsDetails';
 
-export const useAssetsPercentage = (userId: number): number[] => {
+export const useAssetsPercentage = (userId: string): number[] => {
   let stocks = 0;
   let crypto = 0;
   let indices = 0;

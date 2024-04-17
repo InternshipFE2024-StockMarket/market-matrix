@@ -10,9 +10,7 @@ const authenticate = async (mode: string, email: string, password: string) => {
     returnSecureToken: true,
   });
 
-  const token = response.data.idToken;
-
-  return token;
+  return response.data;
 };
 
 export const createUser = (email: string, password: string) => {

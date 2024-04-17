@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  Image,
+  Pressable,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -12,8 +14,10 @@ import {Colors} from '../../constants/Colors';
 import {useAuth} from '../../contexts/authContext';
 
 const Header = () => {
-  let userPortfolioValue = Number(getTotalPortofolioValue()?.total);
-  let plPortfolioValue = Number(getTotalPortofolioValue()?.difference);
+  const userCtx = useAuth();
+  const userId = userCtx.userId;
+  let userPortfolioValue = Number(getTotalPortofolioValue(userId)?.total);
+  let plPortfolioValue = Number(getTotalPortofolioValue(userId)?.difference);
   const {width, height} = useWindowDimensions();
   const isLandscape = width > height;
   const {logout} = useAuth();
@@ -33,7 +37,12 @@ const Header = () => {
           </Text>
         </View>
         <View style={styles.buttonContainer}>
-          <Button onPress={logout}>Logout</Button>
+          <Pressable onPress={logout}>
+            <Image
+              style={styles.image}
+              source={require('../../assets/icons/logout.png')}
+            />
+          </Pressable>
         </View>
       </View>
       <Text style={[styles.text, styles.title]}>My Portfolio</Text>
@@ -74,6 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginHorizontal: 10,
     marginBottom: 20,
+    marginTop: 20,
   },
   landscapeHeader: {
     justifyContent: 'space-between',
@@ -93,6 +103,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginVertical: 20,
     marginLeft: 10,
+    fontFamily: 'Roboto',
   },
   landscapeTitle: {
     fontSize: 24,
@@ -104,5 +115,9 @@ const styles = StyleSheet.create({
   portfolioValue: {
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  image: {
+    width: 20,
+    height: 20,
   },
 });

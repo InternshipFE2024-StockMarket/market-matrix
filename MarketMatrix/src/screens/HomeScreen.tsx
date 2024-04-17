@@ -1,4 +1,5 @@
 import {
+  Image,
   StyleSheet,
   Text,
   View,
@@ -15,6 +16,8 @@ import {StockChanges} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
+import {useAuth} from '../contexts/authContext';
+import Button from '../components/UI/Button';
 import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
 import {useNavigation} from '@react-navigation/native';
 
@@ -43,15 +46,18 @@ const HomeScreen = () => {
   });
 
   const {stocks} = useStock();
+  const userCtx = useAuth();
+  const userId = userCtx.userId;
+  const logout = userCtx.logout;
 
+  let portfolioValue = Number(getTotalPortofolioValue(userId)?.total);
+  let totalDifference = Number(getTotalPortofolioValue(userId)?.difference);
   const {width, height} = useWindowDimensions();
 
   const navigation = useNavigation<{
     navigate: (screen: string, params: {id: string}) => void;
   }>();
 
-  let portfolioValue = Number(getTotalPortofolioValue()?.total);
-  let totalDifference = Number(getTotalPortofolioValue()?.difference);
   let percentage = ((totalDifference * 100) / portfolioValue).toFixed(2);
 
   const currencyFormat = new Intl.NumberFormat('en-US', {
@@ -169,8 +175,16 @@ const HomeScreen = () => {
   return (
     <GradientBackground>
       <View style={styles.homeWrapper}>
-        <View>
+        <View style={styles.topHeader}>
           <Text style={styles.title}>Market Matrix</Text>
+          <View style={styles.buttonContainer}>
+            <Pressable onPress={logout}>
+              <Image
+                style={styles.image}
+                source={require('../assets/icons/logout.png')}
+              />
+            </Pressable>
+          </View>
         </View>
         <View style={{flexDirection: orientation, gap: 20}}>
           <View>
@@ -297,5 +311,16 @@ const styles = StyleSheet.create({
   chart: {
     width: '100%',
     height: '55%',
+  },
+  topHeader: {
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    position: 'absolute',
+    right: 0,
+  },
+  image: {
+    width: 20,
+    height: 20,
   },
 });

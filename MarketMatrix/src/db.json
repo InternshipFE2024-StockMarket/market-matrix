@@ -2561,7 +2561,7 @@
   ],
   "user": [
     {
-      "id": "123456",
+      "id": "2@2.com",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "s3cur3P@ssw0rd",
@@ -2586,12 +2586,26 @@
           "amount": 2000,
           "boughtPrice": 32.635,
           "shares": 61.25
+        },
+        {
+          "id": "BTC-USD",
+          "ticker": "BTC",
+          "amount": 2000,
+          "boughtPrice": 64412.01,
+          "shares": 0.02
+        },
+        {
+          "id": "SPX",
+          "ticker": "SPX",
+          "amount": 1000,
+          "boughtPrice": 4105.06,
+          "shares": 0.24
         }
       ],
       "total": 10000
     },
     {
-      "id": "123457",
+      "id": "1@1.com",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "s3cur3P@ssw0rd",
@@ -2622,10 +2636,19 @@
           "ticker": "BAC",
           "amount": 2000,
           "boughtPrice": 64412.01,
-          "shares": 61.25
+          "shares": 0.03
         }
       ],
       "total": 100000
+    },
+    {
+      "id": "593e",
+      "kind": "identitytoolkit#SignupNewUserResponse",
+      "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYyOThjZDA3NTlkOGNmN2JjZTZhZWNhODExNmU4ZjYzMDlhNDQwMjAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbWFya2V0bWF0cml4LWExNjVjIiwiYXVkIjoibWFya2V0bWF0cml4LWExNjVjIiwiYXV0aF90aW1lIjoxNzEzMzQ0MTUyLCJ1c2VyX2lkIjoibncyOWFLZDJZUmYxREFhZEFDS0pCMG0wd2l3MSIsInN1YiI6Im53MjlhS2QyWVJmMURBYWRBQ0tKQjBtMHdpdzEiLCJpYXQiOjE3MTMzNDQxNTIsImV4cCI6MTcxMzM0Nzc1MiwiZW1haWwiOiIyQDIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIjJAMi5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.VGWUmLknVpx3U6nRQCFZMTREsagGXSFXcWkJmNhGHV6HVZmP8nt_jmzJuzxWrgnD_OE0DuKaWNC-nf_g3iBBnWK_H5Mr6X5spyemqM80FUwgh0So6fHkOjWHZGrf0JqkL2zBI_gUDflVbQmNf6lyLC2kjTOxBSLhb5WCNtezkiOPFZtbU9zAMH2QqR7R6lqrhJmr_AOOqUcZYwHEEQou1m5dxTOCnVYUHThP26n7O-cxRwtS3wf6J2bK846qhxGxj5dxSJ8X9R2IALwgcTMVJRawvlnJgR9a1BwT-MmHHJppCRMMfovJrCSozpWi4pNTmvP_qmk9BOgTgUpc5sKQdw",
+      "email": "2@2.com",
+      "refreshToken": "AMf-vBxBJY7Rq7EDwYZ_gNwc5x6-kX-bpyyTa71lAuutOYyEYHGOdPunlMraw_SSdJUsq_1wjGl96b4OV2r7wJdbrejNCoudpjiBGBN6uHNLW5Qm5H-EJmCB5LdHlBmAkN7rD_T18gC0xBrkF2YWWhN8e-GemuyLbdmmTzkHJV_nFwPd38167TYSJepCDy42HQdNkMvGpW0acn0dmUeLjSzvdE81d_jYbw",
+      "expiresIn": "3600",
+      "localId": "nw29aKd2YRf1DAadACKJB0m0wiw1"
     }
   ],
   "news": [

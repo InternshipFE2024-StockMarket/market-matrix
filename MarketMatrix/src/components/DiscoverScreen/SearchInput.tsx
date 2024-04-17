@@ -5,11 +5,13 @@ import {
   TextInput,
   View,
   ViewStyle,
+  useWindowDimensions,
 } from 'react-native';
 import React from 'react';
 import {Colors} from '../../constants/Colors';
 import {useSearchContext} from '../../contexts/searchContext';
 import {useNavigation} from '@react-navigation/native';
+import {useAuth} from '../../contexts/authContext';
 
 interface InputProps {
   inputStyle?: ViewStyle;
@@ -18,6 +20,10 @@ interface InputProps {
 const SearchInput = ({inputStyle}: InputProps) => {
   const {inputValue, setInputValue} = useSearchContext();
   const navigation = useNavigation();
+  const authCtx = useAuth();
+  const logout = authCtx.logout;
+  const {width, height} = useWindowDimensions();
+  const isLandscape = width > height;
 
   const handleSubmit = () => {
     navigation.navigate('Overview' as never);
@@ -33,13 +39,26 @@ const SearchInput = ({inputStyle}: InputProps) => {
         onChangeText={setInputValue}
         onSubmitEditing={handleSubmit}
       />
-      <Pressable onPress={handleSubmit} style={styles.search}>
+      <Pressable
+        onPress={handleSubmit}
+        style={isLandscape ? styles.landscapeSearch : styles.search}>
         <Image
           tintColor={Colors.text500}
           style={styles.image}
           source={require('../../assets/icons/icon-search.png')}
         />
       </Pressable>
+      <View
+        style={
+          isLandscape ? styles.landscapeButtonContainer : styles.buttonContainer
+        }>
+        <Pressable onPress={logout}>
+          <Image
+            style={styles.imageLogout}
+            source={require('../../assets/icons/logout.png')}
+          />
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -65,10 +84,30 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     position: 'absolute',
-    right: 40,
+    right: 60,
+  },
+  landscapeSearch: {
+    width: 24,
+    height: 24,
+    position: 'absolute',
+    right: 100,
   },
   image: {
     width: '100%',
     height: '100%',
+  },
+  buttonContainer: {
+    position: 'absolute',
+    right: 30,
+    zIndex: 1,
+  },
+  landscapeButtonContainer: {
+    position: 'absolute',
+    right: 60,
+    zIndex: 1,
+  },
+  imageLogout: {
+    width: 20,
+    height: 20,
   },
 });

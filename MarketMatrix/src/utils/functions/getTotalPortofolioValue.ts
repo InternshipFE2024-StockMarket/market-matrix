@@ -2,9 +2,8 @@ import {useStock} from '../../contexts/stocksContext';
 import {getDynamicValue} from './getDynamicValue';
 import useFetchUserInvetments from '../http/useFetchUserInvetments';
 
-export const getTotalPortofolioValue = () => {
-  // const [user, setUser] = useState<UserData[]>([]);
-  const userInvestments = useFetchUserInvetments(123456);
+export const getTotalPortofolioValue = (userId: string) => {
+  const userInvestments = useFetchUserInvetments(userId);
   const {stocks} = useStock();
 
   let total = 0;

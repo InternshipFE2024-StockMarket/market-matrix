@@ -10,7 +10,7 @@ const formatNumber = (num: number): number => {
 };
 
 export const useUserInvestmentsDetails = (
-  userId: number,
+  userId: string,
 ): UserInvestmentsDetails[] => {
   const userInvestments = useFetchUserInvetments(userId);
   const stockCtx = useStock();

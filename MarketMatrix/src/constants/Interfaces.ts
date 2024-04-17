@@ -98,3 +98,16 @@ export interface BarChartInvestmentData {
   crypto: number;
   indices: number;
 }
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+}
+
+export interface AuthUser {
+  displayName: string;
+  email: string;
+  expiresIn: string;
+  idToken: string;
+}

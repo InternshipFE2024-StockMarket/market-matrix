@@ -3,13 +3,16 @@ import useFetchUserInvetments from '../../utils/http/useFetchUserInvetments';
 import {useFetchChanges} from '../../utils/http/useFetchChanges';
 import {useEffect, useState} from 'react';
 import {StockChanges} from '../../constants/Interfaces';
+import {useAuth} from '../../contexts/authContext';
 
 interface TotalValueLineChartProps {
   currency: string;
 }
 
 export const TotalValueLineChart = ({currency}: TotalValueLineChartProps) => {
-  const userInvestments = useFetchUserInvetments(123456);
+  const userCtx = useAuth();
+  const userId = userCtx.userId;
+  const userInvestments = useFetchUserInvetments(userId);
   const [changes, setChanges] = useState<StockChanges[]>([]);
   useEffect(() => {
     const fetchChanges = async () => {
