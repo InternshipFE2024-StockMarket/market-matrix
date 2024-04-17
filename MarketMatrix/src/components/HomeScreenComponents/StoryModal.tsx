@@ -4,6 +4,7 @@ import {View, Modal, StyleSheet, Image, Pressable} from 'react-native';
 import {Colors} from '../../constants/Colors';
 import Button from '../UI/Button';
 import CustomText from '../UI/CustomText';
+import LinearGradient from 'react-native-linear-gradient';
 
 interface ModalProps {
   showModal: boolean;
@@ -31,7 +32,9 @@ export const StoryModal = ({
   return (
     <Modal transparent={true} visible={showModal} animationType="fade">
       <View style={styles.modalBackround}>
-        <View style={styles.modal}>
+        <LinearGradient
+          colors={[Colors.background600, Colors.background800]}
+          style={styles.modal}>
           <Pressable style={{alignItems: 'flex-end'}} onPress={closeModal}>
             <CustomText style={styles.closeIcon}>X</CustomText>
           </Pressable>
@@ -58,7 +61,7 @@ export const StoryModal = ({
 
             <Button onPress={() => navigateToCompany(id)}>Go to company</Button>
           </View>
-        </View>
+        </LinearGradient>
       </View>
     </Modal>
   );
