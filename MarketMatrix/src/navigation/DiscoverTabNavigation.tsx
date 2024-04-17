@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {Dimensions} from 'react-native';
+import {useWindowDimensions} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import OverviewScreen from '../screens/DiscoverScreens/OverviewScreen';
 import StocksScreen from '../screens/DiscoverScreens/StocksScreen';
@@ -12,14 +12,15 @@ import {NavigationIcon} from '../components/UI/NavigationIcon';
 const Tab = createMaterialTopTabNavigator();
 
 const DiscoverTabNavigation = () => {
-  const deviceWidth = Dimensions.get('window').width;
+  const {width} = useWindowDimensions();
+
   return (
     <Tab.Navigator
       backBehavior="history"
       screenOptions={{
         animationEnabled: false,
         tabBarItemStyle: {
-          width: deviceWidth / 4,
+          width: width / 4,
           paddingHorizontal: 0,
         },
         tabBarActiveTintColor: Colors.background800,

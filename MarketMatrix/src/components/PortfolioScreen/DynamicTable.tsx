@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  useWindowDimensions,
+} from 'react-native';
 import {Colors} from '../../constants/Colors';
 import TableRow from './TableRow';
 import {UserInvestmentsDetails} from '../../constants/Interfaces';
@@ -9,10 +15,12 @@ interface DynamicTableProps {
 }
 
 const DynamicTable = ({data}: DynamicTableProps) => {
+  const {width, height} = useWindowDimensions();
+  const isLandscape = width > height;
   return (
     <View style={styles.rootContainer}>
       <View style={styles.headerContainer}>
-        <View style={styles.header}>
+        <View style={isLandscape ? styles.landscapeHeader : styles.header}>
           <Text style={styles.headerText}>Asset</Text>
           <Text style={styles.headerText}>Amount</Text>
           <Text style={styles.headerText}>P/L</Text>
@@ -31,6 +39,7 @@ const DynamicTable = ({data}: DynamicTableProps) => {
             dynamicValue={item.dynamicValue}
             currentPrice={item.currentPrice}
             image={item.image}
+            type={item.type}
           />
         )}
       />
@@ -45,6 +54,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+    marginHorizontal: 5,
+  },
+  landscapeHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 20,

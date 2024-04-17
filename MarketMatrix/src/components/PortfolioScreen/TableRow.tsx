@@ -1,5 +1,11 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/Colors';
@@ -18,13 +24,15 @@ const TableRow = ({
   const navigation = useNavigation<{
     navigate: (screen: string, params: {id: string}) => void;
   }>();
+  const {width, height} = useWindowDimensions();
+  const isLandscape = width > height;
 
   return (
     <Pressable onPress={() => navigation.navigate('Company', {id: id})}>
       <LinearGradient
         colors={[Colors.cardBackground500, Colors.cardBackground700]}
         style={styles.container}>
-        <View style={styles.row}>
+        <View style={isLandscape ? styles.landscapeRow : styles.row}>
           <AssetCell
             ticker={ticker}
             price={currentPrice}
@@ -56,6 +64,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: 20,
+    marginHorizontal: 5,
+  },
+  landscapeRow: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 5,
     marginHorizontal: 5,
   },
   text: {

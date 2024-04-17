@@ -8,6 +8,7 @@ import ChartPortfolio from '../screens/PortfolioScreens/ChartPortfolio';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
 import Header from '../components/PortfolioScreen/Header';
 import GradientBackground from '../components/UI/GradientBackground';
+import {useWindowDimensions} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialTopTabNavigator();
@@ -29,17 +30,20 @@ const PortfolioTabNavigation = () => {
 };
 
 const TabNavigator = () => {
+  const {width, height} = useWindowDimensions();
+  const isLandscape = width > height;
+
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
           backgroundColor: Colors.background500,
+          height: isLandscape ? 45 : 65,
         },
         tabBarActiveTintColor: '#7fa4f8',
         tabBarInactiveTintColor: '#ffffff',
         tabBarIndicatorStyle: {
           backgroundColor: '#7fa4f8',
-          height: 5,
         },
       }}>
       <Tab.Screen
