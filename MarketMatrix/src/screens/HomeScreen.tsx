@@ -1,15 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 import {Story} from '../components/HomeScreenComponents/Story';
 import axios from 'axios';
-import {StockChanges, UserData} from '../constants/Interfaces';
+import {StockChanges} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
-import {LineChart} from '../components/company-screen/LineChart';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
+import {useAuth} from '../contexts/authContext';
+import Button from '../components/UI/Button';
 
 interface Story {
   company: string;
@@ -22,11 +23,13 @@ interface Story {
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
   const [changes, setChanges] = useState<StockChanges[]>([]);
-
   const {stocks} = useStock();
+  const userCtx = useAuth();
+  const userId = userCtx.userId;
+  const logout = userCtx.logout;
 
-  let portfolioValue = Number(getTotalPortofolioValue()?.total);
-  let totalDifference = Number(getTotalPortofolioValue()?.difference);
+  let portfolioValue = Number(getTotalPortofolioValue(userId)?.total);
+  let totalDifference = Number(getTotalPortofolioValue(userId)?.difference);
   let percentage = ((totalDifference * 100) / portfolioValue).toFixed(2);
 
   const currencyFormat = new Intl.NumberFormat('en-US', {
@@ -100,8 +103,16 @@ const HomeScreen = () => {
   return (
     <GradientBackground>
       <View style={styles.homeWrapper}>
-        <View>
+        <View style={styles.topHeader}>
           <Text style={styles.title}>Market Matrix</Text>
+          <View style={styles.buttonContainer}>
+            <Pressable onPress={logout}>
+              <Image
+                style={styles.image}
+                source={require('../assets/icons/logout.png')}
+              />
+            </Pressable>
+          </View>
         </View>
         <View style={styles.header}>
           <View>
@@ -203,5 +214,16 @@ const styles = StyleSheet.create({
   chart: {
     width: '100%',
     height: '65%',
+  },
+  topHeader: {
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    position: 'absolute',
+    right: 0,
+  },
+  image: {
+    width: 20,
+    height: 20,
   },
 });

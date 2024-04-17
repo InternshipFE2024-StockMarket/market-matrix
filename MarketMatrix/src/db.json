@@ -2561,7 +2561,7 @@
   ],
   "user": [
     {
-      "id": "123456",
+      "id": "2@2.com",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "s3cur3P@ssw0rd",
@@ -2593,12 +2593,19 @@
           "amount": 2000,
           "boughtPrice": 64412.01,
           "shares": 61.25
+        },
+        {
+          "id": "SPX",
+          "ticker": "SPX",
+          "amount": 1000,
+          "boughtPrice": 4105.06,
+          "shares": 0.24
         }
       ],
       "total": 10000
     },
     {
-      "id": "123457",
+      "id": "1@1.com",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "s3cur3P@ssw0rd",
@@ -2629,7 +2636,7 @@
           "ticker": "BAC",
           "amount": 2000,
           "boughtPrice": 64412.01,
-          "shares": 61.25
+          "shares": 0.03
         }
       ],
       "total": 100000

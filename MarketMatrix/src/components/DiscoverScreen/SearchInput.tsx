@@ -10,6 +10,7 @@ import React from 'react';
 import {Colors} from '../../constants/Colors';
 import {useSearchContext} from '../../contexts/searchContext';
 import {useNavigation} from '@react-navigation/native';
+import {useAuth} from '../../contexts/authContext';
 
 interface InputProps {
   inputStyle?: ViewStyle;
@@ -18,6 +19,8 @@ interface InputProps {
 const SearchInput = ({inputStyle}: InputProps) => {
   const {inputValue, setInputValue} = useSearchContext();
   const navigation = useNavigation();
+  const authCtx = useAuth();
+  const logout = authCtx.logout;
 
   const handleSubmit = () => {
     navigation.navigate('Overview' as never);
@@ -40,6 +43,14 @@ const SearchInput = ({inputStyle}: InputProps) => {
           source={require('../../assets/icons/icon-search.png')}
         />
       </Pressable>
+      <View style={styles.buttonContainer}>
+        <Pressable onPress={logout}>
+          <Image
+            style={styles.imageLogout}
+            source={require('../../assets/icons/logout.png')}
+          />
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -70,5 +81,13 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
+  },
+  buttonContainer: {
+    position: 'absolute',
+    right: 0,
+  },
+  imageLogout: {
+    width: 20,
+    height: 20,
   },
 });

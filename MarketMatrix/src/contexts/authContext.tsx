@@ -5,7 +5,7 @@ import {AuthUser} from '../constants/Interfaces';
 interface AuthContextType {
   token: string | null;
   isAuthenticated: boolean;
-  userId: string | null;
+  userId: string;
   authenticate: (userData: AuthUser) => void;
   logout: () => void;
 }
@@ -13,7 +13,7 @@ interface AuthContextType {
 export const AuthContext = createContext<AuthContextType>({
   token: '',
   isAuthenticated: false,
-  userId: null,
+  userId: '',
   authenticate: () => {},
   logout: () => {},
 });
@@ -26,7 +26,7 @@ interface AuthContextProviderProps {
 
 const AuthContextProvider = ({children}: AuthContextProviderProps) => {
   const [authToken, setAuthToken] = useState<string | null>(null);
-  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [userEmail, setUserEmail] = useState<string>('');
 
   const loadTokenFromStorage = async () => {
     try {
