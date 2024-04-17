@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {LineChart} from '../components/company-screen/LineChart';
 import {CandlestickChart} from '../components/company-screen/CandlestickChart';

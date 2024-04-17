@@ -2,12 +2,12 @@
 /* eslint-disable react/self-closing-comp */
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
-import PortfolioScreen from '../screens/PortfolioScreen';
 import {Colors} from '../constants/Colors';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
 import DiscoverTabNavigation from './DiscoverTabNavigation';
 import SearchHeader from '../components/DiscoverScreen/SearchHeader';
 import React from 'react';
+import PortfolioTabNavigation from './PortfolioTabNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +40,7 @@ export const BottomTabNavigation = () => {
       />
       <Tab.Screen
         name="Portfolio"
-        component={PortfolioScreen}
+        component={PortfolioTabNavigation}
         options={{
           headerShown: false,
           tabBarIcon: ({focused, color}) => (

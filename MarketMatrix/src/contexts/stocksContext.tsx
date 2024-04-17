@@ -1,7 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Stock} from '../constants/Interfaces';
 import {fetchStocks} from '../utils/http/fetchStocks';
-import {fetchStockById} from '../utils/http/fetchStockbyTicker';
 
 interface StockContextValue {
   stocks: Stock[];
@@ -75,7 +74,7 @@ export default StockContext;
 
 const modifyPrice = (price: number) => {
   const randomOffset = Math.random();
-  const modifier = Math.random() > 0.5 ? 1 : -1;
+  const modifier = Math.random() > 0.05 ? 0.5 : -0.5;
   const modifiedPrice = price + randomOffset * modifier;
   return Number(modifiedPrice.toFixed(2));
 };

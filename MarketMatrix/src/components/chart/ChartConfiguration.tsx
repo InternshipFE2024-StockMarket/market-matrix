@@ -5,7 +5,7 @@ import {Colors} from '../../constants/Colors';
 
 interface ChartConfigurationProp {
   title: string;
-  chartType: 'line' | 'candlestick' | 'bar';
+  chartType: 'line' | 'candlestick' | 'column';
   seriesData: number[];
   ticker?: string;
   height?: number;
@@ -38,12 +38,13 @@ export const ChartConfiguration = ({
     },
     xAxis: {
       title: {
-        text: 'Date',
+        text: chartType === 'column' ? '' : 'Date',
         style: {
           color: '#ffffff',
         },
       },
-      type: 'datetime',
+      categories: chartType === 'column' ? ['Stocks', 'Crypto', 'Indices'] : '',
+      type: 'datatime',
       gridLineWidth: 0,
       labels: {
         style: {
@@ -83,6 +84,7 @@ export const ChartConfiguration = ({
         upColor: Colors.green,
         upLineColor: Colors.green,
       },
+      column: {},
     },
     legend: {
       enabled: true,
@@ -101,10 +103,15 @@ export const ChartConfiguration = ({
             ? `Price`
             : chartType === 'candlestick'
             ? `Price Movement`
-            : chartType === 'bar'
-            ? `Bar series name`
+            : chartType === 'column'
+            ? `Assets type`
             : 'Chart type not defined',
         data: seriesData,
+        colorByPoint: true,
+        colors:
+          chartType === 'column'
+            ? [Colors.pink, Colors.green, Colors.text500]
+            : ' ',
         tooltip: {
           valueDecimals: 2,
         },
