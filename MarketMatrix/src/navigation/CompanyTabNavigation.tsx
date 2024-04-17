@@ -2,7 +2,7 @@
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {LineChart} from '../components/company-screen/LineChart';
 import {CandlestickChart} from '../components/company-screen/CandlestickChart';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from '../constants/Colors';
 import {StockDetails} from '../components/company-screen/StockDetails';
 import {useEffect, useState} from 'react';
 import {Dimensions} from 'react-native';
@@ -31,12 +31,12 @@ export const CompanyTabNavigation = ({id}: CompanyNavigationProp) => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: Colors.background500,
+          backgroundColor: 'rgba(0, 0, 0, 0)',
         },
-        tabBarActiveTintColor: '#7fa4f8',
-        tabBarInactiveTintColor: '#ffffff',
+        tabBarActiveTintColor: Colors.background500,
+        tabBarInactiveTintColor: Colors.text500,
         tabBarIndicatorStyle: {
-          backgroundColor: '#7fa4f8',
+          backgroundColor: Colors.background500,
           height: 5,
         },
       }}>
