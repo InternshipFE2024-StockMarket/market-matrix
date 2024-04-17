@@ -52,13 +52,6 @@ export const StoryModal = ({
               <Text style={styles.title}>{title}</Text>
             </View>
 
-            {/* <View
-              style={{
-                backgroundColor: 'white',
-                width: 300,
-                height: 200,
-              }}></View> */}
-
             <Text style={styles.date}>{date}</Text>
 
             <Text
