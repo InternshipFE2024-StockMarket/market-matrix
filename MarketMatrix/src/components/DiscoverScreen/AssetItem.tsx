@@ -1,10 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, StyleSheet, Image, Pressable} from 'react-native';
+import {View, StyleSheet, Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Stock} from '../../constants/Interfaces';
 import {Colors} from '../../constants/Colors';
 import CardContainer from '../UI/CardContainer';
+import CustomText from '../UI/CustomText';
 
 interface AssetItemProps {
   stock: Stock;
@@ -24,15 +25,15 @@ const AssetItem = ({stock}: AssetItemProps) => {
             <View style={styles.titleContainer}>
               <Image source={{uri: stock.image}} style={styles.image} />
               <View>
-                <Text style={styles.ticker}>{stock.ticker}</Text>
-                <Text style={styles.name}>{stock.companyName}</Text>
+                <CustomText style={styles.ticker}>{stock.ticker}</CustomText>
+                <CustomText style={styles.name}>{stock.companyName}</CustomText>
               </View>
             </View>
           </View>
 
           <View style={styles.rightContainer}>
-            <Text style={styles.price}>{stock.price}</Text>
-            <Text
+            <CustomText style={styles.price}>{stock.price}</CustomText>
+            <CustomText
               style={{
                 color: change > 0 ? Colors.green : Colors.pink,
                 fontFamily: 'monospace',
@@ -40,7 +41,7 @@ const AssetItem = ({stock}: AssetItemProps) => {
               }}>
               {change > 0 ? '+' : ''}
               {change.toFixed(2)}%
-            </Text>
+            </CustomText>
           </View>
         </View>
       </CardContainer>

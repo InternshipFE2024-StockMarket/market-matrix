@@ -1,7 +1,10 @@
-import {SetStateAction, useState} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/react-in-jsx-scope */
+import {SetStateAction} from 'react';
+import {Image, StyleSheet, View} from 'react-native';
 import {SelectList} from 'react-native-dropdown-select-list';
 import {Colors} from '../../constants/Colors';
+import CustomText from '../UI/CustomText';
 
 const data = [
   {key: 'EUR', value: 'EUR'},
@@ -39,7 +42,11 @@ export const CurrencyDropdown = ({
             style={{width: 15, height: 15, alignSelf: 'center'}}
           />
         }
-        closeicon={<Text style={{color: Colors.text500, fontSize: 13}}>X</Text>}
+        closeicon={
+          <CustomText style={{color: Colors.text500, fontSize: 13}}>
+            X
+          </CustomText>
+        }
         searchicon={
           <Image
             source={require('../../assets/icons/icon-search.png')}

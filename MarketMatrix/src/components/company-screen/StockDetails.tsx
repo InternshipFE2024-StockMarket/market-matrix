@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {Stock} from '../../constants/Interfaces';
 import {Colors} from '../../constants/Colors';
 import {useStock} from '../../contexts/stocksContext';
+import CustomText from '../UI/CustomText';
 
 const nasdaq = 'NASDAQ:';
 const ceo = 'CEO:';
@@ -34,7 +36,7 @@ export const StockDetails = () => {
   }, [id, stockContext]);
 
   if (typeof selStock === 'string') {
-    return <Text>Stock not found</Text>;
+    return <CustomText>Stock not found</CustomText>;
   }
 
   const change = selStock?.priceChange;
@@ -45,41 +47,45 @@ export const StockDetails = () => {
         <Image style={styles.companyImage} source={{uri: selStock?.image}} />
         <View style={styles.mainDetails}>
           <View style={{flex: 1}}>
-            <Text style={styles.companyName}>{selStock?.companyName}</Text>
-            <Text style={styles.compantIndex}>
+            <CustomText style={styles.companyName}>
+              {selStock?.companyName}
+            </CustomText>
+            <CustomText style={styles.compantIndex}>
               {nasdaq} {selStock?.ticker}
-            </Text>
+            </CustomText>
           </View>
           <View>
-            <Text style={styles.companyCapital}>${selStock?.companyValue}</Text>
-            <Text style={styles.marketText}>{market}</Text>
+            <CustomText style={styles.companyCapital}>
+              ${selStock?.companyValue}
+            </CustomText>
+            <CustomText style={styles.marketText}>{market}</CustomText>
           </View>
         </View>
       </View>
       <View style={styles.secondaryDetails}>
         <View style={styles.detailColumn}>
-          <Text style={styles.detailsText}>
+          <CustomText style={styles.detailsText}>
             {ceo} {selStock?.ceo}
-          </Text>
-          <Text style={styles.detailsText}>
+          </CustomText>
+          <CustomText style={styles.detailsText}>
             {industry} {selStock?.industry}
-          </Text>
-          <Text style={styles.detailsText}>
+          </CustomText>
+          <CustomText style={styles.detailsText}>
             {sector} {selStock?.sector}
-          </Text>
+          </CustomText>
         </View>
         <View style={styles.priceColumn}>
-          <Text style={styles.priceValue}>${selStock?.price}</Text>
+          <CustomText style={styles.priceValue}>${selStock?.price}</CustomText>
           <View style={styles.fluctuationText}>
-            <Text
+            <CustomText
               style={{
                 fontSize: 16,
                 color: change && change > 0 ? Colors.green : Colors.pink,
               }}>
               {change && change > 0 ? '+' : ''}
               {change}
-            </Text>
-            <Text
+            </CustomText>
+            <CustomText
               style={{
                 fontSize: 16,
                 color:
@@ -87,7 +93,7 @@ export const StockDetails = () => {
               }}>
               ({percentage && percentage > 0 ? '+' : ''}
               {percentage}%)
-            </Text>
+            </CustomText>
           </View>
         </View>
       </View>

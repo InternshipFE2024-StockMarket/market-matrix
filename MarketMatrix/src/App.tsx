@@ -21,6 +21,9 @@ function App(): React.JSX.Element {
       background: Colors.background800,
       text: 'white',
     },
+    font: {
+      fontFamily: 'Roboto-Italic',
+    },
   };
   return (
     <NavigationContainer theme={MyTheme}>

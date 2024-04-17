@@ -1,6 +1,7 @@
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Colors} from '../../constants/Colors';
+import CustomText from './CustomText';
 
 interface ButtonProps {
   onPress?: () => void;
@@ -13,7 +14,7 @@ const Button = ({onPress, children}: ButtonProps) => {
       <Pressable
         onPress={onPress}
         style={({pressed}) => [styles.button, pressed ? {opacity: 0.5} : null]}>
-        <Text style={styles.title}>{children}</Text>
+        <CustomText style={styles.title}>{children}</CustomText>
       </Pressable>
     </View>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
-import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import GradientBackground from './GradientBackground';
+import CustomText from './CustomText';
 
 interface LoadingOverlayProps {
   message: string;
@@ -10,7 +11,7 @@ function LoadingOverlay({message}: LoadingOverlayProps) {
   return (
     <GradientBackground>
       <View style={styles.rootContainer}>
-        <Text style={styles.message}>{message}</Text>
+        <CustomText style={styles.message}>{message}</CustomText>
         <ActivityIndicator size="large" />
       </View>
     </GradientBackground>

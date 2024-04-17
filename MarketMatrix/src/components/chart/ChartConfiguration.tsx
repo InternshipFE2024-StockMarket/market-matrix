@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import WebView from 'react-native-webview';
 import {Colors} from '../../constants/Colors';
+import CustomText from '../UI/CustomText';
 
 interface ChartConfigurationProp {
   title: string;
@@ -168,7 +169,9 @@ export const ChartConfiguration = ({
         />
       ) : (
         <View style={styles.textContainer}>
-          <Text style={styles.text}>There is no data provided yet.</Text>
+          <CustomText style={styles.text}>
+            There is no data provided yet.
+          </CustomText>
         </View>
       )}
       {seriesData.length > 0 && loading && (

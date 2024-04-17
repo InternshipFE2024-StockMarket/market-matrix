@@ -4,7 +4,6 @@ import {
   Pressable,
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
   useWindowDimensions,
 } from 'react-native';
@@ -12,6 +11,7 @@ import Button from '../UI/Button';
 import {getTotalPortofolioValue} from '../../utils/functions/getTotalPortofolioValue';
 import {Colors} from '../../constants/Colors';
 import {useAuth} from '../../contexts/authContext';
+import CustomText from '../UI/CustomText';
 
 const Header = () => {
   const userCtx = useAuth();
@@ -26,15 +26,15 @@ const Header = () => {
     <>
       <View style={styles.header}>
         <View style={styles.portfolioData}>
-          <Text style={[styles.text, styles.portfolioValue]}>
+          <CustomText style={[styles.text, styles.portfolioValue]}>
             ${userPortfolioValue.toFixed(2)}
-          </Text>
-          <Text
+          </CustomText>
+          <CustomText
             style={{
               color: plPortfolioValue > 0 ? Colors.green : Colors.pink,
             }}>
             {plPortfolioValue.toFixed(2)}
-          </Text>
+          </CustomText>
         </View>
         <View style={styles.buttonContainer}>
           <Pressable onPress={logout}>
@@ -45,24 +45,26 @@ const Header = () => {
           </Pressable>
         </View>
       </View>
-      <Text style={[styles.text, styles.title]}>My Portfolio</Text>
+      <CustomText style={[styles.text, styles.title]}>My Portfolio</CustomText>
     </>
   );
   if (isLandscape) {
     content = (
       <>
         <View style={styles.landscapeHeader}>
-          <Text style={[styles.text, styles.landscapeTitle]}>My Portfolio</Text>
+          <CustomText style={[styles.text, styles.landscapeTitle]}>
+            My Portfolio
+          </CustomText>
           <View>
-            <Text style={[styles.text, styles.portfolioValue]}>
+            <CustomText style={[styles.text, styles.portfolioValue]}>
               ${userPortfolioValue.toFixed(2)}
-            </Text>
-            <Text
+            </CustomText>
+            <CustomText
               style={{
                 color: plPortfolioValue > 0 ? Colors.green : Colors.pink,
               }}>
               {plPortfolioValue.toFixed(2)}
-            </Text>
+            </CustomText>
           </View>
           <View>
             <Button onPress={logout}>Logout</Button>
@@ -100,10 +102,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     marginVertical: 20,
     marginLeft: 10,
-    fontFamily: 'Roboto',
+    // fontFamily: 'Roboto',
   },
   landscapeTitle: {
     fontSize: 24,
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.text500,
+    // fontFamily: 'Roboto',
   },
   portfolioValue: {
     fontWeight: 'bold',

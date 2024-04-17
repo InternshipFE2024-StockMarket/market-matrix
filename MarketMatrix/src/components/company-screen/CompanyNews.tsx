@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text} from 'react-native';
+import CustomText from '../UI/CustomText';
 
 export const CompanyNews = () => {
-  return <Text>CompanyNews</Text>;
+  return <CustomText>CompanyNews</CustomText>;
 };

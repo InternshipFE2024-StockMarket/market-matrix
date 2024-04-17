@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react-native/no-inline-styles */
 import {
   Image,
   StyleSheet,
-  Text,
   View,
   useWindowDimensions,
   Pressable,
@@ -17,9 +18,9 @@ import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
 import {useAuth} from '../contexts/authContext';
-import Button from '../components/UI/Button';
 import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
 import {useNavigation} from '@react-navigation/native';
+import CustomText from '../components/UI/CustomText';
 
 interface Story {
   company: string;
@@ -52,7 +53,7 @@ const HomeScreen = () => {
 
   let portfolioValue = Number(getTotalPortofolioValue(userId)?.total);
   let totalDifference = Number(getTotalPortofolioValue(userId)?.difference);
-  const {width, height} = useWindowDimensions();
+  const {height} = useWindowDimensions();
 
   const navigation = useNavigation<{
     navigate: (screen: string, params: {id: string}) => void;
@@ -176,7 +177,7 @@ const HomeScreen = () => {
     <GradientBackground>
       <View style={styles.homeWrapper}>
         <View style={styles.topHeader}>
-          <Text style={styles.title}>Market Matrix</Text>
+          <CustomText style={styles.title}>Market Matrix</CustomText>
           <View style={styles.buttonContainer}>
             <Pressable onPress={logout}>
               <Image
@@ -190,21 +191,22 @@ const HomeScreen = () => {
           <View>
             <View style={styles.header}>
               <View>
-                <Text style={styles.text}>Your total value:</Text>
+                <CustomText style={styles.text}>Your total value:</CustomText>
+
                 <View style={styles.valueContainer}>
-                  <Text style={styles.value}>
+                  <CustomText style={styles.value}>
                     {currency === 'USD'
                       ? currencyFormat.format(Number(portfolioValue))
                       : currencyFormat.format(Number(portfolioValue * 1.06))}
-                  </Text>
+                  </CustomText>
                 </View>
-                <Text
+                <CustomText
                   style={{
                     fontSize: 20,
                     color: totalDifference > 0 ? Colors.green : Colors.pink,
                   }}>
                   {totalDifference.toFixed(2)} ({percentage}%)
-                </Text>
+                </CustomText>
               </View>
               <View style={[styles.dropdown, {right: currencyPosition}]}>
                 <CurrencyDropdown

@@ -1,6 +1,7 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View, ViewStyle} from 'react-native';
+import {Image, StyleSheet, View, ViewStyle} from 'react-native';
 import {Colors} from '../../constants/Colors';
+import CustomText from '../UI/CustomText';
 
 interface AssetCellProps {
   logoSource: any;
@@ -16,8 +17,8 @@ const AssetCell = ({logoSource, ticker, price, style}: AssetCellProps) => {
         <Image style={styles.image} source={{uri: logoSource}} />
       </View>
       <View>
-        <Text style={styles.ticker}>{ticker}</Text>
-        <Text style={styles.price}>{price}</Text>
+        <CustomText style={styles.ticker}>{ticker}</CustomText>
+        <CustomText style={styles.price}>{price}</CustomText>
       </View>
     </View>
   );

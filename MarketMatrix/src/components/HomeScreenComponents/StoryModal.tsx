@@ -1,16 +1,9 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  View,
-  Modal,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-  Pressable,
-  ImageSourcePropType,
-} from 'react-native';
+import {View, Modal, StyleSheet, Image, Pressable} from 'react-native';
 import {Colors} from '../../constants/Colors';
 import Button from '../UI/Button';
+import CustomText from '../UI/CustomText';
 
 interface ModalProps {
   showModal: boolean;
@@ -40,7 +33,7 @@ export const StoryModal = ({
       <View style={styles.modalBackround}>
         <View style={styles.modal}>
           <Pressable style={{alignItems: 'flex-end'}} onPress={closeModal}>
-            <Text style={styles.closeIcon}>X</Text>
+            <CustomText style={styles.closeIcon}>X</CustomText>
           </Pressable>
 
           <View style={styles.modalContent}>
@@ -49,19 +42,19 @@ export const StoryModal = ({
                 source={logo}
                 style={{width: 50, height: 50, alignSelf: 'center'}}
               />
-              <Text style={styles.title}>{title}</Text>
+              <CustomText style={styles.title}>{title}</CustomText>
             </View>
 
-            <Text style={styles.date}>{date}</Text>
+            <CustomText style={styles.date}>{date}</CustomText>
 
-            <Text
+            <CustomText
               style={{
                 fontSize: 20,
                 color: totalDifference >= 0 ? Colors.green : Colors.pink,
                 marginBottom: 10,
               }}>
               {totalDifference} ({percentage}%)
-            </Text>
+            </CustomText>
 
             <Button onPress={() => navigateToCompany(id)}>Go to company</Button>
           </View>

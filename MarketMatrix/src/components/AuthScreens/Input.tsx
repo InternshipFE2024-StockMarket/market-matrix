@@ -1,12 +1,7 @@
-import {
-  KeyboardTypeOptions,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import {KeyboardTypeOptions, StyleSheet, TextInput, View} from 'react-native';
 import React from 'react';
 import {Colors} from '../../constants/Colors';
+import CustomText from '../UI/CustomText';
 
 interface InputProps {
   label: string;
@@ -25,9 +20,9 @@ const Input = ({
 }: InputProps) => {
   return (
     <View style={styles.inputContainer}>
-      <Text style={[styles.label, isInvalid && styles.labelInvalid]}>
+      <CustomText style={[styles.label, isInvalid && styles.labelInvalid]}>
         {label}
-      </Text>
+      </CustomText>
       <TextInput
         style={[styles.input, isInvalid && styles.inputInvalid]}
         autoCapitalize="none"
