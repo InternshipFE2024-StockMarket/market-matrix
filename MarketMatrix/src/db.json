@@ -2640,6 +2640,26 @@
         }
       ],
       "total": 100000
+    },
+    {
+      "id": "4@4.com",
+      "email": "4@4.com",
+      "password": "s3cur3P@ssw0rd",
+      "investment": []
+    },
+    {
+      "id": "5@5.com",
+      "email": "5@5.com",
+      "password": "s3cur3P@ssw0rd",
+      "investment": [
+        {
+          "id": "",
+          "ticker": "",
+          "amount": 0,
+          "boughtPrice": 0,
+          "shares": 0
+        }
+      ]
     }
   ],
   "news": [
