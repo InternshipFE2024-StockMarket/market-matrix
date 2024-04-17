@@ -7,8 +7,6 @@ interface BarChartProps {
 }
 
 const BarChart = (invData: BarChartProps) => {
-  console.log({invData});
-
   return (
     <View style={styles.chart}>
       <ChartConfiguration
