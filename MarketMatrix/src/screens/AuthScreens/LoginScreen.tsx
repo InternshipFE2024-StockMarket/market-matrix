@@ -13,8 +13,8 @@ const SignoutScreen = () => {
   const handleLogin = async ({email, password}: FormCredentials) => {
     setIsLoading(true);
     try {
-      const token = await login(email, password);
-      authenticate(token);
+      const response = await login(email, password);
+      authenticate(response);
     } catch (err) {
       Alert.alert(
         'Authentication failed!',
