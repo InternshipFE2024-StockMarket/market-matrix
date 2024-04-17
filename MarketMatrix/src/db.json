@@ -2592,7 +2592,7 @@
           "ticker": "BTC",
           "amount": 2000,
           "boughtPrice": 64412.01,
-          "shares": 61.25
+          "shares": 0.02
         },
         {
           "id": "SPX",
