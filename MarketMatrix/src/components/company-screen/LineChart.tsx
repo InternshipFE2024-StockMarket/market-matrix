@@ -6,12 +6,28 @@ import {fetchChangesForStock} from '../../utils/http/fetchChangesForStock';
 import {Dimensions} from 'react-native';
 
 export const LineChart = ({route}: any) => {
-  const [chartValues, setChartValues] = useState([]);
+  const [chartValues, setChartValues] = useState<number[]>([]);
+  const [dates, setDates] = useState<string[]>([]);
   const [screenHeight, setScreenHeight] = useState(
     Dimensions.get('window').height,
   );
   const id = route.params?.userParams?.id;
   const title = `Recent Close Prices for ${id}`;
+
+  const monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
 
   useEffect(() => {
     const onChange = () => {
@@ -33,23 +49,28 @@ export const LineChart = ({route}: any) => {
   const getValuesForStock = async () => {
     const selStock = await fetchChangesForStock(id);
     if (selStock) {
-      try {
-        const chartData = selStock.values.map((item: StockValues) => {
-          return [
-            new Date(item.date).getTime(),
-            parseFloat(item.close.toFixed(2)),
-          ];
-        });
-        setChartValues(chartData);
-      } catch (error: any) {
-        console.error('Failed to fetch values for stock:', error);
-      }
+      const newChartData: number[] = [];
+      const newDates: string[] = [];
+
+      selStock.values.forEach((item: StockValues) => {
+        const dateObj = new Date(item.date);
+        const formattedDate = `${dateObj.getDate()} ${
+          monthNames[dateObj.getMonth()]
+        }`;
+        newDates.push(formattedDate);
+        newChartData.push(parseFloat(item.close.toFixed(2)));
+      });
+
+      setDates(newDates);
+      setChartValues(newChartData);
     }
   };
+
   return (
     <ChartConfiguration
       title={title}
       seriesData={chartValues}
+      xaxis={dates}
       chartType="line"
       ticker={id}
       height={screenHeight}
