@@ -36,6 +36,7 @@ export interface UserInvestmentsDetails {
   amount: number;
   plValue: number;
   dynamicValue: number;
+  type: string;
 }
 
 export interface Investment {
@@ -90,4 +91,10 @@ export interface UserData {
   name: string;
   investment: Investment[];
   total: string;
+}
+
+export interface BarChartInvestmentData {
+  stocks: number;
+  crypto: number;
+  indices: number;
 }
