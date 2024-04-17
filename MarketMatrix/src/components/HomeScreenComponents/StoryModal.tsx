@@ -3,33 +3,77 @@ import {
   View,
   Modal,
   Text,
-  Button,
   TouchableOpacity,
   StyleSheet,
   Image,
+  Pressable,
+  ImageSourcePropType,
 } from 'react-native';
 import {Colors} from '../../constants/Colors';
+import Button from '../UI/Button';
 
 interface ModalProps {
   showModal: boolean;
   closeModal: () => void;
+  date?: string;
+  title: string;
+  logo?: {uri: string};
+  totalDifference: number;
+  percentage: number;
+  navigateToCompany: (id: string) => void;
+  id: string;
 }
 
-export const StoryModal = ({showModal, closeModal}: ModalProps) => {
+export const StoryModal = ({
+  showModal,
+  closeModal,
+  date,
+  title,
+  logo,
+  totalDifference,
+  percentage,
+  navigateToCompany,
+  id,
+}: ModalProps) => {
   return (
     <Modal transparent={true} visible={showModal} animationType="fade">
-      <TouchableOpacity
-        activeOpacity={1}
-        style={styles.modalBackround}
-        onPress={closeModal}>
+      <View style={styles.modalBackround}>
         <View style={styles.modal}>
-          <Text style={styles.text}>22.10.2024</Text>
-          <Image source={require('../../assets/icons/icon-apple.png')} />
-          <Text style={styles.text}>Apple</Text>
-          {/* <Text style={{color: 'red', fontSize: 20}}>Hello</Text>
-          <Button title="Close" onPress={closeModal} /> */}
+          <Pressable style={{alignItems: 'flex-end'}} onPress={closeModal}>
+            <Text style={styles.closeIcon}>X</Text>
+          </Pressable>
+
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Image
+                source={logo}
+                style={{width: 50, height: 50, alignSelf: 'center'}}
+              />
+              <Text style={styles.title}>{title}</Text>
+            </View>
+
+            {/* <View
+              style={{
+                backgroundColor: 'white',
+                width: 300,
+                height: 200,
+              }}></View> */}
+
+            <Text style={styles.date}>{date}</Text>
+
+            <Text
+              style={{
+                fontSize: 20,
+                color: totalDifference >= 0 ? Colors.green : Colors.pink,
+                marginBottom: 10,
+              }}>
+              {totalDifference} ({percentage}%)
+            </Text>
+
+            <Button onPress={() => navigateToCompany(id)}>Go to company</Button>
+          </View>
         </View>
-      </TouchableOpacity>
+      </View>
     </Modal>
   );
 };
@@ -53,7 +97,25 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 3.84,
   },
-  text: {
-    color: 'white',
+  modalHeader: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  modalContent: {
+    gap: 5,
+    alignItems: 'center',
+  },
+  closeIcon: {
+    color: Colors.text500,
+    fontSize: 16,
+  },
+  title: {
+    color: Colors.text500,
+    fontSize: 20,
+  },
+  date: {
+    color: Colors.text500,
+    fontSize: 16,
   },
 });

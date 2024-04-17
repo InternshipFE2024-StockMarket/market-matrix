@@ -3,8 +3,6 @@ import {
   Text,
   View,
   useWindowDimensions,
-  Modal,
-  Button,
   Pressable,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
@@ -18,13 +16,16 @@ import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
 import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
+import {useNavigation} from '@react-navigation/native';
 
 interface Story {
   company: string;
   change: number | string;
-  logo: {
-    uri: string;
-  };
+  logo: {uri: string};
+  name: string;
+  percentage: number;
+  date: string;
+  id: string;
 }
 
 const HomeScreen = () => {
@@ -32,9 +33,22 @@ const HomeScreen = () => {
   const [changes, setChanges] = useState<StockChanges[]>([]);
   const [showModal, setShowModal] = useState(false);
 
+  const [storyState, setStoryState] = useState({
+    title: '',
+    logo: {uri: ''},
+    totalDifference: 0,
+    percentage: 0,
+    date: '',
+    id: '',
+  });
+
   const {stocks} = useStock();
 
   const {width, height} = useWindowDimensions();
+
+  const navigation = useNavigation<{
+    navigate: (screen: string, params: {id: string}) => void;
+  }>();
 
   let portfolioValue = Number(getTotalPortofolioValue()?.total);
   let totalDifference = Number(getTotalPortofolioValue()?.difference);
@@ -58,11 +72,15 @@ const HomeScreen = () => {
     fetchData();
   }, []);
 
-  const maxDifferences: {[ticker: string]: number | string} = {};
+  const maxDifferences: {
+    [ticker: string]: {difference: number | string; date: string};
+  } = {};
 
   changes?.forEach(change => {
     let maxDifference = -Infinity;
     let minDifference = Infinity;
+    let maxDifferenceDate = '';
+    let minDifferenceDate = '';
 
     const last7DaysValues = change.values.slice(-7);
 
@@ -70,16 +88,24 @@ const HomeScreen = () => {
       const difference = value.close - value.open;
       if (difference > maxDifference) {
         maxDifference = difference;
+        maxDifferenceDate = value.date;
       }
       if (difference < minDifference) {
         minDifference = difference;
+        minDifferenceDate = value.date;
       }
     });
 
     if (Math.abs(minDifference) > maxDifference) {
-      maxDifferences[change.ticker] = minDifference.toFixed(2);
+      maxDifferences[change.ticker] = {
+        difference: minDifference.toFixed(2),
+        date: maxDifferenceDate,
+      };
     } else {
-      maxDifferences[change.ticker] = maxDifference.toFixed(2);
+      maxDifferences[change.ticker] = {
+        difference: maxDifference.toFixed(2),
+        date: maxDifferenceDate,
+      };
     }
   });
 
@@ -87,8 +113,8 @@ const HomeScreen = () => {
 
   entries.sort(
     (a, b) =>
-      Math.abs(parseFloat(b[1] as string)) -
-      Math.abs(parseFloat(a[1] as string)),
+      Math.abs(parseFloat(b[1].difference as string)) -
+      Math.abs(parseFloat(a[1].difference as string)),
   );
 
   const firstEntries = entries.slice(0, 5);
@@ -101,19 +127,39 @@ const HomeScreen = () => {
     if (stock) {
       let obj = {
         company: company,
-        change: change,
+        change: change.difference,
         logo: {uri: stock.image},
+        name: stock.companyName,
+        percentage: ((change.difference as number) * 100) / stock.openPrice,
+        date: change.date,
+        id: stock.id,
       };
       stories.push(obj);
     }
   });
 
-  const handleOpenModal = () => {
+  const handleOpenModal = (story: Story) => {
     setShowModal(true);
+
+    setStoryState({
+      title: story.name,
+      logo: story.logo,
+      totalDifference: story.change as unknown as number,
+      percentage: story.percentage.toFixed(2) as unknown as number,
+      date: story.date,
+      id: story.id,
+    });
   };
+
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  const handleNavigate = (companyId: string) => {
+    navigation.navigate('Company', {id: companyId});
+    setShowModal(false);
+  };
+
   const currencyPosition = height < 500 ? 0 : 0;
   const storiesAllignment = height < 500 ? 'flex-start' : 'center';
   const orientation = height < 500 ? 'row' : 'column';
@@ -159,21 +205,35 @@ const HomeScreen = () => {
                 styles.storiesContaner,
                 {justifyContent: storiesAllignment},
               ]}>
-              <StoryModal showModal={showModal} closeModal={handleCloseModal} />
               {stories.map((story, index) => (
-                <Pressable key={index} onPress={handleOpenModal}>
-                  <Story
-                    logo={story.logo}
-                    title={story.company}
-                    value={
-                      currency === 'USD'
-                        ? (story.change as number)
-                        : Number((Number(story.change) * 1.06).toFixed(2))
-                    }
-                    percentage={0.19}
-                    color={(story.change as number) >= 0 ? 'green' : 'pink'}
+                <View key={index}>
+                  <StoryModal
+                    showModal={showModal}
+                    closeModal={handleCloseModal}
+                    title={storyState.title}
+                    logo={storyState.logo}
+                    totalDifference={storyState.totalDifference}
+                    percentage={storyState.percentage}
+                    date={storyState.date}
+                    navigateToCompany={handleNavigate}
+                    id={storyState.id}
                   />
-                </Pressable>
+                  <Pressable onPress={() => handleOpenModal(story)}>
+                    <Story
+                      logo={story.logo}
+                      title={story.company}
+                      value={
+                        currency === 'USD'
+                          ? (story.change as number)
+                          : Number((Number(story.change) * 1.06).toFixed(2))
+                      }
+                      percentage={
+                        story.percentage.toFixed(2) as never as number
+                      }
+                      color={(story.change as number) >= 0 ? 'green' : 'pink'}
+                    />
+                  </Pressable>
+                </View>
               ))}
             </View>
           </View>

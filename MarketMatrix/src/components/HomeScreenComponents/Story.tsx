@@ -3,14 +3,22 @@ import {Colors} from '../../constants/Colors';
 import LinearGradient from 'react-native-linear-gradient';
 
 interface StoryProps {
-  logo?: ImageSourcePropType;
+  logo: {uri: string};
   title: string;
   value: number;
   percentage: number;
   color: string;
+  date?: string;
 }
 
-export const Story = ({logo, title, value, percentage, color}: StoryProps) => {
+export const Story = ({
+  logo,
+  title,
+  value,
+  percentage,
+  color,
+  date,
+}: StoryProps) => {
   const gradientColors =
     color === 'green'
       ? ['rgba(38, 209, 123, 0.50)', Colors.background600]
@@ -41,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 10,
-    width: 65,
+    width: 70,
   },
   title: {
     color: Colors.text500,
