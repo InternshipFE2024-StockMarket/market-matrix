@@ -9,7 +9,7 @@ const TablePortfolio = () => {
   const userCtx = useAuth();
   const userId = userCtx.userId;
   const userInvestmentsDetails = useUserInvestmentsDetails(userId);
-  console.log({userInvestmentsDetails});
+  // console.log({userInvestmentsDetails});
 
   return (
     <View style={styles.rootContainer}>

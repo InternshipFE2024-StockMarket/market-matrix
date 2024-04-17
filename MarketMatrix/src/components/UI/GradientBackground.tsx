@@ -14,7 +14,7 @@ const GradientBackground = ({children}: GradientBackgroundProps) => {
     <LinearGradient
       colors={[
         Colors.background500,
-        Colors.background600,
+        Colors.background800,
         Colors.background800,
       ]}
       locations={[0, 0.3, 0.6]}

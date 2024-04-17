@@ -21,8 +21,8 @@ export const Story = ({
 }: StoryProps) => {
   const gradientColors =
     color === 'green'
-      ? ['rgba(38, 209, 123, 0.50)', Colors.background600]
-      : ['rgba(235, 19, 123, 0.5)', Colors.background600];
+      ? ['rgba(38, 177, 125, 0.50)', Colors.background600]
+      : ['rgba(231, 111, 81, 0.5)', Colors.background600];
   const differenceColor = color === 'green' ? Colors.green : Colors.pink;
   return (
     <LinearGradient colors={gradientColors}>

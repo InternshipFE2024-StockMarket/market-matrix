@@ -27,7 +27,7 @@ export const ChartConfiguration = ({
       type: chartType,
       backgroundColor: Colors.companyScreenBackground,
       style: {
-        color: '#ffffff',
+        color: chartType === 'candlestick' ? Colors.pink : Colors.text500,
         fontSize: height ? (height > 500 ? '28' : '14') : '28',
         fontWeight: 'bold',
       },
@@ -35,14 +35,14 @@ export const ChartConfiguration = ({
     title: {
       text: title,
       style: {
-        color: '#ffffff',
+        color: Colors.text500,
       },
     },
     xAxis: {
       title: {
         text: chartType === 'column' ? '' : 'Date',
         style: {
-          color: '#ffffff',
+          color: Colors.text500,
         },
       },
       categories:
@@ -51,7 +51,7 @@ export const ChartConfiguration = ({
       gridLineWidth: 0,
       labels: {
         style: {
-          color: '#ffffff',
+          color: Colors.text500,
         },
       },
     },
@@ -59,13 +59,13 @@ export const ChartConfiguration = ({
       title: {
         text: 'Price',
         style: {
-          color: '#ffffff',
+          color: Colors.text500,
         },
       },
       gridLineWidth: 0,
       labels: {
         style: {
-          color: '#ffffff',
+          color: Colors.text500,
         },
       },
     },
@@ -73,7 +73,7 @@ export const ChartConfiguration = ({
       line: {
         dataLabels: {
           enabled: true,
-          color: '#ffffff',
+          color: Colors.text500,
           style: {
             fontWeight: 'bold',
             fontSize: height ? (height > 500 ? '24' : '14') : 24,
@@ -82,8 +82,8 @@ export const ChartConfiguration = ({
         color: Colors.green,
       },
       candlestick: {
-        color: Colors.pink,
-        lineColor: Colors.pink,
+        color: chartType === 'candlestick' ? Colors.pink : Colors.text500,
+        lineColor: Colors.text500,
         upColor: Colors.green,
         upLineColor: Colors.green,
       },
@@ -92,7 +92,7 @@ export const ChartConfiguration = ({
     legend: {
       enabled: true,
       itemStyle: {
-        color: '#ffffff',
+        color: Colors.text500,
         fontSize: height ? (height > 500 ? '24' : '14') : '24',
       },
     },
@@ -119,7 +119,7 @@ export const ChartConfiguration = ({
           valueDecimals: 2,
         },
         style: {
-          color: '#ffffff',
+          color: Colors.text500,
         },
       },
     ],

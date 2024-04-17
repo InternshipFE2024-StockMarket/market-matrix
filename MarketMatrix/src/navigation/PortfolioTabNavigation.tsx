@@ -2,7 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from '../constants/Colors';
 import TablePortfolio from '../screens/PortfolioScreens/TablePortfolio';
 import ChartPortfolio from '../screens/PortfolioScreens/ChartPortfolio';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
@@ -37,13 +37,13 @@ const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: Colors.background500,
+          backgroundColor: 'rgba(0, 0, 0, 0)',
           height: isLandscape ? 45 : 65,
         },
-        tabBarActiveTintColor: '#7fa4f8',
-        tabBarInactiveTintColor: '#ffffff',
+        tabBarActiveTintColor: Colors.background500,
+        tabBarInactiveTintColor: Colors.text500,
         tabBarIndicatorStyle: {
-          backgroundColor: '#7fa4f8',
+          backgroundColor: Colors.background500,
         },
       }}>
       <Tab.Screen
