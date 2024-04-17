@@ -114,6 +114,8 @@ export const ChartConfiguration = ({
             : ' ',
         tooltip: {
           valueDecimals: 2,
+          headerFormat: '<span style="font-size: 28px">{point.key}</span><br/>',
+          pointFormat: '<span style="font-size: 25px">{point.y}</span><br/>',
         },
         style: {
           color: '#ffffff',

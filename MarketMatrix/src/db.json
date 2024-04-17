@@ -2586,13 +2586,6 @@
           "amount": 2000,
           "boughtPrice": 32.635,
           "shares": 61.25
-        },
-        {
-          "id": "BTC-USD",
-          "ticker": "BTC",
-          "amount": 2000,
-          "boughtPrice": 64412.01,
-          "shares": 61.25
         }
       ],
       "total": 10000
