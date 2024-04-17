@@ -9,6 +9,7 @@ interface ChartConfigurationProp {
   seriesData: number[];
   ticker?: string;
   height?: number;
+  xaxis?: any[] | undefined;
 }
 
 export const ChartConfiguration = ({
@@ -17,6 +18,7 @@ export const ChartConfiguration = ({
   seriesData,
   ticker,
   height,
+  xaxis,
 }: ChartConfigurationProp) => {
   const [loading, setLoading] = useState(true);
 
@@ -43,8 +45,9 @@ export const ChartConfiguration = ({
           color: '#ffffff',
         },
       },
-      categories: chartType === 'column' ? ['Stocks', 'Crypto', 'Indices'] : '',
-      type: 'datatime',
+      categories:
+        chartType === 'column' ? ['Stocks', 'Crypto', 'Indices'] : xaxis,
+      type: 'date',
       gridLineWidth: 0,
       labels: {
         style: {

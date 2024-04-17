@@ -1,29 +1,54 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+  Pressable,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 import {Story} from '../components/HomeScreenComponents/Story';
 import axios from 'axios';
-import {StockChanges, UserData} from '../constants/Interfaces';
+import {StockChanges} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
 import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
-import {LineChart} from '../components/company-screen/LineChart';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
+import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
+import {useNavigation} from '@react-navigation/native';
 
 interface Story {
   company: string;
   change: number | string;
-  logo: {
-    uri: string;
-  };
+  logo: {uri: string};
+  name: string;
+  percentage: number;
+  date: string;
+  id: string;
 }
 
 const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
   const [changes, setChanges] = useState<StockChanges[]>([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const [storyState, setStoryState] = useState({
+    title: '',
+    logo: {uri: ''},
+    totalDifference: 0,
+    percentage: 0,
+    date: '',
+    id: '',
+  });
 
   const {stocks} = useStock();
+
+  const {width, height} = useWindowDimensions();
+
+  const navigation = useNavigation<{
+    navigate: (screen: string, params: {id: string}) => void;
+  }>();
 
   let portfolioValue = Number(getTotalPortofolioValue()?.total);
   let totalDifference = Number(getTotalPortofolioValue()?.difference);
@@ -47,11 +72,15 @@ const HomeScreen = () => {
     fetchData();
   }, []);
 
-  const maxDifferences: {[ticker: string]: number | string} = {};
+  const maxDifferences: {
+    [ticker: string]: {difference: number | string; date: string};
+  } = {};
 
   changes?.forEach(change => {
     let maxDifference = -Infinity;
     let minDifference = Infinity;
+    let maxDifferenceDate = '';
+    let minDifferenceDate = '';
 
     const last7DaysValues = change.values.slice(-7);
 
@@ -59,16 +88,24 @@ const HomeScreen = () => {
       const difference = value.close - value.open;
       if (difference > maxDifference) {
         maxDifference = difference;
+        maxDifferenceDate = value.date;
       }
       if (difference < minDifference) {
         minDifference = difference;
+        minDifferenceDate = value.date;
       }
     });
 
     if (Math.abs(minDifference) > maxDifference) {
-      maxDifferences[change.ticker] = minDifference.toFixed(2);
+      maxDifferences[change.ticker] = {
+        difference: minDifference.toFixed(2),
+        date: maxDifferenceDate,
+      };
     } else {
-      maxDifferences[change.ticker] = maxDifference.toFixed(2);
+      maxDifferences[change.ticker] = {
+        difference: maxDifference.toFixed(2),
+        date: maxDifferenceDate,
+      };
     }
   });
 
@@ -76,8 +113,8 @@ const HomeScreen = () => {
 
   entries.sort(
     (a, b) =>
-      Math.abs(parseFloat(b[1] as string)) -
-      Math.abs(parseFloat(a[1] as string)),
+      Math.abs(parseFloat(b[1].difference as string)) -
+      Math.abs(parseFloat(a[1].difference as string)),
   );
 
   const firstEntries = entries.slice(0, 5);
@@ -90,12 +127,44 @@ const HomeScreen = () => {
     if (stock) {
       let obj = {
         company: company,
-        change: change,
+        change: change.difference,
         logo: {uri: stock.image},
+        name: stock.companyName,
+        percentage: ((change.difference as number) * 100) / stock.openPrice,
+        date: change.date,
+        id: stock.id,
       };
       stories.push(obj);
     }
   });
+
+  const handleOpenModal = (story: Story) => {
+    setShowModal(true);
+
+    setStoryState({
+      title: story.name,
+      logo: story.logo,
+      totalDifference: story.change as unknown as number,
+      percentage: story.percentage.toFixed(2) as unknown as number,
+      date: story.date,
+      id: story.id,
+    });
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleNavigate = (companyId: string) => {
+    navigation.navigate('Company', {id: companyId});
+    setShowModal(false);
+  };
+
+  const currencyPosition = height < 500 ? 0 : 0;
+  const storiesAllignment = height < 500 ? 'flex-start' : 'center';
+  const orientation = height < 500 ? 'row' : 'column';
+  const chartWidth = height < 500 ? '55%' : '100%';
+  const chartHeight = height < 500 ? '100%' : '55%';
 
   return (
     <GradientBackground>
@@ -103,47 +172,78 @@ const HomeScreen = () => {
         <View>
           <Text style={styles.title}>Market Matrix</Text>
         </View>
-        <View style={styles.header}>
+        <View style={{flexDirection: orientation, gap: 20}}>
           <View>
-            <Text style={styles.text}>Your total value:</Text>
-            <View style={styles.valueContainer}>
-              <Text style={styles.value}>
-                {currency === 'USD'
-                  ? currencyFormat.format(Number(portfolioValue))
-                  : currencyFormat.format(Number(portfolioValue * 1.06))}
-              </Text>
+            <View style={styles.header}>
+              <View>
+                <Text style={styles.text}>Your total value:</Text>
+                <View style={styles.valueContainer}>
+                  <Text style={styles.value}>
+                    {currency === 'USD'
+                      ? currencyFormat.format(Number(portfolioValue))
+                      : currencyFormat.format(Number(portfolioValue * 1.06))}
+                  </Text>
+                </View>
+                <Text
+                  style={{
+                    fontSize: 20,
+                    color: totalDifference > 0 ? Colors.green : Colors.pink,
+                  }}>
+                  {totalDifference.toFixed(2)} ({percentage}%)
+                </Text>
+              </View>
+              <View style={[styles.dropdown, {right: currencyPosition}]}>
+                <CurrencyDropdown
+                  selected={currency}
+                  setSelected={setCurrency}
+                />
+              </View>
             </View>
-            <Text
-              style={{
-                fontSize: 20,
-                color: totalDifference > 0 ? Colors.green : Colors.pink,
-              }}>
-              {totalDifference.toFixed(2)} ({percentage}%)
-            </Text>
-          </View>
-          <View style={styles.dropdown}>
-            <CurrencyDropdown selected={currency} setSelected={setCurrency} />
-          </View>
-        </View>
 
-        <View style={styles.storiesContaner}>
-          {stories.map((story, index) => (
-            <Story
-              key={index}
-              logo={story.logo}
-              title={story.company}
-              value={
-                currency === 'USD'
-                  ? (story.change as number)
-                  : Number((Number(story.change) * 1.06).toFixed(2))
-              }
-              percentage={0.19}
-              color={(story.change as number) >= 0 ? 'green' : 'pink'}
-            />
-          ))}
-        </View>
-        <View style={styles.chartContainer}>
-          <View style={styles.chart}>
+            <View
+              style={[
+                styles.storiesContaner,
+                {justifyContent: storiesAllignment},
+              ]}>
+              {stories.map((story, index) => (
+                <View key={index}>
+                  <StoryModal
+                    showModal={showModal}
+                    closeModal={handleCloseModal}
+                    title={storyState.title}
+                    logo={storyState.logo}
+                    totalDifference={storyState.totalDifference}
+                    percentage={storyState.percentage}
+                    date={storyState.date}
+                    navigateToCompany={handleNavigate}
+                    id={storyState.id}
+                  />
+                  <Pressable onPress={() => handleOpenModal(story)}>
+                    <Story
+                      logo={story.logo}
+                      title={story.company}
+                      value={
+                        currency === 'USD'
+                          ? (story.change as number)
+                          : Number((Number(story.change) * 1.06).toFixed(2))
+                      }
+                      percentage={
+                        story.percentage.toFixed(2) as never as number
+                      }
+                      color={(story.change as number) >= 0 ? 'green' : 'pink'}
+                    />
+                  </Pressable>
+                </View>
+              ))}
+            </View>
+          </View>
+
+          <View
+            style={{
+              width: chartWidth,
+              height: chartHeight,
+              marginTop: 15,
+            }}>
             <TotalValueLineChart currency={currency} />
           </View>
         </View>
@@ -163,6 +263,7 @@ const styles = StyleSheet.create({
   homeWrapper: {
     padding: 20,
   },
+
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -189,19 +290,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   dropdown: {
     position: 'absolute',
-    right: 0,
-  },
-  chartContainer: {
-    marginTop: '20%',
-    alignItems: 'center',
-    marginBottom: 20,
   },
   chart: {
     width: '100%',
-    height: '65%',
+    height: '55%',
   },
 });

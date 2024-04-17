@@ -10,7 +10,9 @@ interface ButtonProps {
 const Button = ({onPress, children}: ButtonProps) => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={onPress} style={styles.button}>
+      <Pressable
+        onPress={onPress}
+        style={({pressed}) => [styles.button, pressed ? {opacity: 0.5} : null]}>
         <Text style={styles.title}>{children}</Text>
       </Pressable>
     </View>
