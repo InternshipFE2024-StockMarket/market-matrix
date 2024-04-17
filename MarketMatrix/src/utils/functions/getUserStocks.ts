@@ -7,7 +7,7 @@ export const getUserStocks = (
   const fetchedStocksData: UserStockData[] = [];
   for (const userInvestment of userInvestments) {
     const stock = stocks.find(
-      (stock: Stock) => stock.id === userInvestment.ticker,
+      (stock: Stock) => stock.ticker === userInvestment.ticker,
     );
     const stockData = {
       image: stock!.image,

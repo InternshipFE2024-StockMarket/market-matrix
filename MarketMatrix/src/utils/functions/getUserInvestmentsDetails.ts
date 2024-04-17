@@ -46,6 +46,7 @@ export const useUserInvestmentsDetails = (
         amount: userInvestment.amount,
         plValue,
         dynamicValue,
+        type: stock.type,
       };
 
       userInvestmentsDetails.push(userInvestmentData);

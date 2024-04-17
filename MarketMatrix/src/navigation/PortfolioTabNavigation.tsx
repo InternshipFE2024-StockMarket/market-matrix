@@ -17,7 +17,7 @@ const PortfolioTabNavigation = () => {
     <GradientBackground>
       <Stack.Navigator>
         <Stack.Screen
-          name="Portfolio"
+          name="PortfolioScreen"
           component={TabNavigator}
           options={{
             header: () => <Header />,
