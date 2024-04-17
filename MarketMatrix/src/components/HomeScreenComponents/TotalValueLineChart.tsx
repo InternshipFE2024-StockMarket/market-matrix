@@ -23,6 +23,7 @@ export const TotalValueLineChart = ({currency}: TotalValueLineChartProps) => {
   }, []);
 
   let chartValues: number[] = [];
+  let dates: any[] | undefined = [];
 
   if (userInvestments.length > 0 && changes.length > 0) {
     const dateTotalMap = new Map();
@@ -48,17 +49,34 @@ export const TotalValueLineChart = ({currency}: TotalValueLineChartProps) => {
       total,
     }));
 
+    const monthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+
     const chartData = result.map(item => {
+      const dateObj = new Date(item.date);
+      const monthIndex = dateObj.getMonth();
+      const monthAbbreviation = monthNames[monthIndex];
+      const day = dateObj.getDate();
+      const formattedDate = `${monthAbbreviation} ${day}`;
+
       if (currency === 'EUR') {
-        return [
-          new Date(item.date).getTime(),
-          parseFloat((item.total * 1.06).toFixed(2)),
-        ];
+        dates?.push(formattedDate);
+        return [parseFloat((item.total * 1.06).toFixed(2))];
       } else {
-        return [
-          new Date(item.date).getTime(),
-          parseFloat(item.total.toFixed(2)),
-        ];
+        dates?.push(formattedDate);
+        return [parseFloat(item.total.toFixed(2))];
       }
     });
 
@@ -70,6 +88,7 @@ export const TotalValueLineChart = ({currency}: TotalValueLineChartProps) => {
       title="Total values fluctuation"
       seriesData={chartValues}
       chartType="line"
+      xaxis={dates}
     />
   );
 };
