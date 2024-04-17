@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/react-in-jsx-scope */
 import {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
@@ -13,6 +15,7 @@ import {CompanyTabNavigation} from '../navigation/CompanyTabNavigation';
 import {BackButton} from '../components/UI/BackButton';
 import {useStock} from '../contexts/stocksContext';
 import {StockDetails} from '../components/company-screen/StockDetails';
+import CustomText from '../components/UI/CustomText';
 
 export const CompanyScreen = ({navigation, route}: any) => {
   const [selStock, setSelectedStock] = useState<Stock | string>();
@@ -77,7 +80,7 @@ export const CompanyScreen = ({navigation, route}: any) => {
           </View>
         </View>
       ) : (
-        <Text>No details available for {id}</Text>
+        <CustomText>No details available for {id}</CustomText>
       )}
     </GradientBackground>
   );

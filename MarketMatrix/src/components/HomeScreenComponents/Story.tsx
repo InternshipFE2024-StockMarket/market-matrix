@@ -1,6 +1,8 @@
-import {View, Text, StyleSheet, Image, ImageSourcePropType} from 'react-native';
+/* eslint-disable react/react-in-jsx-scope */
+import {View, StyleSheet, Image} from 'react-native';
 import {Colors} from '../../constants/Colors';
 import LinearGradient from 'react-native-linear-gradient';
+import CustomText from '../UI/CustomText';
 
 interface StoryProps {
   logo: {uri: string};
@@ -11,14 +13,7 @@ interface StoryProps {
   date?: string;
 }
 
-export const Story = ({
-  logo,
-  title,
-  value,
-  percentage,
-  color,
-  date,
-}: StoryProps) => {
+export const Story = ({logo, title, value, percentage, color}: StoryProps) => {
   const gradientColors =
     color === 'green'
       ? ['rgba(38, 209, 123, 0.50)', Colors.background600]
@@ -31,13 +26,13 @@ export const Story = ({
           source={logo}
           style={{width: 30, height: 30, alignSelf: 'center'}}
         />
-        <Text style={styles.title}>{title}</Text>
-        <Text style={[styles.difference, {color: differenceColor}]}>
+        <CustomText style={styles.title}>{title}</CustomText>
+        <CustomText style={[styles.difference, {color: differenceColor}]}>
           {value}
-        </Text>
-        <Text style={[styles.difference, {color: differenceColor}]}>
+        </CustomText>
+        <CustomText style={[styles.difference, {color: differenceColor}]}>
           ({percentage}%)
-        </Text>
+        </CustomText>
       </View>
     </LinearGradient>
   );

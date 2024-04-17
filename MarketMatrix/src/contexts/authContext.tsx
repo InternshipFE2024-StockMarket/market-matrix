@@ -35,7 +35,7 @@ const AuthContextProvider = ({children}: AuthContextProviderProps) => {
         const userData = JSON.parse(userDataString);
         setAuthToken(userData.token);
         setUserEmail(userData.email);
-        console.log({userData});
+        // console.log({userData});
       }
     } catch (error) {
       console.error('Error loading token from AsyncStorage:', error);

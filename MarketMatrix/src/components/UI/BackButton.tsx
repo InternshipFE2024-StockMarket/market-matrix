@@ -1,4 +1,5 @@
-import {Image, Pressable, StyleSheet, Text, ViewStyle} from 'react-native';
+import {Image, Pressable, StyleSheet, ViewStyle} from 'react-native';
+import CustomText from './CustomText';
 
 const backIcon = require('../../assets/icons/icon-back.png');
 
@@ -12,7 +13,7 @@ export const BackButton = ({onPress, text, style}: BackButtonProp) => {
   return (
     <Pressable onPress={onPress} style={[styles.button, style]}>
       <Image source={backIcon} style={styles.icon} />
-      <Text style={styles.text}>{text}</Text>
+      <CustomText style={styles.text}>{text}</CustomText>
     </Pressable>
   );
 };

@@ -1,16 +1,11 @@
 import React from 'react';
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from 'react-native';
+import {Pressable, StyleSheet, View, useWindowDimensions} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/Colors';
 import AssetCell from './AssetCell';
 import {UserInvestmentsDetails} from '../../constants/Interfaces';
+import CustomText from '../UI/CustomText';
 
 const TableRow = ({
   id,
@@ -39,15 +34,17 @@ const TableRow = ({
             logoSource={image}
             style={styles.cell}
           />
-          <Text style={[styles.cell, styles.text]}>{amount}</Text>
-          <Text
+          <CustomText style={[styles.cell, styles.text]}>{amount}</CustomText>
+          <CustomText
             style={[
               {color: plValue > 0 ? Colors.green : Colors.pink},
               styles.cell,
             ]}>
             {plValue}
-          </Text>
-          <Text style={[styles.cell, styles.text]}>{dynamicValue}</Text>
+          </CustomText>
+          <CustomText style={[styles.cell, styles.text]}>
+            {dynamicValue}
+          </CustomText>
         </View>
       </LinearGradient>
     </Pressable>

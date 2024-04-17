@@ -1,4 +1,4 @@
-import {Alert, StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import GradientBackground from '../UI/GradientBackground';
 import {Colors} from '../../constants/Colors';
@@ -6,6 +6,7 @@ import AuthForm from './AuthForm';
 import {useNavigation} from '@react-navigation/core';
 import Button from '../UI/Button';
 import {FormCredentials, FormValidation} from '../../constants/Interfaces';
+import CustomText from '../UI/CustomText';
 
 interface AuthContentProps {
   isLogin?: boolean;
@@ -61,13 +62,13 @@ const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
   return (
     <GradientBackground>
       <View style={styles.formContainer}>
-        <Text style={styles.title}>Create Account</Text>
+        <CustomText style={styles.title}>Create Account</CustomText>
         <AuthForm
           isLogin={isLogin}
           onSubmit={handleSubmit}
           credentialsInvalid={credentialsInvalid}
         />
-        <Text style={styles.or}>or</Text>
+        <CustomText style={styles.or}>or</CustomText>
         <View style={styles.buttonContainer}>
           <Button onPress={handleSwitchToLogin}>
             {isLogin ? 'Switch to Signup' : 'Switch to Login'}

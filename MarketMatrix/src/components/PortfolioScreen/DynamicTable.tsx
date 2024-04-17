@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  useWindowDimensions,
-} from 'react-native';
+import {View, FlatList, StyleSheet, useWindowDimensions} from 'react-native';
 import {Colors} from '../../constants/Colors';
 import TableRow from './TableRow';
 import {UserInvestmentsDetails} from '../../constants/Interfaces';
+import CustomText from '../UI/CustomText';
 
 interface DynamicTableProps {
   data: UserInvestmentsDetails[];
@@ -21,10 +16,10 @@ const DynamicTable = ({data}: DynamicTableProps) => {
     <View style={styles.rootContainer}>
       <View style={styles.headerContainer}>
         <View style={isLandscape ? styles.landscapeHeader : styles.header}>
-          <Text style={styles.headerText}>Asset</Text>
-          <Text style={styles.headerText}>Amount</Text>
-          <Text style={styles.headerText}>P/L</Text>
-          <Text style={styles.headerText}>Value</Text>
+          <CustomText style={styles.headerText}>Asset</CustomText>
+          <CustomText style={styles.headerText}>Amount</CustomText>
+          <CustomText style={styles.headerText}>P/L</CustomText>
+          <CustomText style={styles.headerText}>Value</CustomText>
         </View>
       </View>
       <FlatList
