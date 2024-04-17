@@ -46,8 +46,12 @@ export const ChartConfiguration = ({
         },
       },
       categories:
-        chartType === 'column' ? ['Stocks', 'Crypto', 'Indices'] : xaxis,
-      type: 'date',
+        chartType === 'column'
+          ? ['Stocks', 'Crypto', 'Indices']
+          : chartType === 'line'
+          ? xaxis
+          : '',
+      type: chartType === 'candlestick' ? 'datetime' : 'date',
       gridLineWidth: 0,
       labels: {
         style: {
@@ -164,9 +168,7 @@ export const ChartConfiguration = ({
         />
       ) : (
         <View style={styles.textContainer}>
-          <Text style={styles.text}>
-            There is no data provided for {ticker}.
-          </Text>
+          <Text style={styles.text}>There is no data provided yet.</Text>
         </View>
       )}
       {seriesData.length > 0 && loading && (
