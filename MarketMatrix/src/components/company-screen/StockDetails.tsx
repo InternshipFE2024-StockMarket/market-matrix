@@ -132,6 +132,10 @@ export const StockDetails = () => {
           isVisible={modalIsVisible}
           closeModal={handleCloseModal}
           availableAmount={userAvailableAmount}
+          stockId={selStock?.id}
+          stockTicker={selStock?.ticker}
+          boughtPrice={selStock?.price}
+          userId={userId}
         />
       )}
     </>

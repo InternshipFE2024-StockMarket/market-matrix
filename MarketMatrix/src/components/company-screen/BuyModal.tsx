@@ -1,23 +1,63 @@
 import React, {useState} from 'react';
 import {Button, Modal, StyleSheet, Text, TextInput, View} from 'react-native';
 import {Colors} from '../../constants/Colors';
+import {Investment} from '../../constants/Interfaces';
+import {addNewStockForUser} from '../../utils/http/addNewStockForUser';
+import {fetchUserData} from '../../utils/http/fetchUserData';
 
 interface BuyModalProp {
   isVisible: boolean;
   closeModal: () => void;
   availableAmount: number | undefined;
+  stockId: string | undefined;
+  stockTicker: string | undefined;
+  boughtPrice: number | undefined;
+  userId: string;
 }
 
 export const BuyModal = ({
   isVisible,
   closeModal,
   availableAmount,
+  stockId,
+  stockTicker,
+  boughtPrice,
+  userId,
 }: BuyModalProp) => {
   const [amount, setAmount] = useState('');
+  const [errorText, setErrorText] = useState('');
+
+  const userInvestments = fetchUserData(userId)?.investment;
+
+  const stockIds = userInvestments?.map(investment => investment.id);
 
   const handleBuy = () => {
-    console.log('Buy:', amount);
-    closeModal();
+    setErrorText('');
+    if (amount === '') {
+      setErrorText('Amount can not be empty!');
+    } else {
+      if (!stockIds?.includes(stockId || '')) {
+        if (amount && boughtPrice) {
+          const share = (parseFloat(amount) / boughtPrice).toFixed(2);
+
+          const investment: Investment = {
+            id: stockId ?? 'default-id',
+            ticker: stockTicker ?? 'default-ticker',
+            amount: parseFloat(amount),
+            boughtPrice: boughtPrice ?? 0,
+            shares: parseFloat(share),
+          };
+
+          addNewStockForUser(userId, investment)
+            .then(() => {
+              closeModal();
+            })
+            .catch(error => {
+              console.error('Failed to add new stock for user:', error);
+            });
+        }
+      } else setErrorText('Stock already in portofolio!');
+    }
   };
 
   if (!isVisible) return null;
@@ -38,6 +78,7 @@ export const BuyModal = ({
             placeholder="Enter amount"
           />
           <Text style={styles.modalText}>Available: {availableAmount}$</Text>
+          {errorText && <Text>{errorText}</Text>}
           <Button title="Buy" onPress={handleBuy} />
           <Button title="Cancel" color="#FF6347" onPress={closeModal} />
         </View>
