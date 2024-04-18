@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {Stock} from '../../constants/Interfaces';
-import {Colors} from '../../constants/Colors';
 import {useStock} from '../../contexts/stocksContext';
 import CustomText from '../UI/CustomText';
+import {useThemeContext} from '../../contexts/themeContext';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 const nasdaq = 'NASDAQ:';
 const ceo = 'CEO:';
@@ -18,6 +19,10 @@ interface RouteParams {
 
 export const StockDetails = () => {
   const [selStock, setSelectedStock] = useState<Stock | string>();
+
+  const {theme} = useThemeContext();
+  const {stockDetailsStyles} = useThemeColorHook();
+
   const stockContext = useStock();
   const route = useRoute();
   const {id} = route.params as RouteParams;
@@ -42,45 +47,52 @@ export const StockDetails = () => {
   const change = selStock?.priceChange;
   const percentage = selStock?.priceChangePercentage;
   return (
-    <View style={styles.companyDetaildContainer}>
-      <View style={styles.upperView}>
-        <Image style={styles.companyImage} source={{uri: selStock?.image}} />
-        <View style={styles.mainDetails}>
+    <View style={stockDetailsStyles.companyDetaildContainer}>
+      <View style={stockDetailsStyles.upperView}>
+        <Image
+          style={stockDetailsStyles.companyImage}
+          source={{uri: selStock?.image}}
+        />
+        <View style={stockDetailsStyles.mainDetails}>
           <View style={{flex: 1}}>
-            <CustomText style={styles.companyName}>
+            <CustomText style={stockDetailsStyles.companyName}>
               {selStock?.companyName}
             </CustomText>
-            <CustomText style={styles.compantIndex}>
+            <CustomText style={stockDetailsStyles.compantIndex}>
               {nasdaq} {selStock?.ticker}
             </CustomText>
           </View>
           <View>
-            <CustomText style={styles.companyCapital}>
+            <CustomText style={stockDetailsStyles.companyCapital}>
               ${selStock?.companyValue}
             </CustomText>
-            <CustomText style={styles.marketText}>{market}</CustomText>
+            <CustomText style={stockDetailsStyles.marketText}>
+              {market}
+            </CustomText>
           </View>
         </View>
       </View>
-      <View style={styles.secondaryDetails}>
-        <View style={styles.detailColumn}>
-          <CustomText style={styles.detailsText}>
+      <View style={stockDetailsStyles.secondaryDetails}>
+        <View style={stockDetailsStyles.detailColumn}>
+          <CustomText style={stockDetailsStyles.detailsText}>
             {ceo} {selStock?.ceo}
           </CustomText>
-          <CustomText style={styles.detailsText}>
+          <CustomText style={stockDetailsStyles.detailsText}>
             {industry} {selStock?.industry}
           </CustomText>
-          <CustomText style={styles.detailsText}>
+          <CustomText style={stockDetailsStyles.detailsText}>
             {sector} {selStock?.sector}
           </CustomText>
         </View>
-        <View style={styles.priceColumn}>
-          <CustomText style={styles.priceValue}>${selStock?.price}</CustomText>
-          <View style={styles.fluctuationText}>
+        <View style={stockDetailsStyles.priceColumn}>
+          <CustomText style={stockDetailsStyles.priceValue}>
+            ${selStock?.price}
+          </CustomText>
+          <View style={stockDetailsStyles.fluctuationText}>
             <CustomText
               style={{
                 fontSize: 16,
-                color: change && change > 0 ? Colors.green : Colors.pink,
+                color: change && change > 0 ? theme.green : theme.pink,
               }}>
               {change && change > 0 ? '+' : ''}
               {change}
@@ -88,8 +100,7 @@ export const StockDetails = () => {
             <CustomText
               style={{
                 fontSize: 16,
-                color:
-                  percentage && percentage > 0 ? Colors.green : Colors.pink,
+                color: percentage && percentage > 0 ? theme.green : theme.pink,
               }}>
               ({percentage && percentage > 0 ? '+' : ''}
               {percentage}%)
@@ -100,71 +111,3 @@ export const StockDetails = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  companyDetaildContainer: {
-    margin: '3%',
-    height: '30%',
-    flex: 0.55,
-  },
-  upperView: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  mainDetails: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    flex: 1,
-  },
-  companyImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 15,
-    marginRight: 10,
-  },
-  companyName: {
-    color: Colors.text500,
-    fontSize: 24,
-    marginBottom: 10,
-  },
-  compantIndex: {
-    color: Colors.text500,
-    fontSize: 14,
-  },
-  companyCapital: {
-    color: Colors.text500,
-    fontSize: 32,
-    marginBottom: 2,
-  },
-  marketText: {
-    color: Colors.text500,
-    fontSize: 12,
-  },
-  secondaryDetails: {
-    flexDirection: 'row',
-    flex: 1,
-    justifyContent: 'space-between',
-  },
-  detailColumn: {
-    flex: 0.8,
-    paddingRight: 10,
-  },
-  priceColumn: {
-    flex: 0.6,
-    alignItems: 'flex-end',
-  },
-  detailsText: {
-    color: Colors.text500,
-    fontSize: 16,
-    marginVertical: 5,
-  },
-  priceValue: {
-    color: Colors.text500,
-    fontSize: 28,
-    marginBottom: 2,
-  },
-  fluctuationText: {
-    flexDirection: 'row',
-  },
-});

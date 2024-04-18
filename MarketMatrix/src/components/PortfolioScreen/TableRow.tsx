@@ -1,11 +1,12 @@
 import React from 'react';
-import {Pressable, StyleSheet, View, useWindowDimensions} from 'react-native';
+import {Pressable, View, useWindowDimensions} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Colors} from '../../constants/Colors';
 import AssetCell from './AssetCell';
 import {UserInvestmentsDetails} from '../../constants/Interfaces';
 import CustomText from '../UI/CustomText';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
+import {useThemeContext} from '../../contexts/themeContext';
 
 const TableRow = ({
   id,
@@ -22,27 +23,35 @@ const TableRow = ({
   const {width, height} = useWindowDimensions();
   const isLandscape = width > height;
 
+  const {theme} = useThemeContext();
+  const {tableRowStyles} = useThemeColorHook();
+
   return (
     <Pressable onPress={() => navigation.navigate('Company', {id: id})}>
       <LinearGradient
-        colors={[Colors.cardBackground500, Colors.cardBackground700]}
-        style={styles.container}>
-        <View style={isLandscape ? styles.landscapeRow : styles.row}>
+        colors={[theme.cardBackground500, theme.cardBackground700]}
+        style={tableRowStyles.container}>
+        <View
+          style={
+            isLandscape ? tableRowStyles.landscapeRow : tableRowStyles.row
+          }>
           <AssetCell
             ticker={ticker}
             price={currentPrice}
             logoSource={image}
-            style={styles.cell}
+            style={tableRowStyles.cell}
           />
-          <CustomText style={[styles.cell, styles.text]}>{amount}</CustomText>
+          <CustomText style={[tableRowStyles.cell, tableRowStyles.text]}>
+            {amount}
+          </CustomText>
           <CustomText
             style={[
-              {color: plValue > 0 ? Colors.green : Colors.pink},
-              styles.cell,
+              {color: plValue > 0 ? theme.green : theme.pink},
+              tableRowStyles.cell,
             ]}>
             {plValue}
           </CustomText>
-          <CustomText style={[styles.cell, styles.text]}>
+          <CustomText style={[tableRowStyles.cell, tableRowStyles.text]}>
             {dynamicValue}
           </CustomText>
         </View>
@@ -52,32 +61,3 @@ const TableRow = ({
 };
 
 export default TableRow;
-
-const styles = StyleSheet.create({
-  container: {},
-  row: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingVertical: 20,
-    marginHorizontal: 5,
-  },
-  landscapeRow: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingVertical: 5,
-    marginHorizontal: 5,
-  },
-  text: {
-    color: Colors.text500,
-  },
-  cell: {
-    flex: 1,
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '500',
-  },
-});

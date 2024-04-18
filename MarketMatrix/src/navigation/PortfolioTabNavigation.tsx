@@ -2,13 +2,14 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {Colors} from '../constants/Colors';
+
 import TablePortfolio from '../screens/PortfolioScreens/TablePortfolio';
 import ChartPortfolio from '../screens/PortfolioScreens/ChartPortfolio';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
 import Header from '../components/PortfolioScreen/Header';
 import GradientBackground from '../components/UI/GradientBackground';
 import {useWindowDimensions} from 'react-native';
+import {useThemeContext} from '../contexts/themeContext';
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialTopTabNavigator();
@@ -32,6 +33,7 @@ const PortfolioTabNavigation = () => {
 const TabNavigator = () => {
   const {width, height} = useWindowDimensions();
   const isLandscape = width > height;
+  const {theme} = useThemeContext();
 
   return (
     <Tab.Navigator
@@ -40,10 +42,10 @@ const TabNavigator = () => {
           backgroundColor: 'rgba(0, 0, 0, 0)',
           height: isLandscape ? 45 : 65,
         },
-        tabBarActiveTintColor: Colors.background500,
-        tabBarInactiveTintColor: Colors.text500,
+        tabBarActiveTintColor: theme.background500,
+        tabBarInactiveTintColor: theme.text500,
         tabBarIndicatorStyle: {
-          backgroundColor: Colors.background500,
+          backgroundColor: theme.background500,
         },
       }}>
       <Tab.Screen

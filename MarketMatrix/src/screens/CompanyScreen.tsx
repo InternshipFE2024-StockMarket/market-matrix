@@ -9,15 +9,18 @@ import {
   View,
 } from 'react-native';
 import GradientBackground from '../components/UI/GradientBackground';
-import {Colors} from '../constants/Colors';
 import {Stock} from '../constants/Interfaces';
 import {CompanyTabNavigation} from '../navigation/CompanyTabNavigation';
 import {BackButton} from '../components/UI/BackButton';
 import {useStock} from '../contexts/stocksContext';
 import {StockDetails} from '../components/company-screen/StockDetails';
 import CustomText from '../components/UI/CustomText';
+import {useThemeColorHook} from '../utils/useThemeColorHook';
+import {useThemeContext} from '../contexts/themeContext';
 
 export const CompanyScreen = ({navigation, route}: any) => {
+  const {theme, setTheme} = useThemeContext();
+  const {companyScreenStyles} = useThemeColorHook();
   const [selStock, setSelectedStock] = useState<Stock | string>();
   const [loading, setLoading] = useState(false);
   const [screenHeight, setScreenHeight] = useState(
@@ -51,8 +54,8 @@ export const CompanyScreen = ({navigation, route}: any) => {
 
   if (loading) {
     return (
-      <View style={styles.loader}>
-        <ActivityIndicator size="large" color={Colors.background500} />
+      <View style={companyScreenStyles.loader}>
+        <ActivityIndicator size="large" color={theme.background500} />
       </View>
     );
   }
@@ -66,13 +69,13 @@ export const CompanyScreen = ({navigation, route}: any) => {
       <BackButton
         text="Back"
         onPress={() => navigation.goBack()}
-        style={styles.backButton}
+        style={companyScreenStyles.backButton}
       />
       {selStock ? (
         <View>
           <View
             style={[
-              styles.rootContainer,
+              companyScreenStyles.rootContainer,
               screenHeight < 500 && {marginTop: '2%'},
             ]}>
             {screenHeight > 500 && <StockDetails />}
@@ -85,22 +88,3 @@ export const CompanyScreen = ({navigation, route}: any) => {
     </GradientBackground>
   );
 };
-
-const styles = StyleSheet.create({
-  backButton: {
-    marginHorizontal: '5%',
-    marginTop: '2%',
-  },
-  rootContainer: {
-    marginHorizontal: '5%',
-    marginTop: '5%',
-    backgroundColor: Colors.companyScreenBackground,
-    height: '90%',
-    borderRadius: 15,
-  },
-  loader: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
