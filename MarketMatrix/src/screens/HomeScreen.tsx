@@ -33,7 +33,6 @@ const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
   const [changes, setChanges] = useState<StockChanges[]>([]);
   const [showModal, setShowModal] = useState(false);
-  // const [isEnabled, setIsEnabled] = useState(false);
 
   const {theme, setTheme, isEnabled, setIsEnabled} = useThemeContext();
   const {homePageStyles} = useThemeColorHook();
