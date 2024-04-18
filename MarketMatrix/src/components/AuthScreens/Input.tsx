@@ -9,6 +9,7 @@ interface InputProps {
   onUpdateValue?: (enteredValue: any) => void;
   value?: string;
   isInvalid?: boolean;
+  type?: 'text' | 'password';
 }
 
 const Input = ({
@@ -17,6 +18,7 @@ const Input = ({
   onUpdateValue,
   value,
   isInvalid,
+  type = 'text',
 }: InputProps) => {
   return (
     <View style={styles.inputContainer}>
@@ -29,6 +31,7 @@ const Input = ({
         keyboardType={keyboardType}
         onChangeText={onUpdateValue}
         value={value}
+        secureTextEntry={type === 'password'}
       />
     </View>
   );

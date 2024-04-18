@@ -63,6 +63,7 @@ const AuthForm = ({isLogin, onSubmit}: AuthFormProps) => {
           label="Password"
           value={enteredPassword}
           onUpdateValue={updateInputValueHandler.bind(this, 'password')}
+          type="password"
         />
         {!isLogin && (
           <Input
@@ -72,6 +73,7 @@ const AuthForm = ({isLogin, onSubmit}: AuthFormProps) => {
               this,
               'confirmPassword',
             )}
+            type="password"
           />
         )}
         <View style={styles.buttons}>
