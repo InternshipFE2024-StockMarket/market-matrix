@@ -11,12 +11,12 @@ const SignoutScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
   const {authenticate} = useAuth();
 
-  const handleSignup = async ({email, password}: FormCredentials) => {
+  const handleSignup = async ({name, email, password}: FormCredentials) => {
     setIsLoading(true);
     try {
       const response = await createUser(email, password);
-      authenticate(response);
-      createNewUser(response);
+      authenticate({...response, name});
+      createNewUser({...response, name});
     } catch (err) {
       Alert.alert(
         'Authentication failed!',

@@ -2642,24 +2642,21 @@
       "total": 100000
     },
     {
-      "id": "4@4.com",
-      "email": "4@4.com",
-      "password": "s3cur3P@ssw0rd",
+      "id": "9@9.com",
+      "email": "9@9.com",
       "investment": []
     },
     {
-      "id": "5@5.com",
-      "email": "5@5.com",
-      "password": "s3cur3P@ssw0rd",
-      "investment": [
-        {
-          "id": "",
-          "ticker": "",
-          "amount": 0,
-          "boughtPrice": 0,
-          "shares": 0
-        }
-      ]
+      "id": "3@3.com",
+      "name": "3",
+      "email": "3@3.com",
+      "investment": []
+    },
+    {
+      "id": "4@4.com",
+      "name": "Coste Adriana",
+      "email": "4@4.com",
+      "investment": []
     }
   ],
   "news": [

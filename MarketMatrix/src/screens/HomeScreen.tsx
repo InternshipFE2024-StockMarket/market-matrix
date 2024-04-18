@@ -6,6 +6,7 @@ import {
   View,
   useWindowDimensions,
   Pressable,
+  Dimensions,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Colors} from '../constants/Colors';
@@ -15,7 +16,7 @@ import {Story} from '../components/HomeScreenComponents/Story';
 import axios from 'axios';
 import {StockChanges} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
-import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
+import {useTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
 import {useAuth} from '../contexts/authContext';
 import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
@@ -49,10 +50,11 @@ const HomeScreen = () => {
   const {stocks} = useStock();
   const userCtx = useAuth();
   const userId = userCtx.userId;
+  const userName = userCtx.userName;
   const logout = userCtx.logout;
 
-  let portfolioValue = Number(getTotalPortofolioValue(userId)?.total);
-  let totalDifference = Number(getTotalPortofolioValue(userId)?.difference);
+  let portfolioValue = Number(useTotalPortofolioValue(userId)?.total);
+  let totalDifference = Number(useTotalPortofolioValue(userId)?.difference);
   const {height} = useWindowDimensions();
 
   const navigation = useNavigation<{
@@ -189,32 +191,43 @@ const HomeScreen = () => {
         </View>
         <View style={{flexDirection: orientation, gap: 20}}>
           <View>
-            <View style={styles.header}>
-              <View>
-                <CustomText style={styles.text}>Your total value:</CustomText>
-
-                <View style={styles.valueContainer}>
-                  <CustomText style={styles.value}>
-                    {currency === 'USD'
-                      ? currencyFormat.format(Number(portfolioValue))
-                      : currencyFormat.format(Number(portfolioValue * 1.06))}
-                  </CustomText>
-                </View>
-                <CustomText
-                  style={{
-                    fontSize: 20,
-                    color: totalDifference > 0 ? Colors.green : Colors.pink,
-                  }}>
-                  {totalDifference.toFixed(2)} ({percentage}%)
+            {portfolioValue === 0 ? (
+              <View style={styles.welcomeContainer}>
+                <CustomText style={styles.welcome}>
+                  Welcome to MarketMatrix!
+                </CustomText>
+                <CustomText style={styles.instructions}>
+                  Start investing now to grow your portfolio!
                 </CustomText>
               </View>
-              <View style={[styles.dropdown, {right: currencyPosition}]}>
-                <CurrencyDropdown
-                  selected={currency}
-                  setSelected={setCurrency}
-                />
+            ) : (
+              <View style={styles.header}>
+                <View>
+                  <CustomText style={styles.text}>Your total value:</CustomText>
+
+                  <View style={styles.valueContainer}>
+                    <CustomText style={styles.value}>
+                      {currency === 'USD'
+                        ? currencyFormat.format(Number(portfolioValue))
+                        : currencyFormat.format(Number(portfolioValue * 1.06))}
+                    </CustomText>
+                  </View>
+                  <CustomText
+                    style={{
+                      fontSize: 20,
+                      color: totalDifference > 0 ? Colors.green : Colors.pink,
+                    }}>
+                    {totalDifference.toFixed(2)} ({percentage}%)
+                  </CustomText>
+                </View>
+                <View style={[styles.dropdown, {right: currencyPosition}]}>
+                  <CurrencyDropdown
+                    selected={currency}
+                    setSelected={setCurrency}
+                  />
+                </View>
               </View>
-            </View>
+            )}
 
             <View
               style={[
@@ -270,6 +283,8 @@ const HomeScreen = () => {
 
 export default HomeScreen;
 
+const deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
   title: {
     color: Colors.text500,
@@ -324,5 +339,24 @@ const styles = StyleSheet.create({
   image: {
     width: 20,
     height: 20,
+  },
+  welcomeContainer: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 30,
+  },
+  welcome: {
+    color: Colors.text500,
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  instructionsContainer: {
+    width: 0.8 * deviceWidth,
+  },
+  instructions: {
+    color: Colors.text500,
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
