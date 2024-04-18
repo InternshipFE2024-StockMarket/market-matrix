@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-native/no-inline-homePageStyles */
-import {Image, View, useWindowDimensions, Pressable, Text} from 'react-native';
+import {Image, View, useWindowDimensions, Pressable} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
@@ -17,6 +17,7 @@ import {useFetchChanges} from '../utils/http/useFetchChanges';
 import {useThemeContext} from '../contexts/themeContext';
 import {useThemeColorHook} from '../utils/useThemeColorHook';
 import {blueColors, greenColors} from '../constants/Colors';
+import {ThemeToggle} from '../components/HomeScreenComponents/ThemeToggle';
 
 interface Story {
   company: string;
@@ -32,8 +33,9 @@ const HomeScreen = () => {
   const [currency, setCurrency] = useState('USD');
   const [changes, setChanges] = useState<StockChanges[]>([]);
   const [showModal, setShowModal] = useState(false);
+  // const [isEnabled, setIsEnabled] = useState(false);
 
-  const {theme, setTheme} = useThemeContext();
+  const {theme, setTheme, isEnabled, setIsEnabled} = useThemeContext();
   const {homePageStyles} = useThemeColorHook();
 
   const [storyState, setStoryState] = useState({
@@ -51,7 +53,7 @@ const HomeScreen = () => {
   const logout = userCtx.logout;
 
   const themeHandler = () => {
-    console.log('Change theme');
+    setIsEnabled(previousState => !previousState);
     theme === blueColors ? setTheme(greenColors) : setTheme(blueColors);
   };
 
@@ -179,16 +181,14 @@ const HomeScreen = () => {
         style={[homePageStyles.homeWrapper, {marginRight: marginRightWrapper}]}>
         <View style={homePageStyles.topHeader}>
           <CustomText style={homePageStyles.title}>Market Matrix</CustomText>
-          <View style={homePageStyles.buttonContainer}>
+          <View style={[homePageStyles.buttonContainer]}>
+            <ThemeToggle isEnabled={isEnabled} toggleSwitch={themeHandler} />
+
             <Pressable onPress={logout}>
               <Image
                 style={homePageStyles.image}
                 source={require('../assets/icons/logout.png')}
               />
-            </Pressable>
-
-            <Pressable onPress={themeHandler}>
-              <Text style={{color: 'white', padding: 10}}>Theme</Text>
             </Pressable>
           </View>
         </View>

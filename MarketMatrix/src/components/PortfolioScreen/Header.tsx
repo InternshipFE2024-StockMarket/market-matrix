@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   Pressable,
@@ -12,10 +12,15 @@ import {useAuth} from '../../contexts/authContext';
 import CustomText from '../UI/CustomText';
 import {useThemeContext} from '../../contexts/themeContext';
 import {useThemeColorHook} from '../../utils/useThemeColorHook';
+import {ThemeToggle} from '../HomeScreenComponents/ThemeToggle';
+import {blueColors, greenColors} from '../../constants/Colors';
 
 const Header = () => {
-  const {theme} = useThemeContext();
+  const {theme, setTheme, isEnabled, setIsEnabled} = useThemeContext();
+
   const {headerStyles} = useThemeColorHook();
+  // const [isEnabled, setIsEnabled] = useState(false);
+
   const userCtx = useAuth();
   const userId = userCtx.userId;
   let userPortfolioValue = Number(getTotalPortofolioValue(userId)?.total);
@@ -23,6 +28,11 @@ const Header = () => {
   const {width, height} = useWindowDimensions();
   const isLandscape = width > height;
   const {logout} = useAuth();
+
+  const themeHandler = () => {
+    setIsEnabled(previousState => !previousState);
+    theme === blueColors ? setTheme(greenColors) : setTheme(blueColors);
+  };
 
   let content = (
     <>
@@ -39,12 +49,15 @@ const Header = () => {
           </CustomText>
         </View>
         <View style={headerStyles.buttonContainer}>
-          <Pressable onPress={logout}>
-            <Image
-              style={headerStyles.image}
-              source={require('../../assets/icons/logout.png')}
-            />
-          </Pressable>
+          <View style={{flexDirection: 'row', alignItems: 'center', gap: 10}}>
+            <ThemeToggle isEnabled={isEnabled} toggleSwitch={themeHandler} />
+            <Pressable onPress={logout}>
+              <Image
+                style={headerStyles.image}
+                source={require('../../assets/icons/logout.png')}
+              />
+            </Pressable>
+          </View>
         </View>
       </View>
       <CustomText style={[headerStyles.text, headerStyles.title]}>

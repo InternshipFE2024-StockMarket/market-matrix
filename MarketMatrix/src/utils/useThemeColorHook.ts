@@ -54,6 +54,9 @@ export const useThemeColorHook = () => {
     buttonContainer: {
       position: 'absolute',
       right: 0,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 10,
     },
     image: {
       width: 20,
