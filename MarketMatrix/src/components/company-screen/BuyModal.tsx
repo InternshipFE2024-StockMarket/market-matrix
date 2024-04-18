@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Modal, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Modal, StyleSheet, Text, TextInput, View} from 'react-native';
 import {Colors} from '../../constants/Colors';
 import {Investment} from '../../constants/Interfaces';
 import {addNewStockForUser} from '../../utils/http/addNewStockForUser';
@@ -7,6 +7,8 @@ import {fetchUserData} from '../../utils/http/fetchUserData';
 import {updateUserAvailableAmount} from '../../utils/http/updateUserAvailableAmount';
 import {useAuth} from '../../contexts/authContext';
 import {getUserAvailableAmount} from '../../utils/functions/getUserAvailableAmount';
+import LinearGradient from 'react-native-linear-gradient';
+import Button from '../UI/Button';
 
 interface BuyModalProp {
   isVisible: boolean;
@@ -23,14 +25,15 @@ export const BuyModal = ({
   stockTicker,
   boughtPrice,
 }: BuyModalProp) => {
+  const userCtx = useAuth();
   const [amount, setAmount] = useState('');
   const [errorText, setErrorText] = useState('');
-  const userCtx = useAuth();
+
   const userId = userCtx.userId;
   const userInvestments = fetchUserData(userId)?.investment;
   const stockIds = userInvestments?.map(investment => investment.id);
-
   const availableAmount = getUserAvailableAmount(userId);
+
   const handleBuy = () => {
     setErrorText('');
     if (amount === '') {
@@ -50,9 +53,6 @@ export const BuyModal = ({
             shares: parseFloat(share),
           };
 
-          const newAmount =
-            availableAmount && availableAmount - parseFloat(amount);
-          console.log(newAmount);
           addNewStockForUser(userId, investment)
             .then(() => {
               closeModal();
@@ -60,6 +60,7 @@ export const BuyModal = ({
             .catch(error => {
               console.error('Failed to add new stock for user:', error);
             });
+
           updateUserAvailableAmount(parseFloat(amount), userId);
         }
       } else setErrorText('Stock already in portofolio!');
@@ -74,37 +75,53 @@ export const BuyModal = ({
       transparent={true}
       visible={isVisible}
       onRequestClose={closeModal}>
-      <View style={styles.centeredView}>
-        <View style={styles.modalView}>
+      <View style={styles.modalContainer}>
+        <LinearGradient
+          colors={[Colors.background600, Colors.background800]}
+          style={styles.modalView}>
+          <Text style={styles.modalText}>Available: {availableAmount}$</Text>
           <TextInput
             style={styles.input}
             onChangeText={setAmount}
             value={amount}
             keyboardType="numeric"
             placeholder="Enter amount"
+            placeholderTextColor={Colors.text500}
           />
-          <Text style={styles.modalText}>Available: {availableAmount}$</Text>
-          {errorText && <Text>{errorText}</Text>}
-          <Button title="Buy" onPress={handleBuy} />
-          <Button title="Cancel" color="#FF6347" onPress={closeModal} />
-        </View>
+
+          {errorText && <Text style={styles.errorText}>{errorText}</Text>}
+          <View style={styles.buttonsContainer}>
+            <Button
+              style={{
+                backgroundColor: Colors.background500,
+                flex: 0.3,
+                marginRight: 25,
+              }}
+              onPress={handleBuy}>
+              Buy
+            </Button>
+            <Button
+              style={{backgroundColor: Colors.pink, marginLeft: 25, flex: 0.3}}
+              onPress={closeModal}>
+              Cancel
+            </Button>
+          </View>
+        </LinearGradient>
       </View>
     </Modal>
   );
 };
 
 const styles = StyleSheet.create({
-  centeredView: {
+  modalContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
   },
   modalView: {
-    margin: 20,
-    backgroundColor: 'white',
     borderRadius: 20,
-    padding: 35,
+    padding: 20,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -113,17 +130,32 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5,
   },
   input: {
     height: 40,
-    margin: 12,
+    marginHorizontal: 10,
+    marginVertical: 20,
     borderWidth: 1,
+    borderColor: Colors.border,
+    borderRadius: 10,
     padding: 10,
-    width: 200,
+    width: 250,
+    color: Colors.text500,
   },
   modalText: {
+    marginBottom: 5,
+    textAlign: 'center',
+    color: Colors.text500,
+    fontSize: 18,
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  errorText: {
     marginBottom: 15,
     textAlign: 'center',
+    color: Colors.pink,
+    fontSize: 18,
   },
 });
