@@ -26,8 +26,6 @@ export const StockDetails = () => {
   const stockContext = useStock();
   const route = useRoute();
   const {id} = route.params as RouteParams;
-  const userCtx = useAuth();
-  const userId = userCtx.userId;
 
   const findById = stockContext?.findById;
 
@@ -54,7 +52,6 @@ export const StockDetails = () => {
     setModalIsVisible(false);
   };
 
-  const userAvailableAmount = getUserAvailableAmount(userId);
   const change = selStock?.priceChange;
   const percentage = selStock?.priceChangePercentage;
 
@@ -131,11 +128,9 @@ export const StockDetails = () => {
         <BuyModal
           isVisible={modalIsVisible}
           closeModal={handleCloseModal}
-          availableAmount={userAvailableAmount}
           stockId={selStock?.id}
           stockTicker={selStock?.ticker}
           boughtPrice={selStock?.price}
-          userId={userId}
         />
       )}
     </>

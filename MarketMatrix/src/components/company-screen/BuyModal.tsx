@@ -4,37 +4,39 @@ import {Colors} from '../../constants/Colors';
 import {Investment} from '../../constants/Interfaces';
 import {addNewStockForUser} from '../../utils/http/addNewStockForUser';
 import {fetchUserData} from '../../utils/http/fetchUserData';
+import {updateUserAvailableAmount} from '../../utils/http/updateUserAvailableAmount';
+import {useAuth} from '../../contexts/authContext';
+import {getUserAvailableAmount} from '../../utils/functions/getUserAvailableAmount';
 
 interface BuyModalProp {
   isVisible: boolean;
   closeModal: () => void;
-  availableAmount: number | undefined;
   stockId: string | undefined;
   stockTicker: string | undefined;
   boughtPrice: number | undefined;
-  userId: string;
 }
 
 export const BuyModal = ({
   isVisible,
   closeModal,
-  availableAmount,
   stockId,
   stockTicker,
   boughtPrice,
-  userId,
 }: BuyModalProp) => {
   const [amount, setAmount] = useState('');
   const [errorText, setErrorText] = useState('');
-
+  const userCtx = useAuth();
+  const userId = userCtx.userId;
   const userInvestments = fetchUserData(userId)?.investment;
-
   const stockIds = userInvestments?.map(investment => investment.id);
 
+  const availableAmount = getUserAvailableAmount(userId);
   const handleBuy = () => {
     setErrorText('');
     if (amount === '') {
       setErrorText('Amount can not be empty!');
+    } else if (availableAmount && availableAmount < parseFloat(amount)) {
+      setErrorText('Insufficient funds!');
     } else {
       if (!stockIds?.includes(stockId || '')) {
         if (amount && boughtPrice) {
@@ -48,6 +50,9 @@ export const BuyModal = ({
             shares: parseFloat(share),
           };
 
+          const newAmount =
+            availableAmount && availableAmount - parseFloat(amount);
+          console.log(newAmount);
           addNewStockForUser(userId, investment)
             .then(() => {
               closeModal();
@@ -55,6 +60,7 @@ export const BuyModal = ({
             .catch(error => {
               console.error('Failed to add new stock for user:', error);
             });
+          updateUserAvailableAmount(parseFloat(amount), userId);
         }
       } else setErrorText('Stock already in portofolio!');
     }

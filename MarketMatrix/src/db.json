@@ -2638,10 +2638,17 @@
           "amount": 2000,
           "boughtPrice": 64412.01,
           "shares": 0.03
+        },
+        {
+          "id": "AMZN",
+          "ticker": "AMZN",
+          "amount": 3100,
+          "boughtPrice": 214.88,
+          "shares": 14.43
         }
       ],
       "total": 100000,
-      "availableAmount": 3500
+      "availableAmount": 400
     },
     {
       "id": "4@4.com",
