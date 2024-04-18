@@ -2633,7 +2633,7 @@
         },
         {
           "id": "BTC-USD",
-          "ticker": "BAC",
+          "ticker": "BTC",
           "amount": 2000,
           "boughtPrice": 64412.01,
           "shares": 0.03
