@@ -91,6 +91,7 @@ export interface UserData {
   name: string;
   investment: Investment[];
   total: string;
+  availableAmount: number;
 }
 
 export interface BarChartInvestmentData {

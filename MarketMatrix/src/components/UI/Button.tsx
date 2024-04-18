@@ -1,4 +1,4 @@
-import {Pressable, StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View, ViewStyle} from 'react-native';
 import React from 'react';
 import {Colors} from '../../constants/Colors';
 import CustomText from './CustomText';
@@ -6,11 +6,12 @@ import CustomText from './CustomText';
 interface ButtonProps {
   onPress?: () => void;
   children: React.ReactNode;
+  style?: ViewStyle;
 }
 
-const Button = ({onPress, children}: ButtonProps) => {
+const Button = ({onPress, children, style}: ButtonProps) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Pressable
         onPress={onPress}
         style={({pressed}) => [styles.button, pressed ? {opacity: 0.5} : null]}>

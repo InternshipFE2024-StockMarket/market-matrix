@@ -1,11 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {Stock} from '../../constants/Interfaces';
 import {Colors} from '../../constants/Colors';
 import {useStock} from '../../contexts/stocksContext';
 import CustomText from '../UI/CustomText';
+import Button from '../UI/Button';
+import {useAuth} from '../../contexts/authContext';
+import {getUserAvailableAmount} from '../../utils/functions/getUserAvailableAmount';
+import {BuyModal} from './BuyModal';
 
 const nasdaq = 'NASDAQ:';
 const ceo = 'CEO:';
@@ -18,9 +22,12 @@ interface RouteParams {
 
 export const StockDetails = () => {
   const [selStock, setSelectedStock] = useState<Stock | string>();
+  const [modalIsVisible, setModalIsVisible] = useState(false);
   const stockContext = useStock();
   const route = useRoute();
   const {id} = route.params as RouteParams;
+  const userCtx = useAuth();
+  const userId = userCtx.userId;
 
   const findById = stockContext?.findById;
 
@@ -39,65 +46,95 @@ export const StockDetails = () => {
     return <CustomText>Stock not found</CustomText>;
   }
 
+  const handleTradeAction = () => {
+    setModalIsVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalIsVisible(false);
+  };
+
+  const userAvailableAmount = getUserAvailableAmount(userId);
   const change = selStock?.priceChange;
   const percentage = selStock?.priceChangePercentage;
+
   return (
-    <View style={styles.companyDetaildContainer}>
-      <View style={styles.upperView}>
-        <Image style={styles.companyImage} source={{uri: selStock?.image}} />
-        <View style={styles.mainDetails}>
-          <View style={{flex: 1}}>
-            <CustomText style={styles.companyName}>
-              {selStock?.companyName}
+    <>
+      <View style={styles.companyDetaildContainer}>
+        <View style={styles.upperView}>
+          <Image style={styles.companyImage} source={{uri: selStock?.image}} />
+          <View style={styles.mainDetails}>
+            <View style={{flex: 1}}>
+              <CustomText style={styles.companyName}>
+                {selStock?.companyName}
+              </CustomText>
+              <CustomText style={styles.compantIndex}>
+                {nasdaq} {selStock?.ticker}
+              </CustomText>
+            </View>
+            <View>
+              <CustomText style={styles.companyCapital}>
+                ${selStock?.companyValue}
+              </CustomText>
+              <CustomText style={styles.marketText}>{market}</CustomText>
+            </View>
+          </View>
+        </View>
+        <View style={styles.secondaryDetails}>
+          <View style={styles.detailColumn}>
+            <CustomText style={styles.detailsText}>
+              {ceo} {selStock?.ceo}
             </CustomText>
-            <CustomText style={styles.compantIndex}>
-              {nasdaq} {selStock?.ticker}
+            <CustomText style={styles.detailsText}>
+              {industry} {selStock?.industry}
+            </CustomText>
+            <CustomText style={styles.detailsText}>
+              {sector} {selStock?.sector}
             </CustomText>
           </View>
-          <View>
-            <CustomText style={styles.companyCapital}>
-              ${selStock?.companyValue}
-            </CustomText>
-            <CustomText style={styles.marketText}>{market}</CustomText>
+          <View style={styles.priceColumn}>
+            <View>
+              <CustomText style={styles.priceValue}>
+                ${selStock?.price}
+              </CustomText>
+              <View style={styles.fluctuationText}>
+                <CustomText
+                  style={{
+                    fontSize: 16,
+                    color: change && change > 0 ? Colors.green : Colors.pink,
+                  }}>
+                  {change && change > 0 ? '+' : ''}
+                  {change}
+                </CustomText>
+                <CustomText
+                  style={{
+                    fontSize: 16,
+                    color:
+                      percentage && percentage > 0 ? Colors.green : Colors.pink,
+                  }}>
+                  ({percentage && percentage > 0 ? '+' : ''}
+                  {percentage}%)
+                </CustomText>
+              </View>
+              <View style={styles.buyButtonContainer}>
+                <Button
+                  style={{backgroundColor: Colors.background600}}
+                  onPress={handleTradeAction}>
+                  Buy
+                </Button>
+              </View>
+            </View>
           </View>
         </View>
       </View>
-      <View style={styles.secondaryDetails}>
-        <View style={styles.detailColumn}>
-          <CustomText style={styles.detailsText}>
-            {ceo} {selStock?.ceo}
-          </CustomText>
-          <CustomText style={styles.detailsText}>
-            {industry} {selStock?.industry}
-          </CustomText>
-          <CustomText style={styles.detailsText}>
-            {sector} {selStock?.sector}
-          </CustomText>
-        </View>
-        <View style={styles.priceColumn}>
-          <CustomText style={styles.priceValue}>${selStock?.price}</CustomText>
-          <View style={styles.fluctuationText}>
-            <CustomText
-              style={{
-                fontSize: 16,
-                color: change && change > 0 ? Colors.green : Colors.pink,
-              }}>
-              {change && change > 0 ? '+' : ''}
-              {change}
-            </CustomText>
-            <CustomText
-              style={{
-                fontSize: 16,
-                color:
-                  percentage && percentage > 0 ? Colors.green : Colors.pink,
-              }}>
-              ({percentage && percentage > 0 ? '+' : ''}
-              {percentage}%)
-            </CustomText>
-          </View>
-        </View>
-      </View>
-    </View>
+      {modalIsVisible && (
+        <BuyModal
+          isVisible={modalIsVisible}
+          closeModal={handleCloseModal}
+          availableAmount={userAvailableAmount}
+        />
+      )}
+    </>
   );
 };
 const styles = StyleSheet.create({
@@ -166,5 +203,9 @@ const styles = StyleSheet.create({
   },
   fluctuationText: {
     flexDirection: 'row',
+  },
+  buyButtonContainer: {
+    marginVertical: '5%',
+    height: 90,
   },
 });
