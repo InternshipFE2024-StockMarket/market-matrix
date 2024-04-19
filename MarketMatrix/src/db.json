@@ -2665,7 +2665,16 @@
       "id": "4@4.com",
       "name": "Coste Adriana",
       "email": "4@4.com",
-      "investment": []
+      "availableAmount": 735,
+      "investment": [
+        {
+          "id": "SPX",
+          "ticker": "SPX",
+          "amount": 300,
+          "boughtPrice": 4135.98,
+          "shares": 0.07
+        }
+      ]
     }
   ],
   "news": [

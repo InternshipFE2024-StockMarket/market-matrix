@@ -6,16 +6,18 @@ import CustomText from '../UI/CustomText';
 
 interface DepositContainerProps {
   setShowModal: any;
+  availableAmount: number;
 }
 
-const DepositContainer = ({setShowModal}: DepositContainerProps) => {
-  const availableCash = 40;
-
+const DepositContainer = ({
+  setShowModal,
+  availableAmount,
+}: DepositContainerProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
         <CustomText style={styles.cash}>Cash Available</CustomText>
-        <CustomText style={styles.cashValue}>$ {availableCash}</CustomText>
+        <CustomText style={styles.cashValue}>$ {availableAmount}</CustomText>
       </View>
       <View style={styles.rightCintainer}>
         <Button onPress={() => setShowModal(true)}>Deposit</Button>
