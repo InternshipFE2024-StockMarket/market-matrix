@@ -206,6 +206,10 @@ export const useThemeColorHook = () => {
     fluctuationText: {
       flexDirection: 'row',
     },
+    buyButtonContainer: {
+      marginVertical: '5%',
+      height: 90,
+    },
   });
 
   const assetItemStyles = StyleSheet.create({
@@ -547,6 +551,54 @@ export const useThemeColorHook = () => {
     },
   });
 
+  const buyModalStyles = StyleSheet.create({
+    modalContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    },
+    modalView: {
+      borderRadius: 20,
+      padding: 20,
+      alignItems: 'center',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+    },
+    input: {
+      height: 40,
+      marginHorizontal: 10,
+      marginVertical: 20,
+      borderWidth: 1,
+      borderColor: theme.border,
+      borderRadius: 10,
+      padding: 10,
+      width: 250,
+      color: theme.text500,
+    },
+    modalText: {
+      marginBottom: 5,
+      textAlign: 'center',
+      color: theme.text500,
+      fontSize: 18,
+    },
+    buttonsContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    errorText: {
+      marginBottom: 15,
+      textAlign: 'center',
+      color: theme.pink,
+      fontSize: 18,
+    },
+  });
+
   return {
     homePageStyles,
     chartConfigurationStyles,
@@ -565,5 +617,6 @@ export const useThemeColorHook = () => {
     buttonStyles,
     cardContainerStyles,
     companyScreenStyles,
+    buyModalStyles,
   };
 };

@@ -1,4 +1,4 @@
-import {Pressable, View} from 'react-native';
+import {Pressable, StyleSheet, View, ViewStyle} from 'react-native';
 import React from 'react';
 import CustomText from './CustomText';
 import {useThemeColorHook} from '../../utils/useThemeColorHook';
@@ -6,12 +6,13 @@ import {useThemeColorHook} from '../../utils/useThemeColorHook';
 interface ButtonProps {
   onPress?: () => void;
   children: React.ReactNode;
+  style?: ViewStyle;
 }
 
-const Button = ({onPress, children}: ButtonProps) => {
+const Button = ({onPress, children, style}: ButtonProps) => {
   const {buttonStyles} = useThemeColorHook();
   return (
-    <View style={buttonStyles.container}>
+    <View style={[buttonStyles.container, style]}>
       <Pressable
         onPress={onPress}
         style={({pressed}) => [

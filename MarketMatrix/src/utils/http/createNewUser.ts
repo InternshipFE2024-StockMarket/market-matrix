@@ -16,6 +16,7 @@ export const createNewUser = async (newUser: User) => {
         shares: 0,
       },
     ],
+    availableAmout: 0,
   };
   try {
     const response = await axios.post('http://localhost:3000/user', userData);
