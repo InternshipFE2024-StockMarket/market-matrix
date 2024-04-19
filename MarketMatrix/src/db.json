@@ -63,7 +63,7 @@
       "openPrice": 63955.06,
       "priceChangePercentage": 2.87,
       "priceChange": 1500.75,
-      "image": "https://example.com/bitcoin.png",
+      "image": "https://media.istockphoto.com/id/1437289526/ro/vector/pictograma-bitcoin-subliniat%C4%83-%C3%AEn-portocaliu.jpg?s=1024x1024&w=is&k=20&c=PZo3R_rj3a4I2z4t6B6xBdgLZg2skNtypUt6NkL9VMg=",
       "exchange": "Crypto Exchange",
       "ceo": "Satoshi Nakamoto",
       "city": "Unknown",
@@ -2648,7 +2648,7 @@
         }
       ],
       "total": 100000,
-      "availableAmount": 400
+      "availableAmount": 4000
     },
     {
       "id": "4@4.com",

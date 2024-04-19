@@ -117,7 +117,7 @@ export const StockDetails = () => {
                 <Button
                   style={{backgroundColor: Colors.background600}}
                   onPress={handleTradeAction}>
-                  Buy
+                  Trade
                 </Button>
               </View>
             </View>
