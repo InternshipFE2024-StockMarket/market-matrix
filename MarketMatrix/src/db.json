@@ -63,7 +63,7 @@
       "openPrice": 63955.06,
       "priceChangePercentage": 2.87,
       "priceChange": 1500.75,
-      "image": "https://example.com/bitcoin.png",
+      "image": "https://media.istockphoto.com/id/1437289526/ro/vector/pictograma-bitcoin-subliniat%C4%83-%C3%AEn-portocaliu.jpg?s=1024x1024&w=is&k=20&c=PZo3R_rj3a4I2z4t6B6xBdgLZg2skNtypUt6NkL9VMg=",
       "exchange": "Crypto Exchange",
       "ceo": "Satoshi Nakamoto",
       "city": "Unknown",
@@ -2602,7 +2602,8 @@
           "shares": 0.24
         }
       ],
-      "total": 10000
+      "total": 10000,
+      "availableAmount": 3500
     },
     {
       "id": "1@1.com",
@@ -2637,9 +2638,17 @@
           "amount": 2000,
           "boughtPrice": 64412.01,
           "shares": 0.03
+        },
+        {
+          "id": "AMZN",
+          "ticker": "AMZN",
+          "amount": 3100,
+          "boughtPrice": 214.88,
+          "shares": 14.43
         }
       ],
-      "total": 100000
+      "total": 100000,
+      "availableAmount": 4000
     },
     {
       "id": "9@9.com",
