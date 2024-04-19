@@ -2665,7 +2665,7 @@
       "id": "4@4.com",
       "name": "Coste Adriana",
       "email": "4@4.com",
-      "availableAmount": 1235,
+      "availableAmount": 1735,
       "investment": [
         {
           "id": "SPX",
@@ -2673,6 +2673,13 @@
           "amount": 300,
           "boughtPrice": 4135.98,
           "shares": 0.07
+        },
+        {
+          "id": "BAC",
+          "ticker": "BAC",
+          "amount": 2000,
+          "boughtPrice": 32.635,
+          "shares": 61.25
         }
       ]
     }

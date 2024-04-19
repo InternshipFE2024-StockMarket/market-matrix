@@ -5,19 +5,16 @@ export const useAssetsPercentage = (userId: string): number[] => {
   let crypto = 0;
   let indices = 0;
   const userInvestments = useUserInvestmentsDetails(userId);
-  if (userInvestments.length === 0) {
-    return [stocks, crypto, indices];
-  } else {
-    userInvestments.map(inv => {
-      if (inv.type === 'stock') {
-        stocks = stocks + inv.amount;
-      } else if (inv.type === 'crypto') {
-        crypto = crypto + inv.amount;
-      } else if (inv.type === 'indices') {
-        indices = indices + inv.amount;
-      }
-    });
 
-    return [stocks, crypto, indices];
-  }
+  userInvestments.map(inv => {
+    if (inv.type === 'stock') {
+      stocks = stocks + inv.amount;
+    } else if (inv.type === 'crypto') {
+      crypto = crypto + inv.amount;
+    } else if (inv.type === 'indices') {
+      indices = indices + inv.amount;
+    }
+  });
+
+  return [stocks, crypto, indices];
 };

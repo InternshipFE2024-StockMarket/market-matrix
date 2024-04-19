@@ -9,6 +9,8 @@ const ChartPortfolio = () => {
   const userCtx = useAuth();
   const userId = userCtx.userId;
   const assetsData = useAssetsPercentage(userId);
+  console.log(assetsData);
+
   const allZeros = assetsData.every(asset => asset === 0);
 
   return (
