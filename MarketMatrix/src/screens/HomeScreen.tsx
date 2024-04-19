@@ -22,6 +22,7 @@ import {useAuth} from '../contexts/authContext';
 import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
 import {useNavigation} from '@react-navigation/native';
 import CustomText from '../components/UI/CustomText';
+import EmptyPortfolio from '../components/PortfolioScreen/EmptyPortfolio';
 
 interface Story {
   company: string;
@@ -266,14 +267,17 @@ const HomeScreen = () => {
               ))}
             </View>
           </View>
-
           <View
             style={{
               width: chartWidth,
               height: chartHeight,
               marginTop: 15,
             }}>
-            <TotalValueLineChart currency={currency} />
+            {portfolioValue === 0 ? (
+              <EmptyPortfolio />
+            ) : (
+              <TotalValueLineChart currency={currency} />
+            )}
           </View>
         </View>
       </View>
