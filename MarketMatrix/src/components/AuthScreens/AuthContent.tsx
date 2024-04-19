@@ -1,12 +1,12 @@
 import {Alert, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import GradientBackground from '../UI/GradientBackground';
-import {Colors} from '../../constants/Colors';
 import AuthForm from './AuthForm';
 import {useNavigation} from '@react-navigation/core';
 import Button from '../UI/Button';
 import {FormCredentials, FormValidation} from '../../constants/Interfaces';
 import CustomText from '../UI/CustomText';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface AuthContentProps {
   isLogin?: boolean;
@@ -15,6 +15,8 @@ interface AuthContentProps {
 
 const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
   const navigation = useNavigation();
+
+  const {authStyles} = useThemeColorHook();
 
   const [credentialsInvalid, setCredentialsInvalid] = useState<FormValidation>({
     name: false,
@@ -75,15 +77,15 @@ const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
 
   return (
     <GradientBackground>
-      <View style={styles.formContainer}>
-        <CustomText style={styles.title}>Create Account</CustomText>
+      <View style={authStyles.formContainer}>
+        <CustomText style={authStyles.title}>Create Account</CustomText>
         <AuthForm
           isLogin={isLogin}
           onSubmit={handleSubmit}
           credentialsInvalid={credentialsInvalid}
         />
-        <CustomText style={styles.or}>or</CustomText>
-        <View style={styles.buttonContainer}>
+        <CustomText style={authStyles.or}>or</CustomText>
+        <View style={authStyles.buttonContainer}>
           <Button onPress={handleSwitchToLogin}>
             {isLogin ? 'Switch to Signup' : 'Switch to Login'}
           </Button>
@@ -94,25 +96,3 @@ const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
 };
 
 export default AuthContent;
-
-const styles = StyleSheet.create({
-  formContainer: {
-    flex: 1,
-    marginTop: 80,
-  },
-  title: {
-    fontSize: 24,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    color: Colors.text500,
-    marginBottom: 20,
-  },
-  or: {
-    color: Colors.text500,
-    textAlign: 'center',
-    marginVertical: 5,
-  },
-  buttonContainer: {
-    marginHorizontal: 20,
-  },
-});

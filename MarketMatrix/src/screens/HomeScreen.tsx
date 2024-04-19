@@ -9,11 +9,9 @@ import {
   Dimensions,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {Colors} from '../constants/Colors';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 import {Story} from '../components/HomeScreenComponents/Story';
-import axios from 'axios';
 import {StockChanges} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
 import {useTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
@@ -23,6 +21,11 @@ import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
 import {useNavigation} from '@react-navigation/native';
 import CustomText from '../components/UI/CustomText';
 import EmptyPortfolio from '../components/PortfolioScreen/EmptyPortfolio';
+import {useFetchChanges} from '../utils/http/useFetchChanges';
+import {useThemeContext} from '../contexts/themeContext';
+import {useThemeColorHook} from '../utils/useThemeColorHook';
+import {blueColors, greenColors} from '../constants/Colors';
+import {ThemeToggle} from '../components/HomeScreenComponents/ThemeToggle';
 
 interface Story {
   company: string;
@@ -39,6 +42,9 @@ const HomeScreen = () => {
   const [changes, setChanges] = useState<StockChanges[]>([]);
   const [showModal, setShowModal] = useState(false);
 
+  const {theme, setTheme, isEnabled, setIsEnabled} = useThemeContext();
+  const {homePageStyles} = useThemeColorHook();
+
   const [storyState, setStoryState] = useState({
     title: '',
     logo: {uri: ''},
@@ -53,6 +59,11 @@ const HomeScreen = () => {
   const userId = userCtx.userId;
   const userName = userCtx.userName;
   const logout = userCtx.logout;
+
+  const themeHandler = () => {
+    setIsEnabled(previousState => !previousState);
+    theme === blueColors ? setTheme(greenColors) : setTheme(blueColors);
+  };
 
   let portfolioValue = Number(useTotalPortofolioValue(userId)?.total);
   let totalDifference = Number(useTotalPortofolioValue(userId)?.difference);
@@ -70,16 +81,11 @@ const HomeScreen = () => {
   });
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8081/src/db.json');
-        setChanges(response.data.changes);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+    const fetchChanges = async () => {
+      const response = await useFetchChanges();
+      setChanges(response);
     };
-
-    fetchData();
+    fetchChanges();
   }, []);
 
   const maxDifferences: {
@@ -175,16 +181,20 @@ const HomeScreen = () => {
   const orientation = height < 500 ? 'row' : 'column';
   const chartWidth = height < 500 ? '55%' : '100%';
   const chartHeight = height < 500 ? '100%' : '55%';
+  const marginRightWrapper = height < 500 ? 60 : 0;
 
   return (
     <GradientBackground>
-      <View style={styles.homeWrapper}>
-        <View style={styles.topHeader}>
-          <CustomText style={styles.title}>Market Matrix</CustomText>
-          <View style={styles.buttonContainer}>
+      <View
+        style={[homePageStyles.homeWrapper, {marginRight: marginRightWrapper}]}>
+        <View style={homePageStyles.topHeader}>
+          <CustomText style={homePageStyles.title}>Market Matrix</CustomText>
+          <View style={[homePageStyles.buttonContainer]}>
+            <ThemeToggle isEnabled={isEnabled} toggleSwitch={themeHandler} />
+
             <Pressable onPress={logout}>
               <Image
-                style={styles.image}
+                style={homePageStyles.image}
                 source={require('../assets/icons/logout.png')}
               />
             </Pressable>
@@ -193,21 +203,23 @@ const HomeScreen = () => {
         <View style={{flexDirection: orientation, gap: 20}}>
           <View>
             {portfolioValue === 0 ? (
-              <View style={styles.welcomeContainer}>
-                <CustomText style={styles.welcome}>
+              <View style={homePageStyles.welcomeContainer}>
+                <CustomText style={homePageStyles.welcome}>
                   Welcome to MarketMatrix!
                 </CustomText>
-                <CustomText style={styles.instructions}>
+                <CustomText style={homePageStyles.instructions}>
                   Start investing now to grow your portfolio!
                 </CustomText>
               </View>
             ) : (
-              <View style={styles.header}>
+              <View style={homePageStyles.header}>
                 <View>
-                  <CustomText style={styles.text}>Your total value:</CustomText>
+                  <CustomText style={homePageStyles.text}>
+                    Your total value:
+                  </CustomText>
 
-                  <View style={styles.valueContainer}>
-                    <CustomText style={styles.value}>
+                  <View style={homePageStyles.valueContainer}>
+                    <CustomText style={homePageStyles.value}>
                       {currency === 'USD'
                         ? currencyFormat.format(Number(portfolioValue))
                         : currencyFormat.format(Number(portfolioValue * 1.06))}
@@ -216,12 +228,13 @@ const HomeScreen = () => {
                   <CustomText
                     style={{
                       fontSize: 20,
-                      color: totalDifference > 0 ? Colors.green : Colors.pink,
+                      color: totalDifference > 0 ? theme.green : theme.pink,
                     }}>
                     {totalDifference.toFixed(2)} ({percentage}%)
                   </CustomText>
                 </View>
-                <View style={[styles.dropdown, {right: currencyPosition}]}>
+                <View
+                  style={[homePageStyles.dropdown, {right: currencyPosition}]}>
                   <CurrencyDropdown
                     selected={currency}
                     setSelected={setCurrency}
@@ -232,7 +245,7 @@ const HomeScreen = () => {
 
             <View
               style={[
-                styles.storiesContaner,
+                homePageStyles.storiesContaner,
                 {justifyContent: storiesAllignment},
               ]}>
               {stories.map((story, index) => (
@@ -286,81 +299,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const deviceWidth = Dimensions.get('window').width;
-
-const styles = StyleSheet.create({
-  title: {
-    color: Colors.text500,
-    fontSize: 20,
-    alignSelf: 'center',
-  },
-  homeWrapper: {
-    padding: 20,
-  },
-
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 40,
-    position: 'relative',
-  },
-  text: {
-    color: Colors.text500,
-    fontSize: 16,
-  },
-  valueContainer: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
-  },
-  currency: {
-    color: Colors.text500,
-    fontSize: 32,
-  },
-  value: {
-    color: Colors.text500,
-    fontSize: 44,
-  },
-  storiesContaner: {
-    flexDirection: 'row',
-    gap: 8,
-    alignItems: 'center',
-  },
-  dropdown: {
-    position: 'absolute',
-  },
-  chart: {
-    width: '100%',
-    height: '55%',
-  },
-  topHeader: {
-    justifyContent: 'center',
-  },
-  buttonContainer: {
-    position: 'absolute',
-    right: 0,
-  },
-  image: {
-    width: 20,
-    height: 20,
-  },
-  welcomeContainer: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginVertical: 30,
-  },
-  welcome: {
-    color: Colors.text500,
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  instructionsContainer: {
-    width: 0.8 * deviceWidth,
-  },
-  instructions: {
-    color: Colors.text500,
-    fontSize: 14,
-    fontWeight: '600',
-  },
-});

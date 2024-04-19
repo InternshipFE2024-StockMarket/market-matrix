@@ -1,10 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Modal, StyleSheet, Image, Pressable} from 'react-native';
-import {Colors} from '../../constants/Colors';
+import {View, Modal, Image, Pressable} from 'react-native';
 import Button from '../UI/Button';
 import CustomText from '../UI/CustomText';
 import LinearGradient from 'react-native-linear-gradient';
+import {useThemeContext} from '../../contexts/themeContext';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface ModalProps {
   showModal: boolean;
@@ -29,31 +30,34 @@ export const StoryModal = ({
   navigateToCompany,
   id,
 }: ModalProps) => {
+  const {theme} = useThemeContext();
+  const {storyModalStyles} = useThemeColorHook();
+
   return (
     <Modal transparent={true} visible={showModal} animationType="fade">
-      <View style={styles.modalBackround}>
+      <View style={storyModalStyles.modalBackround}>
         <LinearGradient
-          colors={[Colors.background600, Colors.background800]}
-          style={styles.modal}>
+          colors={[theme.background600, theme.background800]}
+          style={storyModalStyles.modal}>
           <Pressable style={{alignItems: 'flex-end'}} onPress={closeModal}>
-            <CustomText style={styles.closeIcon}>X</CustomText>
+            <CustomText style={storyModalStyles.closeIcon}>X</CustomText>
           </Pressable>
 
-          <View style={styles.modalContent}>
-            <View style={styles.modalHeader}>
+          <View style={storyModalStyles.modalContent}>
+            <View style={storyModalStyles.modalHeader}>
               <Image
                 source={logo}
                 style={{width: 50, height: 50, alignSelf: 'center'}}
               />
-              <CustomText style={styles.title}>{title}</CustomText>
+              <CustomText style={storyModalStyles.title}>{title}</CustomText>
             </View>
 
-            <CustomText style={styles.date}>{date}</CustomText>
+            <CustomText style={storyModalStyles.date}>{date}</CustomText>
 
             <CustomText
               style={{
                 fontSize: 20,
-                color: totalDifference >= 0 ? Colors.green : Colors.pink,
+                color: totalDifference >= 0 ? theme.green : theme.pink,
                 marginBottom: 10,
               }}>
               {totalDifference} ({percentage}%)
@@ -66,45 +70,3 @@ export const StoryModal = ({
     </Modal>
   );
 };
-
-const styles = StyleSheet.create({
-  modalBackround: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-  },
-  modal: {
-    backgroundColor: Colors.background600,
-    padding: 20,
-    borderRadius: 20,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.5,
-    shadowRadius: 3.84,
-  },
-  modalHeader: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginBottom: 30,
-  },
-  modalContent: {
-    gap: 5,
-    alignItems: 'center',
-  },
-  closeIcon: {
-    color: Colors.text500,
-    fontSize: 16,
-  },
-  title: {
-    color: Colors.text500,
-    fontSize: 20,
-  },
-  date: {
-    color: Colors.text500,
-    fontSize: 16,
-  },
-});

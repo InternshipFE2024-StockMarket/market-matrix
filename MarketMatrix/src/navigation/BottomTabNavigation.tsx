@@ -2,26 +2,28 @@
 /* eslint-disable react/self-closing-comp */
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
-import {Colors} from '../constants/Colors';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
 import DiscoverTabNavigation from './DiscoverTabNavigation';
 import SearchHeader from '../components/DiscoverScreen/SearchHeader';
 import React from 'react';
 import PortfolioTabNavigation from './PortfolioTabNavigation';
+import {useThemeContext} from '../contexts/themeContext';
 
 const Tab = createBottomTabNavigator();
 
 export const BottomTabNavigation = () => {
+  const {theme} = useThemeContext();
+
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: Colors.navigationBackground,
+          backgroundColor: theme.navigationBackground,
           borderTopWidth: 0,
           paddingTop: 10,
         },
-        tabBarActiveTintColor: Colors.selectedIcon,
-        tabBarInactiveTintColor: Colors.text500,
+        tabBarActiveTintColor: theme.selectedIcon,
+        tabBarInactiveTintColor: theme.text500,
       }}>
       <Tab.Screen
         name="Home"

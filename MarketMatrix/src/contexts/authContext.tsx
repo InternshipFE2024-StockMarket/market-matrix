@@ -36,7 +36,6 @@ const AuthContextProvider = ({children}: AuthContextProviderProps) => {
       const userDataString = await AsyncStorage.getItem('userdata');
       if (userDataString !== null) {
         const userData = JSON.parse(userDataString);
-        console.log('get', {userData});
 
         setAuthToken(userData.token);
         setUserEmail(userData.email);

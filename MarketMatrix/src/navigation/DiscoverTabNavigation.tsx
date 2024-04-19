@@ -6,13 +6,15 @@ import OverviewScreen from '../screens/DiscoverScreens/OverviewScreen';
 import StocksScreen from '../screens/DiscoverScreens/StocksScreen';
 import CryptoScreen from '../screens/DiscoverScreens/CryptoScreen';
 import IndicesScreen from '../screens/DiscoverScreens/IndicesScreen';
-import {Colors} from '../constants/Colors';
 import {NavigationIcon} from '../components/UI/NavigationIcon';
+import {useThemeContext} from '../contexts/themeContext';
 
 const Tab = createMaterialTopTabNavigator();
 
 const DiscoverTabNavigation = () => {
   const {width} = useWindowDimensions();
+
+  const {theme} = useThemeContext();
 
   return (
     <Tab.Navigator
@@ -23,10 +25,10 @@ const DiscoverTabNavigation = () => {
           width: width / 4,
           paddingHorizontal: 0,
         },
-        tabBarActiveTintColor: Colors.background800,
-        tabBarInactiveTintColor: Colors.text500,
+        tabBarActiveTintColor: theme.background800,
+        tabBarInactiveTintColor: theme.text500,
         tabBarStyle: {
-          backgroundColor: Colors.background500,
+          backgroundColor: theme.background500,
         },
         tabBarLabelStyle: {
           textTransform: 'none',

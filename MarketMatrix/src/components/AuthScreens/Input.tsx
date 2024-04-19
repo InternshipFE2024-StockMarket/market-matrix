@@ -1,7 +1,7 @@
 import {KeyboardTypeOptions, StyleSheet, TextInput, View} from 'react-native';
 import React from 'react';
-import {Colors} from '../../constants/Colors';
 import CustomText from '../UI/CustomText';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface InputProps {
   label: string;
@@ -20,13 +20,16 @@ const Input = ({
   isInvalid,
   type = 'text',
 }: InputProps) => {
+  const {inputStyles} = useThemeColorHook();
+
   return (
-    <View style={styles.inputContainer}>
-      <CustomText style={[styles.label, isInvalid && styles.labelInvalid]}>
+    <View style={inputStyles.inputContainer}>
+      <CustomText
+        style={[inputStyles.label, isInvalid && inputStyles.labelInvalid]}>
         {label}
       </CustomText>
       <TextInput
-        style={[styles.input, isInvalid && styles.inputInvalid]}
+        style={[inputStyles.input, isInvalid && inputStyles.inputInvalid]}
         autoCapitalize="none"
         keyboardType={keyboardType}
         onChangeText={onUpdateValue}
@@ -38,28 +41,3 @@ const Input = ({
 };
 
 export default Input;
-
-const styles = StyleSheet.create({
-  inputContainer: {
-    marginVertical: 8,
-  },
-  label: {
-    color: 'white',
-    marginBottom: 4,
-    fontWeight: '600',
-  },
-  labelInvalid: {
-    color: Colors.pink,
-  },
-  input: {
-    paddingVertical: 8,
-    paddingHorizontal: 6,
-    backgroundColor: Colors.background500,
-    borderRadius: 10,
-    fontSize: 16,
-    color: Colors.text500,
-  },
-  inputInvalid: {
-    backgroundColor: Colors.pink,
-  },
-});

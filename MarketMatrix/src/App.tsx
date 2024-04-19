@@ -12,6 +12,7 @@ import {StockProvider} from './contexts/stocksContext';
 import {SearchProvider} from './contexts/searchContext';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import AuthContextProvider from './contexts/authContext';
+import {ThemeProvider} from './contexts/themeContext';
 
 function App(): React.JSX.Element {
   const MyTheme = {
@@ -28,11 +29,13 @@ function App(): React.JSX.Element {
   return (
     <NavigationContainer theme={MyTheme}>
       <StockProvider>
-        <SearchProvider>
-          <AuthContextProvider>
-            <MainNavigation />
-          </AuthContextProvider>
-        </SearchProvider>
+        <ThemeProvider>
+          <SearchProvider>
+            <AuthContextProvider>
+              <MainNavigation />
+            </AuthContextProvider>
+          </SearchProvider>
+        </ThemeProvider>
       </StockProvider>
     </NavigationContainer>
   );

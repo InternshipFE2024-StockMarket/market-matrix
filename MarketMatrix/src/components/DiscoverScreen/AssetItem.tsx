@@ -3,9 +3,11 @@ import React from 'react';
 import {View, StyleSheet, Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Stock} from '../../constants/Interfaces';
-import {Colors} from '../../constants/Colors';
+
 import CardContainer from '../UI/CardContainer';
 import CustomText from '../UI/CustomText';
+import {useThemeContext} from '../../contexts/themeContext';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface AssetItemProps {
   stock: Stock;
@@ -16,26 +18,36 @@ const AssetItem = ({stock}: AssetItemProps) => {
     navigate: (screen: string, params: {id: string}) => void;
   }>();
 
+  const {theme} = useThemeContext();
+  const {assetItemStyles} = useThemeColorHook();
+
   const change = stock.priceChangePercentage;
   return (
     <Pressable onPress={() => navigation.navigate('Company', {id: stock.id})}>
       <CardContainer>
-        <View style={styles.container}>
-          <View style={styles.leftContainer}>
-            <View style={styles.titleContainer}>
-              <Image source={{uri: stock.image}} style={styles.image} />
+        <View style={assetItemStyles.container}>
+          <View style={assetItemStyles.leftContainer}>
+            <View style={assetItemStyles.titleContainer}>
+              <Image
+                source={{uri: stock.image}}
+                style={assetItemStyles.image}
+              />
               <View>
-                <CustomText style={styles.ticker}>{stock.ticker}</CustomText>
-                <CustomText style={styles.name}>{stock.companyName}</CustomText>
+                <CustomText style={assetItemStyles.ticker}>
+                  {stock.ticker}
+                </CustomText>
+                <CustomText style={assetItemStyles.name}>
+                  {stock.companyName}
+                </CustomText>
               </View>
             </View>
           </View>
 
-          <View style={styles.rightContainer}>
-            <CustomText style={styles.price}>{stock.price}</CustomText>
+          <View style={assetItemStyles.rightContainer}>
+            <CustomText style={assetItemStyles.price}>{stock.price}</CustomText>
             <CustomText
               style={{
-                color: change > 0 ? Colors.green : Colors.pink,
+                color: change > 0 ? theme.green : theme.pink,
                 fontFamily: 'monospace',
                 fontSize: 14,
               }}>
@@ -50,47 +62,3 @@ const AssetItem = ({stock}: AssetItemProps) => {
 };
 
 export default AssetItem;
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-  },
-  leftContainer: {
-    flex: 1,
-    gap: 5,
-  },
-  rightContainer: {
-    alignItems: 'flex-end',
-    gap: 6,
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 3,
-    color: Colors.text500,
-  },
-  ticker: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.text500,
-  },
-  name: {
-    fontSize: 16,
-    color: Colors.text500,
-  },
-  icon: {
-    width: 18,
-    height: 18,
-    tintColor: Colors.text500,
-  },
-  price: {
-    fontFamily: 'monospace',
-    fontSize: 14,
-    color: Colors.text500,
-  },
-  image: {
-    width: 30,
-    height: 30,
-    marginRight: 5,
-  },
-});

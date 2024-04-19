@@ -1,10 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {View, Modal, StyleSheet, TextInput} from 'react-native';
-import {Colors} from '../../constants/Colors';
+import {View, Modal, TextInput} from 'react-native';
 import CustomText from '../UI/CustomText';
 import LinearGradient from 'react-native-linear-gradient';
 import Button from '../UI/Button';
+import {useThemeContext} from '../../contexts/themeContext';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface ModalProps {
   showModal: boolean;
@@ -18,6 +19,8 @@ export const DepositModal = ({
   handleDeposit,
 }: ModalProps) => {
   const [amount, setAmount] = useState('');
+  const {theme} = useThemeContext();
+  const {DepositModal} = useThemeColorHook();
 
   const handleAdd = () => {
     handleDeposit(parseFloat(amount));
@@ -36,24 +39,26 @@ export const DepositModal = ({
       transparent={true}
       visible={showModal}
       onRequestClose={closeModal}>
-      <View style={styles.modalContainer}>
+      <View style={DepositModal.modalContainer}>
         <LinearGradient
-          colors={[Colors.background600, Colors.background800]}
-          style={styles.modalView}>
-          <CustomText style={styles.modalText}>Fund Your Account</CustomText>
+          colors={[theme.background600, theme.background800]}
+          style={DepositModal.modalView}>
+          <CustomText style={DepositModal.modalText}>
+            Fund Your Account
+          </CustomText>
           <TextInput
-            style={styles.input}
+            style={DepositModal.input}
             onChangeText={setAmount}
             value={amount}
             keyboardType="numeric"
             placeholder="Enter amount"
-            placeholderTextColor={Colors.text500}
+            placeholderTextColor={theme.text500}
           />
 
-          <View style={styles.buttonsContainer}>
+          <View style={DepositModal.buttonsContainer}>
             <Button
               style={{
-                backgroundColor: Colors.background500,
+                backgroundColor: theme.background500,
                 flex: 0.3,
                 marginRight: 25,
               }}
@@ -61,7 +66,7 @@ export const DepositModal = ({
               Add
             </Button>
             <Button
-              style={{backgroundColor: Colors.pink, marginLeft: 25, flex: 0.3}}
+              style={{backgroundColor: theme.pink, marginLeft: 25, flex: 0.3}}
               onPress={handleCancel}>
               Cancel
             </Button>
@@ -71,51 +76,3 @@ export const DepositModal = ({
     </Modal>
   );
 };
-
-const styles = StyleSheet.create({
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-  },
-  modalView: {
-    borderRadius: 20,
-    padding: 20,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-  },
-  input: {
-    height: 40,
-    marginHorizontal: 10,
-    marginVertical: 20,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: 10,
-    padding: 10,
-    width: 250,
-    color: Colors.text500,
-  },
-  modalText: {
-    marginBottom: 5,
-    textAlign: 'center',
-    color: Colors.text500,
-    fontSize: 18,
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  errorText: {
-    marginBottom: 15,
-    textAlign: 'center',
-    color: Colors.pink,
-    fontSize: 18,
-  },
-});

@@ -1,8 +1,8 @@
-import {StyleSheet, View, Dimensions} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
-import {Colors} from '../../constants/Colors';
 import Button from '../UI/Button';
 import CustomText from '../UI/CustomText';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface DepositContainerProps {
   setShowModal: any;
@@ -13,13 +13,16 @@ const DepositContainer = ({
   setShowModal,
   availableAmount,
 }: DepositContainerProps) => {
+  const {depositContainer} = useThemeColorHook();
   return (
-    <View style={styles.container}>
-      <View style={styles.leftContainer}>
-        <CustomText style={styles.cash}>Cash Available</CustomText>
-        <CustomText style={styles.cashValue}>$ {availableAmount}</CustomText>
+    <View style={depositContainer.container}>
+      <View style={depositContainer.leftContainer}>
+        <CustomText style={depositContainer.cash}>Cash Available</CustomText>
+        <CustomText style={depositContainer.cashValue}>
+          $ {availableAmount}
+        </CustomText>
       </View>
-      <View style={styles.rightCintainer}>
+      <View style={depositContainer.rightCintainer}>
         <Button onPress={() => setShowModal(true)}>Deposit</Button>
       </View>
     </View>
@@ -27,34 +30,3 @@ const DepositContainer = ({
 };
 
 export default DepositContainer;
-
-const deviceHeight = Dimensions.get('window').height;
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    height: 0.08 * deviceHeight,
-    position: 'absolute',
-    bottom: 0,
-    backgroundColor: Colors.background600,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  leftContainer: {
-    marginLeft: 20,
-  },
-  rightCintainer: {
-    marginRight: 20,
-  },
-  cash: {
-    color: Colors.text500,
-    fontSize: 18,
-  },
-  cashValue: {
-    color: Colors.text500,
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginTop: 5,
-  },
-});
