@@ -1,23 +1,25 @@
 import {
   Image,
   Pressable,
-  StyleSheet,
   TextInput,
   View,
   ViewStyle,
   useWindowDimensions,
 } from 'react-native';
 import React from 'react';
-import {Colors} from '../../constants/Colors';
 import {useSearchContext} from '../../contexts/searchContext';
 import {useNavigation} from '@react-navigation/native';
 import {useAuth} from '../../contexts/authContext';
+import {useThemeContext} from '../../contexts/themeContext';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface InputProps {
   inputStyle?: ViewStyle;
 }
 
 const SearchInput = ({inputStyle}: InputProps) => {
+  const {theme} = useThemeContext();
+  const {searchInputStyles} = useThemeColorHook();
   const {inputValue, setInputValue} = useSearchContext();
   const navigation = useNavigation();
   const authCtx = useAuth();
@@ -30,31 +32,37 @@ const SearchInput = ({inputStyle}: InputProps) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={searchInputStyles.container}>
       <TextInput
-        style={[styles.input, inputStyle]}
+        style={[searchInputStyles.input, inputStyle]}
         placeholder="Search"
-        placeholderTextColor={Colors.text600}
+        placeholderTextColor={theme.text600}
         value={inputValue}
         onChangeText={setInputValue}
         onSubmitEditing={handleSubmit}
       />
       <Pressable
         onPress={handleSubmit}
-        style={isLandscape ? styles.landscapeSearch : styles.search}>
+        style={
+          isLandscape
+            ? searchInputStyles.landscapeSearch
+            : searchInputStyles.search
+        }>
         <Image
-          tintColor={Colors.text500}
-          style={styles.image}
+          tintColor={theme.text500}
+          style={searchInputStyles.image}
           source={require('../../assets/icons/icon-search.png')}
         />
       </Pressable>
       <View
         style={
-          isLandscape ? styles.landscapeButtonContainer : styles.buttonContainer
+          isLandscape
+            ? searchInputStyles.landscapeButtonContainer
+            : searchInputStyles.buttonContainer
         }>
         <Pressable onPress={logout}>
           <Image
-            style={styles.imageLogout}
+            style={searchInputStyles.imageLogout}
             source={require('../../assets/icons/logout.png')}
           />
         </Pressable>
@@ -64,50 +72,3 @@ const SearchInput = ({inputStyle}: InputProps) => {
 };
 
 export default SearchInput;
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    position: 'relative',
-  },
-  input: {
-    backgroundColor: Colors.background600,
-    width: '90%',
-    height: 60,
-    borderRadius: 10,
-    color: Colors.text500,
-  },
-  search: {
-    width: 24,
-    height: 24,
-    position: 'absolute',
-    right: 60,
-  },
-  landscapeSearch: {
-    width: 24,
-    height: 24,
-    position: 'absolute',
-    right: 100,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-  },
-  buttonContainer: {
-    position: 'absolute',
-    right: 30,
-    zIndex: 1,
-  },
-  landscapeButtonContainer: {
-    position: 'absolute',
-    right: 60,
-    zIndex: 1,
-  },
-  imageLogout: {
-    width: 20,
-    height: 20,
-  },
-});

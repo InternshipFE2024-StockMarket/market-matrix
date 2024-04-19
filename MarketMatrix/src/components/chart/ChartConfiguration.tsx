@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {ActivityIndicator, StyleSheet, View} from 'react-native';
+import {ActivityIndicator, View} from 'react-native';
 import WebView from 'react-native-webview';
-import {Colors} from '../../constants/Colors';
 import CustomText from '../UI/CustomText';
+import {useThemeContext} from '../../contexts/themeContext';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface ChartConfigurationProp {
   title: string;
@@ -17,18 +18,19 @@ export const ChartConfiguration = ({
   title,
   chartType,
   seriesData,
-  ticker,
   height,
   xaxis,
 }: ChartConfigurationProp) => {
   const [loading, setLoading] = useState(true);
+  const {theme} = useThemeContext();
+  const {chartConfigurationStyles} = useThemeColorHook();
 
   const chartConfig = {
     chart: {
       type: chartType,
-      backgroundColor: Colors.companyScreenBackground,
+      backgroundColor: theme.companyScreenBackground,
       style: {
-        color: chartType === 'candlestick' ? Colors.pink : Colors.text500,
+        color: chartType === 'candlestick' ? theme.pink : theme.text500,
         fontSize: height ? (height > 500 ? '28' : '14') : '28',
         fontWeight: 'bold',
       },
@@ -36,14 +38,14 @@ export const ChartConfiguration = ({
     title: {
       text: title,
       style: {
-        color: Colors.text500,
+        color: theme.text500,
       },
     },
     xAxis: {
       title: {
         text: chartType === 'column' ? '' : 'Date',
         style: {
-          color: Colors.text500,
+          color: theme.text500,
         },
       },
       categories:
@@ -56,7 +58,7 @@ export const ChartConfiguration = ({
       gridLineWidth: 0,
       labels: {
         style: {
-          color: Colors.text500,
+          color: theme.text500,
         },
       },
     },
@@ -64,13 +66,13 @@ export const ChartConfiguration = ({
       title: {
         text: 'Price',
         style: {
-          color: Colors.text500,
+          color: theme.text500,
         },
       },
       gridLineWidth: 0,
       labels: {
         style: {
-          color: Colors.text500,
+          color: theme.text500,
         },
       },
     },
@@ -78,26 +80,26 @@ export const ChartConfiguration = ({
       line: {
         dataLabels: {
           enabled: true,
-          color: Colors.text500,
+          color: theme.text500,
           style: {
             fontWeight: 'bold',
             fontSize: height ? (height > 500 ? '24' : '14') : 24,
           },
         },
-        color: Colors.green,
+        color: theme.green,
       },
       candlestick: {
-        color: chartType === 'candlestick' ? Colors.pink : Colors.text500,
-        lineColor: Colors.text500,
-        upColor: Colors.green,
-        upLineColor: Colors.green,
+        color: chartType === 'candlestick' ? theme.pink : theme.text500,
+        lineColor: theme.text500,
+        upColor: theme.green,
+        upLineColor: theme.green,
       },
       column: {},
     },
     legend: {
       enabled: true,
       itemStyle: {
-        color: Colors.text500,
+        color: theme.text500,
         fontSize: height ? (height > 500 ? '24' : '14') : '24',
       },
     },
@@ -118,13 +120,13 @@ export const ChartConfiguration = ({
         colorByPoint: true,
         colors:
           chartType === 'column'
-            ? [Colors.pink, Colors.green, Colors.text500]
+            ? [theme.pink, theme.green, theme.text500]
             : ' ',
         tooltip: {
           valueDecimals: 2,
         },
         style: {
-          color: Colors.text500,
+          color: theme.text500,
         },
       },
     ],
@@ -138,7 +140,7 @@ export const ChartConfiguration = ({
           height: 100%;
           margin: 0;
           padding: 0;
-          background-color: ${Colors.background600};
+          background-color: ${theme.background600};
         }
       </style>
         <script src="https://code.highcharts.com/stock/highstock.js"></script>
@@ -159,7 +161,7 @@ export const ChartConfiguration = ({
     `;
 
   return (
-    <View style={styles.container}>
+    <View style={chartConfigurationStyles.container}>
       {seriesData.length > 0 ? (
         <WebView
           originWhitelist={['*']}
@@ -168,8 +170,8 @@ export const ChartConfiguration = ({
           onLoadEnd={() => setLoading(false)}
         />
       ) : (
-        <View style={styles.textContainer}>
-          <CustomText style={styles.text}>
+        <View style={chartConfigurationStyles.textContainer}>
+          <CustomText style={chartConfigurationStyles.text}>
             There is no data provided yet.
           </CustomText>
         </View>
@@ -177,39 +179,10 @@ export const ChartConfiguration = ({
       {seriesData.length > 0 && loading && (
         <ActivityIndicator
           size="large"
-          color={Colors.text500}
-          style={styles.loader}
+          color={theme.text500}
+          style={chartConfigurationStyles.loader}
         />
       )}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 0,
-    backgroundColor: Colors.background600,
-  },
-  textContainer: {
-    justifyContent: 'center',
-    alignContent: 'center',
-    flex: 1,
-  },
-  text: {
-    color: Colors.text500,
-    fontSize: 20,
-    alignSelf: 'center',
-  },
-  loader: {
-    position: 'absolute',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: Colors.background600,
-    flex: 1,
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-  },
-});

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Modal, StyleSheet, Text, TextInput, View} from 'react-native';
-import {Colors} from '../../constants/Colors';
 import {Investment} from '../../constants/Interfaces';
 import {addNewStockForUser} from '../../utils/http/addNewStockForUser';
 import {fetchUserData} from '../../utils/http/fetchUserData';
@@ -9,6 +8,8 @@ import {useAuth} from '../../contexts/authContext';
 import {getUserAvailableAmount} from '../../utils/functions/getUserAvailableAmount';
 import LinearGradient from 'react-native-linear-gradient';
 import Button from '../UI/Button';
+import {useThemeContext} from '../../contexts/themeContext';
+import {useThemeColorHook} from '../../utils/useThemeColorHook';
 
 interface BuyModalProp {
   isVisible: boolean;
@@ -28,6 +29,9 @@ export const BuyModal = ({
   const userCtx = useAuth();
   const [amount, setAmount] = useState('');
   const [errorText, setErrorText] = useState('');
+
+  const {theme} = useThemeContext();
+  const {buyModalStyles} = useThemeColorHook();
 
   const userId = userCtx.userId;
   const userInvestments = fetchUserData(userId)?.investment;
@@ -75,25 +79,29 @@ export const BuyModal = ({
       transparent={true}
       visible={isVisible}
       onRequestClose={closeModal}>
-      <View style={styles.modalContainer}>
+      <View style={buyModalStyles.modalContainer}>
         <LinearGradient
-          colors={[Colors.background600, Colors.background800]}
-          style={styles.modalView}>
-          <Text style={styles.modalText}>Available: {availableAmount}$</Text>
+          colors={[theme.background600, theme.background800]}
+          style={buyModalStyles.modalView}>
+          <Text style={buyModalStyles.modalText}>
+            Available: {availableAmount}$
+          </Text>
           <TextInput
-            style={styles.input}
+            style={buyModalStyles.input}
             onChangeText={setAmount}
             value={amount}
             keyboardType="numeric"
             placeholder="Enter amount"
-            placeholderTextColor={Colors.text500}
+            placeholderTextColor={theme.text500}
           />
 
-          {errorText && <Text style={styles.errorText}>{errorText}</Text>}
-          <View style={styles.buttonsContainer}>
+          {errorText && (
+            <Text style={buyModalStyles.errorText}>{errorText}</Text>
+          )}
+          <View style={buyModalStyles.buttonsContainer}>
             <Button
               style={{
-                backgroundColor: Colors.background500,
+                backgroundColor: theme.background500,
                 flex: 0.3,
                 marginRight: 25,
               }}
@@ -101,7 +109,7 @@ export const BuyModal = ({
               Buy
             </Button>
             <Button
-              style={{backgroundColor: Colors.pink, marginLeft: 25, flex: 0.3}}
+              style={{backgroundColor: theme.pink, marginLeft: 25, flex: 0.3}}
               onPress={closeModal}>
               Cancel
             </Button>
@@ -111,51 +119,3 @@ export const BuyModal = ({
     </Modal>
   );
 };
-
-const styles = StyleSheet.create({
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-  },
-  modalView: {
-    borderRadius: 20,
-    padding: 20,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-  },
-  input: {
-    height: 40,
-    marginHorizontal: 10,
-    marginVertical: 20,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: 10,
-    padding: 10,
-    width: 250,
-    color: Colors.text500,
-  },
-  modalText: {
-    marginBottom: 5,
-    textAlign: 'center',
-    color: Colors.text500,
-    fontSize: 18,
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  errorText: {
-    marginBottom: 15,
-    textAlign: 'center',
-    color: Colors.pink,
-    fontSize: 18,
-  },
-});

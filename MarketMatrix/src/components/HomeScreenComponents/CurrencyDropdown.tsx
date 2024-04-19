@@ -1,10 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/react-in-jsx-scope */
 import {SetStateAction} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, View} from 'react-native';
 import {SelectList} from 'react-native-dropdown-select-list';
-import {Colors} from '../../constants/Colors';
 import CustomText from '../UI/CustomText';
+import {useThemeContext} from '../../contexts/themeContext';
 
 const data = [
   {key: 'EUR', value: 'EUR'},
@@ -20,21 +20,23 @@ export const CurrencyDropdown = ({
   selected,
   setSelected,
 }: CurrencyDropdownProps) => {
+  const {theme} = useThemeContext();
+
   return (
-    <View style={styles.dropdown}>
+    <View>
       <SelectList
         data={data}
         setSelected={setSelected}
         boxStyles={{
-          borderColor: Colors.dropdown,
+          borderColor: theme.dropdown,
           borderWidth: 2,
           borderRadius: 30,
           width: 80,
           height: 40,
         }}
-        dropdownStyles={{borderColor: Colors.text500, width: 80, height: 80}}
-        dropdownTextStyles={{color: Colors.text500, fontSize: 12}}
-        inputStyles={{color: Colors.text500, fontSize: 12}}
+        dropdownStyles={{borderColor: theme.text500, width: 80, height: 80}}
+        dropdownTextStyles={{color: theme.text500, fontSize: 12}}
+        inputStyles={{color: theme.text500, fontSize: 12}}
         placeholder={selected}
         arrowicon={
           <Image
@@ -43,7 +45,7 @@ export const CurrencyDropdown = ({
           />
         }
         closeicon={
-          <CustomText style={{color: Colors.text500, fontSize: 13}}>
+          <CustomText style={{color: theme.text500, fontSize: 13}}>
             X
           </CustomText>
         }
@@ -58,7 +60,3 @@ export const CurrencyDropdown = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  dropdown: {},
-});

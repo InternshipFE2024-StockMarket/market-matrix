@@ -1,6 +1,6 @@
 import {View, Image, StyleSheet} from 'react-native';
 import React from 'react';
-import {Colors} from '../../constants/Colors';
+import {useThemeContext} from '../../contexts/themeContext';
 
 interface IconProps {
   focused?: boolean;
@@ -10,16 +10,22 @@ interface IconProps {
 }
 
 export const NavigationIcon = ({focused, source, color, size}: IconProps) => {
-  const styles = StyleSheet.create({
+  const {theme} = useThemeContext();
+
+  const navigationIconstyles = StyleSheet.create({
     icon: {
       width: size,
       height: size,
-      tintColor: focused ? Colors.selectedIcon : Colors.text500,
+      tintColor: focused ? theme.selectedIcon : theme.text500,
     },
   });
   return (
     <View>
-      <Image source={source} style={styles.icon} tintColor={color} />
+      <Image
+        source={source}
+        style={navigationIconstyles.icon}
+        tintColor={color}
+      />
     </View>
   );
 };
