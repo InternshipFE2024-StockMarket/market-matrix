@@ -6,6 +6,7 @@ interface AuthContextType {
   token: string | null;
   isAuthenticated: boolean;
   userId: string;
+  userName: string;
   authenticate: (userData: AuthUser) => void;
   logout: () => void;
 }
@@ -14,6 +15,7 @@ export const AuthContext = createContext<AuthContextType>({
   token: '',
   isAuthenticated: false,
   userId: '',
+  userName: '',
   authenticate: () => {},
   logout: () => {},
 });
@@ -27,8 +29,9 @@ interface AuthContextProviderProps {
 const AuthContextProvider = ({children}: AuthContextProviderProps) => {
   const [authToken, setAuthToken] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string>('');
+  const [userName, setUserName] = useState<string>('');
 
-  const loadTokenFromStorage = async () => {
+  const loadUserFromStorage = async () => {
     try {
       const userDataString = await AsyncStorage.getItem('userdata');
       if (userDataString !== null) {
@@ -36,22 +39,29 @@ const AuthContextProvider = ({children}: AuthContextProviderProps) => {
 
         setAuthToken(userData.token);
         setUserEmail(userData.email);
+        setUserName(userData.name);
       }
     } catch (error) {
       console.error('Error loading token from AsyncStorage:', error);
     }
   };
 
-  const saveTokenToStorage = async (token: string, email: string) => {
+  const saveUserToStorage = async (
+    token: string,
+    email: string,
+    name: string,
+  ) => {
     try {
-      const userData = {token, email};
+      const userData = {token, email, name};
+      console.log('set', {userData});
+
       await AsyncStorage.setItem('userdata', JSON.stringify(userData));
     } catch (error) {
       console.error('Error saving token to AsyncStorage:', error);
     }
   };
 
-  const removeTokenFromStorage = async () => {
+  const removeUserFromStorage = async () => {
     try {
       await AsyncStorage.removeItem('authToken');
     } catch (error) {
@@ -61,22 +71,24 @@ const AuthContextProvider = ({children}: AuthContextProviderProps) => {
 
   const authenticate = (userData: AuthUser) => {
     setAuthToken(userData.idToken);
-    saveTokenToStorage(userData.idToken, userData.email);
+    saveUserToStorage(userData.idToken, userData.email, userData.name);
+    setUserName(userData.name);
   };
 
   useEffect(() => {
-    loadTokenFromStorage();
+    loadUserFromStorage();
   }, []);
 
   const logout = () => {
     setAuthToken(null);
-    removeTokenFromStorage();
+    removeUserFromStorage();
   };
 
   const value = {
     token: authToken,
     isAuthenticated: !!authToken,
     userId: userEmail,
+    userName: userName,
     authenticate: authenticate,
     logout: logout,
   };

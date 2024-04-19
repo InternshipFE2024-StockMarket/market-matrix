@@ -57,6 +57,7 @@ export interface Stock {
 }
 
 export interface FormValidation {
+  name: boolean;
   email: boolean;
   password: boolean;
   confirmEmail: boolean;
@@ -64,6 +65,7 @@ export interface FormValidation {
 }
 
 export interface FormCredentials {
+  name: string;
   email: string;
   password: string;
   confirmEmail?: string;
@@ -86,7 +88,6 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  password: string;
 }
 
 export interface AuthUser {
@@ -94,4 +95,5 @@ export interface AuthUser {
   email: string;
   expiresIn: string;
   idToken: string;
+  name: string;
 }

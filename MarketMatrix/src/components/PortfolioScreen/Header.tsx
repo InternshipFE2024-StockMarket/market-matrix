@@ -7,7 +7,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import Button from '../UI/Button';
-import {getTotalPortofolioValue} from '../../utils/functions/getTotalPortofolioValue';
+import {useTotalPortofolioValue} from '../../utils/functions/getTotalPortofolioValue';
 import {useAuth} from '../../contexts/authContext';
 import CustomText from '../UI/CustomText';
 import {useThemeContext} from '../../contexts/themeContext';
@@ -23,8 +23,8 @@ const Header = () => {
 
   const userCtx = useAuth();
   const userId = userCtx.userId;
-  let userPortfolioValue = Number(getTotalPortofolioValue(userId)?.total);
-  let plPortfolioValue = Number(getTotalPortofolioValue(userId)?.difference);
+  let userPortfolioValue = Number(useTotalPortofolioValue(userId)?.total);
+  let plPortfolioValue = Number(useTotalPortofolioValue(userId)?.difference);
   const {width, height} = useWindowDimensions();
   const isLandscape = width > height;
   const {logout} = useAuth();

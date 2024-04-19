@@ -42,10 +42,10 @@ const TabNavigator = () => {
           backgroundColor: 'rgba(0, 0, 0, 0)',
           height: isLandscape ? 45 : 65,
         },
-        tabBarActiveTintColor: theme.background500,
+        tabBarActiveTintColor: theme.background800,
         tabBarInactiveTintColor: theme.text500,
         tabBarIndicatorStyle: {
-          backgroundColor: theme.background500,
+          height: 0,
         },
       }}>
       <Tab.Screen

@@ -1,18 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-native/no-inline-homePageStyles */
-import {Image, View, useWindowDimensions, Pressable} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import {
+  Image,
+  StyleSheet,
+  View,
+  useWindowDimensions,
+  Pressable,
+  Dimensions,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import GradientBackground from '../components/UI/GradientBackground';
 import {CurrencyDropdown} from '../components/HomeScreenComponents/CurrencyDropdown';
 import {Story} from '../components/HomeScreenComponents/Story';
 import {StockChanges} from '../constants/Interfaces';
 import {useStock} from '../contexts/stocksContext';
-import {getTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
+import {useTotalPortofolioValue} from '../utils/functions/getTotalPortofolioValue';
 import {TotalValueLineChart} from '../components/HomeScreenComponents/TotalValueLineChart';
 import {useAuth} from '../contexts/authContext';
 import {StoryModal} from '../components/HomeScreenComponents/StoryModal';
 import {useNavigation} from '@react-navigation/native';
 import CustomText from '../components/UI/CustomText';
+import EmptyPortfolio from '../components/PortfolioScreen/EmptyPortfolio';
 import {useFetchChanges} from '../utils/http/useFetchChanges';
 import {useThemeContext} from '../contexts/themeContext';
 import {useThemeColorHook} from '../utils/useThemeColorHook';
@@ -49,6 +57,7 @@ const HomeScreen = () => {
   const {stocks} = useStock();
   const userCtx = useAuth();
   const userId = userCtx.userId;
+  const userName = userCtx.userName;
   const logout = userCtx.logout;
 
   const themeHandler = () => {
@@ -56,8 +65,8 @@ const HomeScreen = () => {
     theme === blueColors ? setTheme(greenColors) : setTheme(blueColors);
   };
 
-  let portfolioValue = Number(getTotalPortofolioValue(userId)?.total);
-  let totalDifference = Number(getTotalPortofolioValue(userId)?.difference);
+  let portfolioValue = Number(useTotalPortofolioValue(userId)?.total);
+  let totalDifference = Number(useTotalPortofolioValue(userId)?.difference);
   const {height} = useWindowDimensions();
 
   const navigation = useNavigation<{
@@ -193,35 +202,46 @@ const HomeScreen = () => {
         </View>
         <View style={{flexDirection: orientation, gap: 20}}>
           <View>
-            <View style={homePageStyles.header}>
-              <View>
-                <CustomText style={homePageStyles.text}>
-                  Your total value:
+            {portfolioValue === 0 ? (
+              <View style={homePageStyles.welcomeContainer}>
+                <CustomText style={homePageStyles.welcome}>
+                  Welcome to MarketMatrix!
                 </CustomText>
+                <CustomText style={homePageStyles.instructions}>
+                  Start investing now to grow your portfolio!
+                </CustomText>
+              </View>
+            ) : (
+              <View style={homePageStyles.header}>
+                <View>
+                  <CustomText style={homePageStyles.text}>
+                    Your total value:
+                  </CustomText>
 
-                <View style={homePageStyles.valueContainer}>
-                  <CustomText style={homePageStyles.value}>
-                    {currency === 'USD'
-                      ? currencyFormat.format(Number(portfolioValue))
-                      : currencyFormat.format(Number(portfolioValue * 1.06))}
+                  <View style={homePageStyles.valueContainer}>
+                    <CustomText style={homePageStyles.value}>
+                      {currency === 'USD'
+                        ? currencyFormat.format(Number(portfolioValue))
+                        : currencyFormat.format(Number(portfolioValue * 1.06))}
+                    </CustomText>
+                  </View>
+                  <CustomText
+                    style={{
+                      fontSize: 20,
+                      color: totalDifference > 0 ? theme.green : theme.pink,
+                    }}>
+                    {totalDifference.toFixed(2)} ({percentage}%)
                   </CustomText>
                 </View>
-                <CustomText
-                  style={{
-                    fontSize: 20,
-                    color: totalDifference > 0 ? theme.green : theme.pink,
-                  }}>
-                  {totalDifference.toFixed(2)} ({percentage}%)
-                </CustomText>
+                <View
+                  style={[homePageStyles.dropdown, {right: currencyPosition}]}>
+                  <CurrencyDropdown
+                    selected={currency}
+                    setSelected={setCurrency}
+                  />
+                </View>
               </View>
-              <View
-                style={[homePageStyles.dropdown, {right: currencyPosition}]}>
-                <CurrencyDropdown
-                  selected={currency}
-                  setSelected={setCurrency}
-                />
-              </View>
-            </View>
+            )}
 
             <View
               style={[
@@ -260,14 +280,17 @@ const HomeScreen = () => {
               ))}
             </View>
           </View>
-
           <View
             style={{
               width: chartWidth,
               height: chartHeight,
               marginTop: 15,
             }}>
-            <TotalValueLineChart currency={currency} />
+            {portfolioValue === 0 ? (
+              <EmptyPortfolio />
+            ) : (
+              <TotalValueLineChart currency={currency} />
+            )}
           </View>
         </View>
       </View>

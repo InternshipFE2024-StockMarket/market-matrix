@@ -19,6 +19,7 @@ const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
   const {authStyles} = useThemeColorHook();
 
   const [credentialsInvalid, setCredentialsInvalid] = useState<FormValidation>({
+    name: false,
     email: false,
     password: false,
     confirmEmail: false,
@@ -26,23 +27,36 @@ const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
   });
 
   const handleSubmit = (credentials: FormCredentials) => {
-    let {email, confirmEmail, password, confirmPassword} = credentials;
+    let {name, email, confirmEmail, password, confirmPassword} = credentials;
+    console.log({credentials});
 
+    name = name.trim();
     email = email.trim();
     password = password.trim();
 
+    const nameIsValid = name.length > 0;
     const emailIsValid = email.includes('@');
     const passwordIsValid = password.length > 6;
     const emailsAreEqual = email === confirmEmail;
     const passwordsAreEqual = password === confirmPassword;
+    console.log(
+      {nameIsValid},
+      {emailIsValid},
+      {passwordIsValid},
+      {emailsAreEqual},
+      {
+        passwordsAreEqual,
+      },
+    );
 
     if (
       !emailIsValid ||
       !passwordIsValid ||
-      (!isLogin && (!emailsAreEqual || !passwordsAreEqual))
+      (!isLogin && (!emailsAreEqual || !passwordsAreEqual || !nameIsValid))
     ) {
       Alert.alert('Invalid input', 'Please check your entered credentials.');
       setCredentialsInvalid({
+        name: !nameIsValid,
         email: !emailIsValid,
         confirmEmail: !emailIsValid || !emailsAreEqual,
         password: !passwordIsValid,
@@ -50,7 +64,7 @@ const AuthContent = ({isLogin, onAuthenticate}: AuthContentProps) => {
       });
       return;
     }
-    onAuthenticate({email, password});
+    onAuthenticate({name, email, password});
   };
 
   const handleSwitchToLogin = () => {

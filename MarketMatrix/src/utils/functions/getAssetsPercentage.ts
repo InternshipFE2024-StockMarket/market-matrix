@@ -5,6 +5,7 @@ export const useAssetsPercentage = (userId: string): number[] => {
   let crypto = 0;
   let indices = 0;
   const userInvestments = useUserInvestmentsDetails(userId);
+
   userInvestments.map(inv => {
     if (inv.type === 'stock') {
       stocks = stocks + inv.amount;

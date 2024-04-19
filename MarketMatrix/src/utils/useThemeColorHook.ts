@@ -1,8 +1,10 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 import {useThemeContext} from '../contexts/themeContext';
 
 export const useThemeColorHook = () => {
   const {theme} = useThemeContext();
+  const deviceWidth = Dimensions.get('window').width;
+  const deviceHeight = Dimensions.get('window').height;
 
   const homePageStyles = StyleSheet.create({
     homeWrapper: {
@@ -61,6 +63,25 @@ export const useThemeColorHook = () => {
     image: {
       width: 20,
       height: 20,
+    },
+    welcomeContainer: {
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginVertical: 30,
+    },
+    welcome: {
+      color: theme.text500,
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+    instructionsContainer: {
+      width: 0.8 * deviceWidth,
+    },
+    instructions: {
+      color: theme.text500,
+      fontSize: 14,
+      fontWeight: '600',
     },
   });
 
@@ -599,6 +620,110 @@ export const useThemeColorHook = () => {
     },
   });
 
+  const DepositModal = StyleSheet.create({
+    modalContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    },
+    modalView: {
+      borderRadius: 20,
+      padding: 20,
+      alignItems: 'center',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+    },
+    input: {
+      height: 40,
+      marginHorizontal: 10,
+      marginVertical: 20,
+      borderWidth: 1,
+      borderColor: theme.border,
+      borderRadius: 10,
+      padding: 10,
+      width: 250,
+      color: theme.text500,
+    },
+    modalText: {
+      marginBottom: 5,
+      textAlign: 'center',
+      color: theme.text500,
+      fontSize: 18,
+    },
+    buttonsContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    errorText: {
+      marginBottom: 15,
+      textAlign: 'center',
+      color: theme.pink,
+      fontSize: 18,
+    },
+  });
+  const depositContainer = StyleSheet.create({
+    container: {
+      width: '100%',
+      height: 0.08 * deviceHeight,
+      position: 'absolute',
+      bottom: 0,
+      backgroundColor: theme.background600,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    leftContainer: {
+      marginLeft: 20,
+    },
+    rightCintainer: {
+      marginRight: 20,
+    },
+    cash: {
+      color: theme.text500,
+      fontSize: 18,
+    },
+    cashValue: {
+      color: theme.text500,
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginTop: 5,
+    },
+  });
+
+  const emptyPortfolio = StyleSheet.create({
+    newAccountContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    emptyPortfolioImage: {
+      width: deviceWidth * 0.2,
+      height: deviceWidth * 0.2,
+      marginBottom: 20,
+    },
+    emptyPortfolioText: {
+      fontSize: 24,
+      fontWeight: 'bold',
+      marginBottom: 10,
+      color: theme.text500,
+    },
+    instructionsContainer: {
+      width: 0.6 * deviceWidth,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    instructionsText: {
+      textAlign: 'center',
+      color: theme.text500,
+    },
+  });
+
   return {
     homePageStyles,
     chartConfigurationStyles,
@@ -618,5 +743,8 @@ export const useThemeColorHook = () => {
     cardContainerStyles,
     companyScreenStyles,
     buyModalStyles,
+    DepositModal,
+    depositContainer,
+    emptyPortfolio,
   };
 };
